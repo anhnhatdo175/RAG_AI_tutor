@@ -118,18 +118,19 @@ def _generate_transformers(
         tokenize=True,
         add_generation_prompt=True,
         return_tensors="pt",
+        return_dict=True,
         truncation=True,
         max_length=config.TRANSFORMERS_CONTEXT_LENGTH,
     )
-    inputs = inputs.to(model.device)
+    inputs = {key: value.to(model.device) for key, value in inputs.items()}
     with torch.inference_mode():
         output = model.generate(
-            inputs,
+            **inputs,
             max_new_tokens=config.TRANSFORMERS_MAX_NEW_TOKENS,
             do_sample=False,
             pad_token_id=tokenizer.pad_token_id,
         )
-    generated_tokens = output[0, inputs.shape[-1] :]
+    generated_tokens = output[0, inputs["input_ids"].shape[-1] :]
     content = tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
     if not content:
         raise ValueError("Transformers model trả về phản hồi rỗng.")
