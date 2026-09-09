@@ -1,0 +1,12 @@
+pandas
+numpy
+faiss-cpu
+groq
+matplotlib
+tqdm
+python-dotenv
+sentence-transformers
+transformers
+accelerate
+bitsandbytes
+sentencepiece
