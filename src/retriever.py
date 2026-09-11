@@ -33,7 +33,7 @@ def build_index(docs: list[dict]):
         )
 
     vectors = np.array(vectors, dtype="float32")
-    faiss.normalize_L2(vectors)  # để dùng cosine similarity qua inner product
+    faiss.normalize_L2(vectors)
 
     index = faiss.IndexFlatIP(vectors.shape[1])
     index.add(vectors)

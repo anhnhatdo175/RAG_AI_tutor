@@ -12,7 +12,6 @@ _embedding_model = None
 _transformers_models = {}
 _transformers_tokenizers = {}
 
-# Biến toàn cục lưu thời điểm gọi API cuối cùng (dùng cho rate limiter)
 _last_request_time = 0.0
 
 def _wait_for_rate_limit():
@@ -186,7 +185,7 @@ def generate_answer(
     client = _get_client()
     for attempt in range(config.RETRY_ATTEMPTS):
         try:
-            _wait_for_rate_limit()  # Chờ đủ thời gian trước khi gọi
+            _wait_for_rate_limit()
             response = client.chat.completions.create(
                 model=selected_model,
                 messages=[{"role": "user", "content": prompt}],

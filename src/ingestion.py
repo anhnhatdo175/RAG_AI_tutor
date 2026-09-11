@@ -1,8 +1,4 @@
-"""
-Đọc dữ liệu SciQ từ D:\\SciQ (train.csv, test.csv, validation.csv),
-xây corpus các đoạn 'support' duy nhất để đưa vào vector store,
-và chuẩn bị bộ câu hỏi test cho benchmark.
-"""
+"""Load SciQ splits, build the retrieval corpus, and sample test questions."""
 import json
 import pandas as pd
 from src import config
@@ -10,7 +6,6 @@ from src import config
 
 def load_split(path) -> pd.DataFrame:
     df = pd.read_csv(path)
-    # Một vài bản export có thể dùng tab thay vì dấu phẩy — thử lại nếu thiếu cột
     if "support" not in df.columns:
         df = pd.read_csv(path, sep="\t")
     return df
@@ -27,10 +22,7 @@ def load_all() -> pd.DataFrame:
 
 
 def build_corpus(df: pd.DataFrame) -> list[dict]:
-    """
-    Mỗi đoạn 'support' duy nhất trở thành một document trong vector store.
-    Nhiều câu hỏi có thể share chung 1 support -> dedupe theo nội dung.
-    """
+    """Create one deduplicated document for each non-empty support passage."""
     df = df.dropna(subset=["support"])
     df = df[df["support"].str.strip() != ""]
 

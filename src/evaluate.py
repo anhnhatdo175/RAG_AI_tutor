@@ -1,8 +1,4 @@
-"""
-Chạy cả 2 pipeline (RAG và LLM thuần) trên bộ câu hỏi test đã sample,
-chấm Accuracy bằng LLM-as-judge, tính Precision@K/Recall@K cho retrieval,
-đo Latency, lưu toàn bộ vào benchmark_results.csv cùng retrieved support thực tế.
-"""
+"""Run the RAG and baseline benchmark and save answer and retrieval metrics."""
 import json
 import pandas as pd
 from tqdm import tqdm
@@ -44,7 +40,7 @@ def precision_recall_at_k(retrieved_doc_ids: list[str], gold_doc_id: str, k_valu
         top_k = retrieved_doc_ids[:k]
         hit = 1 if gold_doc_id in top_k else 0
         result[f"precision@{k}"] = hit / k
-        result[f"recall@{k}"] = hit  # chỉ có 1 tài liệu đúng mỗi câu hỏi -> recall = hit
+        result[f"recall@{k}"] = hit
     return result
 
 
@@ -86,15 +82,17 @@ def run_benchmark():
         question = row["question"]
         correct_answer = row["correct_answer"]
         gold_doc_id = support_to_docid.get(row["support"])
+        if gold_doc_id is None:
+            raise ValueError(
+                "Gold support không có trong corpus; hãy chạy ingestion theo cách 1."
+            )
 
-        # --- Nhánh RAG ---
         rag_result = rag_answer(question, index, docs, k=max(config.K_VALUES))
         rag_verdict = judge_answer(question, correct_answer, rag_result["answer"])
         pr_at_k = precision_recall_at_k(
             rag_result["retrieved_doc_ids"], gold_doc_id, config.K_VALUES
         )
 
-        # --- Nhánh LLM thuần ---
         base_result = baseline_answer(question)
         base_verdict = judge_answer(question, correct_answer, base_result["answer"])
 
