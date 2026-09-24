@@ -1,0 +1,362 @@
+{
+  "78523": {
+    "source": "ASSISTments 2009-2010 Skill Builder",
+    "user_id": "78523",
+    "skills": [
+      {
+        "skill_id": "11",
+        "skill_name": "Venn Diagram",
+        "questions_attempted": 135,
+        "correct_answers": 135,
+        "accuracy": 1.0,
+        "avg_attempt_count": 0.681,
+        "avg_time_sec": 31.277,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      },
+      {
+        "skill_id": "70",
+        "skill_name": "Percent Of",
+        "questions_attempted": 494,
+        "correct_answers": 359,
+        "accuracy": 0.7267,
+        "avg_attempt_count": 1.273,
+        "avg_time_sec": 73.38,
+        "mastery_level": "developing",
+        "recommended_material_difficulty": "intermediate"
+      },
+      {
+        "skill_id": "297",
+        "skill_name": "Area Trapezoid",
+        "questions_attempted": 288,
+        "correct_answers": 94,
+        "accuracy": 0.3264,
+        "avg_attempt_count": 1.674,
+        "avg_time_sec": 52.0,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "303",
+        "skill_name": "Volume Cylinder",
+        "questions_attempted": 183,
+        "correct_answers": 0,
+        "accuracy": 0.0,
+        "avg_attempt_count": 2.0,
+        "avg_time_sec": 95.823,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "307",
+        "skill_name": "Volume Rectangular Prism",
+        "questions_attempted": 731,
+        "correct_answers": 641,
+        "accuracy": 0.8769,
+        "avg_attempt_count": 1.186,
+        "avg_time_sec": 44.743,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      },
+      {
+        "skill_id": "317",
+        "skill_name": "Greatest Common Factor",
+        "questions_attempted": 88,
+        "correct_answers": 88,
+        "accuracy": 1.0,
+        "avg_attempt_count": 1.0,
+        "avg_time_sec": 25.296,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      }
+    ]
+  },
+  "78561": {
+    "source": "ASSISTments 2009-2010 Skill Builder",
+    "user_id": "78561",
+    "skills": [
+      {
+        "skill_id": "11",
+        "skill_name": "Venn Diagram",
+        "questions_attempted": 227,
+        "correct_answers": 181,
+        "accuracy": 0.7974,
+        "avg_attempt_count": 1.013,
+        "avg_time_sec": 13.31,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      },
+      {
+        "skill_id": "70",
+        "skill_name": "Percent Of",
+        "questions_attempted": 623,
+        "correct_answers": 359,
+        "accuracy": 0.5762,
+        "avg_attempt_count": 1.562,
+        "avg_time_sec": 70.791,
+        "mastery_level": "developing",
+        "recommended_material_difficulty": "intermediate"
+      },
+      {
+        "skill_id": "297",
+        "skill_name": "Area Trapezoid",
+        "questions_attempted": 144,
+        "correct_answers": 0,
+        "accuracy": 0.0,
+        "avg_attempt_count": 2.0,
+        "avg_time_sec": 58.239,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "303",
+        "skill_name": "Volume Cylinder",
+        "questions_attempted": 323,
+        "correct_answers": 93,
+        "accuracy": 0.2879,
+        "avg_attempt_count": 1.985,
+        "avg_time_sec": 72.16,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "307",
+        "skill_name": "Volume Rectangular Prism",
+        "questions_attempted": 416,
+        "correct_answers": 416,
+        "accuracy": 1.0,
+        "avg_attempt_count": 1.0,
+        "avg_time_sec": 88.056,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      },
+      {
+        "skill_id": "317",
+        "skill_name": "Greatest Common Factor",
+        "questions_attempted": 134,
+        "correct_answers": 134,
+        "accuracy": 1.0,
+        "avg_attempt_count": 0.657,
+        "avg_time_sec": 15.289,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      }
+    ]
+  },
+  "78571": {
+    "source": "ASSISTments 2009-2010 Skill Builder",
+    "user_id": "78571",
+    "skills": [
+      {
+        "skill_id": "11",
+        "skill_name": "Venn Diagram",
+        "questions_attempted": 92,
+        "correct_answers": 92,
+        "accuracy": 1.0,
+        "avg_attempt_count": 1.0,
+        "avg_time_sec": 135.43,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      },
+      {
+        "skill_id": "70",
+        "skill_name": "Percent Of",
+        "questions_attempted": 322,
+        "correct_answers": 230,
+        "accuracy": 0.7143,
+        "avg_attempt_count": 1.143,
+        "avg_time_sec": 95.201,
+        "mastery_level": "developing",
+        "recommended_material_difficulty": "intermediate"
+      },
+      {
+        "skill_id": "297",
+        "skill_name": "Area Trapezoid",
+        "questions_attempted": 97,
+        "correct_answers": 0,
+        "accuracy": 0.0,
+        "avg_attempt_count": 2.0,
+        "avg_time_sec": 54.218,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "303",
+        "skill_name": "Volume Cylinder",
+        "questions_attempted": 465,
+        "correct_answers": 186,
+        "accuracy": 0.4,
+        "avg_attempt_count": 2.2,
+        "avg_time_sec": 71.891,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "307",
+        "skill_name": "Volume Rectangular Prism",
+        "questions_attempted": 279,
+        "correct_answers": 186,
+        "accuracy": 0.6667,
+        "avg_attempt_count": 1.333,
+        "avg_time_sec": 81.391,
+        "mastery_level": "developing",
+        "recommended_material_difficulty": "intermediate"
+      },
+      {
+        "skill_id": "317",
+        "skill_name": "Greatest Common Factor",
+        "questions_attempted": 93,
+        "correct_answers": 93,
+        "accuracy": 1.0,
+        "avg_attempt_count": 1.0,
+        "avg_time_sec": 106.25,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      }
+    ]
+  },
+  "78544": {
+    "source": "ASSISTments 2009-2010 Skill Builder",
+    "user_id": "78544",
+    "skills": [
+      {
+        "skill_id": "11",
+        "skill_name": "Venn Diagram",
+        "questions_attempted": 368,
+        "correct_answers": 276,
+        "accuracy": 0.75,
+        "avg_attempt_count": 1.25,
+        "avg_time_sec": 46.614,
+        "mastery_level": "developing",
+        "recommended_material_difficulty": "intermediate"
+      },
+      {
+        "skill_id": "70",
+        "skill_name": "Percent Of",
+        "questions_attempted": 276,
+        "correct_answers": 184,
+        "accuracy": 0.6667,
+        "avg_attempt_count": 1.167,
+        "avg_time_sec": 135.621,
+        "mastery_level": "developing",
+        "recommended_material_difficulty": "intermediate"
+      },
+      {
+        "skill_id": "297",
+        "skill_name": "Area Trapezoid",
+        "questions_attempted": 47,
+        "correct_answers": 47,
+        "accuracy": 1.0,
+        "avg_attempt_count": 1.0,
+        "avg_time_sec": 85.631,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      },
+      {
+        "skill_id": "303",
+        "skill_name": "Volume Cylinder",
+        "questions_attempted": 186,
+        "correct_answers": 93,
+        "accuracy": 0.5,
+        "avg_attempt_count": 1.5,
+        "avg_time_sec": 129.394,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "307",
+        "skill_name": "Volume Rectangular Prism",
+        "questions_attempted": 139,
+        "correct_answers": 46,
+        "accuracy": 0.3309,
+        "avg_attempt_count": 1.338,
+        "avg_time_sec": 109.903,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "317",
+        "skill_name": "Greatest Common Factor",
+        "questions_attempted": 279,
+        "correct_answers": 279,
+        "accuracy": 1.0,
+        "avg_attempt_count": 1.0,
+        "avg_time_sec": 101.057,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      }
+    ]
+  },
+  "78557": {
+    "source": "ASSISTments 2009-2010 Skill Builder",
+    "user_id": "78557",
+    "skills": [
+      {
+        "skill_id": "11",
+        "skill_name": "Venn Diagram",
+        "questions_attempted": 322,
+        "correct_answers": 138,
+        "accuracy": 0.4286,
+        "avg_attempt_count": 2.0,
+        "avg_time_sec": 23.953,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "70",
+        "skill_name": "Percent Of",
+        "questions_attempted": 393,
+        "correct_answers": 307,
+        "accuracy": 0.7812,
+        "avg_attempt_count": 1.328,
+        "avg_time_sec": 54.312,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      },
+      {
+        "skill_id": "297",
+        "skill_name": "Area Trapezoid",
+        "questions_attempted": 194,
+        "correct_answers": 97,
+        "accuracy": 0.5,
+        "avg_attempt_count": 1.5,
+        "avg_time_sec": 104.243,
+        "mastery_level": "struggling",
+        "recommended_material_difficulty": "beginner"
+      },
+      {
+        "skill_id": "303",
+        "skill_name": "Volume Cylinder",
+        "questions_attempted": 181,
+        "correct_answers": 137,
+        "accuracy": 0.7569,
+        "avg_attempt_count": 1.243,
+        "avg_time_sec": 90.016,
+        "mastery_level": "developing",
+        "recommended_material_difficulty": "intermediate"
+      },
+      {
+        "skill_id": "307",
+        "skill_name": "Volume Rectangular Prism",
+        "questions_attempted": 44,
+        "correct_answers": 44,
+        "accuracy": 1.0,
+        "avg_attempt_count": 1.0,
+        "avg_time_sec": 24.74,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      },
+      {
+        "skill_id": "317",
+        "skill_name": "Greatest Common Factor",
+        "questions_attempted": 183,
+        "correct_answers": 183,
+        "accuracy": 1.0,
+        "avg_attempt_count": 0.749,
+        "avg_time_sec": 37.338,
+        "mastery_level": "proficient",
+        "recommended_material_difficulty": "advanced"
+      }
+    ]
+  }
+}

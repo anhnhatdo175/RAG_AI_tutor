@@ -5,3 +5,5 @@ __pycache__/
 
 
 !output/.gitkeep
+
+adaptiverag\skill_builder_data.csv

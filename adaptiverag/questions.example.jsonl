@@ -1,0 +1,12 @@
+{"student_id":"78523","question":"Find the area of a trapezoid with parallel bases 8 and 12 and height 5.","skill_id":"297","expected_difficulty":"beginner","gold_answer":"50 square units"}
+{"student_id":"78561","question":"A trapezoid has bases 6 and 10 and height 4. What is its area?","skill_id":"297","expected_difficulty":"beginner","gold_answer":"32 square units"}
+{"student_id":"78571","question":"Explain why the slanted side of a trapezoid is not necessarily its height.","skill_id":"297","expected_difficulty":"beginner","gold_answer":"The height is perpendicular to the parallel bases."}
+{"student_id":"78544","question":"What is the exact volume of a cylinder with radius 3 and height 5?","skill_id":"303","expected_difficulty":"beginner","gold_answer":"45 pi cubic units"}
+{"student_id":"78557","question":"A cylinder has diameter 10 and height 4. Which radius belongs in V = pi r^2 h?","skill_id":"303","expected_difficulty":"beginner","gold_answer":"The radius is 5."}
+{"student_id":"78523","question":"A rectangular prism measures 4 by 3 by 5. Find its volume.","skill_id":"307","expected_difficulty":"advanced","gold_answer":"60 cubic units"}
+{"student_id":"78571","question":"Why is the volume of a rectangular prism measured in cubic units?","skill_id":"307","expected_difficulty":"intermediate","gold_answer":"It counts three-dimensional unit cubes."}
+{"student_id":"78544","question":"If 12 students like A, 9 like B, and 4 like both, how many like A or B?","skill_id":"11","expected_difficulty":"intermediate","gold_answer":"17"}
+{"student_id":"78557","question":"Why must the intersection be subtracted once when finding a union?","skill_id":"11","expected_difficulty":"beginner","gold_answer":"The intersection was counted in both sets."}
+{"student_id":"78561","question":"Calculate 25 percent of 80.","skill_id":"70","expected_difficulty":"intermediate","gold_answer":"20"}
+{"student_id":"78571","question":"Estimate 10 percent of 350 before calculating exactly.","skill_id":"70","expected_difficulty":"intermediate","gold_answer":"35"}
+{"student_id":"78523","question":"Find the greatest common factor of 18 and 24.","skill_id":"317","expected_difficulty":"advanced","gold_answer":"6"}
