@@ -70,8 +70,25 @@ Run the alpha/beta grid:
 !python adaptiverag/adaptive_rag.py experiment \
   --questions adaptiverag/questions.example.jsonl \
   --alphas 1.0,0.75,0.5,0.25 \
-  --betas 0.0,0.25,0.5,0.75,1.0
+  --betas 0.0,0.25,0.5,0.75,1.0 \
+  --evaluation-mode known-skill
 ```
+
+The experiment has two non-leaking evaluation tracks:
+
+- `known-skill` (default): the LMS has already routed the query to its
+  `skill_id`; retrieval must choose the appropriate difficulty and content
+  type. This is the primary Traditional-vs-Adaptive comparison.
+- `end-to-end`: neither `skill_id` nor difficulty is passed to retrieval.
+  This additionally measures whether the retriever discovers the correct
+  skill.
+
+`expected_difficulty` and `expected_content_type` are evaluation labels only;
+they are never used as metadata filters. The report includes skill
+Recall@k, skill top-1 accuracy, difficulty hit@k, difficulty top-1 accuracy,
+difficulty MRR, and content-type top-1 accuracy. This prevents a result from
+being called successful merely because a correct difficulty appears somewhere
+in the top-k list.
 
 Outputs are written under `adaptiverag/artifacts/`:
 
@@ -79,7 +96,8 @@ Outputs are written under `adaptiverag/artifacts/`:
 - `embeddings.npy`: normalized embedding matrix;
 - `faiss.index`: FAISS inner-product index;
 - `alpha_beta_results.json`: one row per question and alpha/beta pair;
-- `error_analysis.json`: failed retrieval cases grouped by expected difficulty.
+- `error_analysis.json`: metrics and failed retrieval cases grouped by
+  expected difficulty and alpha/beta setting.
 
 The example question file is only a schema/example. For the final experiment,
 create a larger held-out set with one JSON object per line:
@@ -89,8 +107,8 @@ create a larger held-out set with one JSON object per line:
   "student_id": "78523",
   "question": "Find the area ...",
   "skill_id": "297",
-  "difficulty": "beginner",
-  "gold_answer": "50 square units"
+  "expected_difficulty": "beginner",
+  "expected_content_type": "worked_example"
 }
 ```
 

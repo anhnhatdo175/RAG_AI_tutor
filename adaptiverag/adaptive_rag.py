@@ -372,10 +372,14 @@ def run_alpha_beta_experiment(
     top_k: int,
     alphas: Iterable[float],
     betas: Iterable[float],
+    evaluation_mode: str = "known-skill",
 ) -> list[dict[str, Any]]:
     """Compare ranking weights on one shared, unfiltered candidate pool.
 
-    ``skill_id`` may be supplied as a gold/evaluation label, but
+    In ``known-skill`` mode, the skill is supplied as an LMS routing signal
+    and only difficulty/content type are personalized. In ``end-to-end``
+    mode, skill is also discovered by retrieval.
+
     ``expected_difficulty`` is never passed as a retrieval filter. Otherwise
     the experiment would reveal the answer to both systems before reranking.
     """
@@ -384,7 +388,7 @@ def run_alpha_beta_experiment(
         for beta in betas:
             for question in questions:
                 profile = profiles.get(str(question["student_id"]))
-                expected_difficulty = question.get("difficulty")
+                expected_difficulty = question.get("expected_difficulty")
                 if expected_difficulty is None and profile:
                     skill_profile = profile_lookup(profile).get(
                         str(question.get("skill_id", ""))
@@ -402,24 +406,39 @@ def run_alpha_beta_experiment(
                     profile=profile,
                     alpha=alpha,
                     beta=beta,
-                    skill_id=question.get("skill_id"),
+                    skill_id=(
+                        question.get("skill_id")
+                        if evaluation_mode == "known-skill"
+                        else None
+                    ),
                     difficulty=None,
+                    content_type=None,
                 )
                 gold_skill = str(question.get("skill_id", ""))
                 gold_hit = any(hit.skill_id == gold_skill for hit in hits)
                 gold_difficulty = expected_difficulty
-                difficulty_hit = (
-                    gold_difficulty is None
-                    or any(
-                        hit.skill_id == gold_skill
-                        and hit.difficulty == gold_difficulty
-                        for hit in hits
+                matching_difficulty = [
+                    index + 1
+                    for index, hit in enumerate(hits)
+                    if hit.skill_id == gold_skill
+                    and hit.difficulty == gold_difficulty
+                ]
+                matching_content = [
+                    index + 1
+                    for index, hit in enumerate(hits)
+                    if hit.skill_id == gold_skill
+                    and (
+                        not question.get("expected_content_type")
+                        or hit.content_type == question["expected_content_type"]
                     )
-                )
+                ]
+                difficulty_hit = bool(matching_difficulty)
+                content_hit = bool(matching_content)
                 rows.append(
                     {
                         "alpha": alpha,
                         "beta": beta,
+                        "evaluation_mode": evaluation_mode,
                         "student_id": question["student_id"],
                         "question": question["question"],
                         "gold_skill_id": gold_skill,
@@ -429,20 +448,24 @@ def run_alpha_beta_experiment(
                         "top_content_types": [hit.content_type for hit in hits],
                         "retrieval_hit": int(gold_hit),
                         "difficulty_hit": int(difficulty_hit),
+                        "difficulty_top1": int(
+                            bool(matching_difficulty and matching_difficulty[0] == 1)
+                        ),
+                        "difficulty_rank": (
+                            matching_difficulty[0] if matching_difficulty else None
+                        ),
+                        "content_hit": int(content_hit),
+                        "content_top1": int(
+                            bool(matching_content and matching_content[0] == 1)
+                        ),
+                        "content_rank": (
+                            matching_content[0] if matching_content else None
+                        ),
                         "skill_rank": next(
                             (
                                 index + 1
                                 for index, hit in enumerate(hits)
                                 if hit.skill_id == gold_skill
-                            ),
-                            None,
-                        ),
-                        "difficulty_rank": next(
-                            (
-                                index + 1
-                                for index, hit in enumerate(hits)
-                                if hit.skill_id == gold_skill
-                                and hit.difficulty == gold_difficulty
                             ),
                             None,
                         ),
@@ -462,6 +485,8 @@ def error_analysis(rows: list[dict[str, Any]]) -> dict[str, Any]:
             error_types["wrong_skill"] += 1
         elif not row["difficulty_hit"]:
             error_types["right_skill_wrong_difficulty"] += 1
+        elif not row["content_hit"]:
+            error_types["right_skill_difficulty_wrong_content_type"] += 1
         else:
             error_types["success"] += 1
     by_setting: dict[str, dict[str, float]] = {}
@@ -478,8 +503,28 @@ def error_analysis(rows: list[dict[str, Any]]) -> dict[str, Any]:
                     row["retrieval_hit"] for row in setting_rows
                 )
                 / len(setting_rows),
+                "skill_top1_accuracy": sum(
+                    int(row["skill_rank"] == 1)
+                    for row in setting_rows
+                )
+                / len(setting_rows),
                 "difficulty_match_at_k": sum(
                     row["difficulty_hit"] for row in setting_rows
+                )
+                / len(setting_rows),
+                "difficulty_top1_accuracy": sum(
+                    row["difficulty_top1"] for row in setting_rows
+                )
+                / len(setting_rows),
+                "difficulty_mrr": sum(
+                    1 / row["difficulty_rank"]
+                    if row["difficulty_rank"]
+                    else 0.0
+                    for row in setting_rows
+                )
+                / len(setting_rows),
+                "content_top1_accuracy": sum(
+                    row["content_top1"] for row in setting_rows
                 )
                 / len(setting_rows),
             }
@@ -492,6 +537,27 @@ def error_analysis(rows: list[dict[str, Any]]) -> dict[str, Any]:
         ),
         "difficulty_match_at_k": (
             sum(row["difficulty_hit"] for row in rows) / len(rows) if rows else 0.0
+        ),
+        "difficulty_top1_accuracy": (
+            sum(row["difficulty_top1"] for row in rows) / len(rows)
+            if rows
+            else 0.0
+        ),
+        "difficulty_mrr": (
+            sum(
+                1 / row["difficulty_rank"]
+                if row["difficulty_rank"]
+                else 0.0
+                for row in rows
+            )
+            / len(rows)
+            if rows
+            else 0.0
+        ),
+        "content_top1_accuracy": (
+            sum(row["content_top1"] for row in rows) / len(rows)
+            if rows
+            else 0.0
         ),
         "errors_by_expected_difficulty": dict(by_difficulty),
         "error_types": dict(error_types),
@@ -549,6 +615,7 @@ def cmd_experiment(args: argparse.Namespace) -> None:
         args.top_k,
         [float(value) for value in args.alphas.split(",")],
         [float(value) for value in args.betas.split(",")],
+        evaluation_mode=args.evaluation_mode,
     )
     write_json(args.results, rows)
     write_json(args.error_report, error_analysis(rows))
@@ -593,6 +660,15 @@ def make_parser() -> argparse.ArgumentParser:
     experiment.add_argument("--alphas", default="1.0,0.75,0.5,0.25")
     experiment.add_argument("--betas", default="0.0,0.25,0.5,0.75,1.0")
     experiment.add_argument("--top-k", type=int, default=5)
+    experiment.add_argument(
+        "--evaluation-mode",
+        choices=("known-skill", "end-to-end"),
+        default="known-skill",
+        help=(
+            "known-skill evaluates profile-aware difficulty selection after "
+            "LMS skill routing; end-to-end also evaluates skill retrieval."
+        ),
+    )
     experiment.add_argument("--model", default=DEFAULT_MODEL)
     experiment.add_argument("--chunks", type=Path, default=DEFAULT_OUTPUT / "chunks.jsonl")
     experiment.add_argument("--index", type=Path, default=DEFAULT_OUTPUT / "faiss.index")
