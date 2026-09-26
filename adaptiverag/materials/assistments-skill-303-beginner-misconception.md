@@ -1,4 +1,4 @@
----
+﻿---
 doc_id: "assistments-skill-303-beginner-misconception"
 source: "synthetic_template_v3"
 source_dataset: "ASSISTments 2009-2010 Skill Builder"
@@ -6,7 +6,6 @@ skill_id: "303"
 skill_name: "Volume Cylinder"
 difficulty: "beginner"
 content_type: "misconception"
-target_student_ids: ["78523", "78544", "78561", "78571"]
 review_status: "needs_subject_matter_review"
 ---
 
@@ -22,7 +21,7 @@ Use a worked example, name each quantity, and check units after every step.
 ## Common misconception
 A learner may choose a related operation without first identifying the
 quantities in the question. For this skill, do not skip the representation:
-The volume of a cylinder is pi times the radius squared times the height: V = pi r²h.
+The volume of a cylinder is pi times the radius squared times the height: V = pi rÂ²h.
 
 ## Corrective feedback
 Ask the learner to point to the step where the definition or formula was
@@ -38,3 +37,4 @@ Write the exact volume of a cylinder with radius 2 and height 7.
 - Ask the learner to show intermediate steps rather than returning only a number.
 - If the learner makes an arithmetic error, revisit the corresponding step without
   changing the target skill.
+

@@ -1,1837 +1,1532 @@
-[
-  {
-    "doc_id": "assistments-skill-11-beginner-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "beginner",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-beginner-concept.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "beginner",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-beginner-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "beginner",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-beginner-worked_example.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "beginner",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-beginner-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "beginner",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-beginner-misconception.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "beginner",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-beginner-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "beginner",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-beginner-strategy.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "beginner",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-beginner-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "beginner",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-beginner-transfer_practice.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "beginner",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-intermediate-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "intermediate",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-intermediate-concept.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "intermediate",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-intermediate-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "intermediate",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-intermediate-worked_example.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "intermediate",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-intermediate-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "intermediate",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-intermediate-misconception.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "intermediate",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-intermediate-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "intermediate",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-intermediate-strategy.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "intermediate",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-intermediate-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "intermediate",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-intermediate-transfer_practice.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "intermediate",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-advanced-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "advanced",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78523",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-advanced-concept.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "advanced",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-advanced-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "advanced",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78523",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-advanced-worked_example.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "advanced",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-advanced-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "advanced",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78523",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-advanced-misconception.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "advanced",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-advanced-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "advanced",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78523",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-advanced-strategy.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "advanced",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-11-advanced-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "11",
-    "skill_name": "Venn Diagram",
-    "difficulty": "advanced",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78523",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-11-advanced-transfer_practice.md",
-    "tags": [
-      "skill-11",
-      "venn-diagram",
-      "advanced",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-beginner-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "beginner",
-    "content_type": "concept",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-beginner-concept.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "beginner",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-beginner-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "beginner",
-    "content_type": "worked_example",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-beginner-worked_example.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "beginner",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-beginner-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "beginner",
-    "content_type": "misconception",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-beginner-misconception.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "beginner",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-beginner-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "beginner",
-    "content_type": "strategy",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-beginner-strategy.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "beginner",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-beginner-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "beginner",
-    "content_type": "transfer_practice",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-beginner-transfer_practice.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "beginner",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-intermediate-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "intermediate",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-intermediate-concept.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "intermediate",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-intermediate-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "intermediate",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-intermediate-worked_example.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "intermediate",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-intermediate-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "intermediate",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-intermediate-misconception.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "intermediate",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-intermediate-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "intermediate",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-intermediate-strategy.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "intermediate",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-intermediate-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "intermediate",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-intermediate-transfer_practice.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "intermediate",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-advanced-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "advanced",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-advanced-concept.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "advanced",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-advanced-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "advanced",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-advanced-worked_example.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "advanced",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-advanced-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "advanced",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-advanced-misconception.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "advanced",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-advanced-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "advanced",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-advanced-strategy.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "advanced",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-70-advanced-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "70",
-    "skill_name": "Percent Of",
-    "difficulty": "advanced",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-70-advanced-transfer_practice.md",
-    "tags": [
-      "skill-70",
-      "percent-of",
-      "advanced",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-beginner-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "beginner",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-beginner-concept.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "beginner",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-beginner-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "beginner",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-beginner-worked_example.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "beginner",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-beginner-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "beginner",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-beginner-misconception.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "beginner",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-beginner-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "beginner",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-beginner-strategy.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "beginner",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-beginner-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "beginner",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-beginner-transfer_practice.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "beginner",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-intermediate-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "intermediate",
-    "content_type": "concept",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-intermediate-concept.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "intermediate",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-intermediate-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "intermediate",
-    "content_type": "worked_example",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-intermediate-worked_example.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "intermediate",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-intermediate-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "intermediate",
-    "content_type": "misconception",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-intermediate-misconception.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "intermediate",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-intermediate-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "intermediate",
-    "content_type": "strategy",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-intermediate-strategy.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "intermediate",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-intermediate-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "intermediate",
-    "content_type": "transfer_practice",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-intermediate-transfer_practice.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "intermediate",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-advanced-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "advanced",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-advanced-concept.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "advanced",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-advanced-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "advanced",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-advanced-worked_example.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "advanced",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-advanced-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "advanced",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-advanced-misconception.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "advanced",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-advanced-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "advanced",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-advanced-strategy.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "advanced",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-297-advanced-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "297",
-    "skill_name": "Area Trapezoid",
-    "difficulty": "advanced",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-297-advanced-transfer_practice.md",
-    "tags": [
-      "skill-297",
-      "area-trapezoid",
-      "advanced",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-beginner-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "beginner",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-beginner-concept.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "beginner",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-beginner-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "beginner",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-beginner-worked_example.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "beginner",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-beginner-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "beginner",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-beginner-misconception.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "beginner",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-beginner-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "beginner",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-beginner-strategy.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "beginner",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-beginner-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "beginner",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-beginner-transfer_practice.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "beginner",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-intermediate-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "intermediate",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-intermediate-concept.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "intermediate",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-intermediate-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "intermediate",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-intermediate-worked_example.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "intermediate",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-intermediate-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "intermediate",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-intermediate-misconception.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "intermediate",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-intermediate-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "intermediate",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-intermediate-strategy.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "intermediate",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-intermediate-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "intermediate",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78557"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-intermediate-transfer_practice.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "intermediate",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-advanced-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "advanced",
-    "content_type": "concept",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-advanced-concept.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "advanced",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-advanced-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "advanced",
-    "content_type": "worked_example",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-advanced-worked_example.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "advanced",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-advanced-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "advanced",
-    "content_type": "misconception",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-advanced-misconception.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "advanced",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-advanced-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "advanced",
-    "content_type": "strategy",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-advanced-strategy.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "advanced",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-303-advanced-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "303",
-    "skill_name": "Volume Cylinder",
-    "difficulty": "advanced",
-    "content_type": "transfer_practice",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-303-advanced-transfer_practice.md",
-    "tags": [
-      "skill-303",
-      "volume-cylinder",
-      "advanced",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-beginner-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "beginner",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-beginner-concept.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "beginner",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-beginner-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "beginner",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-beginner-worked_example.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "beginner",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-beginner-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "beginner",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-beginner-misconception.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "beginner",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-beginner-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "beginner",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-beginner-strategy.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "beginner",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-beginner-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "beginner",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78544"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-beginner-transfer_practice.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "beginner",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-intermediate-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "intermediate",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-intermediate-concept.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "intermediate",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-intermediate-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "intermediate",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-intermediate-worked_example.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "intermediate",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-intermediate-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "intermediate",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-intermediate-misconception.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "intermediate",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-intermediate-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "intermediate",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-intermediate-strategy.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "intermediate",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-intermediate-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "intermediate",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-intermediate-transfer_practice.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "intermediate",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-advanced-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "advanced",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-advanced-concept.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "advanced",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-advanced-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "advanced",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-advanced-worked_example.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "advanced",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-advanced-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "advanced",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-advanced-misconception.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "advanced",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-advanced-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "advanced",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-advanced-strategy.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "advanced",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-307-advanced-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "307",
-    "skill_name": "Volume Rectangular Prism",
-    "difficulty": "advanced",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78523",
-      "78557",
-      "78561"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-307-advanced-transfer_practice.md",
-    "tags": [
-      "skill-307",
-      "volume-rectangular-prism",
-      "advanced",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-beginner-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "beginner",
-    "content_type": "concept",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-beginner-concept.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "beginner",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-beginner-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "beginner",
-    "content_type": "worked_example",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-beginner-worked_example.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "beginner",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-beginner-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "beginner",
-    "content_type": "misconception",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-beginner-misconception.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "beginner",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-beginner-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "beginner",
-    "content_type": "strategy",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-beginner-strategy.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "beginner",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-beginner-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "beginner",
-    "content_type": "transfer_practice",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-beginner-transfer_practice.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "beginner",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-intermediate-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "intermediate",
-    "content_type": "concept",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-intermediate-concept.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "intermediate",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-intermediate-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "intermediate",
-    "content_type": "worked_example",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-intermediate-worked_example.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "intermediate",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-intermediate-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "intermediate",
-    "content_type": "misconception",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-intermediate-misconception.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "intermediate",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-intermediate-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "intermediate",
-    "content_type": "strategy",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-intermediate-strategy.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "intermediate",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-intermediate-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "intermediate",
-    "content_type": "transfer_practice",
-    "target_student_ids": [],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-intermediate-transfer_practice.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "intermediate",
-      "transfer_practice"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-advanced-concept",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "advanced",
-    "content_type": "concept",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-advanced-concept.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "advanced",
-      "concept"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-advanced-worked_example",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "advanced",
-    "content_type": "worked_example",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-advanced-worked_example.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "advanced",
-      "worked_example"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-advanced-misconception",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "advanced",
-    "content_type": "misconception",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-advanced-misconception.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "advanced",
-      "misconception"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-advanced-strategy",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "advanced",
-    "content_type": "strategy",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-advanced-strategy.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "advanced",
-      "strategy"
-    ]
-  },
-  {
-    "doc_id": "assistments-skill-317-advanced-transfer_practice",
-    "source": "synthetic_template_v3",
-    "source_dataset": "ASSISTments 2009-2010 Skill Builder",
-    "skill_id": "317",
-    "skill_name": "Greatest Common Factor",
-    "difficulty": "advanced",
-    "content_type": "transfer_practice",
-    "target_student_ids": [
-      "78523",
-      "78544",
-      "78557",
-      "78561",
-      "78571"
-    ],
-    "review_status": "needs_subject_matter_review",
-    "file": "materials/assistments-skill-317-advanced-transfer_practice.md",
-    "tags": [
-      "skill-317",
-      "greatest-common-factor",
-      "advanced",
-      "transfer_practice"
-    ]
-  }
+﻿[
+    {
+        "doc_id":  "assistments-skill-11-beginner-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "beginner",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-beginner-concept.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "beginner",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-beginner-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "beginner",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-beginner-worked_example.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "beginner",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-beginner-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "beginner",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-beginner-misconception.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "beginner",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-beginner-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "beginner",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-beginner-strategy.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "beginner",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-beginner-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "beginner",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-beginner-transfer_practice.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "beginner",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-intermediate-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "intermediate",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-intermediate-concept.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "intermediate",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-intermediate-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "intermediate",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-intermediate-worked_example.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "intermediate",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-intermediate-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "intermediate",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-intermediate-misconception.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "intermediate",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-intermediate-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "intermediate",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-intermediate-strategy.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "intermediate",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-intermediate-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "intermediate",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-intermediate-transfer_practice.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "intermediate",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-advanced-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "advanced",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-advanced-concept.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "advanced",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-advanced-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "advanced",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-advanced-worked_example.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "advanced",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-advanced-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "advanced",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-advanced-misconception.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "advanced",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-advanced-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "advanced",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-advanced-strategy.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "advanced",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-11-advanced-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "11",
+        "skill_name":  "Venn Diagram",
+        "difficulty":  "advanced",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-11-advanced-transfer_practice.md",
+        "tags":  [
+                     "skill-11",
+                     "venn-diagram",
+                     "advanced",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-beginner-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "beginner",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-beginner-concept.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "beginner",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-beginner-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "beginner",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-beginner-worked_example.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "beginner",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-beginner-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "beginner",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-beginner-misconception.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "beginner",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-beginner-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "beginner",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-beginner-strategy.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "beginner",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-beginner-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "beginner",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-beginner-transfer_practice.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "beginner",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-intermediate-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "intermediate",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-intermediate-concept.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "intermediate",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-intermediate-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "intermediate",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-intermediate-worked_example.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "intermediate",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-intermediate-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "intermediate",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-intermediate-misconception.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "intermediate",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-intermediate-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "intermediate",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-intermediate-strategy.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "intermediate",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-intermediate-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "intermediate",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-intermediate-transfer_practice.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "intermediate",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-advanced-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "advanced",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-advanced-concept.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "advanced",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-advanced-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "advanced",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-advanced-worked_example.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "advanced",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-advanced-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "advanced",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-advanced-misconception.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "advanced",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-advanced-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "advanced",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-advanced-strategy.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "advanced",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-70-advanced-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "70",
+        "skill_name":  "Percent Of",
+        "difficulty":  "advanced",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-70-advanced-transfer_practice.md",
+        "tags":  [
+                     "skill-70",
+                     "percent-of",
+                     "advanced",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-beginner-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "beginner",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-beginner-concept.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "beginner",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-beginner-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "beginner",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-beginner-worked_example.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "beginner",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-beginner-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "beginner",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-beginner-misconception.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "beginner",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-beginner-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "beginner",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-beginner-strategy.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "beginner",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-beginner-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "beginner",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-beginner-transfer_practice.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "beginner",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-intermediate-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "intermediate",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-intermediate-concept.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "intermediate",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-intermediate-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "intermediate",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-intermediate-worked_example.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "intermediate",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-intermediate-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "intermediate",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-intermediate-misconception.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "intermediate",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-intermediate-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "intermediate",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-intermediate-strategy.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "intermediate",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-intermediate-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "intermediate",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-intermediate-transfer_practice.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "intermediate",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-advanced-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "advanced",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-advanced-concept.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "advanced",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-advanced-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "advanced",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-advanced-worked_example.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "advanced",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-advanced-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "advanced",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-advanced-misconception.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "advanced",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-advanced-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "advanced",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-advanced-strategy.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "advanced",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-297-advanced-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "297",
+        "skill_name":  "Area Trapezoid",
+        "difficulty":  "advanced",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-297-advanced-transfer_practice.md",
+        "tags":  [
+                     "skill-297",
+                     "area-trapezoid",
+                     "advanced",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-beginner-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "beginner",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-beginner-concept.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "beginner",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-beginner-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "beginner",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-beginner-worked_example.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "beginner",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-beginner-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "beginner",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-beginner-misconception.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "beginner",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-beginner-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "beginner",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-beginner-strategy.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "beginner",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-beginner-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "beginner",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-beginner-transfer_practice.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "beginner",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-intermediate-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "intermediate",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-intermediate-concept.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "intermediate",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-intermediate-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "intermediate",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-intermediate-worked_example.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "intermediate",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-intermediate-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "intermediate",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-intermediate-misconception.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "intermediate",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-intermediate-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "intermediate",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-intermediate-strategy.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "intermediate",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-intermediate-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "intermediate",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-intermediate-transfer_practice.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "intermediate",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-advanced-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "advanced",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-advanced-concept.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "advanced",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-advanced-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "advanced",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-advanced-worked_example.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "advanced",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-advanced-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "advanced",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-advanced-misconception.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "advanced",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-advanced-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "advanced",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-advanced-strategy.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "advanced",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-303-advanced-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "303",
+        "skill_name":  "Volume Cylinder",
+        "difficulty":  "advanced",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-303-advanced-transfer_practice.md",
+        "tags":  [
+                     "skill-303",
+                     "volume-cylinder",
+                     "advanced",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-beginner-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "beginner",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-beginner-concept.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "beginner",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-beginner-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "beginner",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-beginner-worked_example.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "beginner",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-beginner-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "beginner",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-beginner-misconception.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "beginner",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-beginner-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "beginner",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-beginner-strategy.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "beginner",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-beginner-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "beginner",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-beginner-transfer_practice.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "beginner",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-intermediate-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "intermediate",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-intermediate-concept.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "intermediate",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-intermediate-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "intermediate",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-intermediate-worked_example.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "intermediate",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-intermediate-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "intermediate",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-intermediate-misconception.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "intermediate",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-intermediate-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "intermediate",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-intermediate-strategy.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "intermediate",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-intermediate-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "intermediate",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-intermediate-transfer_practice.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "intermediate",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-advanced-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "advanced",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-advanced-concept.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "advanced",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-advanced-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "advanced",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-advanced-worked_example.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "advanced",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-advanced-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "advanced",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-advanced-misconception.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "advanced",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-advanced-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "advanced",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-advanced-strategy.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "advanced",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-307-advanced-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "307",
+        "skill_name":  "Volume Rectangular Prism",
+        "difficulty":  "advanced",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-307-advanced-transfer_practice.md",
+        "tags":  [
+                     "skill-307",
+                     "volume-rectangular-prism",
+                     "advanced",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-beginner-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "beginner",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-beginner-concept.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "beginner",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-beginner-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "beginner",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-beginner-worked_example.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "beginner",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-beginner-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "beginner",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-beginner-misconception.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "beginner",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-beginner-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "beginner",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-beginner-strategy.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "beginner",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-beginner-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "beginner",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-beginner-transfer_practice.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "beginner",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-intermediate-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "intermediate",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-intermediate-concept.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "intermediate",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-intermediate-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "intermediate",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-intermediate-worked_example.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "intermediate",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-intermediate-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "intermediate",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-intermediate-misconception.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "intermediate",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-intermediate-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "intermediate",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-intermediate-strategy.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "intermediate",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-intermediate-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "intermediate",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-intermediate-transfer_practice.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "intermediate",
+                     "transfer_practice"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-advanced-concept",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "advanced",
+        "content_type":  "concept",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-advanced-concept.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "advanced",
+                     "concept"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-advanced-worked_example",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "advanced",
+        "content_type":  "worked_example",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-advanced-worked_example.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "advanced",
+                     "worked_example"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-advanced-misconception",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "advanced",
+        "content_type":  "misconception",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-advanced-misconception.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "advanced",
+                     "misconception"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-advanced-strategy",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "advanced",
+        "content_type":  "strategy",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-advanced-strategy.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "advanced",
+                     "strategy"
+                 ]
+    },
+    {
+        "doc_id":  "assistments-skill-317-advanced-transfer_practice",
+        "source":  "synthetic_template_v3",
+        "source_dataset":  "ASSISTments 2009-2010 Skill Builder",
+        "skill_id":  "317",
+        "skill_name":  "Greatest Common Factor",
+        "difficulty":  "advanced",
+        "content_type":  "transfer_practice",
+        "review_status":  "needs_subject_matter_review",
+        "file":  "materials/assistments-skill-317-advanced-transfer_practice.md",
+        "tags":  [
+                     "skill-317",
+                     "greatest-common-factor",
+                     "advanced",
+                     "transfer_practice"
+                 ]
+    }
 ]

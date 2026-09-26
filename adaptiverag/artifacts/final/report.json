@@ -1,0 +1,124 @@
+{
+  "method": "temporal_vector_profile_rag",
+  "model": "BAAI/bge-small-en-v1.5",
+  "split": {
+    "history": 7086,
+    "validation": 1519,
+    "test": 1522
+  },
+  "profiles": 5,
+  "chunks": 90,
+  "limitations": [
+    "ASSISTments export has no full problem statement; queries use skill_name and problem_id.",
+    "Corpus is a synthetic instructional scaffold and requires subject-matter review."
+  ],
+  "track": "known_skill",
+  "primary": true,
+  "selected_config": {
+    "alpha": 0.25,
+    "beta": 0.75
+  },
+  "validation": {
+    "alpha=1.0,beta=0.0": {
+      "n": 1519,
+      "skill_recall_at_5": 0.7182356813693219,
+      "skill_mrr": 0.7182356813693219,
+      "difficulty_hit_at_5": 0.4186965108624095,
+      "difficulty_mrr": 0.2455123985077886
+    },
+    "alpha=0.75,beta=0.25": {
+      "n": 1519,
+      "skill_recall_at_5": 0.7182356813693219,
+      "skill_mrr": 0.7182356813693219,
+      "difficulty_hit_at_5": 0.41803818301514156,
+      "difficulty_mrr": 0.18946675444371158
+    },
+    "alpha=0.5,beta=0.5": {
+      "n": 1519,
+      "skill_recall_at_5": 0.7182356813693219,
+      "skill_mrr": 0.7182356813693219,
+      "difficulty_hit_at_5": 0.6589861751152074,
+      "difficulty_mrr": 0.2722514812376532
+    },
+    "alpha=0.25,beta=0.75": {
+      "n": 1519,
+      "skill_recall_at_5": 0.7182356813693219,
+      "skill_mrr": 0.7182356813693219,
+      "difficulty_hit_at_5": 0.631336405529954,
+      "difficulty_mrr": 0.40527759490893245
+    }
+  },
+  "traditional_rag": {
+    "n": 1522,
+    "skill_recall_at_5": 0.9296977660972404,
+    "skill_mrr": 0.9296977660972404,
+    "difficulty_hit_at_5": 0.5203679369250985,
+    "difficulty_mrr": 0.15903416557161573
+  },
+  "adaptive_rag": {
+    "n": 1522,
+    "skill_recall_at_5": 0.9296977660972404,
+    "skill_mrr": 0.9296977660972404,
+    "difficulty_hit_at_5": 0.7260183968462549,
+    "difficulty_mrr": 0.34707621550591344
+  },
+  "elapsed_seconds": 200.759,
+  "comparison": [
+    {
+      "n": 1522,
+      "skill_recall_at_5": 0.9296977660972404,
+      "skill_mrr": 0.9296977660972404,
+      "difficulty_hit_at_5": 0.5203679369250985,
+      "difficulty_mrr": 0.15903416557161573,
+      "system": "Traditional RAG",
+      "difficulty_mrr_ci95": [
+        0.1496,
+        0.1696
+      ]
+    },
+    {
+      "n": 1522,
+      "skill_recall_at_5": 0.9296977660972404,
+      "skill_mrr": 0.9296977660972404,
+      "difficulty_hit_at_5": 0.7260183968462549,
+      "difficulty_mrr": 0.34707621550591344,
+      "system": "Adaptive Profile-Based RAG",
+      "difficulty_mrr_ci95": [
+        0.3343,
+        0.3618
+      ]
+    }
+  ],
+  "per_student": [
+    {
+      "student_id": "78523",
+      "traditional_difficulty_mrr": 0.09616079494128271,
+      "adaptive_difficulty_mrr": 0.4356368563685639,
+      "test_rows": 369
+    },
+    {
+      "student_id": "78544",
+      "traditional_difficulty_mrr": 0.1727272727272726,
+      "adaptive_difficulty_mrr": 0.46060606060605974,
+      "test_rows": 253
+    },
+    {
+      "student_id": "78557",
+      "traditional_difficulty_mrr": 0.20881294964028851,
+      "adaptive_difficulty_mrr": 0.10827338129496392,
+      "test_rows": 278
+    },
+    {
+      "student_id": "78561",
+      "traditional_difficulty_mrr": 0.11944444444444421,
+      "adaptive_difficulty_mrr": 0.44726930320150654,
+      "test_rows": 354
+    },
+    {
+      "student_id": "78571",
+      "traditional_difficulty_mrr": 0.23333333333333423,
+      "adaptive_difficulty_mrr": 0.23333333333333423,
+      "test_rows": 268
+    }
+  ]
+}

@@ -1,4 +1,4 @@
----
+﻿---
 doc_id: "assistments-skill-70-beginner-worked_example"
 source: "synthetic_template_v3"
 source_dataset: "ASSISTments 2009-2010 Skill Builder"
@@ -6,7 +6,6 @@ skill_id: "70"
 skill_name: "Percent Of"
 difficulty: "beginner"
 content_type: "worked_example"
-target_student_ids: []
 review_status: "needs_subject_matter_review"
 ---
 
@@ -20,7 +19,7 @@ Build reliable understanding of percent of at the beginner level.
 Use a worked example, name each quantity, and check units after every step.
 
 ## Worked example
-25% of 80 = 0.25 × 80 = 20.
+25% of 80 = 0.25 Ã— 80 = 20.
 
 ## Why the method works
 Start from the definition of percent of, substitute only known
@@ -37,3 +36,4 @@ Calculate 15% of 60 and explain why the answer is smaller than 60.
 - Ask the learner to show intermediate steps rather than returning only a number.
 - If the learner makes an arithmetic error, revisit the corresponding step without
   changing the target skill.
+

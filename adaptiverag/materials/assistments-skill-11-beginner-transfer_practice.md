@@ -1,4 +1,4 @@
----
+﻿---
 doc_id: "assistments-skill-11-beginner-transfer_practice"
 source: "synthetic_template_v3"
 source_dataset: "ASSISTments 2009-2010 Skill Builder"
@@ -6,7 +6,6 @@ skill_id: "11"
 skill_name: "Venn Diagram"
 difficulty: "beginner"
 content_type: "transfer_practice"
-target_student_ids: ["78557"]
 review_status: "needs_subject_matter_review"
 ---
 
@@ -42,3 +41,4 @@ Draw two sets with 8 elements in A, 6 in B, and 3 in both. Find the union.
 - Ask the learner to show intermediate steps rather than returning only a number.
 - If the learner makes an arithmetic error, revisit the corresponding step without
   changing the target skill.
+

@@ -1,4 +1,4 @@
----
+﻿---
 doc_id: "assistments-skill-303-intermediate-concept"
 source: "synthetic_template_v3"
 source_dataset: "ASSISTments 2009-2010 Skill Builder"
@@ -6,7 +6,6 @@ skill_id: "303"
 skill_name: "Volume Cylinder"
 difficulty: "intermediate"
 content_type: "concept"
-target_student_ids: ["78557"]
 review_status: "needs_subject_matter_review"
 ---
 
@@ -20,7 +19,7 @@ Build reliable understanding of volume cylinder at the intermediate level.
 Solve a two-stage variation and compare the result with an estimate.
 
 ## Core concept
-The volume of a cylinder is pi times the radius squared times the height: V = pi r²h.
+The volume of a cylinder is pi times the radius squared times the height: V = pi rÂ²h.
 
 ## Study checklist
 1. Name the quantities or sets in the problem.
@@ -41,3 +40,4 @@ Write the exact volume of a cylinder with radius 2 and height 7.
 - Ask the learner to show intermediate steps rather than returning only a number.
 - If the learner makes an arithmetic error, revisit the corresponding step without
   changing the target skill.
+

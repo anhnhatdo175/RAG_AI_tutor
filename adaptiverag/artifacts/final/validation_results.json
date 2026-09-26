@@ -1,0 +1,30 @@
+{
+  "alpha=1.0,beta=0.0": {
+    "n": 1519,
+    "skill_recall_at_5": 0.7182356813693219,
+    "skill_mrr": 0.7182356813693219,
+    "difficulty_hit_at_5": 0.4186965108624095,
+    "difficulty_mrr": 0.2455123985077886
+  },
+  "alpha=0.75,beta=0.25": {
+    "n": 1519,
+    "skill_recall_at_5": 0.7182356813693219,
+    "skill_mrr": 0.7182356813693219,
+    "difficulty_hit_at_5": 0.41803818301514156,
+    "difficulty_mrr": 0.18946675444371158
+  },
+  "alpha=0.5,beta=0.5": {
+    "n": 1519,
+    "skill_recall_at_5": 0.7182356813693219,
+    "skill_mrr": 0.7182356813693219,
+    "difficulty_hit_at_5": 0.6589861751152074,
+    "difficulty_mrr": 0.2722514812376532
+  },
+  "alpha=0.25,beta=0.75": {
+    "n": 1519,
+    "skill_recall_at_5": 0.7182356813693219,
+    "skill_mrr": 0.7182356813693219,
+    "difficulty_hit_at_5": 0.631336405529954,
+    "difficulty_mrr": 0.40527759490893245
+  }
+}

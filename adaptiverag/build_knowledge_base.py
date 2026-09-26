@@ -388,7 +388,6 @@ def write_materials(
     for skill_id in common_skills:
         skill_name = skill_names[skill_id]
         for difficulty in ("beginner", "intermediate", "advanced"):
-            users = needed.get((skill_id, difficulty), [])
             for content_type in CONTENT_TYPES:
                 doc_id = (
                     f"assistments-skill-{skill_id}-{difficulty}-{content_type}"
@@ -402,7 +401,6 @@ def write_materials(
                     "skill_name": skill_name,
                     "difficulty": difficulty,
                     "content_type": content_type,
-                    "target_student_ids": sorted(users),
                     "review_status": "needs_subject_matter_review",
                 }
                 content = "---\n" + yaml_like(frontmatter) + "---\n\n"
@@ -453,30 +451,18 @@ def main() -> None:
     manifest = write_materials(args.output, profiles, common_skills, skill_names)
 
     args.output.mkdir(parents=True, exist_ok=True)
-    (args.output / "learner_profiles.json").write_text(
-        json.dumps(profiles, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
     (args.output / "corpus_manifest.json").write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     selection = {
         "input": str(args.input.name),
         "selected_user_ids": selected_users,
-        "selection_rule": {
-            "minimum_valid_attempts_per_user": args.min_rows,
-            "minimum_common_skills": DEFAULT_MIN_COMMON_SKILLS,
-            "minimum_attempts_per_common_skill": args.min_attempts_per_skill,
-            "reason": "Five real learners with sufficient observations and shared skills for controlled profile-aware retrieval.",
-        },
         "common_skills": [
             {"skill_id": skill_id, "skill_name": skill_names[skill_id]}
             for skill_id in common_skills
         ],
         "data_quality": counters,
     }
-    (args.output / "selection_report.json").write_text(
-        json.dumps(selection, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
     print(json.dumps(selection, indent=2, ensure_ascii=False))
     print(f"Generated {len(profiles)} profiles and {len(manifest)} materials.")
 

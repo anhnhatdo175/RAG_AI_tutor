@@ -1,4 +1,4 @@
----
+﻿---
 doc_id: "assistments-skill-307-intermediate-concept"
 source: "synthetic_template_v3"
 source_dataset: "ASSISTments 2009-2010 Skill Builder"
@@ -6,7 +6,6 @@ skill_id: "307"
 skill_name: "Volume Rectangular Prism"
 difficulty: "intermediate"
 content_type: "concept"
-target_student_ids: ["78571"]
 review_status: "needs_subject_matter_review"
 ---
 
@@ -41,3 +40,4 @@ Find the volume of a prism measuring 8 by 2 by 3 units.
 - Ask the learner to show intermediate steps rather than returning only a number.
 - If the learner makes an arithmetic error, revisit the corresponding step without
   changing the target skill.
+

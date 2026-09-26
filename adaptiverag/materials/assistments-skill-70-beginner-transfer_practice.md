@@ -1,4 +1,4 @@
----
+﻿---
 doc_id: "assistments-skill-70-beginner-transfer_practice"
 source: "synthetic_template_v3"
 source_dataset: "ASSISTments 2009-2010 Skill Builder"
@@ -6,7 +6,6 @@ skill_id: "70"
 skill_name: "Percent Of"
 difficulty: "beginner"
 content_type: "transfer_practice"
-target_student_ids: []
 review_status: "needs_subject_matter_review"
 ---
 
@@ -42,3 +41,4 @@ Calculate 15% of 60 and explain why the answer is smaller than 60.
 - Ask the learner to show intermediate steps rather than returning only a number.
 - If the learner makes an arithmetic error, revisit the corresponding step without
   changing the target skill.
+

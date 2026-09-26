@@ -1,4 +1,4 @@
----
+﻿---
 doc_id: "assistments-skill-303-beginner-transfer_practice"
 source: "synthetic_template_v3"
 source_dataset: "ASSISTments 2009-2010 Skill Builder"
@@ -6,7 +6,6 @@ skill_id: "303"
 skill_name: "Volume Cylinder"
 difficulty: "beginner"
 content_type: "transfer_practice"
-target_student_ids: ["78523", "78544", "78561", "78571"]
 review_status: "needs_subject_matter_review"
 ---
 
@@ -42,3 +41,4 @@ Write the exact volume of a cylinder with radius 2 and height 7.
 - Ask the learner to show intermediate steps rather than returning only a number.
 - If the learner makes an arithmetic error, revisit the corresponding step without
   changing the target skill.
+

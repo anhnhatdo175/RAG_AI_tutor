@@ -1,4 +1,4 @@
----
+﻿---
 doc_id: "assistments-skill-303-beginner-strategy"
 source: "synthetic_template_v3"
 source_dataset: "ASSISTments 2009-2010 Skill Builder"
@@ -6,7 +6,6 @@ skill_id: "303"
 skill_name: "Volume Cylinder"
 difficulty: "beginner"
 content_type: "strategy"
-target_student_ids: ["78523", "78544", "78561", "78571"]
 review_status: "needs_subject_matter_review"
 ---
 
@@ -22,7 +21,7 @@ Use a worked example, name each quantity, and check units after every step.
 ## Problem-solving strategy
 1. Restate what the question asks.
 2. Mark the known quantities and the unknown.
-3. Select the definition or formula: The volume of a cylinder is pi times the radius squared times the height: V = pi r²h.
+3. Select the definition or formula: The volume of a cylinder is pi times the radius squared times the height: V = pi rÂ²h.
 4. Calculate and verify the result.
 
 ## Strategy reminders
@@ -39,3 +38,4 @@ Write the exact volume of a cylinder with radius 2 and height 7.
 - Ask the learner to show intermediate steps rather than returning only a number.
 - If the learner makes an arithmetic error, revisit the corresponding step without
   changing the target skill.
+
