@@ -1,0 +1,109 @@
+{
+  "embedder": "lsa",
+  "n_input_records": 14395,
+  "clean": {
+    "input": 14395,
+    "kept": 13946,
+    "dropped_near_duplicate": 8,
+    "flagged_has_figure": 788,
+    "dropped_figure_dependent": 422,
+    "dropped_exact_duplicate": 8,
+    "dropped_too_short": 11
+  },
+  "n_records": 13946,
+  "n_chunks": 14641,
+  "chunks_per_record": {
+    "1": 13593,
+    "2": 260,
+    "3": 429,
+    "4": 232,
+    "5": 65,
+    "6": 24,
+    "7": 21,
+    "8": 8,
+    "9": 9
+  },
+  "token_count": {
+    "mean": 171.58705006488628,
+    "p95": 396.0,
+    "max": 512,
+    "over_512": 0
+  },
+  "tokenizer": "tiktoken",
+  "unit_norm": {
+    "norm_min": 0.9999998211860657,
+    "norm_max": 1.0000001192092896,
+    "dim": 256,
+    "n": 14641
+  },
+  "geometry": {
+    "random_pair_cos_mean": 0.10052639991044998,
+    "random_pair_cos_std": 0.08155933767557144,
+    "intra_skill_cos_mean": 0.20333026349544525,
+    "inter_skill_cos_mean": 0.10691995173692703,
+    "effective_rank": 201.2222442626953
+  },
+  "index_self_retrieval_acc": 1.0,
+  "topic_query_prec5_unfiltered": {
+    "mean": 0.30000000000000004,
+    "by_tag": {
+      "Addition-and-Subtraction-Fractions": 0.0,
+      "Algebraic-Simplification": 0.0,
+      "Conversion-of-Fraction-Decimals-Percents": 0.0,
+      "Counting-Methods": 0.0,
+      "Distributive-Property": 0.2,
+      "Divisibility-Rules": 0.0,
+      "Division-Fractions": 0.0,
+      "Finding-Percents": 0.2,
+      "Greatest-Common-Factor": 0.8,
+      "Mean": 1.0,
+      "Midpoint": 0.6,
+      "Multiplication-Fractions": 0.0,
+      "Percent-Discount": 0.0,
+      "Percent-Of": 0.6,
+      "Perimeter-of-a-Polygon": 1.0,
+      "Prime-Number": 0.0,
+      "Probability-of-Two-Distinct-Events": 0.4,
+      "Probability-of-a-Single-Event": 0.4,
+      "Proportion": 0.4,
+      "Pythagorean-Theorem": 0.0,
+      "Rounding": 1.0,
+      "Unit-Rate": 0.0
+    }
+  },
+  "manifest": {
+    "schema_version": 3,
+    "created_unix": 1792405434,
+    "n_chunks": 14641,
+    "dim": 256,
+    "embedder": {
+      "kind": "lsa",
+      "model": "lsa",
+      "fingerprint": "a86b8867dea6"
+    },
+    "chunks_sha256": "1dbfccaefd09b05eb13fee998744ac796fd6621dcd2a9abad7008fcc43c5d83b",
+    "by_source": {
+      "GSM8K": 8791,
+      "MATH": 5222,
+      "Khan_Academy_khan_exercises": 628
+    },
+    "by_content_type": {
+      "worked_example": 13946,
+      "worked_example_cont": 695
+    },
+    "by_difficulty": {
+      "0.3": 4466,
+      "0.6": 5530,
+      "0.9": 4645
+    },
+    "by_grade": {
+      "primary_lower_secondary": 8791,
+      "lower_upper_secondary": 1105,
+      "upper_secondary": 2896,
+      "lower_secondary": 1849
+    },
+    "n_skill_tags": 54,
+    "n_unmapped": 11297
+  },
+  "elapsed_s": 72.5
+}

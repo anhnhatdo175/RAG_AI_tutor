@@ -1,0 +1,140 @@
+{
+  "sources": {
+    "gsm8k_train.jsonl": {
+      "path": "lmsrag/data/raw/gsm8k_train.jsonl",
+      "bytes": 4166206,
+      "lines": 7473,
+      "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+      "url": "https://github.com/openai/grade-school-math",
+      "licence": "MIT"
+    },
+    "gsm8k_test.jsonl": {
+      "path": "lmsrag/data/raw/gsm8k_test.jsonl",
+      "bytes": 749738,
+      "lines": 1319,
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "url": "https://github.com/openai/grade-school-math",
+      "licence": "MIT"
+    },
+    "math_test.jsonl": {
+      "path": "lmsrag/data/raw/math_test.jsonl",
+      "bytes": 4416980,
+      "lines": 5000,
+      "sha256": "0e9257f4e3481c45c1ba0ae3b09a14c7a751ed30a018f41f317c64537dac8a5a",
+      "url": "https://github.com/hendrycks/math (copy: QwenLM/Qwen2.5-Math evaluation data)",
+      "licence": "MIT"
+    },
+    "skill_builder_data.csv": {
+      "path": "adaptiverag/skill_builder_data.csv",
+      "bytes": 82676405,
+      "lines": 525535,
+      "sha256": "408698925fc3488672431e4c19b9b16808b6a25760f8e41ad4d3d6257ad0832a",
+      "url": "https://sites.google.com/site/assistmentsdata/ (2009-2010 skill builder)",
+      "licence": "academic research use - verify the original terms before redistributing"
+    }
+  },
+  "exercise_bank_T": {
+    "n_items": 13574,
+    "n_mapped": 3208,
+    "by_difficulty": {
+      "0.3": 4366,
+      "0.6": 5352,
+      "0.9": 3856
+    },
+    "by_source": {
+      "GSM8K": 8638,
+      "MATH": 4351,
+      "Khan_Academy_khan_exercises": 585
+    },
+    "mapped_by_skill_top10": {
+      "Unit-Rate": 651,
+      "Percent-Of": 442,
+      "Multiplication-Fractions": 351,
+      "Mean": 282,
+      "Percent-Discount": 172,
+      "Conversion-of-Fraction-Decimals-Percents": 156,
+      "Counting-Methods": 126,
+      "Probability-of-a-Single-Event": 115,
+      "Proportion": 94,
+      "Divisibility-Rules": 87
+    }
+  },
+  "interaction_matrix_R": {
+    "splits": [
+      "history"
+    ],
+    "n_users": 2219,
+    "n_items": 14329,
+    "nnz": 165645,
+    "density": 0.005209609205872767,
+    "mean_score": 0.6678639650344849,
+    "per_user_interactions": {
+      "p5": 12.0,
+      "p25": 19.0,
+      "p50": 33.0,
+      "p75": 84.0,
+      "p95": 326.0999999999999
+    },
+    "per_item_interactions": {
+      "p5": 1.0,
+      "p25": 3.0,
+      "p50": 7.0,
+      "p75": 15.0,
+      "p95": 37.0
+    },
+    "users_with_ge20": 1642,
+    "items_with_lt3": 2824,
+    "density_all_splits": 0.006897299271752938
+  },
+  "learner_state_P_u": {
+    "as_of": "history",
+    "ema_alpha": 0.1,
+    "n_states": 2219,
+    "A": {
+      "p5": 0.1917,
+      "p25": 0.5,
+      "p50": 0.6596,
+      "p75": 0.789,
+      "p95": 0.9
+    },
+    "sigma": {
+      "p5": 0.2228,
+      "p25": 0.3727,
+      "p50": 0.4518,
+      "p75": 0.4899,
+      "p95": 0.4991
+    },
+    "pace_per_100": {
+      "p5": -0.8299,
+      "p25": -0.0655,
+      "p50": 0.0,
+      "p75": 0.0184,
+      "p95": 0.7063
+    },
+    "mean_rt_s": {
+      "p5": 10.9154,
+      "p25": 22.9329,
+      "p50": 32.868,
+      "p75": 45.0824,
+      "p95": 64.5945
+    },
+    "n_weak_skills": {
+      "p5": 0.0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "p95": 4.0
+    },
+    "n_strong_skills": {
+      "p5": 0.0,
+      "p25": 0.0,
+      "p50": 1.0,
+      "p75": 2.0,
+      "p95": 10.0
+    },
+    "share_users_with_weak_skill": 0.45110410094637227,
+    "share_users_with_strong_skill": 0.5313204146011717
+  },
+  "leakage_check": "state attempt counts == history row counts (500 users sampled)",
+  "elapsed_s": 40.3
+}
