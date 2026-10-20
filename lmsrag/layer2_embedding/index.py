@@ -12,8 +12,9 @@ import numpy as np
 from .. import config
 from ..vectorstore import VectorStore
 
-SCHEMA_VERSION = 3                       # 3: + `grade`
-REQUIRED_META = ("chunk_id", "doc_id", "text", "skill_tag", "difficulty", "content_type", "source", "token_count", "grade")
+SCHEMA_VERSION = 4                       # 4: canonical skill and exact subject/grade metadata
+REQUIRED_META = ("chunk_id", "doc_id", "text", "skill_tag", "canonical_skill_id", "mapping_status",
+                 "difficulty", "content_type", "source", "subject", "grade", "token_count")
 
 
 def save_index(chunks: list[dict], V: np.ndarray, embedder_info: dict) -> dict:
@@ -33,8 +34,18 @@ def save_index(chunks: list[dict], V: np.ndarray, embedder_info: dict) -> dict:
                 "by_content_type": dict(Counter(c["content_type"] for c in chunks)),
                 "by_difficulty": {str(k): v for k, v in sorted(Counter(c["difficulty"] for c in chunks).items())},
                 "by_grade": dict(Counter(c["grade"] for c in chunks)),
+                "by_subject": dict(Counter(c["subject"] for c in chunks)),
+                "by_subject_grade": {
+                    f"{subject}|{grade}": count
+                    for (subject, grade), count in sorted(
+                        Counter((c["subject"], c["grade"]) for c in chunks).items())
+                },
+                "mapped_chunks": sum(c["mapping_status"] == "mapped" for c in chunks),
                 "n_skill_tags": len({c["skill_tag"] for c in chunks} - {"unmapped"}),
-                "n_unmapped": sum(c["skill_tag"] == "unmapped" for c in chunks)}
+                "n_unmapped": sum(c["skill_tag"] == "unmapped" for c in chunks),
+                "chunks_by_skill_tag": dict(sorted(
+                    Counter(c["skill_tag"] for c in chunks if c["skill_tag"] != "unmapped").items()
+                ))}
     (config.ART / "index_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     return manifest
 

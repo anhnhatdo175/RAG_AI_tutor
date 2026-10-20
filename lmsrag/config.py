@@ -15,6 +15,7 @@ KHAN_DIR = ROOT / "data" / "khan"          # optional: drop Khan Academy exports
 
 # ---- artifacts ---------------------------------------------------------------
 MAPPING_JSON = ART / "skill_mapping.json"
+SKILL_CATALOG_JSON = ART / "skill_catalog.json"
 CHUNKS_JSONL = ART / "corpus_chunks.jsonl"
 EMB_NPY = ART / "chunk_embeddings.npy"
 PROFILES_NPZ = ART / "profiles.npz"
@@ -48,3 +49,4 @@ GRADE_GSM8K = "primary_lower_secondary"                      # grade-school word
 GRADE_BY_MATH_LEVEL = {1: "lower_secondary", 2: "lower_secondary", 3: "lower_upper_secondary",
                        4: "upper_secondary", 5: "upper_secondary"}
 GRADE_DEFAULT = "lower_secondary"                            # Khan / lessons without an explicit grade
+SUBJECT_DEFAULT = "Mathematics"                              # all bundled exercise corpora are math-focused

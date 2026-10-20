@@ -24,7 +24,9 @@ def build(embedder: str = "lsa") -> dict:
         tag, label, conf = mapper.tag_text(r.question.lower(), r.subject, r.level, r.is_gsm8k)
         for c in chunk.make_chunks(r):
             c.update(skill_tag=tag or "unmapped", topic_label=label or "unmapped", tag_confidence=conf or "none",
-                     difficulty=r.difficulty, source=r.source, subject=r.subject, level=r.level, grade=parse.infer_grade(r),
+                     canonical_skill_id=tag, mapping_status="mapped" if tag else "unmapped",
+                     difficulty=r.difficulty, source=r.source, subject=parse.infer_subject(r),
+                     source_subject=r.subject, level=r.level, grade=parse.infer_grade(r),
                      has_figure=r.extra.get("has_figure", False), split=r.extra.get("split"), schema_version=index.SCHEMA_VERSION)
             chunks.append(c)
 

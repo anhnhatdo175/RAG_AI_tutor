@@ -47,12 +47,23 @@ class VectorStore:
         return [(int(i), float(d)) for d, i in zip(D[0], I[0]) if i != -1]
 
     # ---- Layer 3 helpers ---------------------------------------------------------------------------------
-    def filter_ids(self, skill_tag: str, subjects=None, max_level: int | None = None, content_types=None) -> np.ndarray:
-        """C_candidates = {d | skill_tag(d)=target  AND  subject(d) in subjects  AND  level(d) <= max_level}  (docx 2.4.2)."""
-        ids = self.ids_by_tag.get(skill_tag, np.array([], dtype="int64"))
+    def filter_ids(self, skill_tag: str | None = None, subjects=None, max_level: int | None = None,
+                   content_types=None, target_subject: str | None = None,
+                   target_grade: str | None = None) -> np.ndarray:
+        """Filter candidate chunks, including exact subject/grade matching when targets are supplied."""
+        if target_subject is not None and not target_subject:
+            raise ValueError("target_subject must be non-empty when provided")
+        if target_grade is not None and not target_grade:
+            raise ValueError("target_grade must be non-empty when provided")
+        ids = (self.ids_by_tag.get(skill_tag, np.array([], dtype="int64"))
+               if skill_tag is not None else np.arange(len(self.meta), dtype="int64"))
         keep = []
         for i in ids:
             m = self.meta[i]
+            if target_subject is not None and m.get("subject") != target_subject:
+                continue
+            if target_grade is not None and m.get("grade") != target_grade:
+                continue
             if subjects and m.get("subject") not in subjects:
                 continue
             if max_level is not None and m.get("level") is not None and m["level"] > max_level:

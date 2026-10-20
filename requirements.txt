@@ -1,6 +1,10 @@
 pandas
 numpy
+scipy
+scikit-learn
 faiss-cpu
+datasketch
+tiktoken
 groq
 matplotlib
 tqdm
