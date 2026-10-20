@@ -102,3 +102,9 @@ updated_state = state_store.apply_canonical_event(
 ```
 
 Đối với truy xuất, `load_query_encoder()` đọc loại embedder từ manifest; truyền loại khác sẽ báo lỗi thay vì tạo query vector trong không gian không khớp. Các learner state cũ vẫn đọc được; canonical fields mặc định rỗng và Layer 4 tiếp tục dùng EMA source-skill đã ánh xạ cho đến khi có event canonical.
+
+## Layer 5–6: sinh nội dung và phản hồi thích ứng
+
+Đặc tả đồ án về tổng hợp context đa nguồn, prompting JSON, trợ giảng Socratic, chấm điểm, cập nhật EMA/profile, đánh giá và trạng thái triển khai hiện tại nằm trong [Chương 2.6–2.7](docs/chuong-2-tang-5-6.md). Tài liệu phân biệt rõ chức năng đã có trong repository với các phần cần tích hợp thêm.
+
+Implementation có thể gọi trực tiếp qua `lmsrag.layer5_generation` (`GenerationContext`, `LLMGenerator`, `SocraticTutor`) và `lmsrag.layer6_feedback` (`FeedbackLoop`, `GradingResult`). Layer 5 dùng backend đã cấu hình; Layer 6 nhận `StateStore` live và trả learner state/snapshot mới sau khi chấm.
