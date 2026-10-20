@@ -51,19 +51,59 @@ def test_recency_decay_prefers_recent():
     assert p[1] > p[0]
 
 
-def test_index_alignment():
+def test_index_alignment(tmp_path, monkeypatch):
+    from lmsrag import config
+
+    monkeypatch.setattr(config, "ART", tmp_path)
+    monkeypatch.setattr(config, "EMB_NPY", tmp_path / "chunk_embeddings.npy")
+    monkeypatch.setattr(config, "CHUNKS_JSONL", tmp_path / "corpus_chunks.jsonl")
+    chunks = [
+        {
+            "chunk_id": f"c{i}", "doc_id": f"d{i}", "text": f"text {i}", "skill_tag": "fractions",
+            "canonical_skill_id": "fractions", "mapping_status": "mapped", "difficulty": 0.3,
+            "content_type": "worked_example", "source": "test", "subject": "Mathematics",
+            "grade": "lower_secondary", "token_count": 2,
+        }
+        for i in range(3)
+    ]
+    vectors = np.eye(3, dtype="float32")
+    index.save_index(chunks, vectors, {"kind": "test", "model": "test", "fingerprint": "test"})
     store, man = index.load_and_verify()
     assert man["schema_version"] == index.SCHEMA_VERSION
-    assert index.self_retrieval_check(store, n=100) == 1.0
+    assert index.self_retrieval_check(store, n=3) == 1.0
     assert max(m["token_count"] for m in store.meta) <= chunk.MAX_TOKENS
 
 
 def test_grade_metadata_rules():
     from lmsrag import config
-    from lmsrag.layer2_embedding.parse import ParsedRecord, infer_grade
-    mk = lambda **kw: ParsedRecord("x", kw.pop("source", "MATH"), None, kw.pop("level", None), "q", "s", "a", 0.6, **kw)
+    from lmsrag.layer2_embedding.parse import ParsedRecord, infer_grade, infer_subject
+    mk = lambda **kw: ParsedRecord("x", kw.pop("source", "MATH"), kw.pop("subject", None),
+                                   kw.pop("level", None), "q", "s", "a", 0.6, **kw)
     assert infer_grade(mk(source="GSM8K", is_gsm8k=True)) == config.GRADE_GSM8K
     assert infer_grade(mk(level=1)) == "lower_secondary" and infer_grade(mk(level=5)) == "upper_secondary"
     assert infer_grade(mk(source="Khan")) == config.GRADE_DEFAULT
-    assert infer_grade(mk(source="Khan", extra={"grade": "G7"})) == "G7"          # explicit value wins
+    assert infer_grade(mk(source="Khan", extra={"grade": "G7"})) == "lower_secondary"
+    assert infer_grade(mk(source="Khan", extra={"grade": "Grade 10"})) == "upper_secondary"
+    assert infer_subject(mk(source="GSM8K", subject="word_problem")) == "Mathematics"
+    assert infer_subject(mk(source="Khan", subject="math")) == "Mathematics"
+    assert infer_subject(mk(source="Khan_Academy_export", subject="khan:fractions")) == "Mathematics"
     assert "grade" in index.REQUIRED_META
+
+
+def test_vectorstore_exact_subject_grade_filter():
+    from lmsrag.vectorstore import VectorStore
+
+    vectors = np.eye(3, dtype="float32")
+    meta = [
+        {"chunk_id": "a", "skill_tag": "fractions", "subject": "Mathematics", "grade": "lower_secondary",
+         "content_type": "worked_example", "level": 1},
+        {"chunk_id": "b", "skill_tag": "fractions", "subject": "Mathematics", "grade": "upper_secondary",
+         "content_type": "worked_example", "level": 4},
+        {"chunk_id": "c", "skill_tag": "algebra", "subject": "English", "grade": "lower_secondary",
+         "content_type": "worked_example", "level": 1},
+    ]
+    store = VectorStore(vectors, meta)
+    ids = store.filter_ids(target_subject="Mathematics", target_grade="lower_secondary")
+    assert ids.tolist() == [0]
+    ids = store.filter_ids("fractions", target_subject="Mathematics", target_grade="upper_secondary")
+    assert ids.tolist() == [1]

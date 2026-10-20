@@ -6,6 +6,7 @@ Every record keeps provenance (source, split, original id) so each chunk can be 
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from dataclasses import dataclass, field
@@ -44,12 +45,40 @@ def infer_grade(r: "ParsedRecord") -> str:
     """Grade band stored in chunk metadata (docx 2.4.2).  Explicit `grade` in the record wins, then source/level rules."""
     g = (r.extra or {}).get("grade")
     if g:
-        return str(g)
+        value = str(g).strip()
+        normalized = re.fullmatch(r"(?:grade\s*|g\s*)?(1[0-2]|[1-9])", value, re.I)
+        if normalized:
+            grade = int(normalized.group(1))
+            if grade <= 5:
+                return config.GRADE_GSM8K
+            if grade <= 8:
+                return "lower_secondary"
+            if grade == 9:
+                return "lower_upper_secondary"
+            return "upper_secondary"
+        if value in config.GRADE_BANDS:
+            return value
+        raise ValueError(f"Unsupported grade value {g!r} for record {r.doc_id}")
     if r.is_gsm8k:
         return config.GRADE_GSM8K
     if r.level is not None:
         return config.GRADE_BY_MATH_LEVEL.get(int(r.level), config.GRADE_DEFAULT)
     return config.GRADE_DEFAULT
+
+
+def infer_subject(r: "ParsedRecord") -> str:
+    """Return the exact subject key used by candidate filters; retain the source label separately."""
+    raw_subject = (r.extra or {}).get("subject") or r.subject
+    if raw_subject is None:
+        return config.SUBJECT_DEFAULT
+    value = str(raw_subject).strip()
+    if not value:
+        return config.SUBJECT_DEFAULT
+    if (r.source in {"GSM8K", "MATH"}
+            or value.casefold() in {"math", "mathematics", "word_problem"}
+            or (r.source.startswith("Khan_Academy_") and value.casefold().startswith("khan:"))):
+        return config.SUBJECT_DEFAULT
+    return value
 
 
 def _lines(path: Path) -> Iterator[str]:
@@ -74,7 +103,9 @@ def parse_math(path: Path) -> Iterator[ParsedRecord]:
     for ln in _lines(path):
         r = json.loads(ln)
         lvl = int(str(r["level"]).split()[-1])
-        uid = str(r.get("unique_id", "")).replace("/", "_").replace(".json", "") or f"{split}-{abs(hash(r['problem']))}"
+        uid = str(r.get("unique_id", "")).replace("/", "_").replace(".json", "")
+        if not uid:
+            uid = f"{split}-{hashlib.sha256(r['problem'].encode('utf-8')).hexdigest()[:16]}"
         yield ParsedRecord(f"math-{uid}", "MATH", r["subject"], lvl, r["problem"], r["solution"], str(r.get("answer", "")),
                            math_difficulty(lvl), extra={"split": split})
 

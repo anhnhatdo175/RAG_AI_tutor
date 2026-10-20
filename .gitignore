@@ -1,8 +1,23 @@
 .env
+.env.*
+!.env.example
+.venv/
 .venv-*/
+venv/
+env/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
+# Downloaded corpora and generated Layer 1/2 outputs; rebuild with lmsrag scripts.
+lmsrag/data/raw/
+lmsrag/artifacts/
+
+# Local operating-system files.
+.DS_Store
+Thumbs.db
 
 !output/.gitkeep
 

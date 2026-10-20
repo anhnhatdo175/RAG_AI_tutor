@@ -9,6 +9,7 @@ import numpy as np
 from .. import config, data, profile
 from ..skill_mapping import SkillMapper
 from . import interaction_matrix as im
+from . import catalog as skill_catalog
 from . import learner_state as ls
 from . import sources
 from .state_store import StateStore
@@ -23,6 +24,16 @@ def build() -> dict:
     report["exercise_bank_T"] = sources.save_bank(bank)
 
     df = data.load_logs(mapper)
+    catalog = skill_catalog.build_skill_catalog(df, mapper)
+    skill_catalog.save_skill_catalog(catalog)
+    mappings = catalog["source_skill_mappings"]
+    report["skill_catalog"] = {
+        "path": str(config.SKILL_CATALOG_JSON.relative_to(config.REPO)),
+        "n_canonical_skills": len(catalog["canonical_skills"]),
+        "n_source_skills": len(mappings),
+        "n_mapped_source_skills": sum(m["mapping_status"] == "mapped" for m in mappings),
+        "n_unmapped_source_skills": sum(m["mapping_status"] == "unmapped" for m in mappings),
+    }
     R, users, items = im.build_R(df, ("history",))
     im.save(R, users, items)
     report["interaction_matrix_R"] = {"splits": ["history"], **im.stats(R)}

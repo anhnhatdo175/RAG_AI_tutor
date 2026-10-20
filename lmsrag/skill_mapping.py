@@ -125,7 +125,7 @@ CANONICAL: dict[str, dict] = {
         include=[r"\bequation of the line", r"\bslope-intercept", r"\bline passing through", r"\bline through the points?"]),
     "Finding Slope From Equation": _e(
         "Linear Functions - Slope", [ALG],
-        aliases=["Finding Slope From Situation", "Finding Slope from Ordered Pairs"],
+        aliases=["Finding Slope From Situation", "Finding Slope from Ordered Pairs", "Slope"],
         include=[r"\bslope of\b", r"\bthe slope\b"]),
     "Midpoint": _e("Coordinate Geometry - Midpoint", [ALG, GEO], conf="high", include=[r"\bmidpoint"]),
     "Solving Systems of Linear Equations": _e(
@@ -195,6 +195,107 @@ CANONICAL: dict[str, dict] = {
     "Multiplication and Division Integers": _e(
         "Integers - Multiplication & Division", [PRE, ALG], conf="low",
         include=[r"^(?:compute|evaluate|calculate|what is|find)[^a-z$]{0,3}\$\s*-?\d+\s*(?:\\cdot|\\times|\\div|\*|/)\s*\(?-\d+\)?\s*\$"]),
+    "Mode": _e("Statistics - Mode", [PRE, ALG, CP], conf="high",
+               include=[r"\bmode of (?:the )?(?:given )?(?:data|set|values|numbers)\b",
+                        r"\b(?:only )?mode is\b",
+                        r"\bmost frequent (?:value|number)\b"]),
+    "Unit Conversion Within a System": _e(
+        "Measurement - Unit Conversion", [PRE, GEO], conf="medium",
+        aliases=["Unit Conversion Within a System"],
+        include=[r"\bconvert\b[^.]{0,100}\b(?:inches?|feet|foot|yards?|miles?)\b[^.]{0,100}\b(?:inches?|feet|foot|yards?|miles?)\b",
+                 r"\bconvert\b[^.]{0,100}\b(?:millimeters?|centimeters?|meters?|kilometers?)\b[^.]{0,100}\b(?:millimeters?|centimeters?|meters?|kilometers?)\b",
+                 r"\bconvert\b[^.]{0,100}\b(?:milligrams?|grams?|kilograms?)\b[^.]{0,100}\b(?:milligrams?|grams?|kilograms?)\b"]),
+    "Effect of Changing Dimensions Proportionally": _e(
+        "Geometry - Effect of Proportional Dimension Change", [GEO, PRE], conf="high",
+        aliases=["Effect of Changing Dimensions of a Shape Prportionally"],
+        include=[r"\b(?:dimensions?|side lengths?)\b[^.]{0,80}\b(?:proportionally|scale factor|doubled|tripled)\b",
+                 r"\b(?:double|triple|halve)\b[^.]{0,80}\b(?:dimensions?|side lengths?|area|volume)\b"]),
+    "Equivalent Fractions": _e(
+        "Fractions - Equivalent Fractions", [PRE, ALG], conf="high",
+        include=[r"\bequivalent fractions?\b", r"\bwrite\b[^.]{0,40}\bfraction\b[^.]{0,40}\bequivalent\b"]),
+    "Ordering Positive Decimals": _e(
+        "Decimals - Ordering Positive Decimals", [PRE, ALG], conf="high",
+        include=[r"\border\b[^.]{0,50}\b(?:positive )?decimals?\b",
+                 r"\b(?:least|greatest|smallest|largest) to (?:greatest|least|largest|smallest)\b[^.]{0,50}\bdecimals?\b"]),
+    "Ordering Integers": _e(
+        "Integers - Ordering", [PRE, ALG], conf="high",
+        include=[r"\border\b[^.]{0,50}\bintegers?\b",
+                 r"\b(?:least|greatest|smallest|largest) to (?:greatest|least|largest|smallest)\b[^.]{0,50}\bintegers?\b"]),
+    "Ordering Real Numbers": _e(
+        "Real Numbers - Ordering", [PRE, ALG], conf="high",
+        include=[r"\border\b[^.]{0,50}\breal numbers?\b",
+                 r"\b(?:least|greatest|smallest|largest) to (?:greatest|least|largest|smallest)\b[^.]{0,50}\breal numbers?\b"]),
+    "Addition Whole Numbers": _e(
+        "Whole Numbers - Addition", [PRE], conf="high",
+        include=[r"\badd(?:ition of)?\b[^.]{0,50}\bwhole numbers?\b",
+                 r"\bsum of\b[^.]{0,50}\bwhole numbers?\b"]),
+    "Fraction Of": _e(
+        "Fractions - Fraction of a Quantity", [PRE, ALG], conf="medium",
+        include=[r"\bwhat fraction of\b",
+                 r"\b\d+\s*/\s*\d+\s+of\b",
+                 r"\\frac\{[^{}]+\}\{[^{}]+\}\s*of\b"]),
+    "Multiplication Whole Numbers": _e(
+        "Whole Numbers - Multiplication", [PRE], conf="high",
+        include=[r"\bmultiply\b[^.]{0,50}\bwhole numbers?\b",
+                 r"\bproduct of\b[^.]{0,50}\bwhole numbers?\b"]),
+    "Subtraction Whole Numbers": _e(
+        "Whole Numbers - Subtraction", [PRE], conf="high",
+        include=[r"\bsubtract(?:ion of)?\b[^.]{0,50}\bwhole numbers?\b",
+                 r"\bdifference of\b[^.]{0,50}\bwhole numbers?\b"]),
+    "Choose an Equation from Given Information": _e(
+        "Algebra - Choose an Equation from Information", [PRE, ALG], conf="high",
+        aliases=["Choose an Equation from Given Information"],
+        include=[r"\bwhich equation\b[^.]{0,100}\b(?:represents|models|describes)\b",
+                 r"\bchoose the equation\b[^.]{0,80}\b(?:represents|models|describes)\b"]),
+    "Intercept": _e(
+        "Coordinate Geometry - Intercepts", [ALG, GEO], conf="high",
+        include=[r"\b[xy]-intercepts?\b", r"\bintercepts? of (?:the )?(?:line|graph|function)\b"]),
+    "Linear Equations": _e(
+        "Algebra - Linear Equations", [PRE, ALG], conf="medium",
+        include=[r"\blinear equations?\b", r"\bsolve (?:the )?linear equation\b"]),
+    "Multiplication and Division Positive Decimals": _e(
+        "Decimals - Multiplication & Division", [PRE, ALG], conf="high",
+        aliases=["Multiplication and Division Positive Decimals"],
+        include=[r"\b(?:multiply|divide|multiplication|division)\b[^.]{0,60}\bpositive decimals?\b",
+                 r"\bpositive decimals?\b[^.]{0,60}\b(?:multiply|divide|multiplication|division)\b"]),
+    "Addition and Subtraction Positive Decimals": _e(
+        "Decimals - Addition & Subtraction", [PRE, ALG], conf="high",
+        aliases=["Addition and Subtraction Positive Decimals"],
+        include=[r"\b(?:add|subtract|addition|subtraction)\b[^.]{0,60}\bpositive decimals?\b",
+                 r"\bpositive decimals?\b[^.]{0,60}\b(?:add|subtract|addition|subtraction)\b"]),
+    "Area Irregular Figure": _e(
+        "Geometry - Area of Composite Figures", [GEO, PRE], conf="high",
+        include=[r"\barea of (?:an? |this |that )?(?:irregular|composite) (?:figure|shape|polygon)\b",
+                 r"\b(?:irregular|composite) (?:figure|shape|polygon)\b[^.]{0,60}\barea\b"]),
+    "Angles - Obtuse, Acute, and Right": _e(
+        "Geometry - Classifying Angles", [GEO, PRE], conf="high",
+        aliases=["Angles - Obtuse, Acute, and Right"],
+        include=[r"\b(?:acute|obtuse|right) angles?\b[^.]{0,50}\b(?:measure|degrees|classify|identify)\b",
+                 r"\b(?:measure|classify|identify)\b[^.]{0,50}\b(?:acute|obtuse|right) angles?\b"]),
+    "Computation with Real Numbers": _e(
+        "Real Numbers - Computation", [PRE, ALG], conf="medium",
+        include=[r"\b(?:compute|evaluate|simplify|calculate)\b[^.]{0,60}\breal numbers?\b",
+                 r"\bcomputation with real numbers\b"]),
+    "Recognize Linear Pattern": _e(
+        "Sequences - Recognizing Linear Patterns", [PRE, ALG], conf="high",
+        aliases=["Recognize Linear Pattern"],
+        include=[r"\blinear pattern\b", r"\blinear sequence\b",
+                 r"\bsequence\b[^.]{0,80}\bcommon difference\b"]),
+    "Recognize Quadratic Pattern": _e(
+        "Sequences - Recognizing Quadratic Patterns", [ALG], conf="high",
+        aliases=["Recognize Quadratic Pattern"],
+        include=[r"\bquadratic pattern\b", r"\bquadratic sequence\b",
+                 r"\bsecond differences?\b"]),
+    "Polynomial Vocabulary": _e(
+        "Polynomials - Terms, Coefficients & Degree", [ALG, IA], conf="medium",
+        aliases=["Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable"],
+        include=[r"\b(?:leading )?coefficient of (?:[a-z]\s+in )?(?:the )?(?:polynomial|term)\b",
+                 r"\bcoefficient of [a-z] in (?:this |the )?polynomial\b",
+                 r"\bmonomials?\b", r"\b(?:degree|terms?) of (?:the )?polynomial\b"]),
+    "Solving Inequalities": _e(
+        "Inequalities - Solving", [PRE, ALG], conf="high",
+        include=[r"\bsolve\b[^.]{0,60}\binequalit(?:y|ies)\b",
+                 r"\binequalit(?:y|ies)\b[^.]{0,60}\b(?:solve|solution|solutions)\b"]),
 }
 
 # log skill that has no textual counterpart in MATH / GSM8K
@@ -207,10 +308,12 @@ UNMAPPED: dict[str, str] = {
     "Scatter Plot": "chart reading; no textual counterpart",
     "Histogram as Table or Graph": "chart reading; no textual counterpart",
     "Number Line": "visual item",
-    "Pattern Finding": "too generic to tag reliably with rules",
     "Nets of 3D Figures": "visual item",
+    "Reading a Ruler or Scale": "measurement depends on reading a visual scale; no suitable visual corpus is indexed",
+    "Interpreting Coordinate Graphs": "graph interpretation depends on visual data; no suitable graph corpus is indexed",
     "Congruence": "too few textual problems",
     "Estimation": "too few textual problems",
+    "Pattern Finding": "too generic to tag reliably with rules",
 }
 
 # schema example for a second dataset (no corpus is loaded for it in this repo)
@@ -228,22 +331,35 @@ class SkillMapper:
     _compiled: dict = field(default_factory=dict, init=False)
     alias_to_canon: dict = field(default_factory=dict, init=False)
 
+    @staticmethod
+    def _key(name: str) -> str:
+        return " ".join(name.split()).casefold()
+
     def __post_init__(self):
         for name, rule in self.canonical.items():
             self._compiled[name] = ([re.compile(p, re.I | re.M) for p in rule["include"]],
                                     [re.compile(p, re.I | re.M) for p in rule["exclude"]])
-            self.alias_to_canon[name] = name
+            self.alias_to_canon[self._key(name)] = name
             for a in rule["aliases"]:
-                self.alias_to_canon[a] = name
+                self.alias_to_canon[self._key(a)] = name
+
+    def canonical_name(self, log_skill: str) -> str | None:
+        """Resolve case/whitespace-normalized source labels to a canonical skill name."""
+        return self.alias_to_canon.get(self._key(log_skill))
+
+    def unmapped_reason(self, log_skill: str) -> str:
+        """Return the documented reason for an unsupported source skill, if available."""
+        return next((v for k, v in UNMAPPED.items() if self._key(k) == self._key(log_skill)),
+                    "no rule written")
 
     # --- log side -------------------------------------------------------------------
     def to_tag(self, log_skill: str) -> str | None:
         """log skill name -> skill_tag stored in chunk metadata (None if unmapped)."""
-        c = self.alias_to_canon.get(log_skill)
+        c = self.canonical_name(log_skill)
         return slugify(c) if c else None
 
     def confidence(self, log_skill: str) -> str | None:
-        c = self.alias_to_canon.get(log_skill)
+        c = self.canonical_name(log_skill)
         return self.canonical[c]["confidence"] if c else None
 
     def topic_label(self, tag: str) -> str:
@@ -280,14 +396,14 @@ class SkillMapper:
     def export(self, log_skills: list[str]) -> dict:
         table = {}
         for s in log_skills:
-            c = self.alias_to_canon.get(s)
+            c = self.canonical_name(s)
             if c:
                 r = self.canonical[c]
                 table[s] = {"skill_tag": slugify(c), "topic_label": r["topic_label"],
                             "math_subjects": r["subjects"], "confidence": r["confidence"],
-                            "alias_of": None if c == s else c}
+                            "alias_of": None if self._key(c) == self._key(s) else c}
             else:
-                table[s] = {"skill_tag": None, "reason": UNMAPPED.get(s, "no rule written")}
+                table[s] = {"skill_tag": None, "reason": self.unmapped_reason(s)}
         return {"assistments": table, "ednet": EDNET_EXAMPLE}
 
 

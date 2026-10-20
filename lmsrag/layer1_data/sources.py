@@ -52,7 +52,7 @@ NEEDS_VISUAL = re.compile(r"\b(table|chart|graph|figure|diagram|picture|histogra
 
 
 def build_exercise_bank(mapper: SkillMapper) -> list[dict]:
-    """T = {(statement, gold answer, skill_tag, difficulty)}.  Linked to D through `doc_id` (chunk `<doc_id>#0`)."""
+    """Build the stable exercise catalog linked to D through doc_id and chunk `<doc_id>#0`."""
     recs, _ = clean.clean_records(parse.iter_records())
     bank = []
     for r in recs:
@@ -60,9 +60,27 @@ def build_exercise_bank(mapper: SkillMapper) -> list[dict]:
             continue
         tag, label, conf = mapper.tag_text(r.question.lower(), r.subject, r.level, r.is_gsm8k)
         bank.append(dict(item_id=f"T-{r.doc_id}", doc_id=r.doc_id, statement=r.question, gold_answer=r.answer,
-                         skill_tag=tag or "unmapped", topic_label=label or "unmapped", tag_confidence=conf or "none",
-                         difficulty=r.difficulty, source=r.source, subject=r.subject, level=r.level))
+                         canonical_skill_id=tag, skill_tag=tag or "unmapped", topic_label=label or "unmapped",
+                         tag_confidence=conf or "none", mapping_status="mapped" if tag else "unmapped",
+                         difficulty=r.difficulty, source=r.source, subject=parse.infer_subject(r),
+                         source_subject=r.subject, grade=parse.infer_grade(r), level=r.level))
+    item_ids = [item["item_id"] for item in bank]
+    if len(item_ids) != len(set(item_ids)):
+        raise ValueError("Exercise catalog contains duplicate item_id values")
     return bank
+
+
+def filter_exercise_bank(bank: list[dict], target_subject: str, target_grade: str,
+                         skill_tag: str | None = None) -> list[dict]:
+    """Filter exercise candidates by exact subject and grade; optionally constrain to one mapped skill."""
+    if not target_subject or not target_grade:
+        raise ValueError("target_subject and target_grade must be non-empty")
+    return [
+        item for item in bank
+        if item.get("subject") == target_subject
+        and item.get("grade") == target_grade
+        and (skill_tag is None or item.get("skill_tag") == skill_tag)
+    ]
 
 
 def save_bank(bank: list[dict]) -> dict:
