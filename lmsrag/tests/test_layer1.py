@@ -70,6 +70,59 @@ def test_state_store_roundtrip(tmp_path):
     assert s.get(999) is None
 
 
+def test_canonical_event_updates_mastery_profile_and_persists(tmp_path):
+    store = StateStore(tmp_path / "canonical-state.sqlite")
+
+    state = store.apply_canonical_event(
+        17, "Percent-Of", 0.0, 12_000, alpha=0.5, prior=0.8,
+        bucket=1, tau_base=12_000, task_id="T-17",
+    )
+    assert state.canonical_M["Percent-Of"] == pytest.approx(0.4)
+    assert state.canonical_attempts["Percent-Of"] == 1
+    assert state.canonical_prof["Percent-Of"][1] == pytest.approx(0.3)
+    assert state.seen == ["T-17"] and state.n == 1
+    assert store.get(17).canonical_M == state.canonical_M
+    assert store.db.execute("SELECT version FROM learner_state WHERE user_id=17").fetchone()[0] == 1
+
+    for _ in range(4):
+        state = store.apply_canonical_event(
+            17, "Percent-Of", 0.0, 12_000, alpha=0.5, prior=0.8, bucket=1, tau_base=12_000,
+        )
+    assert state.canonical_W == [("Percent-Of", pytest.approx(state.canonical_M["Percent-Of"]))]
+    assert state.summary()["n_canonical_weak"] == 1
+    snapshot = state.context_snapshot()
+    assert snapshot["canonical_mastery"]["Percent-Of"] == pytest.approx(state.canonical_M["Percent-Of"])
+    assert snapshot["weak_canonical_skills"][0]["skill_tag"] == "Percent-Of"
+    assert store.db.execute("SELECT version FROM learner_state WHERE user_id=17").fetchone()[0] == 5
+    store.close()
+
+
+def test_live_state_store_initializes_from_offline_snapshot_once(tmp_path):
+    snapshot = StateStore(tmp_path / "snapshot.sqlite")
+    snapshot.apply_event(12, 4, 1.0, 8_000, alpha=0.2, prior=0.5)
+    snapshot.close()
+
+    live = StateStore(tmp_path / "live.sqlite")
+    assert live.initialize_from_snapshot(tmp_path / "snapshot.sqlite") == 1
+    live.apply_canonical_event(12, "Mean", 0.0, 15_000, alpha=0.5, task_id="T-12")
+
+    assert live.get(12).canonical_attempts["Mean"] == 1
+    with pytest.raises(RuntimeError, match="already contains data"):
+        live.initialize_from_snapshot(tmp_path / "snapshot.sqlite")
+    unchanged_snapshot = StateStore(tmp_path / "snapshot.sqlite")
+    assert unchanged_snapshot.get(12).canonical_M == {}
+    unchanged_snapshot.close()
+    live.close()
+
+
+def test_legacy_learner_state_json_loads_with_canonical_defaults():
+    state = LearnerState.from_json('{"user_id": 4, "M": {"1": 0.7}, "attempts": {"1": 3}}')
+
+    assert state.canonical_M == {}
+    assert state.canonical_attempts == {}
+    assert state.canonical_prof == {}
+
+
 def test_ST_is_strong_topic_list():
     """docx 1.2.1: ST_u = strong topics (mirror of W_u); study time is a separate property."""
     st = LearnerState(3)

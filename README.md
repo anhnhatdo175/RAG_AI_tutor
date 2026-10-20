@@ -22,3 +22,83 @@ python -m lmsrag.layer2_embedding.build --embedder lsa
 ```
 
 ASSISTments và Khan Academy sample data được lưu trong repository. GSM8K và MATH được tải vào `lmsrag/data/raw/`; các tệp đó và output sinh ra trong `lmsrag/artifacts/` không được commit, vì có thể tạo lại bằng các lệnh trên. Cần kết nối Internet khi tải corpus lần đầu.
+
+## Layer 3–4: truy xuất thích ứng và gợi ý bài tập
+
+Layer 3 dùng `AdaptiveRetriever`: bắt buộc lọc chính xác theo subject + grade, có thể giới hạn thêm `target_skill`, sau đó dense search bằng chính embedder đã tạo index và Cross-Encoder reranking. Lần đầu dùng Cross-Encoder cần tải model đã cấu hình từ Hugging Face. Ví dụ:
+
+```python
+from lmsrag.layer2_embedding.index import load_and_verify
+from lmsrag.layer3_retrieval.retriever import (
+    AdaptiveRetriever, CrossEncoderReranker, load_query_encoder,
+)
+
+store, _ = load_and_verify()
+retriever = AdaptiveRetriever(store, load_query_encoder("lsa"), CrossEncoderReranker())
+hits = retriever.retrieve(
+    "How do I add fractions with different denominators?",
+    target_subject="Mathematics",
+    target_grade="lower_secondary",
+    target_skill="Addition-and-Subtraction-Fractions",
+)
+```
+
+Layer 4 dùng `HybridRecommender` để xếp hạng bài trong exercise bank theo semantic score, profile similarity được điều chỉnh bởi ZPD và CF. Các thành phần được đưa về [0,1]; `Score_profile` trong công thức hybrid là `normalized_profile_cosine * zpd_score`. Nếu chưa có mastery theo kỹ năng, hệ thống dùng accuracy toàn cục của người học; với cold start dùng mastery trung tính 0.5 và ghi rõ nguồn fallback trong kết quả. Do log ASSISTments không dùng cùng ID bài với kho GSM8K/MATH/Khan, CF ở đây là **canonical-skill-level**, không phải item-level. CF chỉ fit từ tương tác `history`, learner state dùng output lịch sử của Layer 1. Khung khởi tạo:
+
+```python
+import json
+from lmsrag import config, data
+from lmsrag.layer1_data.state_store import StateStore
+from lmsrag.layer2_embedding.index import load_and_verify
+from lmsrag.layer3_retrieval.retriever import load_query_encoder
+from lmsrag.layer4_recommender import HybridRecommender
+from lmsrag.skill_mapping import SkillMapper
+
+store, _ = load_and_verify()
+bank = [json.loads(line) for line in (config.ART / "exercise_bank.jsonl").read_text(encoding="utf-8").splitlines() if line]
+catalog = json.loads(config.SKILL_CATALOG_JSON.read_text(encoding="utf-8"))
+logs = data.load_logs(SkillMapper())
+recommender = HybridRecommender(store, bank, catalog, logs)
+state_store = StateStore(config.ART / "learner_state.sqlite")
+state = state_store.get(user_id=123)  # for a read-only/offline demonstration
+encoder = load_query_encoder("lsa")
+query_vector = encoder.encode_queries(["Practice adding fractions"])[0]
+recommendations = recommender.recommend(
+    user_id=123,
+    state=state,
+    query_vector=query_vector,
+    target_subject="Mathematics",
+    target_grade="lower_secondary",
+    target_skill="Addition-and-Subtraction-Fractions",
+    top_k=5,
+)
+state_store.close()
+```
+
+Bài đã có trong `state.seen` được loại mặc định; có thể truyền `seen_item_ids` để ghi đè.
+
+Để chuẩn bị context Layer 5, `LearnerState.context_snapshot()` cung cấp accuracy, consistency, pace, canonical mastery và danh sách kỹ năng yếu/mạnh ở dạng JSON-safe. Để chạy feedback Layer 6, dùng một DB live riêng để Layer 1 có thể rebuild snapshot lịch sử mà không xóa tiến độ online. Khởi tạo DB live một lần từ snapshot:
+
+```python
+state_store = StateStore(config.ART / "learner_state_live.sqlite")
+if state_store.count() == 0:
+    state_store.initialize_from_snapshot(config.ART / "learner_state.sqlite")
+```
+
+Ghi kết quả chấm theo `canonical_skill_tag` của bài, không ánh xạ ngược tùy tiện sang một source skill ID ASSISTments. `StateStore.apply_canonical_event` cập nhật EMA, trọng số profile theo difficulty bucket, danh sách weak/strong canonical skills và `seen`; các đề xuất tiếp theo sẽ ưu tiên canonical mastery/profile vừa cập nhật:
+
+```python
+updated_state = state_store.apply_canonical_event(
+    user_id=123,
+    skill_tag="Addition-and-Subtraction-Fractions",
+    score=0.0,  # auto-graded score in [0, 1]
+    rt_ms=25_000,
+    alpha=0.25,
+    prior=0.5,
+    bucket=1,  # 0 easy, 1 medium, 2 hard
+    tau_base=25_000,
+    task_id="T-123",
+)
+```
+
+Đối với truy xuất, `load_query_encoder()` đọc loại embedder từ manifest; truyền loại khác sẽ báo lỗi thay vì tạo query vector trong không gian không khớp. Các learner state cũ vẫn đọc được; canonical fields mặc định rỗng và Layer 4 tiếp tục dùng EMA source-skill đã ánh xạ cho đến khi có event canonical.

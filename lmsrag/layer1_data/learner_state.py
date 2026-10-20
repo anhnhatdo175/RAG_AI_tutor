@@ -31,12 +31,15 @@ class LearnerState:
     user_id: int
     M: dict = field(default_factory=dict)          # skill_id(str) -> mastery
     attempts: dict = field(default_factory=dict)   # skill_id(str) -> n attempts
+    canonical_M: dict = field(default_factory=dict)       # canonical_skill_tag -> mastery
+    canonical_attempts: dict = field(default_factory=dict)
     n: int = 0
     sum_score: float = 0.0
     recent: list = field(default_factory=list)
     rt_sum_ms: float = 0.0
     sx: float = 0.0; sy: float = 0.0; sxy: float = 0.0; sxx: float = 0.0     # running sums for the pace regression
     prof: dict = field(default_factory=dict)       # skill_id(str) -> [W_easy, W_mid, W_hard]: decayed profile weights (Layer 2)
+    canonical_prof: dict = field(default_factory=dict)    # canonical_skill_tag -> [W_easy, W_mid, W_hard]
     seen: list = field(default_factory=list)       # task ids already served/answered (Layer 3/4 exclude them)
 
     def update(self, skill_id: int, score: float, rt_ms: float, alpha: float, prior: float, bucket: int | None = None,
@@ -52,6 +55,45 @@ class LearnerState:
         prev = self.M.get(k, prior)
         self.M[k] = alpha * score + (1 - alpha) * prev
         self.attempts[k] = self.attempts.get(k, 0) + 1
+        self._record_observation(score, rt_ms)
+
+    def update_canonical(self, skill_tag: str, score: float, rt_ms: float, alpha: float,
+                         prior: float = 0.5, bucket: int | None = None,
+                         tau_base: float | None = None, gamma: float = 0.7,
+                         decay: float = 0.9170040432046712,
+                         task_id: str | None = None) -> None:
+        """Update real-time mastery/profile directly at the canonical exercise skill."""
+        if not skill_tag or not isinstance(skill_tag, str):
+            raise ValueError("skill_tag must be a non-empty string")
+        if not math.isfinite(score) or not 0.0 <= score <= 1.0:
+            raise ValueError("score must be finite and in [0, 1]")
+        if not math.isfinite(alpha) or not 0.0 <= alpha <= 1.0:
+            raise ValueError("alpha must be finite and in [0, 1]")
+        if not math.isfinite(prior) or not 0.0 <= prior <= 1.0:
+            raise ValueError("prior must be finite and in [0, 1]")
+        if not math.isfinite(rt_ms) or rt_ms < 0:
+            raise ValueError("rt_ms must be finite and non-negative")
+        if bucket is not None and bucket not in (0, 1, 2):
+            raise ValueError("bucket must be 0, 1, or 2")
+        if (not math.isfinite(gamma) or not 0.0 <= gamma <= 1.0
+                or not math.isfinite(decay) or not 0.0 <= decay <= 1.0):
+            raise ValueError("gamma and decay must be in [0, 1]")
+        if tau_base is not None and (not math.isfinite(tau_base) or tau_base < 0):
+            raise ValueError("tau_base must be finite and non-negative")
+
+        previous = self.canonical_M.get(skill_tag, prior)
+        self.canonical_M[skill_tag] = alpha * score + (1.0 - alpha) * previous
+        self.canonical_attempts[skill_tag] = self.canonical_attempts.get(skill_tag, 0) + 1
+        if bucket is not None:
+            weights = [value * decay for value in self.canonical_prof.get(skill_tag, [0.0, 0.0, 0.0])]
+            speed = min(1.0, (tau_base or rt_ms or 1.0) / max(rt_ms, 1.0))
+            weights[bucket] += gamma * score + (1.0 - gamma) * speed
+            self.canonical_prof[skill_tag] = weights
+        if task_id is not None:
+            self.seen = (self.seen + [task_id])[-500:]
+        self._record_observation(score, rt_ms)
+
+    def _record_observation(self, score: float, rt_ms: float) -> None:
         x = self.n
         self.n += 1
         self.sum_score += score
@@ -80,6 +122,18 @@ class LearnerState:
         return sorted(st, key=lambda t: -t[1])
 
     @property
+    def canonical_W(self) -> list:
+        weak = [(tag, value) for tag, value in self.canonical_M.items()
+                if self.canonical_attempts.get(tag, 0) >= WEAK_MIN_ATTEMPTS and value < WEAK_THETA]
+        return sorted(weak, key=lambda item: item[1])
+
+    @property
+    def canonical_ST(self) -> list:
+        strong = [(tag, value) for tag, value in self.canonical_M.items()
+                  if self.canonical_attempts.get(tag, 0) >= STRONG_MIN_ATTEMPTS and value >= STRONG_THETA]
+        return sorted(strong, key=lambda item: -item[1])
+
+    @property
     def study_time(self) -> dict:
         return {"mean_rt_s": self.rt_sum_ms / self.n / 1000 if self.n else 0.0, "total_time_h": self.rt_sum_ms / 3.6e6}
 
@@ -91,8 +145,27 @@ class LearnerState:
         return 100.0 * (self.n * self.sxy - self.sx * self.sy) / den if den > 0 else 0.0
 
     def summary(self) -> dict:
-        return {"user_id": self.user_id, "n": self.n, "A": self.A, "sigma": self.sigma, "n_weak": len(self.W), "n_strong": len(self.ST),
-                "mean_rt_s": self.study_time["mean_rt_s"], "pace_per_100": self.pace, "n_skills": len(self.M)}
+        return {"user_id": self.user_id, "n": self.n, "A": self.A, "sigma": self.sigma,
+                "n_weak": len(self.W), "n_strong": len(self.ST),
+                "n_canonical_weak": len(self.canonical_W), "n_canonical_strong": len(self.canonical_ST),
+                "mean_rt_s": self.study_time["mean_rt_s"], "pace_per_100": self.pace,
+                "n_skills": len(self.M), "n_canonical_skills": len(self.canonical_M)}
+
+    def context_snapshot(self) -> dict:
+        """Return a compact, JSON-safe learner profile for downstream generation context."""
+        return {
+            "overall_accuracy": self.A,
+            "consistency_sigma": self.sigma,
+            "pace_per_100": self.pace,
+            "mean_response_time_seconds": self.study_time["mean_rt_s"],
+            "canonical_mastery": dict(self.canonical_M),
+            "weak_canonical_skills": [
+                {"skill_tag": tag, "mastery": mastery} for tag, mastery in self.canonical_W
+            ],
+            "strong_canonical_skills": [
+                {"skill_tag": tag, "mastery": mastery} for tag, mastery in self.canonical_ST
+            ],
+        }
 
     def to_json(self) -> str:
         return json.dumps(asdict(self))
