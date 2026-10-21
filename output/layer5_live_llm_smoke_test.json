@@ -1,0 +1,43 @@
+{
+  "backend": "ollama-local",
+  "model": "qwen3:4b",
+  "endpoint": "http://127.0.0.1:11435",
+  "generated_at_utc": "2026-10-21T08:56:03.869788+00:00",
+  "latency_seconds": 32.05,
+  "project_schema_validation": "passed",
+  "context_source": "demo data; no learner personal data",
+  "result": {
+    "schema_version": "1.0",
+    "status": "ok",
+    "mode": "socratic",
+    "task": {
+      "item_id": "demo-task-01",
+      "skill_tag": "Addition-and-Subtraction-Fractions",
+      "difficulty": 0.6,
+      "prompt": "Tính 1/3 + 1/4.",
+      "response_type": "numeric",
+      "hints": [
+        "Để cộng hai phân số khác mẫu số, hãy tìm mẫu số chung rồi quy đồng tử số trước khi cộng."
+      ],
+      "personalization_reason": "Learner có khả năng yếu về phân số (canonical_mastery: 0.48)",
+      "personalization_basis": [
+        "canonical_mastery.Addition-and-Subtraction-Fractions"
+      ],
+      "supporting_doc_ids": [
+        "demo-fractions-01"
+      ]
+    },
+    "tutor_turn": {
+      "turn_index": 1,
+      "question": "Hãy giải thích cách tìm mẫu số chung của 3 và 4 để cộng 1/3 + 1/4.",
+      "follow_up_questions": [
+        "Sau khi tìm mẫu số chung, bạn có thể quy đồng tử số không?"
+      ],
+      "wait_for_learner": true
+    },
+    "safety": {
+      "contains_final_answer": false,
+      "grounded": true
+    }
+  }
+}

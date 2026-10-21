@@ -10,12 +10,14 @@ from lmsrag.layer6_feedback import FeedbackLoop, GradingResult
 
 def _context(mode="practice"):
     return GenerationContext(
-        retrieved_docs=[{"doc_id": "doc-1", "text": "Find a common denominator."}],
+        retrieved_docs=[{"doc_id": "doc-1", "skill_tag": "fractions", "text": "Find a common denominator."}],
         candidate_tasks=[{
             "item_id": "task-1",
             "skill_tag": "fractions",
             "difficulty": 0.6,
             "mapping_status": "mapped",
+            "statement": "Add 1/3 and 1/4.",
+            "response_type": "exact",
         }],
         learner_profile={"canonical_mastery": {"fractions": 0.4}},
         constraints={"mode": mode, "target_skill": "fractions"},
@@ -114,46 +116,39 @@ def test_context_builder_rejects_invalid_limits(top_k, top_n):
         )
 
 
-@pytest.mark.parametrize(
-    ("item_id", "doc_id", "message"),
-    [
-        ("not-in-context", "doc-1", "candidate"),
-        ("task-1", "not-in-context", "supporting_doc_ids"),
-    ],
-)
-def test_generator_rejects_unverified_references(item_id, doc_id, message):
-    response = _generation(item_id=item_id, doc_id=doc_id)
+def test_generator_binds_bank_identity_and_sources_from_server():
+    response = _generation(item_id="llm-invented-id", doc_id="untrusted-doc-id")
     generator = LLMGenerator(lambda prompt, **kwargs: json.dumps(response))
 
-    with pytest.raises(ValueError, match=message):
-        generator.generate(_context())
+    result = generator.generate(_context())
+
+    assert result["task"]["item_id"] == "task-1"
+    assert result["task"]["prompt"] == "Add 1/3 and 1/4."
+    assert result["task"]["supporting_doc_ids"] == ["doc-1"]
 
 
-@pytest.mark.parametrize(
-    ("candidate_update", "message"),
-    [
-        ({"mapping_status": "unmapped"}, "mapping_status=mapped"),
-        ({"difficulty": 0.9}, "difficulty does not match"),
-    ],
-)
-def test_generator_rejects_changed_or_unmapped_candidates(candidate_update, message):
+def test_generator_rejects_unmapped_candidate():
     context = _context()
-    context.candidate_tasks[0].update(candidate_update)
+    context.candidate_tasks[0]["mapping_status"] = "unmapped"
     generator = LLMGenerator(lambda prompt, **kwargs: json.dumps(_generation()))
 
-    with pytest.raises(ValueError, match=message):
+    with pytest.raises(ValueError, match="mapping_status=mapped"):
         generator.generate(context)
 
 
-def test_generator_rejects_prompt_changed_for_bank_answer_key():
+def test_generator_preserves_bank_statement_and_difficulty():
     context = _context()
-    context.candidate_tasks[0]["statement"] = "Original issued problem"
+    context.candidate_tasks[0]["statement"] = "Canonical issued problem"
+    context.candidate_tasks[0]["difficulty"] = 0.9
     response = _generation()
     response["task"]["prompt"] = "A different problem with the same item ID"
+    response["task"]["difficulty"] = 0.1
     generator = LLMGenerator(lambda prompt, **kwargs: json.dumps(response))
 
-    with pytest.raises(ValueError, match="preserve the selected candidate statement"):
-        generator.generate(context)
+    result = generator.generate(context)
+
+    assert result["task"]["prompt"] == "Canonical issued problem"
+    assert result["task"]["difficulty"] == 0.9
 
 
 def test_generator_rejects_inconsistent_insufficient_context_safety():
