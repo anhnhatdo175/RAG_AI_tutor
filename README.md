@@ -102,3 +102,26 @@ updated_state = state_store.apply_canonical_event(
 ```
 
 Đối với truy xuất, `load_query_encoder()` đọc loại embedder từ manifest; truyền loại khác sẽ báo lỗi thay vì tạo query vector trong không gian không khớp. Các learner state cũ vẫn đọc được; canonical fields mặc định rỗng và Layer 4 tiếp tục dùng EMA source-skill đã ánh xạ cho đến khi có event canonical.
+
+## Layer 5–6: sinh nội dung và phản hồi thích ứng
+
+Mô tả kiến trúc và trạng thái implementation Layer 5–6, gồm context đa nguồn, JSON prompting, trợ giảng Socratic, chấm điểm, EMA/profile, smoke test Ollama thật và các phần còn cần tích hợp nằm trong [Chương 2.6–2.7](docs/chuong-2-tang-5-6.md).
+
+Implementation có thể gọi trực tiếp qua `lmsrag.layer5_generation` (`GenerationContext`, `LLMGenerator`, `SocraticTutor`) và `lmsrag.layer6_feedback` (`FeedbackLoop`, `GradingResult`). Layer 5 dùng backend đã cấu hình; Layer 6 nhận `StateStore` live và trả learner state/snapshot mới sau khi chấm.
+
+Để chạy inference LLM local thật qua Layer 5 (không dùng mock), cài Ollama, pull model rồi chạy:
+
+```powershell
+$env:OLLAMA_HOST = "127.0.0.1:11435"
+$env:OLLAMA_MODELS = "D:\OllamaModels"
+ollama pull qwen3:4b
+ollama serve
+```
+
+Ở một PowerShell khác trong thư mục repository:
+
+```powershell
+./.venv/Scripts/python.exe -m lmsrag.layer5_generation.live_smoke_test --model qwen3:4b --base-url http://127.0.0.1:11435 --output output/layer5_live_llm_smoke_test.json
+```
+
+Lệnh này gọi model local thật, kiểm tra schema qua Layer 5 và lưu model, endpoint, thời gian chạy cùng kết quả vào JSON.
