@@ -1,10 +1,20 @@
 """LLM backends for local Transformers, Ollama, and Groq inference."""
+import json
+import os
 import re
 import time
-import json
+from typing import Any
 from urllib import request
+
+os.environ.setdefault("USE_TF", "0")
+
 from groq import Groq
-from sentence_transformers import SentenceTransformer
+
+try:
+    from sentence_transformers import SentenceTransformer
+except Exception:  # pragma: no cover - optional for Ollama/Groq-only setups
+    SentenceTransformer = None  # type: ignore[assignment]
+
 from src import config
 
 _client = None
@@ -51,6 +61,8 @@ def embed_texts(
 ) -> list[list[float]]:
     """Return normalized local BGE embeddings without using an API quota."""
     global _embedding_model
+    if SentenceTransformer is None:
+        raise RuntimeError("sentence-transformers is not available in this environment.")
     if _embedding_model is None:
         _embedding_model = SentenceTransformer(config.EMBEDDING_MODEL)
     vectors = _embedding_model.encode(
@@ -137,7 +149,10 @@ def _generate_transformers(
 
 
 def generate_answer(
-    prompt: str, model: str | None = None, json_mode: bool = False
+    prompt: str,
+    model: str | None = None,
+    json_mode: bool = False,
+    json_schema: dict[str, Any] | None = None,
 ) -> tuple[str, float]:
     """Generate text with the configured backend."""
     start = time.perf_counter()
@@ -145,24 +160,21 @@ def generate_answer(
     if config.LLM_BACKEND == "transformers":
         return _generate_transformers(prompt, selected_model, start)
     if config.LLM_BACKEND == "ollama":
-        payload = json.dumps(
-            {
-                "model": selected_model,
-                "messages": [{"role": "user", "content": prompt}],
-                "stream": False,
-                "options": {"num_ctx": 4096},
-            }
-        ).encode("utf-8")
+        payload_data = {
+            "model": selected_model,
+            "messages": [{"role": "user", "content": prompt}],
+            "stream": False,
+            "options": {
+                "num_ctx": config.OLLAMA_CONTEXT_LENGTH,
+                "num_predict": config.OLLAMA_MAX_NEW_TOKENS,
+                "temperature": 0,
+            },
+        }
         if json_mode:
-            payload = json.dumps(
-                {
-                    "model": selected_model,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "stream": False,
-                    "format": "json",
-                    "options": {"num_ctx": 4096},
-                }
-            ).encode("utf-8")
+            payload_data["format"] = json_schema or "json"
+        if selected_model.casefold().startswith("qwen3"):
+            payload_data["think"] = False
+        payload = json.dumps(payload_data).encode("utf-8")
         http_request = request.Request(
             f"{config.OLLAMA_BASE_URL}/api/chat",
             data=payload,

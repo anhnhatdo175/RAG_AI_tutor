@@ -102,3 +102,58 @@ updated_state = state_store.apply_canonical_event(
 ```
 
 Đối với truy xuất, `load_query_encoder()` đọc loại embedder từ manifest; truyền loại khác sẽ báo lỗi thay vì tạo query vector trong không gian không khớp. Các learner state cũ vẫn đọc được; canonical fields mặc định rỗng và Layer 4 tiếp tục dùng EMA source-skill đã ánh xạ cho đến khi có event canonical.
+
+## Layer 5–6: sinh nội dung và phản hồi thích ứng
+
+Mô tả kiến trúc và trạng thái implementation Layer 5–6, gồm context đa nguồn, JSON prompting, trợ giảng Socratic, chấm điểm, EMA/profile, smoke test Ollama thật và các phần còn cần tích hợp nằm trong [Chương 2.6–2.7](docs/chuong-2-tang-5-6.md).
+
+Implementation có thể gọi trực tiếp qua `lmsrag.layer5_generation` (`GenerationContext`, `LLMGenerator`, `SocraticTutor`) và `lmsrag.layer6_feedback` (`FeedbackLoop`, `GradingResult`). Layer 5 dùng backend đã cấu hình; Layer 6 nhận `StateStore` live và trả learner state/snapshot mới sau khi chấm.
+
+Để chạy inference LLM local thật qua Layer 5 (không dùng mock), cài Ollama, pull model rồi chạy:
+
+```powershell
+$env:OLLAMA_HOST = "127.0.0.1:11435"
+$env:OLLAMA_MODELS = "D:\OllamaModels"
+ollama pull qwen3:4b
+ollama serve
+```
+
+Ở một PowerShell khác trong thư mục repository:
+
+```powershell
+./.venv/Scripts/python.exe -m lmsrag.layer5_generation.live_smoke_test --model qwen3:4b --base-url http://127.0.0.1:11435 --output output/layer5_live_llm_smoke_test.json
+```
+
+Lệnh này gọi model local thật, kiểm tra schema qua Layer 5 và lưu model, endpoint, thời gian chạy cùng kết quả vào JSON.
+
+## Chạy luồng học terminal Layer 1–6
+
+Build dữ liệu và index một lần (Layer 1–2):
+
+```powershell
+python -m pip install -r requirements.txt
+python -m lmsrag.download_data
+python -m lmsrag.layer1_data.build
+python -m lmsrag.layer2_embedding.build --embedder lsa
+```
+
+Khởi động Ollama trong một PowerShell riêng:
+
+```powershell
+$env:OLLAMA_HOST = "127.0.0.1:11435"
+ollama pull qwen3:4b
+ollama serve
+```
+
+Trong PowerShell khác, tại thư mục repository, cấu hình backend và bắt đầu phiên học:
+
+```powershell
+$env:LLM_BACKEND = "ollama"
+$env:GENERATION_MODEL = "qwen3:4b"
+$env:OLLAMA_BASE_URL = "http://127.0.0.1:11435"
+python -m lmsrag.app --user-id 123 --skill Addition-and-Subtraction-Fractions
+```
+
+Có thể truyền `--query`, `--subject`, hoặc `--grade`; mặc định query được tạo từ skill, môn là `Mathematics`, lớp là `lower_secondary`, và mode là `practice`. Skill cần dùng canonical tag đã có trong corpus. Nhập câu trả lời để chấm và cập nhật learner state; nhập `:quit` để giữ bài đang chờ cho lần chạy tiếp theo.
+
+Ứng dụng nối retrieval, gợi ý bài, sinh nội dung và feedback cho từng lượt học. Snapshot offline `learner_state.sqlite` không bị ghi đè; state online và bài đang chờ được lưu tại `lmsrag/artifacts/learner_state_live.sqlite`. Bài chưa có answer key tự động sẽ không được phát; câu trả lời không chấm được sẽ chuyển sang `needs_review` mà không cập nhật mastery. MVP hiện chấm một lần cho mỗi bài và chưa tự chấm bài tự luận/Socratic nhiều lượt. Lần đầu tạo retriever có thể cần tải Cross-Encoder model từ Hugging Face.

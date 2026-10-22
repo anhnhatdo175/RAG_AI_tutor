@@ -1,5 +1,12 @@
 """Central configuration for the LMS adaptive-profile RAG pipeline (v2, real data only)."""
 from pathlib import Path
+import os
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parent / ".env")
+except ImportError:
+    pass
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
@@ -50,3 +57,15 @@ GRADE_BY_MATH_LEVEL = {1: "lower_secondary", 2: "lower_secondary", 3: "lower_upp
                        4: "upper_secondary", 5: "upper_secondary"}
 GRADE_DEFAULT = "lower_secondary"                            # Khan / lessons without an explicit grade
 SUBJECT_DEFAULT = "Mathematics"                              # all bundled exercise corpora are math-focused
+
+# ---- Layer 5 LLM ------------------------------------------------------------
+LLM_BACKEND = os.environ.get("LLM_BACKEND", "transformers").lower()
+GENERATION_MODEL = os.environ.get("GENERATION_MODEL", "Qwen/Qwen2.5-7B-Instruct")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
+OLLAMA_CONTEXT_LENGTH = int(os.environ.get("OLLAMA_CONTEXT_LENGTH", "2048"))
+OLLAMA_MAX_NEW_TOKENS = int(os.environ.get("OLLAMA_MAX_NEW_TOKENS", "512"))
+TRANSFORMERS_CONTEXT_LENGTH = int(os.environ.get("TRANSFORMERS_CONTEXT_LENGTH", "4096"))
+TRANSFORMERS_MAX_NEW_TOKENS = int(os.environ.get("MAX_NEW_TOKENS", "256"))
+GROQ_RATE_LIMIT = float(os.environ.get("GROQ_RATE_LIMIT", "2.1"))
+GROQ_RETRY_ATTEMPTS = int(os.environ.get("GROQ_RETRY_ATTEMPTS", "5"))

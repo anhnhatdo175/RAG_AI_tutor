@@ -316,14 +316,6 @@ UNMAPPED: dict[str, str] = {
     "Pattern Finding": "too generic to tag reliably with rules",
 }
 
-# schema example for a second dataset (no corpus is loaded for it in this repo)
-EDNET_EXAMPLE = {
-    "Part 5 - Incomplete Sentences - Verb Tense": {
-        "topic_label": "English Grammar - Present/Past Perfect", "corpus": "TOEIC grammar",
-        "status": "schema example only - no EdNet log / TOEIC corpus available in this build"}
-}
-
-
 @dataclass
 class SkillMapper:
     """Resolves log skill names and tags corpus text."""
@@ -404,7 +396,7 @@ class SkillMapper:
                             "alias_of": None if self._key(c) == self._key(s) else c}
             else:
                 table[s] = {"skill_tag": None, "reason": self.unmapped_reason(s)}
-        return {"assistments": table, "ednet": EDNET_EXAMPLE}
+        return {"assistments": table}
 
 
 def write_mapping(log_skills: list[str]) -> SkillMapper:
