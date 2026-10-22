@@ -31,6 +31,8 @@ GENERATION_MODEL = os.environ.get(
 )
 JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "Qwen/Qwen2.5-3B-Instruct")
 OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
+OLLAMA_CONTEXT_LENGTH = int(os.environ.get("OLLAMA_CONTEXT_LENGTH", "2048"))
+OLLAMA_MAX_NEW_TOKENS = int(os.environ.get("OLLAMA_MAX_NEW_TOKENS", "512"))
 TRANSFORMERS_MAX_NEW_TOKENS = int(os.environ.get("MAX_NEW_TOKENS", "256"))
 TRANSFORMERS_CONTEXT_LENGTH = int(os.environ.get("TRANSFORMERS_CONTEXT_LENGTH", "4096"))
 

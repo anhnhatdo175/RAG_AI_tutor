@@ -86,7 +86,11 @@ class LearnerState:
         self.canonical_attempts[skill_tag] = self.canonical_attempts.get(skill_tag, 0) + 1
         if bucket is not None:
             weights = [value * decay for value in self.canonical_prof.get(skill_tag, [0.0, 0.0, 0.0])]
-            speed = min(1.0, (tau_base or rt_ms or 1.0) / max(rt_ms, 1.0))
+            speed = (
+                min(1.0, tau_base / max(rt_ms, 1.0))
+                if tau_base is not None
+                else 0.5
+            )
             weights[bucket] += gamma * score + (1.0 - gamma) * speed
             self.canonical_prof[skill_tag] = weights
         if task_id is not None:
