@@ -49,7 +49,7 @@ class VectorStore:
     # ---- Layer 3 helpers ---------------------------------------------------------------------------------
     def filter_ids(self, skill_tag: str | None = None, subjects=None, max_level: int | None = None,
                    content_types=None, target_subject: str | None = None,
-                   target_grade: str | None = None) -> np.ndarray:
+                   target_grade: str | None = None, mapped_only: bool = False) -> np.ndarray:
         """Filter candidate chunks, including exact subject/grade matching when targets are supplied."""
         if target_subject is not None and not target_subject:
             raise ValueError("target_subject must be non-empty when provided")
@@ -60,6 +60,11 @@ class VectorStore:
         keep = []
         for i in ids:
             m = self.meta[i]
+            if mapped_only and (
+                m.get("mapping_status") != "mapped"
+                or m.get("skill_tag") in (None, "", "unmapped")
+            ):
+                continue
             if target_subject is not None and m.get("subject") != target_subject:
                 continue
             if target_grade is not None and m.get("grade") != target_grade:

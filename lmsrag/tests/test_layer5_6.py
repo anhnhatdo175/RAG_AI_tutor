@@ -66,6 +66,32 @@ def test_generator_builds_context_and_validates_response():
     assert '"canonical_mastery"' in received["prompt"]
 
 
+def test_default_generator_supplies_context_bound_ollama_schema(monkeypatch):
+    from lmsrag import llm_client
+
+    received = {}
+
+    def fake_generate(prompt, **kwargs):
+        received.update(kwargs)
+        return json.dumps(_generation()), 0.01
+
+    monkeypatch.setattr(llm_client, "generate_answer", fake_generate)
+
+    result = LLMGenerator().generate(_context())
+
+    schema = received["json_schema"]
+    assert received["json_mode"] is True
+    assert result["status"] == "ok"
+    assert schema["additionalProperties"] is False
+    assert set(schema["required"]) == {
+        "schema_version", "status", "mode", "task", "tutor_turn", "safety",
+    }
+    task_schema = schema["properties"]["task"]["anyOf"][0]
+    assert task_schema["properties"]["personalization_basis"]["items"]["enum"] == [
+        "canonical_mastery.fractions",
+    ]
+
+
 def test_context_builder_limits_sources_and_hides_private_task_fields():
     state = LearnerState(user_id=4, seen=["seen-task"])
     context = GenerationContext.from_sources(

@@ -12,7 +12,7 @@ from pathlib import Path
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model", default="qwen3:4b")
+    parser.add_argument("--model", default="qwen3:8b")
     parser.add_argument("--base-url", default="http://127.0.0.1:11435")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()

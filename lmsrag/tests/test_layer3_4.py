@@ -124,8 +124,10 @@ def test_hybrid_recommender_applies_constraints_zpd_and_hybrid_formula():
         {"source_skill_id": 7, "canonical_skill_tag": "Percent-Of"},
     ]}
     interactions = pd.DataFrame([
-        {"user_id": 1, "tag": "Percent-Of", "correct": 0, "split": "history"},
-        {"user_id": 2, "tag": "Percent-Of", "correct": 1, "split": "history"},
+        {"user_id": 1, "tag": "Percent-Of", "correct": 0, "split": "history", "bucket": 0},
+        {"user_id": 1, "tag": "Percent-Of", "correct": 1, "split": "history", "bucket": 2},
+        {"user_id": 2, "tag": "Percent-Of", "correct": 1, "split": "history", "bucket": 0},
+        {"user_id": 2, "tag": "Percent-Of", "correct": 1, "split": "history", "bucket": 2},
     ])
     recommender = HybridRecommender(
         store, exercises, catalog, interactions, alpha=0.4, beta=0.3, n_cf_neighbors=1
@@ -158,9 +160,14 @@ def test_hybrid_recommender_applies_constraints_zpd_and_hybrid_formula():
     assert hard["delta"] == pytest.approx(0.9 - hard["mastery"])
     assert hard["zpd_score"] == 0.2
     for row in results:
-        expected = 0.4 * row["semantic_score"] + 0.3 * row["profile_score"] + 0.3 * row["cf_score"]
+        expected = (
+            0.4 * row["semantic_score"]
+            + 0.3 * row["profile_score"]
+            + 0.3 * row["cf_score"]
+        )
         assert row["final_score"] == pytest.approx(expected)
-        assert row["cf_granularity"] == "canonical_skill"
+        assert row["cf_granularity"] == "canonical_skill_difficulty"
+        assert row["cf_used_for_item_ranking"] is True
     assert [row["item_id"] for row in recommender.recommend(
         user_id=1, state=state, query_vector=np.array([1.0, 0.0]),
         target_subject="Mathematics", target_grade="lower_secondary",

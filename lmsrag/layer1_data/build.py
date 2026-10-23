@@ -23,8 +23,8 @@ def build() -> dict:
     bank = sources.build_exercise_bank(mapper)
     report["exercise_bank_T"] = sources.save_bank(bank)
 
-    df = data.load_logs(mapper)
-    catalog = skill_catalog.build_skill_catalog(df, mapper)
+    all_logs = data.load_logs(mapper)
+    catalog = skill_catalog.build_skill_catalog(all_logs, mapper)
     skill_catalog.save_skill_catalog(catalog)
     mappings = catalog["source_skill_mappings"]
     report["skill_catalog"] = {
@@ -34,13 +34,32 @@ def build() -> dict:
         "n_mapped_source_skills": sum(m["mapping_status"] == "mapped" for m in mappings),
         "n_unmapped_source_skills": sum(m["mapping_status"] == "unmapped" for m in mappings),
     }
+    df = data.filter_mapped_logs(all_logs)
+    report["mapped_interaction_scope"] = {
+        "policy": "only interactions with a canonical skill tag are used for matrices, profiles, and evaluation",
+        "all_interactions": int(len(all_logs)),
+        "mapped_interactions": int(len(df)),
+        "excluded_unmapped_interactions": int(len(all_logs) - len(df)),
+        "mapped_share": float(len(df) / len(all_logs)) if len(all_logs) else None,
+        "users_all": int(all_logs.user_id.nunique()),
+        "users_mapped": int(df.user_id.nunique()),
+    }
     R, users, items = im.build_R(df, ("history",))
     im.save(R, users, items)
     report["interaction_matrix_R"] = {"splits": ["history"], **im.stats(R)}
     rh, _ = im.build_R(df, ("history", "val", "test"))[0:2]
     report["interaction_matrix_R"]["density_all_splits"] = float(rh.nnz / (rh.shape[0] * rh.shape[1]))
 
-    alpha, _ = profile.tune_alpha(df)
+    alpha, alpha_grid_scores = profile.tune_alpha(df)
+    validation_states = profile.run_states(df, alpha, with_profile=False)
+    report["ema_validation"] = {
+        "selection_metric": "log_loss",
+        "selected_alpha": alpha,
+        "grid_scores": {str(k): v for k, v in alpha_grid_scores.items()},
+    }
+    report["mastery_test_metrics"] = profile.mastery_report(
+        df, validation_states.M_before.to_numpy()
+    )
     priors, tau = profile.skill_priors(df)
     states = ls.build_states(df, alpha, priors, as_of=("history",), tau_base=tau)
     path = config.ART / "learner_state.sqlite"

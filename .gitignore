@@ -1,8 +1,13 @@
 .env
 .env.*
 !.env.example
+!lmsrag/.env.example
 .venv/
 .venv-*/
+.python311-portable/
+.python311-installer.exe
+.python311-embed.zip
+get-pip.py
 venv/
 env/
 __pycache__/
