@@ -92,6 +92,10 @@ def mastery_report(df: pd.DataFrame, M_before: np.ndarray) -> dict:
     }
     rep = {}
     for name, p in preds.items():
-        rep[name] = {"AUC": float(roc_auc_score(y[t], p[t])), "RMSE": float(np.sqrt(np.mean((y[t] - p[t]) ** 2))),
+        try:
+            auc = float(roc_auc_score(y[t], p[t]))
+        except ValueError:  # a degenerate held-out split can contain only one class
+            auc = None
+        rep[name] = {"AUC": auc, "RMSE": float(np.sqrt(np.mean((y[t] - p[t]) ** 2))),
                      "MAE": float(mean_absolute_error(y[t], p[t]))}
     return rep

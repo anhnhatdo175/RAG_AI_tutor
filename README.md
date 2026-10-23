@@ -16,7 +16,7 @@ Kết quả cuối nằm trong `adaptiverag/artifacts/final/`. Corpus tài liệ
 
 ```powershell
 python -m pip install -r requirements.txt
-python -m lmsrag.download_data
+python -m lmsrag.data_tools.download_data
 python -m lmsrag.layer1_data.build
 python -m lmsrag.layer2_embedding.build --embedder lsa
 ```
@@ -114,14 +114,14 @@ Implementation có thể gọi trực tiếp qua `lmsrag.layer5_generation` (`Ge
 ```powershell
 $env:OLLAMA_HOST = "127.0.0.1:11435"
 $env:OLLAMA_MODELS = "D:\OllamaModels"
-ollama pull qwen3:4b
+ollama pull qwen3:8b
 ollama serve
 ```
 
 Ở một PowerShell khác trong thư mục repository:
 
 ```powershell
-./.venv/Scripts/python.exe -m lmsrag.layer5_generation.live_smoke_test --model qwen3:4b --base-url http://127.0.0.1:11435 --output output/layer5_live_llm_smoke_test.json
+./.venv/Scripts/python.exe -m lmsrag.layer5_generation.live_smoke_test --model qwen3:8b --base-url http://127.0.0.1:11435 --output output/layer5_live_llm_smoke_test.json
 ```
 
 Lệnh này gọi model local thật, kiểm tra schema qua Layer 5 và lưu model, endpoint, thời gian chạy cùng kết quả vào JSON.
@@ -132,7 +132,7 @@ Build dữ liệu và index một lần (Layer 1–2):
 
 ```powershell
 python -m pip install -r requirements.txt
-python -m lmsrag.download_data
+python -m lmsrag.data_tools.download_data
 python -m lmsrag.layer1_data.build
 python -m lmsrag.layer2_embedding.build --embedder lsa
 ```
@@ -141,7 +141,7 @@ Khởi động Ollama trong một PowerShell riêng:
 
 ```powershell
 $env:OLLAMA_HOST = "127.0.0.1:11435"
-ollama pull qwen3:4b
+ollama pull qwen3:8b
 ollama serve
 ```
 
@@ -149,7 +149,7 @@ Trong PowerShell khác, tại thư mục repository, cấu hình backend và b�
 
 ```powershell
 $env:LLM_BACKEND = "ollama"
-$env:GENERATION_MODEL = "qwen3:4b"
+$env:GENERATION_MODEL = "qwen3:8b"
 $env:OLLAMA_BASE_URL = "http://127.0.0.1:11435"
 python -m lmsrag.app --user-id 123 --skill Addition-and-Subtraction-Fractions
 ```

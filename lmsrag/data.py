@@ -1,4 +1,4 @@
-"""Log loading, per-learner temporal split and empirical item difficulty.\n\nASSISTments is read here; Junyi / EdNet adapters live in layer1_data/ and end in ``finalize_logs``."""
+"""ASSISTments log loading, per-learner temporal split, and empirical item difficulty."""
 from __future__ import annotations
 
 import numpy as np
@@ -7,7 +7,10 @@ import pandas as pd
 from . import config
 from .skill_mapping import SkillMapper
 
-COLS = ["order_id", "user_id", "problem_id", "original", "correct", "skill_id", "skill_name", "ms_first_response", "attempt_count", "hint_count"]
+# Keep all native ASSISTments identifiers.  `problem_id` identifies a question,
+# `assistment_id` groups an assistment/scaffold, and `template_id` groups similar
+# question templates; they are distinct namespaces and must not be conflated.
+COLS = ["order_id", "user_id", "assistment_id", "problem_id", "template_id", "original", "correct", "skill_id", "skill_name", "ms_first_response", "attempt_count", "hint_count"]
 BUCKETS = np.asarray(config.DIFFICULTY_LEVELS)
 
 
@@ -24,7 +27,7 @@ def read_assistments(min_user_rows: int = 20) -> pd.DataFrame:
 
 
 def finalize_logs(df: pd.DataFrame, mapper: SkillMapper, min_user_rows: int = 20, shrink_m: float = 5.0, min_item_n: int = 3) -> pd.DataFrame:
-    """Common log schema -> evaluation frame.  Dataset-independent (ASSISTments, Junyi, EdNet adapters all end here).
+    """ASSISTments log schema -> evaluation frame.
 
     Required input columns: order_id (monotone per user = time order), user_id, problem_id (item), correct (0/1),
     skill_id (int), skill_name (a name ``mapper.to_tag`` understands, or any string -> tag None), ms (response time, ms).
@@ -61,3 +64,14 @@ def finalize_logs(df: pd.DataFrame, mapper: SkillMapper, min_user_rows: int = 20
 def load_logs(mapper: SkillMapper, min_user_rows: int = 20, shrink_m: float = 5.0, min_item_n: int = 3) -> pd.DataFrame:
     """ASSISTments (unchanged behaviour): read -> finalize."""
     return finalize_logs(read_assistments(min_user_rows), mapper, min_user_rows, shrink_m, min_item_n)
+
+
+def filter_mapped_logs(df: pd.DataFrame) -> pd.DataFrame:
+    """Return only interactions with a resolved canonical skill tag.
+
+    Unmapped names are represented as null by ``SkillMapper.to_tag``; checking
+    only for the literal string ``"unmapped"`` would incorrectly retain nulls.
+    """
+    if "tag" not in df:
+        raise ValueError("log frame must contain the canonical 'tag' column")
+    return df.loc[df["tag"].notna() & df["tag"].ne("unmapped")].copy()

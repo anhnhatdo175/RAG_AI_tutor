@@ -1,6 +1,6 @@
 """Fetch the real corpora (GSM8K from OpenAI, MATH test split from the Qwen2.5-Math mirror). Khan Academy: add manually."""
 import urllib.request
-from . import config
+from .. import config
 
 URLS = {
     "gsm8k_train.jsonl": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/train.jsonl",

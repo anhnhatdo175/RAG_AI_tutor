@@ -72,12 +72,14 @@ def build_exercise_bank(mapper: SkillMapper) -> list[dict]:
 
 def filter_exercise_bank(bank: list[dict], target_subject: str, target_grade: str,
                          skill_tag: str | None = None) -> list[dict]:
-    """Filter exercise candidates by exact subject and grade; optionally constrain to one mapped skill."""
+    """Return mapped exercise candidates matching subject/grade and optional skill."""
     if not target_subject or not target_grade:
         raise ValueError("target_subject and target_grade must be non-empty")
     return [
         item for item in bank
-        if item.get("subject") == target_subject
+        if item.get("mapping_status", "mapped") == "mapped"
+        and item.get("skill_tag") not in (None, "", "unmapped")
+        and item.get("subject") == target_subject
         and item.get("grade") == target_grade
         and (skill_tag is None or item.get("skill_tag") == skill_tag)
     ]

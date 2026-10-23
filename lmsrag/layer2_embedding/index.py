@@ -51,7 +51,7 @@ def save_index(chunks: list[dict], V: np.ndarray, embedder_info: dict) -> dict:
 
 
 def load_and_verify() -> tuple[VectorStore, dict]:
-    man = json.loads((config.ART / "index_manifest.json").read_text())
+    man = json.loads((config.ART / "index_manifest.json").read_text(encoding="utf-8"))
     body = config.CHUNKS_JSONL.read_text(encoding="utf-8")
     if hashlib.sha256(body.encode()).hexdigest() != man["chunks_sha256"]:
         raise RuntimeError("chunks file changed since the index was built - rebuild the index")

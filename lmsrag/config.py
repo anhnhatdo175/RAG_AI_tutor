@@ -38,7 +38,7 @@ DIFFICULTY_LEVELS = (0.3, 0.6, 0.9)
 # ---- profile (Step 3) --------------------------------------------------------
 HALF_LIFE_OPPS = 8          # recency half-life, measured in opportunities on the skill
 GAMMA = 0.7                 # weight of correctness vs. speed in w(t)
-EMA_ALPHA = 0.25            # default mastery EMA rate (tuned on validation)
+EMA_ALPHA = 0.25            # standalone FeedbackLoop fallback; artifact-backed app uses Layer 1's tuned alpha
 MIN_SKILL_DOCS = 20         # a skill is "retrievable" only if the corpus has >= this many chunks
 MIN_DOCS_PER_LEVEL = 3      # ...and >= this many at each difficulty level it exposes
 
@@ -47,6 +47,18 @@ ZPD_DELTA = 0.10            # target stretch above current mastery
 ZPD_SIGMA = 0.20
 CF_NEIGHBOURS = 50
 TARGET_SUCCESS = 0.70       # ZPD success target used by the evaluation
+# Selected on ASSISTments validation (NDCG@5): semantic retrieval plus learner
+# profile/ZPD and CF-predicted success alignment. The profile-vector contribution
+# remains non-zero so online EMA mastery can affect retrieval.
+RAG_SEMANTIC_WEIGHT = 0.35
+RAG_PROFILE_WEIGHT = 0.65
+# Validation-selected blend within the personalized Adaptive RAG signal:
+# profile-vector/ZPD score vs. collaborative expected-success targeting.
+RAG_PROFILE_VECTOR_BLEND = 0.25
+# Zero disables confidence gating; validation selected the ungated profile/CF blend.
+RAG_CONFIDENCE_TAU = 0.0
+RANK_SEMANTIC_WEIGHT = 0.4
+RANK_PROFILE_WEIGHT = 0.3
 
 # ---- grade metadata (docx 2.4.2: grade(d) = target_grade) ---------------------------------------------------------
 # ASSUMPTION - please confirm: none of the corpora carries a school grade, so `grade` is an ordinal band derived from the
@@ -59,11 +71,11 @@ GRADE_DEFAULT = "lower_secondary"                            # Khan / lessons wi
 SUBJECT_DEFAULT = "Mathematics"                              # all bundled exercise corpora are math-focused
 
 # ---- Layer 5 LLM ------------------------------------------------------------
-LLM_BACKEND = os.environ.get("LLM_BACKEND", "transformers").lower()
-GENERATION_MODEL = os.environ.get("GENERATION_MODEL", "Qwen/Qwen2.5-7B-Instruct")
+LLM_BACKEND = os.environ.get("LLM_BACKEND", "ollama").lower()
+GENERATION_MODEL = os.environ.get("GENERATION_MODEL", "qwen3:8b")
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
-OLLAMA_CONTEXT_LENGTH = int(os.environ.get("OLLAMA_CONTEXT_LENGTH", "2048"))
+OLLAMA_CONTEXT_LENGTH = int(os.environ.get("OLLAMA_CONTEXT_LENGTH", "4096"))
 OLLAMA_MAX_NEW_TOKENS = int(os.environ.get("OLLAMA_MAX_NEW_TOKENS", "512"))
 TRANSFORMERS_CONTEXT_LENGTH = int(os.environ.get("TRANSFORMERS_CONTEXT_LENGTH", "4096"))
 TRANSFORMERS_MAX_NEW_TOKENS = int(os.environ.get("MAX_NEW_TOKENS", "256"))

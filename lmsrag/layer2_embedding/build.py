@@ -30,6 +30,12 @@ def build(embedder: str = "lsa") -> dict:
                      has_figure=r.extra.get("has_figure", False), split=r.extra.get("split"), schema_version=index.SCHEMA_VERSION)
             chunks.append(c)
 
+    all_chunk_count = len(chunks)
+    unmapped_chunk_count = sum(c["mapping_status"] != "mapped" for c in chunks)
+    chunks = [c for c in chunks if c["mapping_status"] == "mapped" and c.get("skill_tag")]
+    if not chunks:
+        raise ValueError("No mapped RAG chunks remain; check the skill mapping rules and corpus")
+
     layer = embed.EmbeddingLayer(embedder)
     V = layer.fit_encode_docs([c["text"] for c in chunks])
     layer.save(config.ART / "embedder_lsa.pkl")
@@ -48,13 +54,18 @@ def build(embedder: str = "lsa") -> dict:
         hits = store.search(q, k=5)
         prec[t] = float(np.mean([store.meta[i]["skill_tag"] == t for i, _ in hits]))
     report = {"embedder": embedder, "n_input_records": len(raw), "clean": clean_report, "n_records": len(recs), "n_chunks": len(chunks),
+              "mapped_content_scope": {"policy": "only mapped chunks are embedded and indexed",
+                                       "chunks_before_filter": all_chunk_count,
+                                       "mapped_chunks_indexed": len(chunks),
+                                       "unmapped_chunks_excluded": unmapped_chunk_count,
+                                       "mapped_chunk_share": len(chunks) / all_chunk_count if all_chunk_count else None},
               "chunks_per_record": {str(k): v for k, v in sorted(Counter(c["n_chunks"] for c in chunks).items())},
               "token_count": {"mean": float(tok.mean()), "p95": float(np.percentile(tok, 95)), "max": int(tok.max()),
                               "over_512": int((tok > chunk.MAX_TOKENS).sum())},
               "tokenizer": "tiktoken" if chunk._tiktoken() else "regex-proxy",
               "unit_norm": layer.norm_report, "geometry": embed.geometry_report(V, tags),
               "index_self_retrieval_acc": index.self_retrieval_check(store),
-              "topic_query_prec5_unfiltered": {"mean": float(np.mean(list(prec.values()))), "by_tag": prec},
+              "topic_query_prec5_mapped_index": {"mean": float(np.mean(list(prec.values()))), "by_tag": prec},
               "manifest": manifest, "elapsed_s": round(time.time() - t0, 1)}
     (config.ART / "layer2_report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False))
     return report
@@ -64,4 +75,4 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--embedder", default="lsa", choices=["lsa", "bge"])
     r = build(ap.parse_args().embedder)
     print(json.dumps({k: v for k, v in r.items() if k not in ("manifest", "topic_query_prec5_unfiltered")}, indent=1))
-    print("topic-query P@5 (unfiltered):", round(r["topic_query_prec5_unfiltered"]["mean"], 3))
+    print("topic-query P@5 (mapped index):", round(r["topic_query_prec5_mapped_index"]["mean"], 3))

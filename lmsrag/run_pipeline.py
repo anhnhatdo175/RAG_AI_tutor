@@ -33,7 +33,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.rebuild or not _artifacts_ready():
-        from lmsrag.download_data import download_missing
+        from lmsrag.data_tools.download_data import download_missing
         from lmsrag.layer1_data.build import build as build_layer1
         from lmsrag.layer2_embedding.build import build as build_layer2
 
