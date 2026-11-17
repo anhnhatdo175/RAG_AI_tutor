@@ -190,6 +190,59 @@ def test_assist2012_clean_counts_and_sections():
     assert set(res.tables["a1_skill_builder_assist2012"].subset) == {"MasterySection", "outside_MasterySection"}
 
 
+def junyi_inputs(n_users=12):
+    rows = []
+    for u in range(n_users):
+        for j in range(30 if u else 8):  # learner 0 has too few rows
+            ex = ["fractions_1", "time_terminology", "not_in_table"][j % 3]
+            rows.append({"user_id": u, "exercise": ex, "problem_type": "0" if j % 2 else "analog_word",
+                         "time_done": 1_400_000_000_000_000 + u * 10**9 + j * 10**6, "time_taken": -3.0 if j == 1 else 4.0,
+                         "correct": j % 4 != 0, "count_attempts": 1.0, "count_hints": 0.0, "review_mode": j % 5 == 0})
+    raw = pd.DataFrame(rows)
+    for col in ("exercise", "problem_type"):
+        raw[col] = raw[col].astype("category")
+    raw["correct"] = raw["correct"].astype("boolean")
+    raw["review_mode"] = raw["review_mode"].astype("boolean")
+    exercises = pd.DataFrame({"name": ["fractions_1", "time_terminology"], "topic": ["fractions", "time"]})
+    templates = pd.DataFrame({"slug": ["fractions_1", "time_terminology"], "status": ["usable", "needs_figure"]})
+    return raw, exercises, templates
+
+
+def junyi_cfg(sample):
+    return {**CFG, "datasets": {"junyi2015": {"sample_users": sample}}}
+
+
+def test_junyi_clean_maps_fields_and_samples_reproducibly():
+    from lmsrag.datasets.junyi2015 import clean
+    raw, exercises, templates = junyi_inputs()
+    res = clean(raw, exercises, templates, junyi_cfg(5), tags={"fractions_1": "fractions"},
+                khan_types={("fractions_1", "0"), ("time_terminology", "analog_word")})
+    df = res.interactions
+    schema.validate(df)
+    assert df.user_id.nunique() == 5 and "0" not in set(df.user_id)
+    assert set(df.source_skill) == {"fractions_1", "time_terminology"}
+    assert set(df.skill_tag) == {"fractions", "junyi:time"}
+    assert df.item_id.str.contains(":").all() and (df.khan_slug == df.source_skill).all()
+    assert df.rt_ms.isna().sum() == 5  # one negative time_taken per sampled learner -> missing
+    assert set(df.section_type) == {"review", "practice"}
+    assert res.facts["raw_share_rows_on_khan_template"] == pytest.approx(2 / 3, abs=0.01)
+    again = clean(raw, exercises, templates, junyi_cfg(5), tags={"fractions_1": "fractions"})
+    assert set(again.interactions.user_id) == set(df.user_id)
+    steps = res.tables["a2_cleaning_junyi2015"]
+    assert dict(zip(steps.rule, steps.dropped))["drop exercises missing from the exercise table"] == 11 * 10 + 2
+
+
+def test_khan_problem_types_reads_direct_children_of_problems_block():
+    from lmsrag.data_tools.khan_problem_types import problem_types
+    html = """<div class="exercise"><div class="vars"><div id="not-a-type"></div></div>
+      <div class="problems">
+        <div id="analog"><div class="question"><div id="inner"></div></div></div>
+        <div data-type="analog"><div class="solution">x</div></div>
+        <div id="digital"></div>
+      </div><div class="hints"><div id="later"></div></div></div>"""
+    assert problem_types(html) == ["analog", "1", "digital"]
+
+
 def test_kept_vs_dropped_point_estimate_and_interval():
     rng = np.random.default_rng(3)
     df = pd.DataFrame({"user_id": rng.integers(0, 50, 4000), "correct": (rng.random(4000) < 0.6).astype(int),

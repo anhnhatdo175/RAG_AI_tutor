@@ -37,6 +37,7 @@ Cấu hình trong `configs/data.yaml`; mã trong `lmsrag/datasets/`; data card t
 ```powershell
 python -m lmsrag.datasets.build --config configs/data.yaml --only assist2009   # P1-01, khoảng 10 giây
 python -m lmsrag.datasets.build --config configs/data.yaml --only assist2012   # P1-02, khoảng 1 phút; cần tệp 3 GB trong lmsrag/data/raw/
+python -m lmsrag.datasets.build --config configs/data.yaml --only junyi2015    # P1-03, khoảng 3 phút
 ```
 
 Đầu ra: `lmsrag/artifacts/v2/interactions_<dataset>.parquet` (không commit) và bảng báo cáo `reports/tables/a1_*.csv`.
