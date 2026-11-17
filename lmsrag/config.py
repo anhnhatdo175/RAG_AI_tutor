@@ -15,7 +15,7 @@ ART = ROOT / "artifacts"
 ART.mkdir(parents=True, exist_ok=True)
 
 # ---- raw sources -----------------------------------------------------------
-ASSISTMENTS_CSV = REPO / "adaptiverag" / "skill_builder_data.csv"
+ASSISTMENTS_CSV = ROOT / "data" / "assistments" / "skill_builder_data.csv"
 GSM8K_FILES = [RAW / "gsm8k_train.jsonl", RAW / "gsm8k_test.jsonl"]
 MATH_FILES = [RAW / "math_test.jsonl"]
 KHAN_DIR = ROOT / "data" / "khan"          # optional: drop Khan Academy exports here

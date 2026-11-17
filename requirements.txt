@@ -6,11 +6,10 @@ faiss-cpu
 datasketch
 tiktoken
 groq
-matplotlib
-tqdm
 python-dotenv
 sentence-transformers
 transformers
 accelerate
 bitsandbytes
-sentencepiece
+torch
+pytest
