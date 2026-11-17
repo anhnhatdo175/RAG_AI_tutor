@@ -1,0 +1,8 @@
+section_type,rows,users,accuracy,dataset
+ChooseConditionSection,512,105,0.560546875,assist2012
+LinearSection,635264,11127,0.7043150564174894,assist2012
+MasterySection,1395481,15384,0.7054606977809085,assist2012
+NumericLimitSection,11,2,0.5454545454545454,assist2012
+PlacementsSection,1869,273,0.39753879079721777,assist2012
+RandomChildOrderSection,111775,4188,0.6791053455602774,assist2012
+RandomIterateSection,3154,1066,0.6350665821179454,assist2012

@@ -14,7 +14,7 @@ from pathlib import Path
 import yaml
 
 REPO = Path(__file__).resolve().parents[2]
-ADAPTERS = {"assist2009": "lmsrag.datasets.assist2009"}
+ADAPTERS = {"assist2009": "lmsrag.datasets.assist2009", "assist2012": "lmsrag.datasets.assist2012"}
 
 
 def load_config(path: Path) -> dict:

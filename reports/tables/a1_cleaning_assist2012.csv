@@ -1,0 +1,11 @@
+dataset,step,rule,applied,rows_before,rows_after,dropped,pct_dropped,users_after,events_after
+assist2012,0,raw file,True,6123270,6123270,0,0.0,46674,6123270
+assist2012,info,"rows with a skill, counted on the raw file",False,6123270,,2630080,42.9522,,
+assist2012,info,duplicate problem_log_id on the raw file,False,6123270,,0,0.0,,
+assist2012,1,drop original == 0 (scaffolding sub-questions),True,6123270,5819737,303533,4.957,46544,5819737
+assist2012,2,drop missing skill,True,5819737,2543887,3275850,56.2886,28812,2543887
+assist2012,3,"drop correct outside {0, 1} (partial credit 0.25/0.5/0.75)",True,2543887,2543677,210,0.0083,28812,2543677
+assist2012,4,drop duplicates on problem_log_id,True,2543677,2543677,0,0.0,28812,2543677
+assist2012,5,drop learners with < 20 rows,True,2543677,2453473,90204,3.5462,17863,2453473
+assist2012,6,drop rows whose skill has no canonical tag (SkillMapper),True,2453473,2162323,291150,11.8669,17823,2162323
+assist2012,7,re-apply: drop learners with < 20 rows after the skill filter,True,2162323,2148066,14257,0.6593,16887,2148066
