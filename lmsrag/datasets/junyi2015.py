@@ -43,20 +43,27 @@ def read_raw(path: Path, chunksize: int = 2_000_000) -> pd.DataFrame:
     return df
 
 
-def khan_tags(mapping_csv: Path, mapper: SkillMapper) -> dict[str, str]:
-    """khan_slug -> canonical tag via the reverse of the ASSISTments-to-Khan dictionary (first tag, sorted)."""
+def khan_tag_lists(mapping_csv: Path, mapper: SkillMapper) -> dict[str, list[str]]:
+    """khan_slug -> sorted canonical tags, through the reverse of the ASSISTments-to-Khan dictionary.
+
+    Uses the dictionary's ``canonical_tag`` column when present (v1), otherwise ``mapper.to_tag`` of the log skill.
+    """
     if not mapping_csv.is_file():
         return {}
     m = pd.read_csv(mapping_csv)
-    slug_col = "khan_slug"
     skill_col = "source_skill" if "source_skill" in m.columns else "assistments_skill"
-    m = m[m[slug_col].notna()]
+    m = m[m["khan_slug"].notna()]
     out: dict[str, set] = {}
-    for skill, slug in zip(m[skill_col], m[slug_col]):
-        tag = m.loc[m[skill_col] == skill, "canonical_tag"].iloc[0] if "canonical_tag" in m.columns else mapper.to_tag(skill)
+    for _, r in m.iterrows():
+        tag = r["canonical_tag"] if "canonical_tag" in m.columns else mapper.to_tag(r[skill_col])
         if isinstance(tag, str) and tag:
-            out.setdefault(slug, set()).add(tag)
-    return {slug: sorted(tags)[0] for slug, tags in out.items()}
+            out.setdefault(r["khan_slug"], set()).add(tag)
+    return {slug: sorted(tags) for slug, tags in out.items()}
+
+
+def khan_tags(mapping_csv: Path, mapper: SkillMapper) -> dict[str, str]:
+    """khan_slug -> its first canonical tag (the value stored as ``skill_tag``)."""
+    return {slug: tags[0] for slug, tags in khan_tag_lists(mapping_csv, mapper).items()}
 
 
 def template_types(problem_types_csv: Path) -> set[tuple[str, str]]:

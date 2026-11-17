@@ -1,0 +1,197 @@
+dataset,source_skill,rows,users,accuracy,skill_tag
+assist2012,Equation Solving Two or Fewer Steps,178944,7802,0.7224,Equation-Solving-Two-or-Fewer-Steps
+assist2012,Addition and Subtraction Fractions,142904,8846,0.6856,Addition-and-Subtraction-Fractions
+assist2012,Addition and Subtraction Integers,142669,8901,0.7211,Addition-and-Subtraction-Integers
+assist2012,Conversion of Fraction Decimals Percents,97025,7610,0.7514,Conversion-of-Fraction-Decimals-Percents
+assist2012,Multiplication and Division Integers,81107,6342,0.8496,Multiplication-and-Division-Integers
+assist2012,Multiplication and Division Positive Decimals,67788,6869,0.7327,Multiplication-and-Division-Positive-Decimals
+assist2012,Multiplication Fractions,65183,6709,0.6821,Multiplication-Fractions
+assist2012,Division Fractions,61675,6697,0.6747,Division-Fractions
+assist2012,Proportion,55759,5978,0.7283,Proportion
+assist2012,Addition and Subtraction Positive Decimals,52989,6338,0.8078,Addition-and-Subtraction-Positive-Decimals
+assist2012,Equation Solving More Than Two Steps,51512,3649,0.5452,Equation-Solving-More-Than-Two-Steps
+assist2012,Order of Operations All,49810,7248,0.661,Order-of-Operations-All
+assist2012,Exponents,45498,8073,0.764,Exponents
+assist2012,Divisibility Rules,42681,4464,0.6497,Divisibility-Rules
+assist2012,Distributive Property,35067,3684,0.6325,Distributive-Property
+assist2012,Rounding,33591,4137,0.7253,Rounding
+assist2012,"Order of Operations +,-,/,* () positive reals",32867,6200,0.713,Order-of-Operations-All
+assist2012,Least Common Multiple,29733,3424,0.6721,Least-Common-Multiple
+assist2012,Pythagorean Theorem,29485,3145,0.7075,Pythagorean-Theorem
+assist2012,Ordering Positive Decimals,29356,3807,0.8102,Ordering-Positive-Decimals
+assist2012,Simplifying Expressions positive exponents,27540,2021,0.6271,Algebraic-Simplification
+assist2012,Equivalent Fractions,27030,3609,0.6943,Equivalent-Fractions
+assist2012,Complementary and Supplementary Angles,25901,2852,0.8095,Complementary-and-Supplementary-Angles
+assist2012,Finding Percents,25468,4116,0.5926,Finding-Percents
+assist2012,Surface Area Rectangular Prism,24848,3288,0.5589,Surface-Area-Rectangular-Prism
+assist2012,Solving for a variable,24282,2408,0.6292,Solving-for-a-variable
+assist2012,Percent Of,23861,3913,0.6957,Percent-Of
+assist2012,Unit Rate,23766,3286,0.705,Unit-Rate
+assist2012,Ordering Fractions,22319,3095,0.797,Ordering-Fractions
+assist2012,Square Root,22218,4743,0.8007,Square-Root
+assist2012,Write Linear Equation from Ordered Pairs,21863,2517,0.462,Write-Linear-Equation-from-Ordered-Pairs
+assist2012,Polynomial Factors,21323,1380,0.6509,Polynomial-Factors
+assist2012,Finding y-intercept from Linear Equation,21026,2268,0.6881,
+assist2012,Finding Slope From Equation,20778,2271,0.6438,Finding-Slope-From-Equation
+assist2012,Mean,20223,4192,0.6231,Mean
+assist2012,Substitution,19920,3435,0.7515,
+assist2012,Ordering Integers,19662,2419,0.8773,Ordering-Integers
+assist2012,Median,19144,3951,0.6815,Median
+assist2012,Circumference,19143,3552,0.6778,Circumference
+assist2012,Finding Slope from Ordered Pairs,18621,3057,0.648,Finding-Slope-From-Equation
+assist2012,Scientific Notation,18617,3364,0.7379,Scientific-Notation
+assist2012,Combining Like Terms,18212,1833,0.5233,
+assist2012,Area Triangle,18121,3568,0.6831,Area-Triangle
+assist2012,Pattern Finding,18082,3679,0.6004,
+assist2012,Probability of a Single Event,17911,3648,0.7325,Probability-of-a-Single-Event
+assist2012,Solving Systems of Linear Equations by Graphing,16410,1752,0.6438,Solving-Systems-of-Linear-Equations
+assist2012,Area Circle,16181,3016,0.6239,Area-Circle
+assist2012,Solving Systems of Linear Equations,16129,1877,0.501,Solving-Systems-of-Linear-Equations
+assist2012,Perimeter of a Polygon,15139,2556,0.7413,Perimeter-of-a-Polygon
+assist2012,Unit Conversion Within a System,15027,2003,0.6601,Unit-Conversion-Within-a-System
+assist2012,Interior Angles Figures with More than 3 Sides,14726,1915,0.666,Interior-Angles-Figures-with-More-than-3-Sides
+assist2012,Calculations with Similar Figures,14670,1993,0.6802,Calculations-with-Similar-Figures
+assist2012,Range,14249,3207,0.7699,Range
+assist2012,Area Rectangle,13822,3375,0.8032,Area-Rectangle
+assist2012,Volume Rectangular Prism,13363,3045,0.7425,Volume-Rectangular-Prism
+assist2012,Prime Number,13354,2277,0.7603,Prime-Number
+assist2012,Area Trapezoid,12695,2474,0.5741,Area-Trapezoid
+assist2012,Greatest Common Factor,12558,3176,0.698,Greatest-Common-Factor
+assist2012,Absolute Value,12515,3261,0.7181,Absolute-Value
+assist2012,Histogram as Table or Graph,12329,2013,0.6977,
+assist2012,Write Linear Equation from Slope and y-intercept,11897,2372,0.7475,
+assist2012,Interior Angles Triangle,11730,2274,0.7651,Interior-Angles-Triangle
+assist2012,Properties and Classification Quadrilaterals,11010,1762,0.8912,
+assist2012,"Angles - Obtuse, Acute, and Right",10944,2165,0.8846,Angles-Obtuse-Acute-and-Right
+assist2012,Write Linear Equation from Graph,10534,1343,0.6426,Write-Linear-Equation-from-Ordered-Pairs
+assist2012,Point Plotting,10383,2972,0.813,
+assist2012,Probability of Two Distinct Events,10243,1976,0.4915,Probability-of-Two-Distinct-Events
+assist2012,Area Parallelogram,9955,2532,0.8194,Area-Parallelogram
+assist2012,Scale Factor,9436,1478,0.6629,Calculations-with-Similar-Figures
+assist2012,Box and Whisker,9191,1535,0.6612,
+assist2012,Surface Area Cylinder,8882,1677,0.4998,Surface-Area-Cylinder
+assist2012,Area Irregular Figure,8871,1372,0.5713,Area-Irregular-Figure
+assist2012,Percent Increase or Decrease,8681,1429,0.5082,
+assist2012,Write Linear Equation from Situation,8594,1824,0.7299,Write-Linear-Equation-from-Ordered-Pairs
+assist2012,Finding Slope From Situation,8107,2106,0.5591,Finding-Slope-From-Equation
+assist2012,Scatter Plot,7746,1613,0.8017,
+assist2012,Recognize Linear Pattern,7696,1245,0.7872,Recognize-Linear-Pattern
+assist2012,Volume Cylinder,7284,1889,0.5803,Volume-Cylinder
+assist2012,Multiplying non Monomial Polynomials,6732,1003,0.7181,
+assist2012,Counting Methods,6658,2033,0.7435,Counting-Methods
+assist2012,Volume Prism,6542,1291,0.7622,
+assist2012,Addition Whole Numbers,6465,1470,0.8492,Addition-Whole-Numbers
+assist2012,Making a Table from an Equation,6455,1029,0.6807,
+assist2012,Venn Diagram,6306,1441,0.6637,
+assist2012,Angles on Parallel Lines Cut by a Transversal,6247,1911,0.7981,Angles-on-Parallel-Lines-Cut-by-a-Transversal
+assist2012,Properties and Classification Polygons with 5 or more sides,5966,1230,0.7635,
+assist2012,Prime Factor,5744,1269,0.7211,
+assist2012,Nets of 3D Figures,5707,1645,0.9338,
+assist2012,Multiplication Whole Numbers,5467,1366,0.7134,Multiplication-Whole-Numbers
+assist2012,Number Line,5386,2180,0.713,
+assist2012,Volume Cone,5242,977,0.5134,
+assist2012,Graph Shape,5153,1400,0.7677,
+assist2012,Congruence,5097,1518,0.8715,
+assist2012,Subtraction Whole Numbers,5074,1634,0.8477,Subtraction-Whole-Numbers
+assist2012,Properties and Classification Triangles,4970,1560,0.7549,
+assist2012,Unit Conversion Standard to Metric,4647,683,0.5528,
+assist2012,Division Whole Numbers,3866,1705,0.6619,
+assist2012,Volume Pyramid,3792,612,0.6461,
+assist2012,Interpreting Coordinate Graphs,3512,841,0.6378,
+assist2012,Parallel and Perpendicular Lines,3262,1366,0.7244,
+assist2012,Solving Inequalities,3229,1186,0.564,Solving-Inequalities
+assist2012,Volume Sphere,3207,821,0.5943,Volume-Sphere
+assist2012,Picking Equation and Inequality from Choices,2999,1248,0.5165,
+assist2012,"Expanded, Standard and Word Notation",2942,567,0.7825,
+assist2012,Algebraic Solving,2861,1020,0.525,Solving-for-a-variable
+assist2012,Surface Area Sphere,2813,702,0.6626,
+assist2012,Computation with Real Numbers,2777,617,0.6583,Computation-with-Real-Numbers
+assist2012,"Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable",2685,564,0.8097,Polynomial-Vocabulary
+assist2012,Properties and Classification Circle,2633,788,0.7847,
+assist2012,Estimation,2583,672,0.6531,
+assist2012,Surface Area of Prism,2454,275,0.6769,
+assist2012,Picking Expressions From Choices,2413,403,0.6983,
+assist2012,Ordering Real Numbers,2329,1085,0.6325,Ordering-Real-Numbers
+assist2012,Properties and Classification Prism,2293,218,0.6324,
+assist2012,Composition of Function Adding,2284,307,0.6659,
+assist2012,Rate,2060,233,0.6209,Unit-Rate
+assist2012,X-Y Graph Reading,1770,215,0.5644,
+assist2012,D.4.8-understanding-concept-of-probabilities,1746,471,0.874,Probability-of-a-Single-Event
+assist2012,Line Plot,1714,1187,0.5648,
+assist2012,Factoring Polynomials Standard,1661,181,0.8886,
+assist2012,Properties and Classification Rectangular Prisms,1661,480,0.8194,
+assist2012,Quadratic Formula to Solve Quadratic Equation,1557,229,0.4631,Quadratic-Formula-to-Solve-Quadratic-Equation
+assist2012,Reflection,1532,676,0.7148,Reflection
+assist2012,Writine Expression from Diagrams,1521,273,0.6062,
+assist2012,Translations,1320,560,0.8205,Translations
+assist2012,Mode,1287,592,0.8244,Mode
+assist2012,Fraction Of,1162,684,0.6196,Fraction-Of
+assist2012,Definition Pi,1140,586,0.6614,
+assist2012,Distance Formula,922,623,0.5933,
+assist2012,Percent Discount,841,267,0.4721,Percent-Discount
+assist2012,Recognizing Equivalent Expressions,820,319,0.4256,
+assist2012,Stem and Leaf Plot,800,347,0.6288,
+assist2012,English and Metric Terminology,783,487,0.6807,
+assist2012,Inverse Relations,760,444,0.6566,
+assist2012,Commutative Property,757,158,0.6724,
+assist2012,Subtraction Mixed Fractions,703,378,0.4154,
+assist2012,Division Mixed Fractions,694,381,0.1686,
+assist2012,Graphing Linear Equations,680,230,0.9779,
+assist2012,Multiplication Division by Powers of 10,654,183,0.4664,
+assist2012,Percents,601,70,0.4709,Percent-Of
+assist2012,Circle Graph,600,239,0.8217,
+assist2012,Division Proper Fractions,582,362,0.2801,
+assist2012,Multiplication Mixed Fractions,582,363,0.1907,
+assist2012,Sampling Techniques,556,276,0.4982,
+assist2012,Multiplication Proper Fractions,555,349,0.6541,
+assist2012,Multiplication Positive Decimals,555,339,0.2649,
+assist2012,Nets of 3D Objects,509,297,0.8959,
+assist2012,Subtraction Proper Fractions,507,337,0.4162,
+assist2012,Addition Mixed Fractions,501,328,0.2136,
+assist2012,Addition Proper Fractions,501,328,0.4731,
+assist2012,Midpoint,490,453,0.6429,Midpoint
+assist2012,Comparing and Identifying Slope/Rate of Change,484,312,0.6798,
+assist2012,Line of Best-Fit,483,97,0.7308,
+assist2012,Circle Concept,481,305,0.4033,
+assist2012,Symbolization,466,80,0.5279,
+assist2012,Concept Volume,459,319,0.4728,
+assist2012,Table,440,343,0.6614,
+assist2012,Choose an Equation from Given Information,429,60,0.331,Choose-an-Equation-from-Given-Information
+assist2012,Finding Slope from Graph,429,272,0.7343,
+assist2012,Effect of Changing Dimensions of a Shape Prportionally,412,230,0.6772,Effect-of-Changing-Dimensions-Proportionally
+assist2012,Surface Area Pyramid,407,266,0.2457,
+assist2012,Volume of 3D Objects,394,58,0.4822,
+assist2012,Common Multiple,375,138,0.712,
+assist2012,Finding Ratios,360,202,0.7667,
+assist2012,Factoring Trinomials,321,56,0.5358,
+assist2012,Graphing Inequalities on a number line,315,239,0.7016,
+assist2012,Surface Area of 3D Objects,302,34,0.7285,
+assist2012,Transformation,300,102,0.5233,
+assist2012,Square Roots,288,70,0.6181,
+assist2012,Associative Property,284,146,0.4401,
+assist2012,Algebraic Simplification,259,137,0.7297,Algebraic-Simplification
+assist2012,Solving System of Equation,248,65,0.3105,
+assist2012,Ordering Whole Numbers,235,136,0.8681,
+assist2012,Rotations,226,178,0.8451,Rotations
+assist2012,Bar Graph,219,138,0.863,
+assist2012,"Tree Diagrams, Lists for Counting",180,105,0.7667,
+assist2012,Common Factor,139,91,0.6403,
+assist2012,Quadratic Equation Solving,114,25,0.2368,
+assist2012,Elapsed Time,88,88,0.7159,
+assist2012,Solve Quadratic Equations Using Factoring,80,67,0.85,
+assist2012,Odd and Even Number,75,75,0.8267,
+assist2012,Mean-Median-Mode-Range Differentiation,63,60,0.6984,
+assist2012,Properties and Clasification of Pyramid,60,60,0.4333,
+assist2012,Geometric Definitions,52,50,0.5,
+assist2012,Reading a Ruler or Scale,44,25,0.6591,
+assist2012,Equal As Balance Concept,43,43,0.8605,
+assist2012,Perimeter of an Irregular Figure,42,41,0.2857,
+assist2012,Calculation with + - * /,40,12,0.675,
+assist2012,Similar Figures,26,20,0.6923,
+assist2012,Recognizing Expressions or Equations from Diagrams,24,7,0.5,
+assist2012,Properties of Numbers,14,2,0.5714,
+assist2012,Line Symmetry,12,3,0.6667,
+assist2012,Recognize Quadratic Pattern,6,6,0.0,Recognize-Quadratic-Pattern
+assist2012,Combinatorics,4,1,0.0,
+assist2012,Co-ordinate Points,1,1,1.0,
+assist2012,Rotational Symmetry,1,1,1.0,

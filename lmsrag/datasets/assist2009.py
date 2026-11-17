@@ -13,7 +13,7 @@ import pandas as pd
 
 from ..skill_mapping import SkillMapper
 from . import schema
-from .cleaning import CleaningLog, kept_vs_dropped
+from .cleaning import CleaningLog, kept_vs_dropped, skill_counts
 from .skill_builder import skill_builder_table
 from .splits import assign_splits
 
@@ -56,6 +56,7 @@ def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | None = None) -> Ad
     tag = {s: mapper.to_tag(s) for s in df["source_skill"].unique()}
     df["skill_tag"] = df["source_skill"].map(tag)
     mapped = df["skill_tag"].notna()
+    counts = skill_counts(df, DATASET)
     comparison = kept_vs_dropped(df, mapped, n_boot, seed, reason=mapper.unmapped_reason)
     unmapped_rows = int((~mapped).sum())
     unmapped_pct = 100.0 * unmapped_rows / max(len(df), 1)
@@ -85,7 +86,7 @@ def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | None = None) -> Ad
              "events_final": int(out[["user_id", "ts"]].drop_duplicates().shape[0])}
     return AdapterResult(out, {"a1_cleaning_assist2009": log.table(DATASET),
                                "a1_kept_vs_dropped": comparison.assign(dataset=DATASET),
-                               "a1_skill_builder": sb}, facts)
+                               "a1_skill_builder": sb, "a1_skill_counts_assist2009": counts}, facts)
 
 
 def build(cfg: dict, repo: Path) -> AdapterResult:

@@ -1,0 +1,111 @@
+dataset,source_skill,rows,users,accuracy,skill_tag
+assist2009,Conversion of Fraction Decimals Percents,17568,1044,0.6376,Conversion-of-Fraction-Decimals-Percents
+assist2009,Equation Solving Two or Fewer Steps,15858,722,0.653,Equation-Solving-Two-or-Fewer-Steps
+assist2009,Addition and Subtraction Integers,12164,1083,0.601,Addition-and-Subtraction-Integers
+assist2009,Addition and Subtraction Fractions,9264,1056,0.6548,Addition-and-Subtraction-Fractions
+assist2009,Percent Of,8792,900,0.5967,Percent-Of
+assist2009,Proportion,8673,701,0.646,Proportion
+assist2009,Ordering Fractions,8193,816,0.7923,Ordering-Fractions
+assist2009,Finding Percents,7494,723,0.5462,Finding-Percents
+assist2009,Probability of Two Distinct Events,7265,408,0.5056,Probability-of-Two-Distinct-Events
+assist2009,Ordering Positive Decimals,6961,827,0.7473,Ordering-Positive-Decimals
+assist2009,Multiplication and Division Integers,6686,848,0.7906,Multiplication-and-Division-Integers
+assist2009,Absolute Value,6629,881,0.762,Absolute-Value
+assist2009,Table,6554,615,0.7421,
+assist2009,Pythagorean Theorem,6476,258,0.6297,Pythagorean-Theorem
+assist2009,Circle Graph,6157,592,0.5257,
+assist2009,Square Root,5619,325,0.7781,Square-Root
+assist2009,Subtraction Whole Numbers,5619,843,0.7115,Subtraction-Whole-Numbers
+assist2009,Venn Diagram,5573,501,0.7179,
+assist2009,Multiplication Fractions,5474,744,0.6606,Multiplication-Fractions
+assist2009,Calculations with Similar Figures,5437,349,0.6897,Calculations-with-Similar-Figures
+assist2009,Median,5361,652,0.6603,Median
+assist2009,Pattern Finding ,5135,411,0.6717,
+assist2009,Probability of a Single Event,5073,597,0.7946,Probability-of-a-Single-Event
+assist2009,Addition and Subtraction Positive Decimals,4920,712,0.5837,Addition-and-Subtraction-Positive-Decimals
+assist2009,Counting Methods,4748,400,0.4985,Counting-Methods
+assist2009,Addition Whole Numbers,4493,894,0.763,Addition-Whole-Numbers
+assist2009,Equation Solving More Than Two Steps,4467,344,0.6257,Equation-Solving-More-Than-Two-Steps
+assist2009,Division Fractions,3882,665,0.6752,Division-Fractions
+assist2009,Range,3865,650,0.7646,Range
+assist2009,Stem and Leaf Plot,3746,442,0.6807,
+assist2009,Box and Whisker,3657,430,0.7476,
+assist2009,Ordering Integers,3386,460,0.7865,Ordering-Integers
+assist2009,Least Common Multiple,3169,342,0.6491,Least-Common-Multiple
+assist2009,Order of Operations All,3019,552,0.633,Order-of-Operations-All
+assist2009,Unit Rate,3012,491,0.4462,Unit-Rate
+assist2009,Equivalent Fractions,2929,418,0.5142,Equivalent-Fractions
+assist2009,Exponents,2821,572,0.7586,Exponents
+assist2009,Divisibility Rules,2776,266,0.634,Divisibility-Rules
+assist2009,Mean,2660,560,0.5308,Mean
+assist2009,"Order of Operations +,-,/,* () positive reals",2100,596,0.6519,Order-of-Operations-All
+assist2009,Multiplication and Division Positive Decimals,1962,346,0.7768,Multiplication-and-Division-Positive-Decimals
+assist2009,Write Linear Equation from Graph,1923,310,0.4129,Write-Linear-Equation-from-Ordered-Pairs
+assist2009,Number Line,1894,166,0.595,
+assist2009,Solving Inequalities,1893,165,0.5954,Solving-Inequalities
+assist2009,Mode,1859,537,0.8774,Mode
+assist2009,Solving for a variable,1774,301,0.6246,Solving-for-a-variable
+assist2009,Histogram as Table or Graph,1758,214,0.7122,
+assist2009,Circumference ,1754,251,0.6904,Circumference
+assist2009,Scatter Plot,1748,319,0.8799,
+assist2009,Scientific Notation,1647,227,0.7498,Scientific-Notation
+assist2009,Estimation,1601,214,0.7908,
+assist2009,Ordering Real Numbers,1522,191,0.6754,Ordering-Real-Numbers
+assist2009,Surface Area Rectangular Prism,1478,281,0.5602,Surface-Area-Rectangular-Prism
+assist2009,Unit Conversion Within a System,1459,352,0.5401,Unit-Conversion-Within-a-System
+assist2009,Complementary and Supplementary Angles,1293,360,0.7007,Complementary-and-Supplementary-Angles
+assist2009,Write Linear Equation from Situation,1283,219,0.8652,Write-Linear-Equation-from-Ordered-Pairs
+assist2009,Volume Cylinder,1232,282,0.5601,Volume-Cylinder
+assist2009,Area Circle,1102,243,0.6869,Area-Circle
+assist2009,Effect of Changing Dimensions of a Shape Prportionally,1090,210,0.5514,Effect-of-Changing-Dimensions-Proportionally
+assist2009,Write Linear Equation from Ordered Pairs,949,223,0.549,Write-Linear-Equation-from-Ordered-Pairs
+assist2009,Rounding,940,222,0.7064,Rounding
+assist2009,Interior Angles Figures with More than 3 Sides,934,228,0.606,Interior-Angles-Figures-with-More-than-3-Sides
+assist2009,Area Trapezoid,893,254,0.5767,Area-Trapezoid
+assist2009,Volume Rectangular Prism,857,312,0.8378,Volume-Rectangular-Prism
+assist2009,Volume Sphere,770,182,0.5948,Volume-Sphere
+assist2009,Area Irregular Figure,750,194,0.5413,Area-Irregular-Figure
+assist2009,Interior Angles Triangle,683,225,0.6559,Interior-Angles-Triangle
+assist2009,Prime Number,635,150,0.7795,Prime-Number
+assist2009,Fraction Of,598,282,0.8278,Fraction-Of
+assist2009,Perimeter of a Polygon,535,247,0.6822,Perimeter-of-a-Polygon
+assist2009,Congruence,529,320,0.8941,
+assist2009,Surface Area Cylinder,491,135,0.3157,Surface-Area-Cylinder
+assist2009,Area Rectangle,449,195,0.8664,Area-Rectangle
+assist2009,D.4.8-understanding-concept-of-probabilities,414,184,0.8599,Probability-of-a-Single-Event
+assist2009,Reflection,396,145,0.3434,Reflection
+assist2009,Translations,393,159,0.4784,Translations
+assist2009,Polynomial Factors,392,13,0.648,Polynomial-Factors
+assist2009,Algebraic Solving,385,86,0.3714,Solving-for-a-variable
+assist2009,Rotations,362,128,0.1133,Rotations
+assist2009,Solving Systems of Linear Equations by Graphing,352,19,0.6534,Solving-Systems-of-Linear-Equations
+assist2009,"Angles - Obtuse, Acute, and Right",300,9,0.5967,Angles-Obtuse-Acute-and-Right
+assist2009,Scale Factor,283,82,0.6572,Calculations-with-Similar-Figures
+assist2009,Nets of 3D Figures,251,210,0.9721,
+assist2009,Area Triangle,250,147,0.856,Area-Triangle
+assist2009,Angles on Parallel Lines Cut by a Transversal,248,114,0.8105,Angles-on-Parallel-Lines-Cut-by-a-Transversal
+assist2009,Solving Systems of Linear Equations,234,22,0.1923,Solving-Systems-of-Linear-Equations
+assist2009,Greatest Common Factor,218,133,0.7477,Greatest-Common-Factor
+assist2009,Percents,117,41,0.3333,Percent-Of
+assist2009,Multiplication Whole Numbers,109,44,0.4404,Multiplication-Whole-Numbers
+assist2009,Simplifying Expressions positive exponents,108,5,0.6481,Algebraic-Simplification
+assist2009,Area Parallelogram,103,83,0.9223,Area-Parallelogram
+assist2009,Finding Slope From Equation,102,6,0.7255,Finding-Slope-From-Equation
+assist2009,Rate,91,39,0.3736,Unit-Rate
+assist2009,Algebraic Simplification,90,15,0.4,Algebraic-Simplification
+assist2009,"Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable",77,6,0.6623,Polynomial-Vocabulary
+assist2009,Slope,64,29,0.7969,Finding-Slope-From-Equation
+assist2009,Intercept,64,29,0.7969,Intercept
+assist2009,Linear Equations,64,29,0.7969,Linear-Equations
+assist2009,Choose an Equation from Given Information,64,29,0.7969,Choose-an-Equation-from-Given-Information
+assist2009,Percent Discount,47,29,0.234,Percent-Discount
+assist2009,Recognize Linear Pattern,36,8,0.6944,Recognize-Linear-Pattern
+assist2009,Interpreting Coordinate Graphs ,32,32,0.5312,
+assist2009,Midpoint,32,30,0.6562,Midpoint
+assist2009,Computation with Real Numbers,20,20,0.2,Computation-with-Real-Numbers
+assist2009,Distributive Property,9,2,0.7778,Distributive-Property
+assist2009,Recognize Quadratic Pattern,8,2,0.625,Recognize-Quadratic-Pattern
+assist2009,Reading a Ruler or Scale,4,4,0.0,
+assist2009,Finding Slope From Situation,4,1,0.0,Finding-Slope-From-Equation
+assist2009,Quadratic Formula to Solve Quadratic Equation,3,1,0.0,Quadratic-Formula-to-Solve-Quadratic-Equation
+assist2009,Finding Slope from Ordered Pairs,1,1,0.0,Finding-Slope-From-Equation

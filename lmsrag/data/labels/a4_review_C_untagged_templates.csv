@@ -1,0 +1,204 @@
+﻿row,khan_slug,tag_now,template_title,usable_problems,sample_question,decision,assistments_skill,note
+1,balancing_chemical_equations,khan:balancing_chemical_equations,Balancing chemical equations,2,"Balance the following chemical equation:
+$\qquad$
+$\text{H}_2 +$
+$\text{O}_2 \rightarrow$
+$\text{H}_2\text{O}$",,,
+2,completing_the_square_in_quadratic_expressions,khan:completing_the_square_in_quadratic_expressions,Completing the square,4,"Complete the square to rewrite this expression in the form $(x + a)^2 + b$ .
+$a$ and $b$ can be positive or negative.
+$\qquad x^{2}-10x+44$",,,
+3,defined_and_undefined_matrix_operations,khan:defined_and_undefined_matrix_operations,Defined and undefined matrix operations,4,"$\textbf C = \left[\begin{array}{rr}0 & 3 \\ -1 & 0 \\ 0 & 0\end{array}\right]$
+$\textbf B = \left[\begin{array}{r}0 \\ -2 \\ 3\end{array}\right]$
+Is $\textbf C-\textbf B$ defined?
+Yes
+No",,,
+4,making_a_decade,khan:making_a_decade,Making a decade,8,"$\Large{
+37 + 3
+= ?}$",,,
+5,matrix_addition_and_subtraction,khan:matrix_addition_and_subtraction,Matrix addition and subtraction,4,"$
+\Large{
+\left[\begin{array}{rr}\color{#6495ED}{-1} & \color{#6495ED}{3} \\ \color{#6495ED}{1} & \color{#6495ED}{1}\end{array}\right]+\left[\begin{array}{rr}\color{#28AE7B}{-2} & \color{#28AE7B}{3} \\ \color{#28AE7B}{0} & \color{#28AE7B}{3}\end{array}\right] = {?}
+}
+$",,,
+6,matrix_dimensions,khan:matrix_dimensions,Matrix dimensions,4,"$\textbf E = \left[\begin{array}{rrr}1 & 1 & -2\end{array}\right]$
+What are the dimensions of matrix $\textbf E$ ?
+$\times$",,,
+7,matrix_inverse_2x2,khan:matrix_inverse_2x2,Inverse of a 2x2 matrix,10,"$\textbf E = \left[\begin{array}{rr}1 & 2 \\ 0 & -1\end{array}\right]$
+What is $\textbf E^{-1}$ ?
+$\textbf E^{-1}$ does not exist",,,
+8,multiplying_a_matrix_by_a_matrix,khan:multiplying_a_matrix_by_a_matrix,Multiplying a matrix by a matrix,4,"$\textbf A = \left[\begin{array}{rr}-1 & 3 \\ 2 & 1\end{array}\right]$
+$\textbf C = \left[\begin{array}{rr}-2 & 4 \\ 1 & 4\end{array}\right]$
+What is $\textbf A\textbf C$ ?",,,
+9,multiplying_a_matrix_by_a_vector,khan:multiplying_a_matrix_by_a_vector,Multiplying a matrix by a vector,4,"$\textbf C = \left[\begin{array}{rr}-1 & 3 \\ 2 & 1\end{array}\right]$
+$\textbf w = \left[\begin{array}{r}-2 \\ 4\end{array}\right]$
+What is $\textbf C\textbf w$ ?",,,
+10,scalar_matrix_multiplication,khan:scalar_matrix_multiplication,Scalar matrix multiplication,4,"$
+\Large{
+\color{#28AE7B}{-3}
+\times
+\left[\begin{array}{rr}\color{#6495ED}{-1} & \color{#6495ED}{3} \\ \color{#6495ED}{1} & \color{#6495ED}{1}\end{array}\right] = {?}
+}
+$",,,
+11,adding_and_subtracting_rational_expressions,rule,Adding and subtracting rational expressions 1,3,"Simplify the following expression:
+$
+\dfrac{p}{p - 3}-
+\dfrac{p + 5}{p - 3}
+$",,,
+12,adding_and_subtracting_rational_expressions_0.5,rule,Adding and subtracting rational expressions 0.5,8,"Simplify the following expression:
+$
+\dfrac{-9n}{5}+
+\dfrac{6n}{5}
+$",,,
+13,adding_and_subtracting_rational_expressions_1.5,rule,Adding and subtracting rational expressions 1.5,2,"Simplify the following expression:
+$
+\dfrac{15h^2}{5fh - 5h}+
+\dfrac{5h^2}{5fh - 5h}$
+You can assume $f,h \neq 0$ .",,,
+14,adding_and_subtracting_rational_expressions_2,rule,Adding and subtracting rational expressions 2,4,"Simplify the following expression:
+$
+\dfrac{5x}{2}+
+\dfrac{x}{9}$",,,
+15,adding_and_subtracting_rational_numbers,rule,Adding and subtracting rational numbers,4,"$
+128\% - 1.375 = {?}
+$",,,
+16,cube_roots_2,rule,Cube roots 2,4,"$\Large{\sqrt[3]{320} = \text{?}}$
+$\sqrt[3]{}$",,,
+17,decasteljau,rule,De Casteljau algorithm,3,"A parabola is created with a string construction from the control points, $A$ , $B$ and $C$ .
+What is the coordinate of a point, $P$ , if it is $\dfrac{1}{2}$ of the way along the parabola,
+from $A$ to $C$ ?
+$P = ($
+,
+$)$",,,
+18,dividing_polynomials_by_binomials_1,rule,Dividing polynomials by binomials 1,8,"Simplify the right-hand side of the equation below and state the condition under which the simplification is valid.
+$x = \dfrac{n^2 - 64}{n - 8}$
+$x = $
+$\space n \neq \space $",,,
+19,dividing_polynomials_by_binomials_2,rule,Dividing polynomials by binomials 2,4,"Simplify the right-hand side of the equation below and state the condition under which the simplification is valid.
+$x =
+\dfrac{6n^2 + 48n - 54}{n - 1}
+$
+$x = $
+$n \neq $",,,
+20,dividing_polynomials_by_binomials_3,rule,Dividing polynomials by binomials 3,8,"Simplify the right-hand side of the equation below and state the condition under which the simplification is valid.
+$y = \dfrac{-5x^2- x+4}{-5x + 4}$
+$y = $
+$x \neq \space $",,,
+21,dividing_rational_numbers,rule,Dividing rational numbers,16,"$
+-\dfrac{2}{6} \div \left(\dfrac{6}{5} \div -\dfrac{6}{2}\right) = {?}
+$",,,
+22,expected_value,rule,Expected value,11,"For a game at the carnival you get to roll a ten-sided die, numbered from $1$ to $10$ .
+If you roll a $6$ , you win $$9$ .
+Unfortunately, if you roll anything else, you lose $$8$ .
+How much money do you expect to make (or lose) per game?
+$$$",,,
+23,extraneous_solutions,rule,Extraneous solutions to rational equations,4,"What is the extraneous solution to this equation?
+$\dfrac{x^2 - 5}{x - 6}
+= \dfrac{7x - 11}{x - 6}$
+$x = 6$
+$x = -6$
+No extraneous solutions",,,
+24,ideal_stoichiometry,rule,Ideal stoichiometry,4,"Given the following reaction:
+$\qquad
+\text{CH}_4
++ 2\text{O}_2
+\rightarrow
+\text{CO}_2
++ 2\text{H}_2\text{O}
+$
+How many moles of $\text{CO}_2$ will be produced from
+$28 \text{g}$ of $\text{CH}_4$ , assuming $\text{O}_2$ is available in excess?
+moles (you can round to the nearest tenth of a mole)",,,
+25,limiting_reagent_stoichiometry,rule,Limiting reagent stoichiometry,4,"Given the following reaction:
+$\qquad
+\text{CH}_4 +
+2\text{O}_2 \rightarrow
+\text{CO}_2
++ 2\text{H}_2\text{O}
+$
+How many grams of $\text{CO}_2$ will be produced from
+$10 \text{g}$ of $\text{CH}_4$ and
+$115 \text{g}$ of $\text{O}_2$ ?
+grams (you can round to the nearest gram)",,,
+26,logarithms_1.5,rule,Evaluating logarithms 2,8,$\large{\log_{5}} 25 = \text{?}$,,,
+27,matrix_determinant_2x2,rule,Determinant of a 2x2 matrix,4,"$\textbf A = \left[\begin{array}{rr}-1 & 3 \\ 2 & 1\end{array}\right]$
+What is the determinant of $\textbf A$ ?",,,
+28,matrix_determinant_3x3,rule,Determinant of a 3x3 matrix,4,"$\textbf C = \left[\begin{array}{rrr}-1 & 3 & 2 \\ 1 & -2 & 4 \\ 1 & 4 & -1\end{array}\right]$
+What is the determinant of $\textbf C$ ?",,,
+29,matrix_inverse_3x3,rule,Inverse of a 3x3 matrix,3,"$\textbf E = \left[\begin{array}{rrr}0 & 2 & 1 \\ 1 & 2 & 0 \\ 2 & 2 & 0\end{array}\right]$
+What is $\textbf E^{-1}$ ?",,,
+30,multiplying_and_dividing_rational_expressions_1,rule,Multiplying and dividing rational expressions 1,1,"Simplify the following expression:
+$
+\dfrac{p - 3}{p} \times
+\dfrac{1}{5}$",,,
+31,multiplying_and_dividing_rational_expressions_2,rule,Multiplying and dividing rational expressions 2,4,"Simplify the following expression:
+$
+\dfrac{9}{5n - 9} \times
+\dfrac{9n}{5}$",,,
+32,multiplying_and_dividing_rational_expressions_3,rule,Multiplying and dividing rational expressions 3,4,"Simplify the following expression and state the condition under which the simplification is valid.
+You can assume that $n \neq 0$ .
+$
+\dfrac{5n(3n + 7)}{-3} \times
+\dfrac{5}{3n(3n + 7)}
+$
+$n \neq \space$",,,
+33,multiplying_rational_numbers,rule,Multiplying rational numbers,12,"Solve the following expression and give your answer as a decimal.
+$
+64\% \times -0.75 = {?}
+$",,,
+34,partial_fraction_expansion_1,rule,Partial fraction expansion,4,"Expand
+$\dfrac{-x-5}{x^2-1}$
+using partial fractions.
+$+$
+$x-$
+$x-$",,,
+35,probability_with_perm_comb,rule,Probability with permutations and combinations,7,"There are $8$ students in a class: $5$ boys and
+$3$ girls.
+If the teacher picks a group of $3$ at random, what is the probability that
+everyone in the group is a boy?",,,
+36,pythagorean_identities,rule,Pythagorean identities,15,"$\dfrac{\sin\theta}
+{\sin^2 \theta + \cos^2 \theta} = \; ?$
+$\csc\theta$
+$\sin\theta$
+$\cot\theta$",,,
+37,reciprocal_trig_funcs,rule,Reciprocal trig functions,11,"$\overline{AC}$ is $6$ units long
+$\overline{BC}$ is $8$ units long
+$\overline{AB}$ is $10$ units long
+What is $\csc(\angle ABC)?$",,,
+38,simplifying_rational_expressions_1,rule,Simplifying rational expression with exponent properties,4,"Simplify the following expression:
+$\dfrac{63n}{54n^5}$
+You can assume $n \neq 0$ .",,,
+39,simplifying_rational_expressions_2,rule,Simplifying rational expressions 2,3,"Simplify the following expression:
+$\dfrac{5n - 45}{-15n - 35}$
+You can assume $n \neq 0$ .",,,
+40,simplifying_rational_expressions_3,rule,Simplifying rational expressions 3,4,"Simplify the following expression and state the condition under which the simplification is valid:
+$\dfrac{n^2 + 4n - 5}{n^2 + 5n}$
+$n \neq \space$",,,
+41,solutions_to_quadratic_equations_0.5,rule,Solutions to quadratic equations,4,"Describe the solutions to the following quadratic equation:
+$9x^{2}-6x+1 = 0$
+One rational solution
+Two rational solutions
+Two irrational solutions",,,
+42,solving_rational_equations_2,rule,Solving rational equations 2,4,"Solve for $n$ ,
+$
+-\dfrac{3n - 1}{n^2} =
+-\dfrac{9}{4n^2} - \dfrac{1}{n^2}
+$
+$n = \space$",,,
+43,trig_addition_identities,rule,Addition and subtraction trig identities,12,"$\sin(\angle ABC
+- 30^{\circ}) = \; ?$
+$\dfrac{12}{25}\sqrt{3}-\dfrac{7}{50}$
+$\dfrac{12}{25}\sqrt{3}+\dfrac{7}{50}$
+$\dfrac{7}{50}\sqrt{3}+\dfrac{12}{25}$
+$\dfrac{7}{50}\sqrt{3}-\dfrac{12}{25}$",,,
+44,volume_2,rule,Volume word problems,12,"A water tank is a rectangular prism that is $4$ meters high,
+$10$ meters long,
+and $7$ meters wide.
+A solid metal box which is $1$ meter high,
+$3$ meters long,
+and $5$ meters wide is sitting inside the tank.
+The tank is filled with water.
+What is the volume of the water in the tank?
+cubic m",,,
+45,weighted_average_of_three_points,rule,Weighted average of three points,4,"What is the average of the points $\blue{A}$ , $\pink{B}$ and $\green{C}$ with weights
+$\blue{1}$ , $\pink{3}$ and $\green{4}$ respectively?
+$($ , $)$",,,
