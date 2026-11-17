@@ -30,6 +30,16 @@ python -m lmsrag.layer1_data.build
 python -m lmsrag.layer2_embedding.build --embedder lsa
 ```
 
+## Data v1: bảng tương tác chung (kế hoạch v2)
+
+Cấu hình trong `configs/data.yaml`; mã trong `lmsrag/datasets/`; data card trong `lmsrag/data/cards/`.
+
+```powershell
+python -m lmsrag.datasets.build --config configs/data.yaml --only assist2009   # P1-01, khoảng 10 giây
+```
+
+Đầu ra: `lmsrag/artifacts/v2/interactions_<dataset>.parquet` (không commit) và bảng báo cáo `reports/tables/a1_*.csv`.
+
 ASSISTments và Khan Academy sample data được lưu trong repository. GSM8K và MATH được tải vào `lmsrag/data/raw/`; các tệp đó và output sinh ra trong `lmsrag/artifacts/` không được commit, vì có thể tạo lại bằng các lệnh trên. Cần kết nối Internet khi tải corpus lần đầu.
 
 ## Layer 3–4: truy xuất thích ứng và gợi ý bài tập

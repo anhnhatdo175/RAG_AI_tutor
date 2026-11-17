@@ -1,0 +1,64 @@
+section,group,skill,metric,value,ci_low,ci_high,note,dataset
+overall,kept,,rows,245048.0,,,,assist2009
+overall,kept,,users,2219.0,,,,assist2009
+overall,kept,,accuracy,0.656,,,,assist2009
+overall,dropped,,rows,38639.0,,,,assist2009
+overall,dropped,,users,1382.0,,,,assist2009
+overall,dropped,,accuracy,0.6924,,,,assist2009
+overall,kept-dropped,,accuracy_diff,-0.0363,-0.0449,-0.0267,"cluster bootstrap over learners, 1000 resamples, seed 2026",assist2009
+overall,kept-dropped,,chi2,196.519,,,row-level test; rows are not independent,assist2009
+overall,kept-dropped,,chi2_p,1.200636886398011e-44,,,,assist2009
+per_learner,kept,,learners,2219.0,,,learners with >= 5 rows in this part,assist2009
+per_learner,kept,,accuracy_q10,0.316,,,,assist2009
+per_learner,kept,,accuracy_q25,0.5,,,,assist2009
+per_learner,kept,,accuracy_q50,0.6552,,,,assist2009
+per_learner,kept,,accuracy_q75,0.7776,,,,assist2009
+per_learner,kept,,accuracy_q90,0.8513,,,,assist2009
+per_learner,dropped,,learners,1044.0,,,learners with >= 5 rows in this part,assist2009
+per_learner,dropped,,accuracy_q10,0.2817,,,,assist2009
+per_learner,dropped,,accuracy_q25,0.5455,,,,assist2009
+per_learner,dropped,,accuracy_q50,0.7143,,,,assist2009
+per_learner,dropped,,accuracy_q75,0.8242,,,,assist2009
+per_learner,dropped,,accuracy_q90,0.8791,,,,assist2009
+dropped_by_skill,dropped,Table,rows,6554.0,,,table reading; no textual counterpart,assist2009
+dropped_by_skill,dropped,Table,accuracy,0.7421,,,,assist2009
+dropped_by_skill,dropped,Table,accuracy_minus_kept,0.0861,,,,assist2009
+dropped_by_skill,dropped,Circle Graph,rows,6157.0,,,chart reading; no textual counterpart,assist2009
+dropped_by_skill,dropped,Circle Graph,accuracy,0.5257,,,,assist2009
+dropped_by_skill,dropped,Circle Graph,accuracy_minus_kept,-0.1303,,,,assist2009
+dropped_by_skill,dropped,Venn Diagram,rows,5573.0,,,diagram/visual items; no textual counterpart in MATH/GSM8K,assist2009
+dropped_by_skill,dropped,Venn Diagram,accuracy,0.7179,,,,assist2009
+dropped_by_skill,dropped,Venn Diagram,accuracy_minus_kept,0.0619,,,,assist2009
+dropped_by_skill,dropped,Pattern Finding ,rows,5135.0,,,too generic to tag reliably with rules,assist2009
+dropped_by_skill,dropped,Pattern Finding ,accuracy,0.6717,,,,assist2009
+dropped_by_skill,dropped,Pattern Finding ,accuracy_minus_kept,0.0156,,,,assist2009
+dropped_by_skill,dropped,Stem and Leaf Plot,rows,3746.0,,,chart reading; no textual counterpart,assist2009
+dropped_by_skill,dropped,Stem and Leaf Plot,accuracy,0.6807,,,,assist2009
+dropped_by_skill,dropped,Stem and Leaf Plot,accuracy_minus_kept,0.0247,,,,assist2009
+dropped_by_skill,dropped,Box and Whisker,rows,3657.0,,,chart reading; no textual counterpart,assist2009
+dropped_by_skill,dropped,Box and Whisker,accuracy,0.7476,,,,assist2009
+dropped_by_skill,dropped,Box and Whisker,accuracy_minus_kept,0.0916,,,,assist2009
+dropped_by_skill,dropped,Number Line,rows,1894.0,,,visual item,assist2009
+dropped_by_skill,dropped,Number Line,accuracy,0.595,,,,assist2009
+dropped_by_skill,dropped,Number Line,accuracy_minus_kept,-0.061,,,,assist2009
+dropped_by_skill,dropped,Histogram as Table or Graph,rows,1758.0,,,chart reading; no textual counterpart,assist2009
+dropped_by_skill,dropped,Histogram as Table or Graph,accuracy,0.7122,,,,assist2009
+dropped_by_skill,dropped,Histogram as Table or Graph,accuracy_minus_kept,0.0562,,,,assist2009
+dropped_by_skill,dropped,Scatter Plot,rows,1748.0,,,chart reading; no textual counterpart,assist2009
+dropped_by_skill,dropped,Scatter Plot,accuracy,0.8799,,,,assist2009
+dropped_by_skill,dropped,Scatter Plot,accuracy_minus_kept,0.2238,,,,assist2009
+dropped_by_skill,dropped,Estimation,rows,1601.0,,,too few textual problems,assist2009
+dropped_by_skill,dropped,Estimation,accuracy,0.7908,,,,assist2009
+dropped_by_skill,dropped,Estimation,accuracy_minus_kept,0.1347,,,,assist2009
+dropped_by_skill,dropped,Congruence,rows,529.0,,,too few textual problems,assist2009
+dropped_by_skill,dropped,Congruence,accuracy,0.8941,,,,assist2009
+dropped_by_skill,dropped,Congruence,accuracy_minus_kept,0.2381,,,,assist2009
+dropped_by_skill,dropped,Nets of 3D Figures,rows,251.0,,,visual item,assist2009
+dropped_by_skill,dropped,Nets of 3D Figures,accuracy,0.9721,,,,assist2009
+dropped_by_skill,dropped,Nets of 3D Figures,accuracy_minus_kept,0.3161,,,,assist2009
+dropped_by_skill,dropped,Interpreting Coordinate Graphs ,rows,32.0,,,graph interpretation depends on visual data; no suitable graph corpus is indexed,assist2009
+dropped_by_skill,dropped,Interpreting Coordinate Graphs ,accuracy,0.5312,,,,assist2009
+dropped_by_skill,dropped,Interpreting Coordinate Graphs ,accuracy_minus_kept,-0.1248,,,,assist2009
+dropped_by_skill,dropped,Reading a Ruler or Scale,rows,4.0,,,measurement depends on reading a visual scale; no suitable visual corpus is indexed,assist2009
+dropped_by_skill,dropped,Reading a Ruler or Scale,accuracy,0.0,,,,assist2009
+dropped_by_skill,dropped,Reading a Ruler or Scale,accuracy_minus_kept,-0.656,,,,assist2009
