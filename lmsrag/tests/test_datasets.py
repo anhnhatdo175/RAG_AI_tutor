@@ -150,6 +150,46 @@ def test_assist2009_clean_logs_every_step_and_validates():
     pd.testing.assert_frame_equal(res.interactions, clean(raw, CFG, mapper=FakeMapper()).interactions)
 
 
+def raw_2012(n_users=4):
+    rows, log_id = [], 0
+    base = pd.Timestamp("2012-09-01 08:00:00")
+    for u in range(n_users):
+        for j in range(25):
+            log_id += 1
+            rows.append({"problem_log_id": log_id, "skill": "Addition" if j % 6 else "Venn Diagram",
+                         "problem_id": 500 + j, "user_id": u, "assistment_id": 9, "problem_type": "algebra",
+                         "original": 1, "correct": float(j % 3 != 0), "hint_count": 0.0, "attempt_count": 1.0,
+                         "ms_first_response": 1500.0, "type": "MasterySection" if u % 2 else "LinearSection",
+                         "template_id": 1.0,
+                         "start_time": str(base + pd.Timedelta(seconds=60 * j + u, milliseconds=250 * (j % 2)))})
+    raw = pd.DataFrame(rows)
+    raw.loc[0, "correct"] = 0.5          # partial credit
+    raw.loc[1, "skill"] = None           # no skill
+    raw.loc[2, "original"] = 0           # scaffolding
+    return raw
+
+
+def test_assist2012_parses_start_time_to_epoch_ms():
+    from lmsrag.datasets.assist2012 import _compact
+    chunk = raw_2012(1).head(2)
+    ts = _compact(chunk)["ts"].tolist()
+    assert ts[0] == int(pd.Timestamp("2012-09-01 08:00:00").value // 1_000_000)
+    assert ts[1] - ts[0] == 60_250
+
+
+def test_assist2012_clean_counts_and_sections():
+    from lmsrag.datasets.assist2012 import _compact, clean
+    res = clean(_compact(raw_2012()), CFG, mapper=FakeMapper())
+    by_rule = dict(zip(res.tables["a1_cleaning_assist2012"].rule, res.tables["a1_cleaning_assist2012"].dropped))
+    assert by_rule["drop original == 0 (scaffolding sub-questions)"] == 1
+    assert by_rule["drop missing skill"] == 1
+    assert by_rule["drop correct outside {0, 1} (partial credit 0.25/0.5/0.75)"] == 1
+    schema.validate(res.interactions)
+    assert set(res.interactions.section_type) == {"MasterySection", "LinearSection"}
+    assert res.facts["rows_outside_mastery"] == int((res.interactions.section_type != "MasterySection").sum())
+    assert set(res.tables["a1_skill_builder_assist2012"].subset) == {"MasterySection", "outside_MasterySection"}
+
+
 def test_kept_vs_dropped_point_estimate_and_interval():
     rng = np.random.default_rng(3)
     df = pd.DataFrame({"user_id": rng.integers(0, 50, 4000), "correct": (rng.random(4000) < 0.6).astype(int),

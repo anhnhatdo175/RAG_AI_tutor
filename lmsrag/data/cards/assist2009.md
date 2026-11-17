@@ -66,15 +66,26 @@ cùng một câu nhiều kỹ năng luôn nằm cùng một phần. Kết quả:
 
 - **`ts` không phải thời gian.** Đây là `order_id`, chỉ cho biết thứ tự.
 - **100% dòng thuộc MasterySection (Skill Builder).** Hệ thống giao bài cùng kỹ năng cho đến khi học sinh đúng 3 câu
-  liên tiếp, nên chuỗi (người học, kỹ năng) thường kết thúc bằng lượt đúng. Baseline "Last Answer on Skill" vì vậy
-  được lợi một cách nhân tạo. Số đo (`reports/tables/a1_skill_builder.csv`):
+  liên tiếp, nên chuỗi (người học, kỹ năng) thường kết thúc bằng lượt đúng. Giả thuyết ban đầu là baseline
+  "Last Answer on Skill" được lợi nhân tạo; số đo bên dưới và so sánh với 2012 **không ủng hộ** giả thuyết này.
+  Số đo (`reports/tables/a1_skill_builder.csv`):
   - 29.976 chuỗi, độ dài trung vị 5;
   - 82,7% chuỗi kết thúc bằng lượt đúng;
   - 45,5% chuỗi kết thúc bằng 3 lượt đúng liên tiếp (65,3% nếu chỉ xét chuỗi dài từ 3 lượt);
   - tỷ lệ đúng tăng từ 0,592 ở lượt đầu lên khoảng 0,69 ở lượt 4–5;
   - AUC của "Last Answer on Skill" là 0,649 trên mọi dòng có lượt trước và 0,651 trên test.
 
-  So sánh với tập con ngoài MasterySection của ASSISTments 2012 sẽ được bổ sung sau P1-02.
+  So với ASSISTments 2012 (`reports/tables/a1_skill_builder_assist2012.csv`, chi tiết trong `assist2012.md`):
+
+  | | 2009 (toàn bộ Skill Builder) | 2012 MasterySection | 2012 ngoài MasterySection |
+  |---|---:|---:|---:|
+  | Chuỗi kết thúc bằng 3 lượt đúng | 45,5% | 71,6% | 24,1% |
+  | Chuỗi kết thúc bằng lượt đúng | 82,7% | 90,0% | 67,6% |
+  | AUC "Last Answer", test | 0,651 | 0,633 | 0,646 |
+
+  Cơ chế dừng thấy rõ ở hình dạng chuỗi, nhưng không làm AUC của "Last Answer" cao hơn. Ảnh hưởng thật nằm ở
+  phân bố: trong Skill Builder, chuỗi dừng ngay khi học sinh đạt yêu cầu, nên thiếu các lượt luyện sau khi đã thành
+  thạo. Mọi chỉ số tính trên 2009 nên được đối chiếu với tập con ngoài MasterySection của 2012.
 - **Tỷ lệ đúng giảm dần theo phần:** 0,661 ở history, 0,654 ở validation, 0,632 ở test. Học sinh gặp bài khó hơn về
   sau, nên mọi so sánh phải dùng cùng một phần dữ liệu.
 - **Thời gian phản hồi:** 0,11% dòng có `rt_ms` thiếu (giá trị gốc ≤ 0); các giá trị còn lại được cắt về
