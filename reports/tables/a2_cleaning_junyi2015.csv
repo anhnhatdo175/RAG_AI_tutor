@@ -1,0 +1,9 @@
+dataset,step,rule,applied,rows_before,rows_after,dropped,pct_dropped,users_after,events_after
+junyi2015,0,raw file,True,25925992,25925992,0,0.0,247606,25924553
+junyi2015,info,"duplicate (user_id, time_done) on the raw file",False,25925992,,1439,0.0056,,
+junyi2015,info,"time_taken <= 0 (set to missing, rows kept)",False,25925992,,75822,0.2925,,
+junyi2015,info,correct is null,False,25925992,,0,0.0,,
+junyi2015,1,drop exercises missing from the exercise table,True,25925992,25925992,0,0.0,247606,25924553
+junyi2015,2,drop rows with missing correct,True,25925992,25925992,0,0.0,247606,25924553
+junyi2015,3,drop learners with < 20 rows,True,25925992,25013101,912891,3.5211,96521,25011678
+junyi2015,4,sample 20000 learners (data_seed 2026),True,25013101,5111317,19901784,79.5654,20000,5110963

@@ -1,0 +1,16 @@
+dataset,metric,value
+junyi2015,rows_raw,25925992.0
+junyi2015,users_raw,247606.0
+junyi2015,users_ge_min_rows,96521.0
+junyi2015,accuracy_raw,0.8279
+junyi2015,accuracy_eligible,0.8311
+junyi2015,accuracy_sample,0.8323
+junyi2015,majority_baseline_sample,0.8323
+junyi2015,raw_share_rows_on_khan_template,0.6576
+junyi2015,raw_share_rows_on_usable_template,0.327
+junyi2015,raw_share_template_rows_with_known_problem_type,0.893
+junyi2015,sample_share_rows_on_khan_template,0.6612
+junyi2015,sample_share_rows_on_usable_template,0.3288
+junyi2015,sample_share_template_rows_with_known_problem_type,0.8917
+junyi2015,share_rows_with_mapped_tag,0.4047
+junyi2015,share_review_rows,0.0221

@@ -8,6 +8,7 @@ bootstrap: {n_resamples: 1000}
 datasets:
   assist2009: {path: lmsrag/data/assistments/skill_builder_data.csv, encoding: latin-1, sample_users: null}
   assist2012: {path: lmsrag/data/raw/assistments_2012/2012-2013-data-with-predictions-4-final.csv, encoding: ISO-8859-15, chunksize: 400000, sample_users: null}
-  junyi2015: {path: lmsrag/data/raw/junyi_2015/junyi_ProblemLog_original.csv, chunksize: 2000000, sample_users: 20000}
+  junyi2015: {path: lmsrag/data/raw/junyi_2015/junyi_ProblemLog_original.csv, chunksize: 2000000, sample_users: 20000,
+              skill_map: lmsrag/data/mappings/assistments_to_khan_draft.csv}   # -> skill_map_v1.csv after P1-05
 output_dir: lmsrag/artifacts/v2
 tables_dir: reports/tables
