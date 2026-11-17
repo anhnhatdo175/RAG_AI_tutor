@@ -1,16 +1,25 @@
-# LMS Adaptive Profile Based RAG
+# LMS AI Tutor — Adaptive RAG + gợi ý cá nhân hóa
 
-Đề tài xây dựng learner profile vector từ dữ liệu ASSISTments và dùng profile để cá nhân hóa truy xuất tài liệu trong LMS.
+Trợ giảng AI cho LMS: xây learner profile từ log ASSISTments, truy xuất thích ứng trên kho bài tập toán (GSM8K, MATH, Khan Academy), gợi ý bài theo ZPD + CF, sinh nội dung bằng LLM và cập nhật mastery sau khi chấm.
 
-## Chạy pipeline duy nhất
+## Cấu trúc repo
 
-```powershell
-python -m adaptiverag.run_experiment
+```text
+lmsrag/
+  config.py, data.py, profile.py, skill_mapping.py   # cấu hình, log ASSISTments, profile, từ điển kỹ năng
+  embedder.py, vectorstore.py, llm_client.py         # thành phần dùng chung
+  layer1_data/ ... layer6_feedback/                  # 6 tầng của kiến trúc
+  application.py, app.py, run_pipeline.py            # luồng học terminal Layer 1–6
+  experiments/assistments.py                         # thực nghiệm offline
+  data/assistments/skill_builder_data.csv            # ASSISTments Skill Builder 2009–2010
+  data/khan/khan_exercises.jsonl                     # mẫu Khan Academy
+  data/raw/        (không commit)                    # GSM8K, MATH — tải bằng download_data
+  artifacts/       (không commit)                    # output sinh ra, build lại được
+  tests/
+output/                                              # kết quả smoke test LLM
 ```
 
-Pipeline chính nằm trong `adaptiverag/`: temporal split 70/15/15, profile vector, Known-skill retrieval, chọn alpha/beta trên validation và đánh giá trên test.
-
-Kết quả cuối nằm trong `adaptiverag/artifacts/final/`. Corpus tài liệu hiện tại là synthetic instructional scaffold; cần thẩm định hoặc thay bằng tài liệu khóa học thật trước khi triển khai.
+Chạy test: `python -m pytest lmsrag/tests -q`
 
 ## Chạy pipeline `lmsrag` (Layer 1–2)
 
@@ -104,8 +113,6 @@ updated_state = state_store.apply_canonical_event(
 Đối với truy xuất, `load_query_encoder()` đọc loại embedder từ manifest; truyền loại khác sẽ báo lỗi thay vì tạo query vector trong không gian không khớp. Các learner state cũ vẫn đọc được; canonical fields mặc định rỗng và Layer 4 tiếp tục dùng EMA source-skill đã ánh xạ cho đến khi có event canonical.
 
 ## Layer 5–6: sinh nội dung và phản hồi thích ứng
-
-Mô tả kiến trúc và trạng thái implementation Layer 5–6, gồm context đa nguồn, JSON prompting, trợ giảng Socratic, chấm điểm, EMA/profile, smoke test Ollama thật và các phần còn cần tích hợp nằm trong [Chương 2.6–2.7](docs/chuong-2-tang-5-6.md).
 
 Implementation có thể gọi trực tiếp qua `lmsrag.layer5_generation` (`GenerationContext`, `LLMGenerator`, `SocraticTutor`) và `lmsrag.layer6_feedback` (`FeedbackLoop`, `GradingResult`). Layer 5 dùng backend đã cấu hình; Layer 6 nhận `StateStore` live và trả learner state/snapshot mới sau khi chấm.
 

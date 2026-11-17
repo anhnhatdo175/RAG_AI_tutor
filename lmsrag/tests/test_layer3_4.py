@@ -34,11 +34,11 @@ def test_adaptive_retriever_hard_filters_and_reranks():
         np.eye(3, dtype="float32"),
         [
             {"chunk_id": "a", "doc_id": "a", "text": "right 1", "skill_tag": "fractions",
-             "subject": "Mathematics", "grade": "lower_secondary", "difficulty": 0.3},
+             "mapping_status": "mapped", "subject": "Mathematics", "grade": "lower_secondary", "difficulty": 0.3},
             {"chunk_id": "b", "doc_id": "b", "text": "right 2", "skill_tag": "fractions",
-             "subject": "Mathematics", "grade": "lower_secondary", "difficulty": 0.6},
+             "mapping_status": "mapped", "subject": "Mathematics", "grade": "lower_secondary", "difficulty": 0.6},
             {"chunk_id": "c", "doc_id": "c", "text": "wrong grade", "skill_tag": "fractions",
-             "subject": "Mathematics", "grade": "upper_secondary", "difficulty": 0.3},
+             "mapping_status": "mapped", "subject": "Mathematics", "grade": "upper_secondary", "difficulty": 0.3},
         ],
     )
     retriever = AdaptiveRetriever(store, FakeEncoder(), FakeReranker())

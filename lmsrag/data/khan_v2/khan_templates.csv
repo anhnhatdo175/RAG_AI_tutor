@@ -1,0 +1,452 @@
+slug,status,usable_problems,problem_types,rendered,drop_reasons
+absolute_value,usable,4,1,4,{}
+absolute_value_equations,usable,4,1,4,{}
+absolute_value_of_complex_numbers,usable,4,1,4,{}
+adding_and_subtracting_complex_numbers,usable,4,1,4,{}
+adding_and_subtracting_decimals_word_problems,usable,24,6,24,{}
+adding_and_subtracting_fractions,usable,4,1,4,{}
+adding_and_subtracting_negative_numbers,usable,8,2,8,{}
+adding_and_subtracting_polynomials,usable,4,1,4,{}
+adding_and_subtracting_radicals,usable,12,3,12,{}
+adding_and_subtracting_rational_expressions,usable,3,1,4,"{""not_autogradable"": 1}"
+adding_and_subtracting_rational_expressions_0.5,usable,8,2,8,{}
+adding_and_subtracting_rational_expressions_1.5,usable,2,1,4,"{""not_autogradable"": 2}"
+adding_and_subtracting_rational_expressions_2,usable,4,1,4,{}
+adding_and_subtracting_rational_expressions_3,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+adding_and_subtracting_rational_expressions_5,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+adding_and_subtracting_rational_expressions_6,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+adding_and_subtracting_rational_numbers,usable,4,1,4,{}
+adding_decimals,no_hints,0,0,4,"{""no_hints"": 4}"
+adding_decimals_0.5,no_hints,0,0,4,"{""no_hints"": 4}"
+adding_decimals_2,no_hints,0,0,4,"{""no_hints"": 4}"
+adding_fractions,usable,4,1,4,{}
+adding_fractions_0.5,usable,4,1,4,{}
+adding_fractions_with_common_denominators,usable,4,1,4,{}
+adding_negative_numbers,usable,4,1,4,{}
+adding_subtracting_mixed_numbers_0.5,usable,4,1,4,{}
+adding_subtracting_mixed_numbers_1,usable,8,2,8,{}
+adding_vectors,usable,4,1,4,{}
+addition_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+addition_2,needs_figure,0,0,4,"{""needs_figure"": 4}"
+addition_3,no_hints,0,0,4,"{""no_hints"": 4}"
+addition_4,no_hints,0,0,4,"{""no_hints"": 4}"
+addition_within_100,usable,8,2,8,{}
+addition_within_1000,usable,12,3,12,{}
+age_word_problems,usable,24,6,24,{}
+angle_addition_postulate,usable,4,1,4,{}
+angle_bisector_theorem,needs_figure,0,0,16,"{""needs_figure"": 16}"
+angle_types,needs_figure,0,0,12,"{""needs_figure"": 12}"
+angles_1,needs_figure,0,0,16,"{""needs_figure"": 16}"
+angles_2,needs_figure,0,0,16,"{""needs_figure"": 16}"
+angles_of_a_polygon,needs_figure,0,0,8,"{""needs_figure"": 8}"
+area_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+area_2,needs_figure,0,0,8,"{""needs_figure"": 8}"
+area_of_a_circle,usable,11,3,11,"{""duplicate"": 1}"
+area_of_parallelograms,usable,4,1,4,{}
+area_of_squares_and_rectangles,usable,12,3,12,{}
+areas_of_circles_and_sectors,usable,8,2,8,{}
+areas_of_trapezoids_rhombi_and_kites,needs_figure,0,0,4,"{""needs_figure"": 4}"
+arithmetic_sequences_1,usable,4,1,4,{}
+arithmetic_sequences_2,usable,4,1,4,{}
+arithmetic_series,usable,4,1,4,{}
+arithmetic_word_problems_1,usable,24,6,24,{}
+arithmetic_word_problems_2,usable,24,6,24,{}
+average_word_problems,usable,12,3,12,{}
+balancing_chemical_equations,usable,2,2,18,"{""duplicate"": 6, ""not_autogradable"": 16}"
+basic_set_notation,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+caesar_cipher_decryption,needs_figure,0,0,4,"{""needs_figure"": 4}"
+caesar_cipher_encryption,needs_figure,0,0,4,"{""needs_figure"": 4}"
+caesar_cipher_frequency_analysis,needs_figure,0,0,4,"{""needs_figure"": 4}"
+circles_and_arcs,usable,12,3,12,{}
+coin_flip_sequences,no_hints,0,0,4,"{""no_hints"": 4}"
+combinations_1,usable,7,2,7,"{""duplicate"": 1}"
+combining_like_terms_1,usable,4,1,4,{}
+combining_like_terms_2,usable,4,1,4,{}
+comparing_absolute_values,usable,12,3,12,{}
+comparing_decimals_1,usable,12,3,12,{}
+comparing_decimals_2,usable,8,2,8,{}
+comparing_fractions_1,usable,8,2,8,{}
+comparing_fractions_2,usable,4,1,4,{}
+comparing_fractions_with_the_same_denominator,usable,4,1,12,"{""needs_figure"": 4, ""not_autogradable"": 4}"
+comparing_fractions_with_the_same_numerator,usable,3,1,11,"{""duplicate"": 1, ""needs_figure"": 4, ""not_autogradable"": 4}"
+comparing_improper_fractions_and_mixed_numbers,usable,4,1,4,{}
+comparing_whole_numbers,usable,8,2,8,{}
+comparing_whole_numbers_2,usable,8,2,8,{}
+complementary_and_supplementary_angles,usable,8,2,8,{}
+completing_the_square_1,usable,4,1,8,"{""not_autogradable"": 4}"
+completing_the_square_2,usable,4,1,8,"{""not_autogradable"": 4}"
+completing_the_square_in_quadratic_expressions,usable,4,1,4,{}
+complex_number_polar_form_intuition,no_hints,0,0,4,"{""no_hints"": 4}"
+complex_plane_operations,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+components_of_vectors,needs_figure,0,0,8,"{""needs_figure"": 8}"
+composite_numbers,usable,4,1,4,{}
+compound_inequalities,usable,4,1,4,{}
+conditional_statements_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+conditional_statements_and_truth_value,usable,11,3,11,"{""duplicate"": 1}"
+congruency_postulates,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+congruency_postulates_2,needs_figure,0,0,4,"{""needs_figure"": 4}"
+congruent_angles,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+congruent_segments,needs_figure,0,0,4,"{""needs_figure"": 4}"
+congruent_triangles_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+congruent_triangles_2,needs_figure,0,0,12,"{""needs_figure"": 12}"
+constructions_1,not_autogradable,0,0,24,"{""not_autogradable"": 24}"
+constructions_2,not_autogradable,0,0,12,"{""not_autogradable"": 12}"
+constructions_3,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+converting_between_point_slope_and_slope_intercept,usable,4,1,4,{}
+converting_between_slope_intercept_and_standard_form,usable,8,2,8,{}
+converting_decimals_to_fractions_1,usable,7,2,7,"{""duplicate"": 1}"
+converting_decimals_to_fractions_2,usable,8,2,8,{}
+converting_decimals_to_percents,usable,4,1,4,{}
+converting_fractions_to_decimals,usable,8,2,8,{}
+converting_fractions_to_decimals_0.5,usable,3,1,3,"{""duplicate"": 1}"
+converting_mixed_numbers_and_improper_fractions,usable,8,2,8,{}
+converting_percents_to_decimals,usable,4,1,4,{}
+converting_repeating_decimals_to_fractions_1,usable,8,2,8,{}
+converting_repeating_decimals_to_fractions_2,usable,20,5,20,{}
+counting_1,usable,12,3,12,{}
+counting_2,usable,12,3,12,{}
+creating_bar_charts_1,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+creating_box_and_whisker_plots,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+cube_roots,usable,4,1,4,{}
+cube_roots_2,usable,4,1,4,{}
+decasteljau,usable,3,1,3,"{""duplicate"": 1}"
+decimals_on_the_number_line_1,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+decimals_on_the_number_line_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+decimals_on_the_number_line_3,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+defined_and_undefined_matrix_operations,usable,4,1,4,{}
+degrees_to_radians,usable,4,1,4,{}
+dependent_probability,usable,12,3,12,{}
+derivative_intuition,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+dice_probability,usable,4,1,4,{}
+direct_and_inverse_variation,usable,24,6,24,{}
+discount_tax_and_tip_word_problems,usable,20,5,20,{}
+distance_between_point_and_line,usable,12,3,12,{}
+distance_formula,usable,4,1,4,{}
+dividing_complex_numbers,usable,4,1,4,{}
+dividing_decimals_0.5,usable,3,1,3,"{""duplicate"": 1}"
+dividing_decimals_1,usable,6,2,6,"{""duplicate"": 2}"
+dividing_decimals_2,usable,3,1,3,"{""duplicate"": 1}"
+dividing_decimals_3,usable,4,1,4,{}
+dividing_decimals_4,usable,4,1,4,{}
+dividing_fractions,usable,4,1,4,{}
+dividing_fractions_0.5,usable,4,1,4,{}
+dividing_fractions_1.5,usable,4,1,4,{}
+dividing_fractions_2,usable,4,1,4,{}
+dividing_fractions_word_problems_2,usable,24,6,24,{}
+dividing_polynomials_by_binomials_1,usable,8,2,8,{}
+dividing_polynomials_by_binomials_2,usable,4,1,4,{}
+dividing_polynomials_by_binomials_3,usable,8,2,8,{}
+dividing_rational_numbers,usable,16,4,16,{}
+divisibility,usable,4,1,4,{}
+divisibility_0.5,usable,8,2,8,{}
+divisibility_intuition,needs_figure,0,0,4,"{""needs_figure"": 4}"
+divisibility_tests,usable,4,1,4,{}
+division_0.5,usable,4,1,4,{}
+division_1,needs_figure,0,0,12,"{""needs_figure"": 8, ""no_hints"": 4}"
+division_1.5,usable,4,1,4,{}
+division_2,usable,4,1,4,{}
+division_3,usable,4,1,4,{}
+division_4,usable,4,1,4,{}
+division_test,no_hints,0,0,4,"{""no_hints"": 4}"
+domain_and_range_0.5,needs_figure,0,0,8,"{""needs_figure"": 8}"
+domain_of_a_function,usable,24,6,24,{}
+ellipse_intuition,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+empirical_rule,usable,8,2,8,{}
+equation_of_a_circle_1,usable,4,1,4,{}
+equation_of_a_circle_2,usable,4,1,4,{}
+equation_of_a_hyperbola,usable,4,1,4,{}
+equation_of_an_ellipse,usable,4,1,4,{}
+equivalent_fractions,usable,8,2,8,{}
+equivalent_fractions_2,usable,16,4,16,{}
+equivalent_fractions_3,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+estimation_with_decimals,needs_figure,0,0,4,"{""needs_figure"": 4}"
+evaluating_expressions_1,usable,4,1,4,{}
+evaluating_expressions_2,usable,4,1,4,{}
+even_and_odd_functions,needs_figure,0,0,4,"{""needs_figure"": 4}"
+expected_value,usable,11,3,11,"{""duplicate"": 1}"
+exploring_angle_pairs_1,needs_figure,0,0,12,"{""needs_figure"": 12}"
+exploring_mean_and_median,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+exploring_standard_deviation_1,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+exponent_rules,usable,16,4,16,{}
+exponents_1,usable,4,1,4,{}
+exponents_1.5,usable,12,3,12,{}
+exponents_2,usable,4,1,4,{}
+exponents_3,usable,4,1,4,{}
+exponents_4,usable,4,1,4,{}
+expressing_ratios_as_fractions,usable,4,1,4,{}
+expressions_with_unknown_variables,usable,4,1,4,{}
+expressions_with_unknown_variables_2,usable,4,1,4,{}
+extraneous_solutions,usable,4,1,8,"{""not_autogradable"": 4}"
+factoring_difference_of_squares_1,usable,4,1,4,{}
+factoring_difference_of_squares_2,usable,4,1,4,{}
+factoring_difference_of_squares_3,usable,4,1,4,{}
+factoring_linear_binomials,usable,4,1,4,{}
+factoring_polynomials_1,usable,4,1,4,{}
+factoring_polynomials_2,usable,4,1,8,"{""render_fail"": 4}"
+factoring_polynomials_by_grouping_1,usable,4,1,4,{}
+factoring_polynomials_with_two_variables,usable,4,1,4,{}
+finding_percents,usable,16,4,16,{}
+fraction_word_problems_1,usable,12,3,12,{}
+fractions_as_division_by_a_multiple_of_10,usable,11,3,11,"{""duplicate"": 1}"
+fractions_cut_and_copy_1,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+fractions_cut_and_copy_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+fractions_on_the_number_line_1,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+fractions_on_the_number_line_3,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+functions_2,needs_figure,0,0,4,"{""needs_figure"": 4}"
+functions_3,usable,8,2,8,{}
+geometric_sequences_1,usable,4,1,4,{}
+geometric_sequences_2,usable,4,1,4,{}
+graphing_circles,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_circles_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_inequalities,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_inequalities_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_linear_equations,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+graphing_parabolas_0.5,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_parabolas_1,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_parabolas_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_points,not_autogradable,0,0,16,"{""needs_figure"": 8, ""not_autogradable"": 8}"
+graphing_points_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_systems_of_equations,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_systems_of_inequalities,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphing_systems_of_inequalities_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+graphs_of_inequalities,needs_figure,0,0,4,"{""needs_figure"": 4}"
+graphs_of_sine_and_cosine,needs_figure,0,0,4,"{""needs_figure"": 4}"
+greatest_common_divisor,usable,4,1,4,{}
+herons_formula,needs_figure,0,0,4,"{""needs_figure"": 4}"
+hyperbola_intuition,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+ideal_stoichiometry,usable,4,1,4,{}
+identifying_points_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+identifying_points_2,usable,4,1,8,"{""needs_figure"": 4}"
+imaginary_unit_powers,usable,7,2,7,"{""duplicate"": 1}"
+independent_probability,usable,12,3,12,{}
+inequalities_on_a_number_line,needs_figure,0,0,8,"{""needs_figure"": 8}"
+inscribed_angles_1,usable,15,4,15,"{""duplicate"": 1}"
+inscribing_and_circumscribing_circles_on_a_triangle,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+integer_sums,usable,4,1,4,{}
+interpreting_linear_equations,needs_figure,0,0,12,"{""needs_figure"": 12}"
+inverse_trig_functions,usable,4,1,4,{}
+inverses_of_functions,usable,8,2,8,{}
+khan-exercise,render_fail,0,0,1,"{""render_fail"": 1}"
+khan-site,render_fail,0,0,4,"{""render_fail"": 4}"
+law_of_cosines,needs_figure,0,0,8,"{""needs_figure"": 8}"
+law_of_sines,needs_figure,0,0,8,"{""needs_figure"": 8}"
+least_common_multiple,usable,4,1,4,{}
+limiting_reagent_stoichiometry,usable,4,1,4,{}
+line_graph_intuition,not_autogradable,0,0,12,"{""no_hints"": 4, ""not_autogradable"": 8}"
+line_relationships,usable,24,6,24,{}
+linear_equation_word_problems,not_autogradable,0,0,12,"{""not_autogradable"": 12}"
+linear_equations_1,usable,16,4,16,{}
+linear_equations_2,usable,4,1,4,{}
+linear_equations_3,usable,4,1,4,{}
+linear_equations_4,usable,4,1,4,{}
+linear_inequalities,usable,4,1,4,{}
+logarithms_1,usable,4,1,4,{}
+logarithms_1.5,usable,8,2,8,{}
+logarithms_2,usable,12,3,12,{}
+logical_arguments_deductive_reasoning,needs_figure,0,0,8,"{""needs_figure"": 8}"
+making_a_decade,usable,8,2,8,{}
+markup_and_commission_word_problems,usable,12,3,16,"{""needs_figure"": 4}"
+matrix_addition_and_subtraction,usable,4,1,4,{}
+matrix_determinant_2x2,usable,4,1,4,{}
+matrix_determinant_3x3,usable,4,1,4,{}
+matrix_dimensions,usable,4,1,4,{}
+matrix_inverse_2x2,usable,10,3,12,"{""not_autogradable"": 2}"
+matrix_inverse_3x3,usable,3,1,4,"{""not_autogradable"": 1}"
+matrix_transpose,usable,4,1,4,{}
+mean_median_and_mode,usable,12,3,12,{}
+measuring_angles,needs_figure,0,0,4,"{""needs_figure"": 4}"
+measuring_segments,needs_figure,0,0,4,"{""needs_figure"": 4}"
+midpoint_formula,usable,8,2,8,{}
+midpoint_of_a_segment,usable,4,1,4,{}
+multiplication_0.5,usable,8,2,8,{}
+multiplication_1,usable,4,1,4,{}
+multiplication_1.5,usable,4,1,4,{}
+multiplication_2,usable,4,1,4,{}
+multiplication_3,usable,4,1,4,{}
+multiplication_4,usable,4,1,4,{}
+multiplying_a_matrix_by_a_matrix,usable,4,1,4,{}
+multiplying_a_matrix_by_a_vector,usable,4,1,4,{}
+multiplying_and_dividing_complex_number_polar_forms,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+multiplying_and_dividing_negative_numbers,usable,8,2,8,{}
+multiplying_and_dividing_rational_expressions_1,usable,1,1,4,"{""not_autogradable"": 3}"
+multiplying_and_dividing_rational_expressions_2,usable,4,1,4,{}
+multiplying_and_dividing_rational_expressions_3,usable,4,1,4,{}
+multiplying_and_dividing_rational_expressions_4,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+multiplying_and_dividing_rational_expressions_5,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+multiplying_and_dividing_scientific_notation,usable,8,2,8,{}
+multiplying_complex_numbers,usable,4,1,4,{}
+multiplying_decimals,usable,4,1,4,{}
+multiplying_decimals_0.5,usable,4,1,4,{}
+multiplying_decimals_1,usable,4,1,4,{}
+multiplying_expressions_0.5,usable,4,1,4,{}
+multiplying_expressions_1,usable,4,1,4,{}
+multiplying_fractions,usable,4,1,4,{}
+multiplying_fractions_0.5,usable,4,1,4,{}
+multiplying_fractions_by_integers,usable,4,1,4,{}
+multiplying_mixed_numbers_1,usable,4,1,4,{}
+multiplying_polynomials,usable,4,1,4,{}
+multiplying_polynomials_0.5,usable,12,3,12,{}
+multiplying_radicals,usable,8,2,8,{}
+multiplying_rational_numbers,usable,12,3,12,{}
+multistep_equations_with_distribution,usable,16,4,16,{}
+new_definitions_1,usable,4,1,4,{}
+new_definitions_2,usable,8,2,8,{}
+number_line,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+number_line_2,not_autogradable,0,0,16,"{""needs_figure"": 8, ""not_autogradable"": 8}"
+number_line_3,needs_figure,0,0,4,"{""needs_figure"": 4}"
+one_step_equation_intuition,no_hints,0,0,4,"{""no_hints"": 4}"
+one_step_equations,usable,4,1,4,{}
+one_step_inequalities,usable,4,1,4,{}
+order_of_operations,usable,24,6,24,{}
+order_of_operations_2,usable,24,6,24,{}
+ordering_decimals,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+ordering_fractions,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+ordering_negative_numbers,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+parabola_intuition_1,no_hints,0,0,4,"{""no_hints"": 4}"
+parabola_intuition_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+parabola_intuition_3,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+parallel_lines_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+parallel_lines_2,needs_figure,0,0,4,"{""needs_figure"": 4}"
+partial_fraction_expansion_1,usable,4,1,4,{}
+perimeter_1,needs_figure,0,0,20,"{""needs_figure"": 20}"
+perimeter_of_squares_and_rectangles,usable,12,3,12,{}
+permutations_1,usable,8,2,8,{}
+permutations_and_combinations_2,usable,12,3,12,{}
+place_value,usable,8,2,8,{}
+plotting_the_line_of_best_fit,not_autogradable,0,0,16,"{""not_autogradable"": 16}"
+plugging_in_values,needs_figure,0,0,8,"{""needs_figure"": 8}"
+point_slope_form,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+points_lines_and_planes,needs_figure,0,0,20,"{""needs_figure"": 20}"
+positive_and_negative_parts_of_functions,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+positive_and_zero_exponents,usable,12,3,12,{}
+powers_of_complex_numbers_1,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+prime_factorization,usable,8,2,8,{}
+prime_numbers,usable,4,1,4,{}
+probability_1,usable,8,2,8,{}
+probability_with_perm_comb,usable,7,2,7,"{""duplicate"": 1}"
+properties_of_addition_and_subtraction_1,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+properties_of_addition_and_subtraction_2,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+proportions_1,usable,8,2,8,{}
+proportions_2,usable,8,2,8,{}
+pythagorean_identities,usable,15,4,15,"{""duplicate"": 1}"
+pythagorean_theorem_1,needs_figure,0,0,8,"{""needs_figure"": 8}"
+pythagorean_theorem_2,needs_figure,0,0,24,"{""needs_figure"": 24}"
+quadratic_equation,usable,4,1,4,{}
+quadrilateral_angles,needs_figure,0,0,4,"{""needs_figure"": 4}"
+radical_equations,usable,4,1,4,{}
+radius_diameter_and_circumference,usable,23,6,23,"{""duplicate"": 1}"
+range_of_a_function,usable,11,3,11,"{""duplicate"": 1}"
+rate_problems_2,usable,12,3,12,{}
+ratio_word_problems,usable,24,6,24,{}
+reading_bar_charts_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+reading_bar_charts_2,needs_figure,0,0,16,"{""needs_figure"": 16}"
+reading_bar_charts_3,needs_figure,0,0,24,"{""needs_figure"": 24}"
+reading_pictographs_1,needs_figure,0,0,12,"{""needs_figure"": 12}"
+reading_pictographs_2,needs_figure,0,0,16,"{""needs_figure"": 16}"
+reading_stem_and_leaf_plots,needs_figure,0,0,16,"{""needs_figure"": 16}"
+reading_tables_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+reading_tables_2,needs_figure,0,0,4,"{""needs_figure"": 4}"
+reciprocal_trig_funcs,usable,11,3,11,"{""duplicate"": 1}"
+recognizing_concavity,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+recognizing_conic_sections,needs_figure,0,0,16,"{""needs_figure"": 16}"
+recognizing_fractions,usable,8,2,8,{}
+recognizing_fractions_0.5,needs_figure,0,0,8,"{""needs_figure"": 8}"
+recognizing_intervals_of_functions,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+recognizing_slope,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+rotation_of_polygons,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+rounding_numbers,usable,8,2,8,{}
+rounding_whole_numbers,usable,8,2,8,{}
+rounding_whole_numbers_0.5,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+scalar_matrix_multiplication,usable,4,1,4,{}
+scaling_vectors,needs_figure,0,0,16,"{""needs_figure"": 16}"
+scientific_notation,usable,8,2,8,{}
+scientific_notation_intuition,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+segment_addition,usable,4,1,4,{}
+shaded_areas,usable,16,4,16,{}
+shifting_and_reflecting_functions,needs_figure,0,0,4,"{""needs_figure"": 4}"
+significant_figures_1,usable,4,1,4,{}
+similar_triangles_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+similar_triangles_2,needs_figure,0,0,4,"{""needs_figure"": 4}"
+simplifying_expressions_with_exponents,usable,8,2,8,{}
+simplifying_fractions,usable,4,1,4,{}
+simplifying_radicals,usable,10,3,10,"{""duplicate"": 2}"
+simplifying_rational_expressions_1,usable,4,1,4,{}
+simplifying_rational_expressions_2,usable,3,1,4,"{""not_autogradable"": 1}"
+simplifying_rational_expressions_3,usable,4,1,4,{}
+simplifying_rational_expressions_4,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+slope_intercept_form,usable,8,2,8,{}
+slope_of_a_line,usable,3,1,8,"{""needs_figure"": 4, ""render_fail"": 1}"
+solid_geometry,needs_figure,0,0,20,"{""needs_figure"": 20}"
+solutions_to_quadratic_equations,usable,4,1,4,{}
+solutions_to_quadratic_equations_0.5,usable,4,1,4,{}
+solutions_to_systems_of_equations,usable,8,2,12,"{""not_autogradable"": 4}"
+solving_for_a_variable,usable,12,3,12,{}
+solving_for_the_x-intercept,usable,4,1,4,{}
+solving_for_the_y-intercept,usable,8,2,8,{}
+solving_quadratics_by_factoring,usable,7,2,7,"{""duplicate"": 1}"
+solving_quadratics_by_factoring_2,usable,8,2,8,{}
+solving_quadratics_by_taking_the_square_root,usable,4,1,4,{}
+solving_rational_equations_2,usable,4,1,4,{}
+solving_similar_triangles_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+solving_similar_triangles_2,usable,16,4,16,{}
+square_roots,usable,4,1,4,{}
+square_roots_2,usable,4,1,4,{}
+standard_deviation,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+standard_deviation_of_a_population,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+subtracting_decimals,usable,4,1,4,{}
+subtracting_decimals_0.5,usable,4,1,4,{}
+subtracting_decimals_2,usable,4,1,4,{}
+subtracting_fractions,usable,4,1,4,{}
+subtracting_fractions_with_common_denominators,usable,4,1,4,{}
+subtraction_1,needs_figure,0,0,4,"{""needs_figure"": 4}"
+subtraction_2,needs_figure,0,0,4,"{""needs_figure"": 4}"
+subtraction_3,no_hints,0,0,4,"{""no_hints"": 4}"
+subtraction_4,no_hints,0,0,4,"{""no_hints"": 4}"
+subtraction_within_100,usable,8,2,8,{}
+subtraction_within_1000,usable,12,3,12,{}
+systems_of_equations,usable,12,3,12,{}
+systems_of_equations_with_elimination,usable,8,2,8,{}
+systems_of_equations_with_elimination_0.5,usable,8,2,8,{}
+systems_of_equations_with_substitution,usable,8,2,8,{}
+systems_of_equations_word_problems,usable,16,4,16,{}
+telling_time,needs_figure,0,0,4,"{""needs_figure"": 4}"
+telling_time_0.5,needs_figure,0,0,4,"{""needs_figure"": 4}"
+telling_time_1,needs_figure,0,0,8,"{""needs_figure"": 4, ""not_autogradable"": 4}"
+telling_time_2,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+telling_time_3,needs_figure,0,0,4,"{""needs_figure"": 4}"
+testing_division,no_hints,0,0,12,"{""no_hints"": 12}"
+the_complex_plane,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+the_fundamental_theorem_of_arithmetic,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+translations_of_points_and_polygons,not_autogradable,0,0,8,"{""needs_figure"": 4, ""not_autogradable"": 4}"
+triangle_angles_1,needs_figure,0,0,16,"{""needs_figure"": 16}"
+triangle_areas_with_trigonometry,needs_figure,0,0,8,"{""needs_figure"": 8}"
+triangle_inequality_theorem,needs_figure,0,0,8,"{""needs_figure"": 8}"
+triangle_types,needs_figure,0,0,4,"{""needs_figure"": 4}"
+triangle_types_0.5,needs_figure,0,0,4,"{""needs_figure"": 4}"
+trig_addition_identities,usable,12,4,12,"{""duplicate"": 4}"
+trigonometry_0.5,usable,11,3,11,"{""duplicate"": 1}"
+trigonometry_1,usable,12,3,12,{}
+trigonometry_1.5,usable,23,6,23,"{""duplicate"": 1}"
+trigonometry_2,usable,24,6,24,{}
+understanding_decimals_place_value,not_autogradable,0,0,8,"{""not_autogradable"": 8}"
+understanding_moving_the_decimal,usable,4,1,4,{}
+unit_circle,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+variance,usable,3,2,8,"{""not_autogradable"": 5}"
+vertex_of_a_parabola,usable,4,1,4,{}
+vertical_angles,needs_figure,0,0,4,"{""needs_figure"": 4}"
+vertical_angles_2,needs_figure,0,0,4,"{""needs_figure"": 4}"
+views_of_a_function,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+vigenere_cipher_encryption,needs_figure,0,0,4,"{""needs_figure"": 4}"
+visualizing_derivatives,not_autogradable,0,0,4,"{""not_autogradable"": 4}"
+volume_1,usable,4,1,8,"{""needs_figure"": 4}"
+volume_2,usable,12,3,16,"{""not_autogradable"": 4}"
+volume_with_fractions,usable,4,1,8,"{""needs_figure"": 4}"
+volume_with_unit_cubes,needs_figure,0,0,8,"{""needs_figure"": 8}"
+volume_with_unit_cubes_2,usable,3,1,7,"{""duplicate"": 1, ""needs_figure"": 4}"
+weighted_average_of_three_points,usable,4,1,4,{}
+writing_expressions_1,usable,4,1,4,{}
+writing_expressions_2,usable,8,2,8,{}
+writing_proportions,usable,4,1,4,{}
+z_scores_1,usable,4,1,4,{}
+z_scores_2,needs_figure,0,0,4,"{""needs_figure"": 4}"
+z_scores_3,needs_figure,0,0,4,"{""needs_figure"": 4}"
