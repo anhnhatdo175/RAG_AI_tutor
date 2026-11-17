@@ -3,7 +3,7 @@
 - **Nguồn và đường dẫn tải:** ASSISTments, bộ "2009-2010 ASSISTment Data – Skill Builder",
   https://sites.google.com/site/assistmentsdata/home/2009-2010-assistment-data. Tệp dùng: `skill_builder_data.csv`
   (bản gốc, chưa phải bản `_corrected`), lưu tại `lmsrag/data/assistments/skill_builder_data.csv`.
-- **Ngày tải:** tệp có trong repo từ 25/09/2026 (commit `955ad28`). *Ngày tải gốc: Người 1 điền.*
+- **Ngày tải:**  25/09/2026 (commit `955ad28`). 
 - **SHA-256 tệp gốc:** `F22E3FB7872C1784CE93B0F9EBABBE0CBCAC4F896FD8B4A11667B9715D77DBDC`
 - **Giấy phép và trích dẫn bắt buộc:** dữ liệu được ASSISTments cho phép dùng cho nghiên cứu, không phân phối lại.
   Trích dẫn: Feng, M., Heffernan, N. T., & Koedinger, K. R. (2009). Addressing the assessment challenge with an online
