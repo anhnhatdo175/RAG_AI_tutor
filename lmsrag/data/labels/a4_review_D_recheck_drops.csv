@@ -1,0 +1,130 @@
+﻿row,a_row,assistments_skill,khan_slug,template_title,template_status,why_listed,junyi_responses,all_types,decision_A,decision,note
+1,3,Unit Rate,rate_problems_2,Rate problems 2,usable,template có nhiều dạng bài,3102,"[dạng 1] Starting at home, Tiffany traveled uphill to the toy store for $12$ minutes at just $15$ mph. She then traveled back home along the same path downhill at a speed of $30$ mph. What is her average speed for the entire trip from home to the toy store and back? mph => 20 mph
+[dạng 2] It takes $41$ minutes for $9$ people to paint $9$ walls. How many minutes does it take $14$ people to paint $14$ walls? minutes => 41 minutes
+[dạng 3] It takes $35$ minutes for $4$ people to paint $7$ walls. How many minutes does it take $5$ people to paint $6$ walls? minutes => 24 minutes",drop,drop,"3 dạng là tốc độ trung bình và năng suất (người sơn tường), không phải đơn giá"
+2,5,Estimation,rounding_whole_numbers,Rounding whole numbers,usable,template có nhiều dạng bài,50301,"[dạng 1] Round $7471$ to the nearest hundred. => 7500
+[dạng 2] Round $336{,}517$ to the nearest thousand. => 337000",drop,drop,"chỉ làm tròn, không ước lượng kết quả phép tính"
+3,6,Volume Cylinder,solid_geometry,Solid geometry,needs_figure,template không dùng được: chỉ xét kỹ năng,14234,"[dạng 1] What is the volume of this object? Drag on the object to rotate it. => 24 cubic units
+[dạng 2] What is the volume of this box? Drag on the box to rotate it. => 90 cubic units
+[dạng 3] What is the surface area of this box? Drag on the box to rotate it. => 78
+square units
+[dạng 4] What is the volume of this cube? Drag on the cube to rotate it. => 216 cubic units
+[dạng 5] What is the surface area of this cube? Drag on the cube to rotate it. => 96
+square units",drop,drop,"5 dạng đều là hình hộp/khối lập phương, không có hình trụ"
+4,7,Volume Sphere,solid_geometry,Solid geometry,needs_figure,template không dùng được: chỉ xét kỹ năng,14234,"[dạng 1] What is the volume of this object? Drag on the object to rotate it. => 24 cubic units
+[dạng 2] What is the volume of this box? Drag on the box to rotate it. => 90 cubic units
+[dạng 3] What is the surface area of this box? Drag on the box to rotate it. => 78
+square units
+[dạng 4] What is the volume of this cube? Drag on the cube to rotate it. => 216 cubic units
+[dạng 5] What is the surface area of this cube? Drag on the cube to rotate it. => 96
+square units",drop,drop,"5 dạng đều là hình hộp/khối lập phương, không có hình cầu"
+5,8,Surface Area Cylinder,solid_geometry,Solid geometry,needs_figure,template không dùng được: chỉ xét kỹ năng,14234,"[dạng 1] What is the volume of this object? Drag on the object to rotate it. => 24 cubic units
+[dạng 2] What is the volume of this box? Drag on the box to rotate it. => 90 cubic units
+[dạng 3] What is the surface area of this box? Drag on the box to rotate it. => 78
+square units
+[dạng 4] What is the volume of this cube? Drag on the cube to rotate it. => 216 cubic units
+[dạng 5] What is the surface area of this cube? Drag on the cube to rotate it. => 96
+square units",drop,drop,"5 dạng đều là hình hộp/khối lập phương, không có hình trụ"
+6,50,Probability of Two Distinct Events,coin_flip_sequences,Coin flip sequences,no_hints,template không dùng được: chỉ xét kỹ năng,0,[dạng 1] Which method was used to generate this sequence of heads and tails? H T T H H T H T H H H H H H T H H T H H T H T H H H T T T T H H H H T H H H T H H T H H T T T H H T H H T T T H T H T T T H H H H T T T T H H H H H H H H H T T T H H H H T T T T H T H H T H T T H H H T H T T H T H T T T T T T H H T  => Fair coin,drop,drop,"đoán đồng xu có công bằng từ dãy kết quả, không tính xác suất hai biến cố"
+7,58,Pythagorean Theorem,pythagorean_theorem_2,Special right triangles,needs_figure,template không dùng được: chỉ xét kỹ năng,0,"[dạng 1] In the right triangle shown, $AC = BC = 3$ . What is $AB$ ? √ => 18
+[dạng 2] In the right triangle shown, $AC = BC$ and $AB = 10$ . How long are each of the legs? √ => 50
+[dạng 3] In the right triangle shown, $AC = BC$ and $AB = 8\sqrt{2}$ . How long are each of the legs? √ => 64
+[dạng 4] In the right triangle shown, $\angle A = 30^\circ$ and $BC = 5\sqrt{3}$ . How long is $AB$ ? √ => 300
+[dạng 5] In the right triangle shown, $\angle B = 60^\circ$ and $AC = 12$ . How long is $AB$ ? √ => 192
+[dạng 6] In the right triangle shown, $\angle B = 60^\circ$ and $AB = 6$ . How long is $BC$ ? √ => 9",drop,keep,tính cạnh tam giác vuông; dạng 4-5 dùng tam giác đặc biệt nhưng vẫn cùng chủ đề
+8,62,Subtraction Whole Numbers,subtraction_1,,needs_figure,template không dùng được: chỉ xét kỹ năng,527707,[dạng 1] (đề là hình) gợi ý 1: We began with $\blue{2}$ dots and crossed out $\red{1}$ of them. => 1,drop,keep,phép trừ trong phạm vi nhỏ bằng hình chấm; template cần hình không phải lý do drop
+9,63,Subtraction Whole Numbers,subtraction_2,,needs_figure,template không dùng được: chỉ xét kỹ năng,402323,[dạng 1] (đề là hình) gợi ý 1: We began with $\blue{6}$ dots and crossed out $\red{4}$ of them. => 2,drop,keep,phép trừ bằng hình chấm; template cần hình không phải lý do drop
+10,64,Subtraction Whole Numbers,subtraction_3,,no_hints,template không dùng được: chỉ xét kỹ năng,226713,[dạng 1]  => 9,drop,keep,Subtraction 3: phép trừ số nguyên dương; đề nằm trong widget
+11,65,Subtraction Whole Numbers,subtraction_4,,no_hints,template không dùng được: chỉ xét kỹ năng,175470,[dạng 1]  => 87,drop,keep,Subtraction 4: phép trừ số có nhiều chữ số; đề nằm trong widget
+12,77,Median,mean_median_and_mode,"Mean, median, and mode",usable,template có nhiều dạng bài,8971,"[dạng 1] What is the arithmetic mean of the following numbers? $2, 4, 5, 4, 4, 2, 8, 4, 4$ => 4.111111111111111
+[dạng 2] What is the median of the following numbers? $8, 8, 3, 6, 8$ => 8
+[dạng 3] What is the mode of the following numbers? $2, 3, 5, 4, 8, 7, 5, 6$ => 5",drop,keep,dạng 2 là tính trung vị; trung bình và yếu vị cùng chủ đề; giữ như Mean
+13,87,Counting Methods,counting_1,Counting 1,usable,template có nhiều dạng bài,62628,"[dạng 1] Tiffany had to read papers $27$ through $61$ for homework last week. If Tiffany read all of the papers she was assigned, how many papers did she read? papers => 35 papers
+[dạng 2] A baker has a whole loaf of bread. How many parallel cuts must he make to have exactly $13$ even slices? cuts => 12 cuts
+[dạng 3] Daniel is building a straight fence, with posts one meter apart. If the fence is $16$ meters long, how many fence posts does he need? fence posts => 17 fence posts",drop,drop,"đếm kiểu hàng rào/cột mốc (fence-post), không phải quy tắc đếm/tổ hợp"
+14,88,Counting Methods,counting_2,Counting 2,usable,template có nhiều dạng bài,21059,"[dạng 1] Jessica starts counting at 42, and she counts by threes. If 42 is the 1st number that Jessica counts. what is the 12th number that she counts? => 75
+[dạng 2] There are 9 people in a room. If everyone shakes everyone else's hand exactly once, how many handshakes occur? => 36
+[dạng 3] Emily wants to give her friend a potted plant. At the local florist, the flowers come in 2 colors, and there are 4 types of flower pots. If she can choose any flower and any pot, how many different potted plants can Emily buy? => 8",drop,keep,"dạng 2-3 là bắt tay và quy tắc nhân, đúng quy tắc đếm"
+15,92,Addition Whole Numbers,addition_1,,needs_figure,template không dùng được: chỉ xét kỹ năng,895736,[dạng 1] (đề là hình) gợi ý 1: There is $\blue{1}$ blue dot. There are $\green{3}$ green dots. => 4,drop,keep,phép cộng bằng hình chấm; template cần hình không phải lý do drop
+16,93,Addition Whole Numbers,addition_2,,needs_figure,template không dùng được: chỉ xét kỹ năng,268922,[dạng 1] (đề là hình) gợi ý 1: There are $\blue{5}$ blue dots. There are $\green{11}$ green dots. => 16,drop,keep,phép cộng bằng hình chấm; template cần hình không phải lý do drop
+17,94,Addition Whole Numbers,addition_3,,no_hints,template không dùng được: chỉ xét kỹ năng,45141,[dạng 1]  => 81,drop,keep,Addition 3: phép cộng số nguyên dương; đề nằm trong widget
+18,95,Addition Whole Numbers,addition_4,,no_hints,template không dùng được: chỉ xét kỹ năng,226206,[dạng 1]  => 811,drop,keep,Addition 4: phép cộng số có nhiều chữ số; đề nằm trong widget
+19,110,Ordering Integers,comparing_whole_numbers,Comparing whole numbers,usable,template có nhiều dạng bài,0,"[dạng 1] Fill in the blank. $\large{31}$ ____ $\large{74}$ $<$ $=$ $>$ => $<$
+[dạng 2] Fill in the blank. $\large{85}$ ____ $\large{58}$ $<$ $=$ $>$ => $>$",drop,drop,"so sánh hai số tự nhiên, không có số âm và không sắp thứ tự dãy số"
+20,111,Ordering Integers,comparing_whole_numbers_2,Comparing whole numbers 2,usable,template có nhiều dạng bài,0,"[dạng 1] Fill in the blank. $\large{637}$ ____ $\large{367}$ $<$ $=$ $>$ => $>$
+[dạng 2] Fill in the blank. $\large{357}$ ____ $\large{273}$ $<$ $=$ $>$ => $>$",drop,drop,"so sánh hai số tự nhiên, không có số âm và không sắp thứ tự dãy số"
+21,129,Mean,exploring_mean_and_median,Exploring mean and median,not_autogradable,template không dùng được: chỉ xét kỹ năng,24936,"[dạng 1] Arrange the 10 orange points on the number line so the arithmetic mean is $1.9$ and the median is $2.5$ . The distance between adjacent tick marks is 1. => $.map(graph.points, function(el) {
+return el.coord[0];
+})
+if (roundTo(1, mean(guess)) === MEAN &&
+roundTo(1, median(guess)) === MEDIAN) {
+return true;
+} else if (graph.moved) {
+return false;
+} else {
+return """";
+}
+$.each(guess, function(i, x) {
+onMovePoint(graph.points[i], x, 0);
+});
+updateMeanAndMedian();",drop,keep,"phân vân: đặt điểm sao cho trung bình và trung vị bằng giá trị cho trước, cần hiểu trung bình"
+22,153,Histogram as Table or Graph,reading_bar_charts_1,Reading bar charts 1,needs_figure,template không dùng được: chỉ xét kỹ năng,71839,"[dạng 1] At Hogwarts, there are four houses: Gryffindor, Hufflepuff, Ravenclaw, and Slytherin. The bar chart below shows the number of house points that each house received today. How many house points did Gryffindor receive? => 0
+house points",drop,keep,"phân vân: đọc biểu đồ cột; histogram là biểu đồ cột tần số, cùng kỹ năng đọc"
+23,154,Histogram as Table or Graph,reading_bar_charts_2,Reading bar charts 2,needs_figure,template không dùng được: chỉ xét kỹ năng,50656,"[dạng 1] Use the graph to answer the question: Which student's score improved the most between the midterm and final exams? Jessica Gabriela Nadia Emily Christopher Which student's score improved the most between the midterm and final exams? => Jessica
+[dạng 2] Use the graph to answer the question: By how many points did Ishaan's score improve from the midterm to the final exam? points By how many points did Ishaan's score improve from the midterm to the final exam? => 15 points
+[dạng 3] Use the graph to answer the question: How many points did Gabriela earn on the final exam? points How many points did Gabriela earn on the final exam? => 80 points
+[dạng 4] Use the graph to answer the question: How many students improved their scores from the midterm to the final exam? students How many students improved their scores from the midterm to the final exam? => 3 students",drop,keep,phân vân: đọc và so sánh số liệu trên biểu đồ cột
+24,155,Histogram as Table or Graph,reading_bar_charts_3,Reading bar charts 3,needs_figure,template không dùng được: chỉ xét kỹ năng,16400,"[dạng 1] Use the graph to answer the question: What was the average student score for the midterm? What was the average student score for the midterm? => 74
+[dạng 2] Use the graph to answer the question: On average, did the students do better on the midterm or the final exam? Midterm Final exam Same on both On average, did the students do better on the midterm or the final exam? => Final exam
+[dạng 3] Use the graph to answer the question: What was the median score for the final exam? What was the median score for the final exam? => 90
+[dạng 4] Use the graph to answer the question: What was the mode for the midterm scores? What was the mode for the midterm scores? => 80
+[dạng 5] Use the graph to answer the question: What is the range of the midterm scores? What is the range of the midterm scores? => 30
+[dạng 6] Use the graph to answer the question: What is the midrange of the final exam scores? What is the midrange of the final exam scores? => 92.5",drop,keep,phân vân: tính trung bình/trung vị từ biểu đồ cột
+25,156,Histogram as Table or Graph,creating_bar_charts_1,Creating bar charts 1,not_autogradable,template không dùng được: chỉ xét kỹ năng,30658,"[dạng 1] Create a bar chart showing everyone's favorite animals: => _.times(5, function(n) { return graph.lines[ n ].coordA[1]; })
+if ( _.isEqual( guess, [ 0.5, 0.5, 0.5, 0.5, 0.5 ] ) ) {
+return """";
+}
+return _.isEqual( guess, DATA );
+$.each( guess, function( index ) {
+graph.lines[ index ].pointA.setCoord([ graph.lines[ index ].pointA.coord[0], this ]);
+graph.lines[ index ].pointZ.setCoord([ graph.lines[ index ].pointZ.coord[0], this ]);
+graph.lines[ index ].pointA.updateLineEnds();
+graph.lines[ index ].pointZ.updateLineEnds();
+graph.lines[ index ].bar.scale( 1, Math.max( 0.01, this * 2 ), scalePoint( 0 )[0], scalePoint( 0 )[1] );
+});",drop,drop,"vẽ biểu đồ cột cho dữ liệu phân loại, không phải histogram"
+26,177,Interior Angles Figures with More than 3 Sides,quadrilateral_angles,Quadrilateral angles,needs_figure,template không dùng được: chỉ xét kỹ năng,18793,[dạng 1] What is the value of the angle marked with $x$ ? => 63 $\Large{{}^\circ}$,drop,keep,tìm góc trong tứ giác
+27,184,Area Irregular Figure,area_2,Area 2,needs_figure,template không dùng được: chỉ xét kỹ năng,0,"[dạng 1] What is the area of the square? => 49
+square meters
+[dạng 2] What is the area of the rectangle? => 24
+square units",drop,drop,"diện tích hình vuông/chữ nhật, không phải hình không đều"
+28,185,Interior Angles Triangle,triangle_angles_1,Triangle angles 1,needs_figure,template không dùng được: chỉ xét kỹ năng,22793,"[dạng 1] What is $X$ ? => $X =$ 28 $\Large{^\circ}$
+[dạng 2] What is $X$ ? => $X =$ 50 $\Large{^\circ}$
+[dạng 3] What is $X$ ? => $X =$ 55 $\Large{^\circ}$
+[dạng 4] What is $X$ ? => $X =$ 59 $\Large{^\circ}$",drop,keep,tìm góc trong tam giác
+29,234,Rate,rate_problems_2,Rate problems 2,usable,template có nhiều dạng bài,3102,"[dạng 1] Starting at home, Tiffany traveled uphill to the toy store for $12$ minutes at just $15$ mph. She then traveled back home along the same path downhill at a speed of $30$ mph. What is her average speed for the entire trip from home to the toy store and back? mph => 20 mph
+[dạng 2] It takes $41$ minutes for $9$ people to paint $9$ walls. How many minutes does it take $14$ people to paint $14$ walls? minutes => 41 minutes
+[dạng 3] It takes $35$ minutes for $4$ people to paint $7$ walls. How many minutes does it take $5$ people to paint $6$ walls? minutes => 24 minutes",drop,drop,Rate có chung tag Unit-Rate với Unit Rate; giữ cặp này sẽ đưa bài tốc độ trung bình vào tag Unit-Rate
+30,247,Slope,recognizing_slope,Recognizing slope of curves,not_autogradable,template không dùng được: chỉ xét kỹ năng,0,"[dạng 1] A function $f(x)$ is plotted below. Highlight an interval where $f^\prime(x) > 0$ . $f(x) = x^{3}+4x^{2}-x-4$ => graph.slidingWindow.getX()
+var correct = _.reduce(_.range(guess, guess + 1, 0.02), function(correct, x) {
+return correct && PREDICATE(x);
+}, true);
+if (!graph.moved && !correct) {
+return """"
+}
+return correct;
+graph.slidingWindow.moveTo(guess, 0);",drop,drop,"khoảng đồng biến của hàm bậc ba (đạo hàm), không phải hệ số góc"
+31,264,Substitution,plugging_in_values,Equations from tables,needs_figure,template không dùng được: chỉ xét kỹ năng,1742,"[dạng 1] Some ordered pairs for a linear function of $\pink{x}$ are given in the table below. Which equation was used to generate this table? => $y = 2x + 8$
+[dạng 2] Some ordered pairs for a linear function of $\pink{p}$ are given in the table below. The data in the table show the cost of buying bulk vegetables per pound, including the fee for the clerk to package the vegetables in boxes. Which equation fits the data? => $c = 5p + 6$",drop,keep,phân vân: thay giá trị trong bảng vào để chọn phương trình đúng
+32,275,Percent Increase or Decrease,discount_tax_and_tip_word_problems,"Discount, tax, and tip word problems",usable,template có nhiều dạng bài,13256,"[dạng 1] Michael buys a basket of oranges on sale for $\$9$ before tax. The sales tax is $15\%$ . What is the total price Michael pays for the basket of oranges? $\$\ $ => $\$\ $ 10.35
+[dạng 2] If the sales tax in your city is $11.7\%$ , and an item costs $\$108$ before tax, how much tax would you pay on that item? Round to the nearest hundredth or cent. $\$\ $ => $\$\ $ 12.64
+[dạng 3] Emily bought a new sweater at the store when they were having a $15\%$ off sale. If the regular price of the sweater was $\$54$ , how much did Emily pay with the discount? $\$\ $ => $\$\ $ 45.9
+[dạng 4] The pizza store is having a $40\%$ off sale on all of its pizzas. If the pizza you want regularly costs $\$13$ , how much would you save with the discount? $\$\ $ => $\$\ $ 5.2
+[dạng 5] Michael eats at a cafe and the cost of his meal is $\$33.00$ . Because of the service, he wants to leave a $5\%$ tip. What is his total bill including tip? $\$\ $ => $\$\ $ 34.65",drop,keep,thuế cộng thêm và giảm giá là tăng/giảm theo phần trăm; dạng 2 là tính phần trăm
+33,278,Multiplying non Monomial Polynomials,multiplying_polynomials_0.5,Multiplying polynomials 0.5,usable,template có nhiều dạng bài,0,"[dạng 1] Expand the expression. $-(2n-7)$ => (-1 * 2)n + (-1 * -7)
+[dạng 2] Simplify the expression. $-3x(-3x+4)$ => (-3 * -3)x^2 + (-3 * 4x)
+[dạng 3] Simplify the expression. $(-3r-1)(-3r-2)$ => 9r^2 + 9r + 2",drop,drop,"2/3 dạng là đơn thức nhân đa thức, kỹ năng yêu cầu đa thức nhân đa thức"
+34,287,Division Whole Numbers,division_1,,needs_figure,template không dùng được: chỉ xét kỹ năng,200577,"[dạng 1] (đề là hình) gợi ý 1: Draw $\blue{24}$ circles, with $\green{8}$ to each row. => 3
+[dạng 2]  => 48
+[dạng 3] (đề là hình) gợi ý 1: Draw $\blue{12}$ circles in $\pink{6}$ equal-sized row. => 2",drop,keep,phép chia bằng cách xếp hàng; template cần hình không phải lý do drop
+35,293,Interpreting Coordinate Graphs,identifying_points_2,Ordered pair solutions to linear equations,usable,template có nhiều dạng bài,8410,"[dạng 1] Which of the following ordered pairs represents a solution to the equation below? $y = -2x+1$ $(-2, 3)$ $(-1, 5)$ $(0, 1)$ $(1, 1)$ $(2, -5)$ => $(0, 1)$
+[dạng 2] Which of the following ordered pairs represents a solution to the equation graphed below? => $(-1, -3)$",drop,drop,"dạng 1 là kiểm tra nghiệm bằng đại số, không đọc đồ thị"

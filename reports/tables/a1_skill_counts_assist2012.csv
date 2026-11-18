@@ -31,18 +31,18 @@ assist2012,Ordering Fractions,22319,3095,0.797,Ordering-Fractions
 assist2012,Square Root,22218,4743,0.8007,Square-Root
 assist2012,Write Linear Equation from Ordered Pairs,21863,2517,0.462,Write-Linear-Equation-from-Ordered-Pairs
 assist2012,Polynomial Factors,21323,1380,0.6509,Polynomial-Factors
-assist2012,Finding y-intercept from Linear Equation,21026,2268,0.6881,
+assist2012,Finding y-intercept from Linear Equation,21026,2268,0.6881,Finding-y-intercept-from-Linear-Equation
 assist2012,Finding Slope From Equation,20778,2271,0.6438,Finding-Slope-From-Equation
 assist2012,Mean,20223,4192,0.6231,Mean
-assist2012,Substitution,19920,3435,0.7515,
+assist2012,Substitution,19920,3435,0.7515,Substitution
 assist2012,Ordering Integers,19662,2419,0.8773,Ordering-Integers
 assist2012,Median,19144,3951,0.6815,Median
 assist2012,Circumference,19143,3552,0.6778,Circumference
 assist2012,Finding Slope from Ordered Pairs,18621,3057,0.648,Finding-Slope-From-Equation
 assist2012,Scientific Notation,18617,3364,0.7379,Scientific-Notation
-assist2012,Combining Like Terms,18212,1833,0.5233,
+assist2012,Combining Like Terms,18212,1833,0.5233,Combining-Like-Terms
 assist2012,Area Triangle,18121,3568,0.6831,Area-Triangle
-assist2012,Pattern Finding,18082,3679,0.6004,
+assist2012,Pattern Finding,18082,3679,0.6004,Pattern-Finding
 assist2012,Probability of a Single Event,17911,3648,0.7325,Probability-of-a-Single-Event
 assist2012,Solving Systems of Linear Equations by Graphing,16410,1752,0.6438,Solving-Systems-of-Linear-Equations
 assist2012,Area Circle,16181,3016,0.6239,Area-Circle
@@ -59,7 +59,7 @@ assist2012,Area Trapezoid,12695,2474,0.5741,Area-Trapezoid
 assist2012,Greatest Common Factor,12558,3176,0.698,Greatest-Common-Factor
 assist2012,Absolute Value,12515,3261,0.7181,Absolute-Value
 assist2012,Histogram as Table or Graph,12329,2013,0.6977,
-assist2012,Write Linear Equation from Slope and y-intercept,11897,2372,0.7475,
+assist2012,Write Linear Equation from Slope and y-intercept,11897,2372,0.7475,Write-Linear-Equation-from-Slope-and-y-intercept
 assist2012,Interior Angles Triangle,11730,2274,0.7651,Interior-Angles-Triangle
 assist2012,Properties and Classification Quadrilaterals,11010,1762,0.8912,
 assist2012,"Angles - Obtuse, Acute, and Right",10944,2165,0.8846,Angles-Obtuse-Acute-and-Right
@@ -71,21 +71,21 @@ assist2012,Scale Factor,9436,1478,0.6629,Calculations-with-Similar-Figures
 assist2012,Box and Whisker,9191,1535,0.6612,
 assist2012,Surface Area Cylinder,8882,1677,0.4998,Surface-Area-Cylinder
 assist2012,Area Irregular Figure,8871,1372,0.5713,Area-Irregular-Figure
-assist2012,Percent Increase or Decrease,8681,1429,0.5082,
+assist2012,Percent Increase or Decrease,8681,1429,0.5082,Percent-Increase-or-Decrease
 assist2012,Write Linear Equation from Situation,8594,1824,0.7299,Write-Linear-Equation-from-Ordered-Pairs
 assist2012,Finding Slope From Situation,8107,2106,0.5591,Finding-Slope-From-Equation
 assist2012,Scatter Plot,7746,1613,0.8017,
 assist2012,Recognize Linear Pattern,7696,1245,0.7872,Recognize-Linear-Pattern
 assist2012,Volume Cylinder,7284,1889,0.5803,Volume-Cylinder
-assist2012,Multiplying non Monomial Polynomials,6732,1003,0.7181,
+assist2012,Multiplying non Monomial Polynomials,6732,1003,0.7181,Multiplying-non-Monomial-Polynomials
 assist2012,Counting Methods,6658,2033,0.7435,Counting-Methods
-assist2012,Volume Prism,6542,1291,0.7622,
+assist2012,Volume Prism,6542,1291,0.7622,Volume-Prism
 assist2012,Addition Whole Numbers,6465,1470,0.8492,Addition-Whole-Numbers
 assist2012,Making a Table from an Equation,6455,1029,0.6807,
 assist2012,Venn Diagram,6306,1441,0.6637,
 assist2012,Angles on Parallel Lines Cut by a Transversal,6247,1911,0.7981,Angles-on-Parallel-Lines-Cut-by-a-Transversal
 assist2012,Properties and Classification Polygons with 5 or more sides,5966,1230,0.7635,
-assist2012,Prime Factor,5744,1269,0.7211,
+assist2012,Prime Factor,5744,1269,0.7211,Prime-Factor
 assist2012,Nets of 3D Figures,5707,1645,0.9338,
 assist2012,Multiplication Whole Numbers,5467,1366,0.7134,Multiplication-Whole-Numbers
 assist2012,Number Line,5386,2180,0.713,
@@ -95,30 +95,30 @@ assist2012,Congruence,5097,1518,0.8715,
 assist2012,Subtraction Whole Numbers,5074,1634,0.8477,Subtraction-Whole-Numbers
 assist2012,Properties and Classification Triangles,4970,1560,0.7549,
 assist2012,Unit Conversion Standard to Metric,4647,683,0.5528,
-assist2012,Division Whole Numbers,3866,1705,0.6619,
+assist2012,Division Whole Numbers,3866,1705,0.6619,Division-Whole-Numbers
 assist2012,Volume Pyramid,3792,612,0.6461,
 assist2012,Interpreting Coordinate Graphs,3512,841,0.6378,
-assist2012,Parallel and Perpendicular Lines,3262,1366,0.7244,
+assist2012,Parallel and Perpendicular Lines,3262,1366,0.7244,Parallel-and-Perpendicular-Lines
 assist2012,Solving Inequalities,3229,1186,0.564,Solving-Inequalities
 assist2012,Volume Sphere,3207,821,0.5943,Volume-Sphere
 assist2012,Picking Equation and Inequality from Choices,2999,1248,0.5165,
-assist2012,"Expanded, Standard and Word Notation",2942,567,0.7825,
+assist2012,"Expanded, Standard and Word Notation",2942,567,0.7825,Expanded-Standard-and-Word-Notation
 assist2012,Algebraic Solving,2861,1020,0.525,Solving-for-a-variable
 assist2012,Surface Area Sphere,2813,702,0.6626,
 assist2012,Computation with Real Numbers,2777,617,0.6583,Computation-with-Real-Numbers
 assist2012,"Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable",2685,564,0.8097,Polynomial-Vocabulary
-assist2012,Properties and Classification Circle,2633,788,0.7847,
+assist2012,Properties and Classification Circle,2633,788,0.7847,Properties-and-Classification-Circle
 assist2012,Estimation,2583,672,0.6531,
 assist2012,Surface Area of Prism,2454,275,0.6769,
-assist2012,Picking Expressions From Choices,2413,403,0.6983,
+assist2012,Picking Expressions From Choices,2413,403,0.6983,Picking-Expressions-From-Choices
 assist2012,Ordering Real Numbers,2329,1085,0.6325,Ordering-Real-Numbers
 assist2012,Properties and Classification Prism,2293,218,0.6324,
-assist2012,Composition of Function Adding,2284,307,0.6659,
+assist2012,Composition of Function Adding,2284,307,0.6659,Composition-of-Function-Adding
 assist2012,Rate,2060,233,0.6209,Unit-Rate
 assist2012,X-Y Graph Reading,1770,215,0.5644,
 assist2012,D.4.8-understanding-concept-of-probabilities,1746,471,0.874,Probability-of-a-Single-Event
 assist2012,Line Plot,1714,1187,0.5648,
-assist2012,Factoring Polynomials Standard,1661,181,0.8886,
+assist2012,Factoring Polynomials Standard,1661,181,0.8886,Factoring-Polynomials-Standard
 assist2012,Properties and Classification Rectangular Prisms,1661,480,0.8194,
 assist2012,Quadratic Formula to Solve Quadratic Equation,1557,229,0.4631,Quadratic-Formula-to-Solve-Quadratic-Equation
 assist2012,Reflection,1532,676,0.7148,Reflection

@@ -24,7 +24,7 @@ COLS = ["user_id", "exercise", "problem_type", "time_done", "time_taken", "corre
 DTYPES = {"user_id": "int32", "exercise": "category", "problem_type": "category", "time_done": "int64",
           "time_taken": "float32", "correct": "string", "count_attempts": "float32", "count_hints": "float32",
           "review_mode": "string"}
-DEFAULT_MAPPING = "lmsrag/data/mappings/assistments_to_khan_draft.csv"
+DEFAULT_MAPPING = "lmsrag/data/mappings/skill_map_v1.csv"
 
 
 def _bool(s: pd.Series) -> pd.Series:

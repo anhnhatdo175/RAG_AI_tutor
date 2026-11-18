@@ -1,0 +1,18 @@
+source_dataset,source_skill,canonical_tag,khan_slug,method,confidence,note,template_status,usable_problems,junyi_responses,junyi_accuracy,review,review_row,map_version
+both,Area Irregular Figure,Area-Irregular-Figure,area_2,manual_review,high,"phiếu D: drop; diện tích hình vuông/chữ nhật, không phải hình không đều",needs_figure,0,,,D:drop,184,1.0
+both,Counting Methods,Counting-Methods,counting_1,manual_review,high,"phiếu D: drop; đếm kiểu hàng rào/cột mốc (fence-post), không phải quy tắc đếm/tổ hợp",usable,12,62628,0.7649,D:drop,87,1.0
+both,Equivalent Fractions,Equivalent-Fractions,simplifying_fractions,manual_review,high,,usable,4,73419,0.7305,A:drop,118,1.0
+both,Estimation,,rounding_whole_numbers,manual_review,high,"phiếu D: drop; chỉ làm tròn, không ước lượng kết quả phép tính",usable,8,50301,0.8208,D:drop,5,1.0
+both,Histogram as Table or Graph,,creating_bar_charts_1,manual_review,high,"phiếu D: drop; vẽ biểu đồ cột cho dữ liệu phân loại, không phải histogram",not_autogradable,0,30658,0.8725,D:drop,156,1.0
+both,Interpreting Coordinate Graphs,,identifying_points_2,manual_review,high,"phiếu D: drop; dạng 1 là kiểm tra nghiệm bằng đại số, không đọc đồ thị",usable,4,8410,0.6974,D:drop,293,1.0
+assist2009,Linear Equations,Linear-Equations,linear_equations_4,manual_review,high,,usable,4,11939,0.6124,A:drop,245,1.0
+assist2012,Multiplying non Monomial Polynomials,Multiplying-non-Monomial-Polynomials,multiplying_polynomials_0.5,manual_review,high,"phiếu D: drop; 2/3 dạng là đơn thức nhân đa thức, kỹ năng yêu cầu đa thức nhân đa thức",usable,12,,,D:drop,278,1.0
+both,Ordering Integers,Ordering-Integers,comparing_whole_numbers,manual_review,high,"phiếu D: drop; so sánh hai số tự nhiên, không có số âm và không sắp thứ tự dãy số",usable,8,,,D:drop,110,1.0
+both,Ordering Integers,Ordering-Integers,comparing_whole_numbers_2,manual_review,high,"phiếu D: drop; so sánh hai số tự nhiên, không có số âm và không sắp thứ tự dãy số",usable,8,,,D:drop,111,1.0
+both,Probability of Two Distinct Events,Probability-of-Two-Distinct-Events,coin_flip_sequences,manual_review,high,"phiếu D: drop; đoán đồng xu có công bằng từ dãy kết quả, không tính xác suất hai biến cố",no_hints,0,,,D:drop,50,1.0
+both,Rate,Unit-Rate,rate_problems_2,manual_review,high,phiếu D: drop; Rate có chung tag Unit-Rate với Unit Rate; giữ cặp này sẽ đưa bài tốc độ trung bình vào tag Unit-Rate,usable,12,3102,0.4684,D:drop,234,1.0
+assist2009,Slope,Finding-Slope-From-Equation,recognizing_slope,manual_review,high,"phiếu D: drop; khoảng đồng biến của hàm bậc ba (đạo hàm), không phải hệ số góc",not_autogradable,0,,,D:drop,247,1.0
+both,Surface Area Cylinder,Surface-Area-Cylinder,solid_geometry,manual_review,high,"phiếu D: drop; 5 dạng đều là hình hộp/khối lập phương, không có hình trụ",needs_figure,0,14234,0.4838,D:drop,8,1.0
+both,Unit Rate,Unit-Rate,rate_problems_2,manual_review,high,"phiếu D: drop; 3 dạng là tốc độ trung bình và năng suất (người sơn tường), không phải đơn giá",usable,12,3102,0.4684,D:drop,3,1.0
+both,Volume Cylinder,Volume-Cylinder,solid_geometry,manual_review,high,"phiếu D: drop; 5 dạng đều là hình hộp/khối lập phương, không có hình trụ",needs_figure,0,14234,0.4838,D:drop,6,1.0
+both,Volume Sphere,Volume-Sphere,solid_geometry,manual_review,high,"phiếu D: drop; 5 dạng đều là hình hộp/khối lập phương, không có hình cầu",needs_figure,0,14234,0.4838,D:drop,7,1.0

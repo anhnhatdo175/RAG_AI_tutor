@@ -29,18 +29,18 @@ docs_by_level,math,level_2,166
 docs_by_level,math,level_4,261
 tag_method,gsm8k,rule,1983
 difficulty_source,gsm8k,counts,"{""gsm8k_steps"": 1983}"
-tag_method,khan,dictionary,1195
-tag_method,khan,junyi_topic,586
-tag_method,khan,rule,205
-tag_method,khan,template_only,78
+tag_method,khan,dictionary,1338
+tag_method,khan,junyi_topic,534
+tag_method,khan,template_only,184
+tag_method,khan,rule,8
 difficulty_source,khan,counts,"{""junyi_history"": 1273, ""khan_steps"": 791}"
 tag_method,math,rule,501
 difficulty_source,math,counts,"{""math_level"": 501}"
-skills,all,skills_with_chunks,105
-skills,all,skills_with_chunks_at_ge3_levels,54
-skills,all,canonical_skills_with_chunks,65
-skills,all,canonical_skills_with_chunks_at_ge3_levels,40
-coverage,assist2009,share_rows_skill_has_usable_khan_template,0.7756
-coverage,assist2009,share_rows_skill_tag_has_any_chunk,0.8093
-coverage,assist2012,share_rows_skill_has_usable_khan_template,0.8413
-coverage,assist2012,share_rows_skill_tag_has_any_chunk,0.8235
+skills,all,skills_with_chunks,139
+skills,all,skills_with_chunks_at_ge3_levels,50
+skills,all,canonical_skills_with_chunks,80
+skills,all,canonical_skills_with_chunks_at_ge3_levels,38
+coverage,assist2009,share_rows_skill_has_usable_khan_template,0.7714
+coverage,assist2009,share_rows_skill_tag_has_any_chunk,0.8155
+coverage,assist2012,share_rows_skill_has_usable_khan_template,0.8239
+coverage,assist2012,share_rows_skill_tag_has_any_chunk,0.8709

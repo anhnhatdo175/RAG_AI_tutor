@@ -41,15 +41,46 @@ Danh sách đầy đủ template dùng được: `lmsrag/data/khan_v2/khan_templ
 ## Phiếu C · `a4_review_C_untagged_templates.csv` (45 dòng)
 
 Đây là các template dùng được mà từ điển và Junyi chưa gắn kỹ năng. 10 dòng đầu có `tag_now = khan:<slug>`, tức
-hiện chưa có tag nào (ma trận, hóa học…); 35 dòng sau đang được gắn bằng quy tắc văn bản.
+hiện chưa có tag nào (ma trận, hóa học…); 35 dòng sau có `tag_now = rule:<tag>`, tức đang được gắn bằng quy tắc
+văn bản theo từ khóa. Quy tắc chạy trên từng bài nên các bài cùng template có thể khác tag; cột ghi tag phổ biến nhất.
 
 | `decision` | Khi nào |
 |---|---|
-| `add` | Template thuộc một kỹ năng ASSISTments; ghi tên kỹ năng vào `assistments_skill` |
-| `none` | Không thuộc kỹ năng nào của đề tài (ví dụ ma trận, cân bằng phương trình hóa học); giữ tag hiện tại |
+| `keep` | (dòng `rule:`) tag hiện tại đúng kỹ năng |
+| `add` | Template thuộc một kỹ năng ASSISTments khác tag hiện tại; ghi tên kỹ năng vào `assistments_skill`, đúng như cột `source_skill` của `reports/tables/a1_skill_counts_*.csv` (có dấu cách, ví dụ `Addition Whole Numbers`); nhiều kỹ năng cách nhau bằng `;` |
+| `none` | Không thuộc kỹ năng nào của đề tài (ví dụ ma trận, hóa học); template sẽ mang tag `khan:<slug>`, bỏ tag quy tắc |
+
+## Phiếu D · `a4_review_D_recheck_drops.csv` (35 dòng, xem lại sau phiếu A)
+
+Sinh bằng `python -m lmsrag.labels.review_recheck`. Đây là các cặp bị `drop` ở phiếu A thuộc một trong hai loại dễ nhầm:
+
+- **Template không dùng được** (`needs_figure`, `no_hints`, `not_autogradable`; 24 dòng). Chỉ xét kỹ năng:
+  học sinh làm bài này có đang luyện kỹ năng đó không? Việc template cần hình **không** phải lý do để `drop`.
+  Template loại này không vào kho, nhưng vẫn gắn tag cho lượt làm Junyi (cột `junyi_responses`; ví dụ
+  `addition_1` có gần 900.000 lượt).
+- **Template dùng được nhưng có nhiều dạng bài** (11 dòng). Phiếu A chỉ in dạng đầu tiên. Ví dụ
+  `mean_median_and_mode` có dạng tính trung vị, `discount_tax_and_tip_word_problems` có dạng giảm giá.
+
+Cột `all_types` in một bài mẫu của **mọi** dạng bài. Với template `no_hints`, đề nằm trong widget nên chỉ thấy đáp án;
+dựa vào tên template (`template_title`). Điền `decision` = `keep` hoặc `drop` và `note`. Để trống thì giữ quyết định ở
+phiếu A. Quy tắc: giữ cặp nếu có ít nhất một dạng bài luyện đúng kỹ năng **và** các dạng còn lại cùng chủ đề gần
+(ví dụ trung bình, trung vị, yếu vị trong một bài); bỏ nếu các dạng còn lại là kỹ năng khác hoặc khó hơn hẳn. Hai kỹ
+năng có chung `canonical_tag` (Rate và Unit Rate đều là `Unit-Rate`) phải được xét cùng nhau, vì cặp của kỹ năng này
+cũng đưa bài vào tag của kỹ năng kia.
 
 ## Sau khi rà xong
 
-Lưu đè ba tệp này, giữ nguyên tên, rồi báo lại. Bước tiếp theo sẽ dựng `skill_map_v1.csv` từ quyết định của bạn,
-chạy lại P1-03 và P1-04, rồi sinh phiếu 150 cặp cho Người 2 và Người 3 gán độc lập để tính κ. Ước tính thời gian:
-khoảng 1,5–2 giờ cho phiếu A, 20 phút cho B, 15 phút cho C.
+Lưu đè ba tệp này, giữ nguyên tên. Trong Excel, chọn **CSV UTF-8 (Comma delimited)**; kiểu "CSV (Comma
+delimited)" lưu theo bảng mã ANSI và làm mất dấu tiếng Việt trong `note`. Ước tính thời gian: khoảng 1,5–2 giờ cho
+phiếu A, 20 phút cho B, 15 phút cho C.
+
+Bước 2 dựng từ điển v1 từ ba phiếu:
+
+```powershell
+python -m lmsrag.labels.build_skill_map
+```
+
+Script kiểm tra mọi quyết định, slug (so với `khan_templates.csv`) và tên kỹ năng (so với `reports/tables/a1_skill_counts_*.csv`);
+nếu có lỗi thì liệt kê và không ghi tệp. Đầu ra: `lmsrag/data/mappings/skill_map_v1.csv` (cột `review` ghi phiếu và
+quyết định của mỗi dòng, ví dụ `A:keep`, `B:add`, `C:none`) và `skill_map_v1_rejected.csv` (các cặp bị bỏ). Sau đó chạy
+lại P1-03 và P1-04 (`configs/data.yaml` đã trỏ tới v1). Bước 3 là phiếu 150 cặp cho Người 2 và Người 3 gán độc lập để tính κ.

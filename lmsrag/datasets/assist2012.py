@@ -11,6 +11,7 @@ from pathlib import Path
 import pandas as pd
 
 from ..skill_mapping import SkillMapper
+from .skill_map import MapTagger, tagger
 from . import schema
 from .assist2009 import AdapterResult
 from .cleaning import CleaningLog, kept_vs_dropped, skill_counts
@@ -48,7 +49,8 @@ def read_raw(path: Path, encoding: str = "ISO-8859-15", chunksize: int = 400_000
     return df
 
 
-def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | None = None) -> AdapterResult:
+def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | MapTagger | None = None,
+          tag_source: str = "SkillMapper") -> AdapterResult:
     mapper = mapper or SkillMapper()
     min_rows = int(cfg["split"]["min_user_interactions"])
     seed = int(cfg["data_seed"])
@@ -74,7 +76,7 @@ def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | None = None) -> Ad
     counts = skill_counts(df, DATASET)
     comparison = kept_vs_dropped(df, mapped, n_boot, seed, reason=mapper.unmapped_reason)
     unmapped_rows, unmapped_skills = int((~mapped).sum()), int(df.loc[~mapped, "source_skill"].nunique())
-    df = log.apply(df, df[mapped], "drop rows whose skill has no canonical tag (SkillMapper)")
+    df = log.apply(df, df[mapped], f"drop rows whose skill has no canonical tag ({tag_source})")
     n = df.groupby("user_id")["problem_log_id"].transform("size")
     df = log.apply(df, df[n >= min_rows], f"re-apply: drop learners with < {min_rows} rows after the skill filter")
 
@@ -120,4 +122,5 @@ def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | None = None) -> Ad
 def build(cfg: dict, repo: Path) -> AdapterResult:
     ds = cfg["datasets"][DATASET]
     raw = read_raw(repo / ds["path"], ds.get("encoding", "ISO-8859-15"), int(ds.get("chunksize", 400_000)))
-    return clean(raw, cfg)
+    tag, source = tagger(ds, repo)
+    return clean(raw, cfg, mapper=tag, tag_source=source)

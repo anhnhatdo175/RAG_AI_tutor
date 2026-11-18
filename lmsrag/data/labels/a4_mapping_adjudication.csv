@@ -1,0 +1,13 @@
+﻿item,skill,source,title,problem,answer,label_nguoi2,label_nguoi3,note_nguoi2,note_nguoi3,label_final,note_final
+m062,Write Linear Equation from Ordered Pairs,MATH,,"Find the sum of the slope and y-intercept of the line through the points (7,8) and (9,0).",32,0,1,Tính hệ số góc và tung độ gốc từ hai điểm rồi lấy tổng; không yêu cầu viết phương trình đường thẳng.,,1,Tìm hệ số góc và tung độ gốc từ hai điểm là phần chính của kỹ năng; chỉ khác cách ghi đáp số
+m097,D.4.8-understanding-concept-of-probabilities,Khan Academy,Probability 1,"A bag contains 8 red jelly beans,
+6 green jelly beans, and 3 blue jelly beans.
+If a jelly bean is randomly chosen, what is the probability
+that it is green?",0.35294117647058826,0,1,"Theo skill_meaning, kỹ năng là nhận biết/hiểu tính chất xác suất; đề yêu cầu tính trực tiếp 6/(8+6+3), phù hợp hơn với Probability of a Single Event.",,1,Tính xác suất một biến cố đơn giản thuộc khái niệm xác suất cơ bản; giải thích kỹ năng trong phiếu hẹp hơn kỹ năng gốc
+m107,Multiplication and Division Positive Decimals,Khan Academy,Dividing completely,"36 ÷ 60 = ?
+Please give your answer in decimal form.",0.6,0,1,"Chia hai số tự nhiên 36 và 60 rồi viết kết quả thập phân, không phải phép chia số thập phân.",,1,"Phải chia tiếp sang phần thập phân để có đáp số 0.6, đúng phép chia số thập phân"
+m114,Proportion,Khan Academy,Expressing ratios as fractions,"Kevin has 24 coconuts for every 24 eggplants.
+Write the ratio of coconuts to eggplants as a simplified fraction.",1,1,0,"Ranh giới với kỹ năng Ratio: đề chỉ yêu cầu viết và rút gọn tỉ số 24:24, không giải bài toán tỉ lệ thức. Chọn 1 vì tỉ số là thành phần trực tiếp của khái niệm tỉ lệ trong mô tả rộng, nhưng đây là dòng dễ phân xử khác nhau.","Chỉ viết tỉ số thành phân số, không phải tỉ lệ thức",1,Viết tỉ số dưới dạng phân số là bước nền của tỉ lệ; ranh giới với Ratio
+m115,Simplifying Expressions positive exponents,Khan Academy,Simplifying expressions with exponents,"Rewrite ((t^-2)^-5)/((tq)^-5) in the form
+t^nq^m .
+Assume t≠ 0, q≠ 0 .",t^15 * q^5,0,1,Biểu thức có số mũ âm và dùng quy tắc số mũ âm; không thuộc phạm vi số mũ dương được mô tả.,,0,"Bài dùng số mũ âm, ngoài phạm vi số mũ dương của kỹ năng"

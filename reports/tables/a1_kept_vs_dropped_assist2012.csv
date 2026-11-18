@@ -1,331 +1,283 @@
 section,group,skill,metric,value,ci_low,ci_high,note,dataset
-overall,kept,,rows,2162323.0,,,,assist2012
-overall,kept,,users,17823.0,,,,assist2012
-overall,kept,,accuracy,0.7029,,,,assist2012
-overall,dropped,,rows,291150.0,,,,assist2012
-overall,dropped,,users,13242.0,,,,assist2012
-overall,dropped,,accuracy,0.686,,,,assist2012
-overall,kept-dropped,,accuracy_diff,0.0169,0.0131,0.0204,"cluster bootstrap over learners, 1000 resamples, seed 2026",assist2012
-overall,kept-dropped,,chi2,349.498,,,row-level test; rows are not independent,assist2012
-overall,kept-dropped,,chi2_p,5.451805371428968e-78,,,,assist2012
-per_learner,kept,,learners,17807.0,,,learners with >= 5 rows in this part,assist2012
-per_learner,kept,,accuracy_q10,0.4839,,,,assist2012
-per_learner,kept,,accuracy_q25,0.6081,,,,assist2012
-per_learner,kept,,accuracy_q50,0.7153,,,,assist2012
-per_learner,kept,,accuracy_q75,0.8043,,,,assist2012
-per_learner,kept,,accuracy_q90,0.8718,,,,assist2012
-per_learner,dropped,,learners,10317.0,,,learners with >= 5 rows in this part,assist2012
+overall,kept,,rows,2298220.0,,,,assist2012
+overall,kept,,users,17825.0,,,,assist2012
+overall,kept,,accuracy,0.7009,,,,assist2012
+overall,dropped,,rows,155253.0,,,,assist2012
+overall,dropped,,users,10433.0,,,,assist2012
+overall,dropped,,accuracy,0.6999,,,,assist2012
+overall,kept-dropped,,accuracy_diff,0.0011,-0.0041,0.0058,"cluster bootstrap over learners, 1000 resamples, seed 2026",assist2012
+overall,kept-dropped,,chi2,0.762,,,row-level test; rows are not independent,assist2012
+overall,kept-dropped,,chi2_p,0.3827629254477727,,,,assist2012
+per_learner,kept,,learners,17817.0,,,learners with >= 5 rows in this part,assist2012
+per_learner,kept,,accuracy_q10,0.4878,,,,assist2012
+per_learner,kept,,accuracy_q25,0.6074,,,,assist2012
+per_learner,kept,,accuracy_q50,0.7143,,,,assist2012
+per_learner,kept,,accuracy_q75,0.8,,,,assist2012
+per_learner,kept,,accuracy_q90,0.8696,,,,assist2012
+per_learner,dropped,,learners,7685.0,,,learners with >= 5 rows in this part,assist2012
 per_learner,dropped,,accuracy_q10,0.4,,,,assist2012
-per_learner,dropped,,accuracy_q25,0.5714,,,,assist2012
-per_learner,dropped,,accuracy_q50,0.7083,,,,assist2012
-per_learner,dropped,,accuracy_q75,0.8261,,,,assist2012
-per_learner,dropped,,accuracy_q90,0.9091,,,,assist2012
-dropped_by_skill,dropped,Finding y-intercept from Linear Equation,rows,21026.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Finding y-intercept from Linear Equation,accuracy,0.6881,,,,assist2012
-dropped_by_skill,dropped,Finding y-intercept from Linear Equation,accuracy_minus_kept,-0.0148,,,,assist2012
-dropped_by_skill,dropped,Substitution,rows,19920.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Substitution,accuracy,0.7515,,,,assist2012
-dropped_by_skill,dropped,Substitution,accuracy_minus_kept,0.0486,,,,assist2012
-dropped_by_skill,dropped,Combining Like Terms,rows,18212.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Combining Like Terms,accuracy,0.5233,,,,assist2012
-dropped_by_skill,dropped,Combining Like Terms,accuracy_minus_kept,-0.1796,,,,assist2012
-dropped_by_skill,dropped,Pattern Finding,rows,18082.0,,,too generic to tag reliably with rules,assist2012
-dropped_by_skill,dropped,Pattern Finding,accuracy,0.6004,,,,assist2012
-dropped_by_skill,dropped,Pattern Finding,accuracy_minus_kept,-0.1025,,,,assist2012
-dropped_by_skill,dropped,Histogram as Table or Graph,rows,12329.0,,,chart reading; no textual counterpart,assist2012
+per_learner,dropped,,accuracy_q25,0.5833,,,,assist2012
+per_learner,dropped,,accuracy_q50,0.7273,,,,assist2012
+per_learner,dropped,,accuracy_q75,0.8542,,,,assist2012
+per_learner,dropped,,accuracy_q90,0.9712,,,,assist2012
+dropped_by_skill,dropped,Histogram as Table or Graph,rows,12329.0,,,"phiếu D: keep; phân vân: đọc biểu đồ cột; histogram là biểu đồ cột tần số, cùng kỹ năng đọc",assist2012
 dropped_by_skill,dropped,Histogram as Table or Graph,accuracy,0.6977,,,,assist2012
-dropped_by_skill,dropped,Histogram as Table or Graph,accuracy_minus_kept,-0.0052,,,,assist2012
-dropped_by_skill,dropped,Write Linear Equation from Slope and y-intercept,rows,11897.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Write Linear Equation from Slope and y-intercept,accuracy,0.7475,,,,assist2012
-dropped_by_skill,dropped,Write Linear Equation from Slope and y-intercept,accuracy_minus_kept,0.0446,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Quadrilaterals,rows,11010.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Histogram as Table or Graph,accuracy_minus_kept,-0.0032,,,,assist2012
+dropped_by_skill,dropped,Properties and Classification Quadrilaterals,rows,11010.0,,,"phân loại hình; không có template, cần hình",assist2012
 dropped_by_skill,dropped,Properties and Classification Quadrilaterals,accuracy,0.8912,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Quadrilaterals,accuracy_minus_kept,0.1883,,,,assist2012
+dropped_by_skill,dropped,Properties and Classification Quadrilaterals,accuracy_minus_kept,0.1902,,,,assist2012
 dropped_by_skill,dropped,Point Plotting,rows,10383.0,,,no rule written,assist2012
 dropped_by_skill,dropped,Point Plotting,accuracy,0.813,,,,assist2012
-dropped_by_skill,dropped,Point Plotting,accuracy_minus_kept,0.1101,,,,assist2012
+dropped_by_skill,dropped,Point Plotting,accuracy_minus_kept,0.112,,,,assist2012
 dropped_by_skill,dropped,Box and Whisker,rows,9191.0,,,chart reading; no textual counterpart,assist2012
 dropped_by_skill,dropped,Box and Whisker,accuracy,0.6612,,,,assist2012
-dropped_by_skill,dropped,Box and Whisker,accuracy_minus_kept,-0.0417,,,,assist2012
-dropped_by_skill,dropped,Percent Increase or Decrease,rows,8681.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Percent Increase or Decrease,accuracy,0.5082,,,,assist2012
-dropped_by_skill,dropped,Percent Increase or Decrease,accuracy_minus_kept,-0.1947,,,,assist2012
+dropped_by_skill,dropped,Box and Whisker,accuracy_minus_kept,-0.0398,,,,assist2012
 dropped_by_skill,dropped,Scatter Plot,rows,7746.0,,,chart reading; no textual counterpart,assist2012
 dropped_by_skill,dropped,Scatter Plot,accuracy,0.8017,,,,assist2012
-dropped_by_skill,dropped,Scatter Plot,accuracy_minus_kept,0.0988,,,,assist2012
-dropped_by_skill,dropped,Multiplying non Monomial Polynomials,rows,6732.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Multiplying non Monomial Polynomials,accuracy,0.7181,,,,assist2012
-dropped_by_skill,dropped,Multiplying non Monomial Polynomials,accuracy_minus_kept,0.0152,,,,assist2012
-dropped_by_skill,dropped,Volume Prism,rows,6542.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Volume Prism,accuracy,0.7622,,,,assist2012
-dropped_by_skill,dropped,Volume Prism,accuracy_minus_kept,0.0593,,,,assist2012
+dropped_by_skill,dropped,Scatter Plot,accuracy_minus_kept,0.1008,,,,assist2012
 dropped_by_skill,dropped,Making a Table from an Equation,rows,6455.0,,,no rule written,assist2012
 dropped_by_skill,dropped,Making a Table from an Equation,accuracy,0.6807,,,,assist2012
-dropped_by_skill,dropped,Making a Table from an Equation,accuracy_minus_kept,-0.0222,,,,assist2012
-dropped_by_skill,dropped,Venn Diagram,rows,6306.0,,,diagram/visual items; no textual counterpart in MATH/GSM8K,assist2012
+dropped_by_skill,dropped,Making a Table from an Equation,accuracy_minus_kept,-0.0202,,,,assist2012
+dropped_by_skill,dropped,Venn Diagram,rows,6306.0,,,cần sơ đồ Venn; Khan 2016 không có template,assist2012
 dropped_by_skill,dropped,Venn Diagram,accuracy,0.6637,,,,assist2012
-dropped_by_skill,dropped,Venn Diagram,accuracy_minus_kept,-0.0392,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Polygons with 5 or more sides,rows,5966.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Venn Diagram,accuracy_minus_kept,-0.0373,,,,assist2012
+dropped_by_skill,dropped,Properties and Classification Polygons with 5 or more sides,rows,5966.0,,,"phân loại hình; không có template, cần hình",assist2012
 dropped_by_skill,dropped,Properties and Classification Polygons with 5 or more sides,accuracy,0.7635,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Polygons with 5 or more sides,accuracy_minus_kept,0.0606,,,,assist2012
-dropped_by_skill,dropped,Prime Factor,rows,5744.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Prime Factor,accuracy,0.7211,,,,assist2012
-dropped_by_skill,dropped,Prime Factor,accuracy_minus_kept,0.0182,,,,assist2012
-dropped_by_skill,dropped,Nets of 3D Figures,rows,5707.0,,,visual item,assist2012
+dropped_by_skill,dropped,Properties and Classification Polygons with 5 or more sides,accuracy_minus_kept,0.0625,,,,assist2012
+dropped_by_skill,dropped,Nets of 3D Figures,rows,5707.0,,,cần hình khai triển khối; không có template,assist2012
 dropped_by_skill,dropped,Nets of 3D Figures,accuracy,0.9338,,,,assist2012
-dropped_by_skill,dropped,Nets of 3D Figures,accuracy_minus_kept,0.2309,,,,assist2012
+dropped_by_skill,dropped,Nets of 3D Figures,accuracy_minus_kept,0.2328,,,,assist2012
 dropped_by_skill,dropped,Number Line,rows,5386.0,,,visual item,assist2012
 dropped_by_skill,dropped,Number Line,accuracy,0.713,,,,assist2012
-dropped_by_skill,dropped,Number Line,accuracy_minus_kept,0.0101,,,,assist2012
-dropped_by_skill,dropped,Volume Cone,rows,5242.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Number Line,accuracy_minus_kept,0.012,,,,assist2012
+dropped_by_skill,dropped,Volume Cone,rows,5242.0,,,không có template hình nón; volume_* chỉ có hình hộp chữ nhật,assist2012
 dropped_by_skill,dropped,Volume Cone,accuracy,0.5134,,,,assist2012
-dropped_by_skill,dropped,Volume Cone,accuracy_minus_kept,-0.1895,,,,assist2012
-dropped_by_skill,dropped,Graph Shape,rows,5153.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Volume Cone,accuracy_minus_kept,-0.1876,,,,assist2012
+dropped_by_skill,dropped,Graph Shape,rows,5153.0,,,cần đọc đồ thị,assist2012
 dropped_by_skill,dropped,Graph Shape,accuracy,0.7677,,,,assist2012
-dropped_by_skill,dropped,Graph Shape,accuracy_minus_kept,0.0648,,,,assist2012
+dropped_by_skill,dropped,Graph Shape,accuracy_minus_kept,0.0668,,,,assist2012
 dropped_by_skill,dropped,Congruence,rows,5097.0,,,too few textual problems,assist2012
 dropped_by_skill,dropped,Congruence,accuracy,0.8715,,,,assist2012
-dropped_by_skill,dropped,Congruence,accuracy_minus_kept,0.1686,,,,assist2012
+dropped_by_skill,dropped,Congruence,accuracy_minus_kept,0.1705,,,,assist2012
 dropped_by_skill,dropped,Properties and Classification Triangles,rows,4970.0,,,no rule written,assist2012
 dropped_by_skill,dropped,Properties and Classification Triangles,accuracy,0.7549,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Triangles,accuracy_minus_kept,0.052,,,,assist2012
-dropped_by_skill,dropped,Unit Conversion Standard to Metric,rows,4647.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Properties and Classification Triangles,accuracy_minus_kept,0.054,,,,assist2012
+dropped_by_skill,dropped,Unit Conversion Standard to Metric,rows,4647.0,,,không có template đổi đơn vị Anh - mét,assist2012
 dropped_by_skill,dropped,Unit Conversion Standard to Metric,accuracy,0.5528,,,,assist2012
-dropped_by_skill,dropped,Unit Conversion Standard to Metric,accuracy_minus_kept,-0.1501,,,,assist2012
-dropped_by_skill,dropped,Division Whole Numbers,rows,3866.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Division Whole Numbers,accuracy,0.6619,,,,assist2012
-dropped_by_skill,dropped,Division Whole Numbers,accuracy_minus_kept,-0.041,,,,assist2012
-dropped_by_skill,dropped,Volume Pyramid,rows,3792.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Unit Conversion Standard to Metric,accuracy_minus_kept,-0.1481,,,,assist2012
+dropped_by_skill,dropped,Volume Pyramid,rows,3792.0,,,không có template hình chóp; volume_* chỉ có hình hộp chữ nhật,assist2012
 dropped_by_skill,dropped,Volume Pyramid,accuracy,0.6461,,,,assist2012
-dropped_by_skill,dropped,Volume Pyramid,accuracy_minus_kept,-0.0568,,,,assist2012
+dropped_by_skill,dropped,Volume Pyramid,accuracy_minus_kept,-0.0549,,,,assist2012
 dropped_by_skill,dropped,Interpreting Coordinate Graphs,rows,3512.0,,,graph interpretation depends on visual data; no suitable graph corpus is indexed,assist2012
 dropped_by_skill,dropped,Interpreting Coordinate Graphs,accuracy,0.6378,,,,assist2012
-dropped_by_skill,dropped,Interpreting Coordinate Graphs,accuracy_minus_kept,-0.0651,,,,assist2012
-dropped_by_skill,dropped,Parallel and Perpendicular Lines,rows,3262.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Parallel and Perpendicular Lines,accuracy,0.7244,,,,assist2012
-dropped_by_skill,dropped,Parallel and Perpendicular Lines,accuracy_minus_kept,0.0215,,,,assist2012
-dropped_by_skill,dropped,Picking Equation and Inequality from Choices,rows,2999.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Interpreting Coordinate Graphs,accuracy_minus_kept,-0.0631,,,,assist2012
+dropped_by_skill,dropped,Picking Equation and Inequality from Choices,rows,2999.0,,,không có template chọn phương trình/bất phương trình từ bài toán lời,assist2012
 dropped_by_skill,dropped,Picking Equation and Inequality from Choices,accuracy,0.5165,,,,assist2012
-dropped_by_skill,dropped,Picking Equation and Inequality from Choices,accuracy_minus_kept,-0.1864,,,,assist2012
-dropped_by_skill,dropped,"Expanded, Standard and Word Notation",rows,2942.0,,,no rule written,assist2012
-dropped_by_skill,dropped,"Expanded, Standard and Word Notation",accuracy,0.7825,,,,assist2012
-dropped_by_skill,dropped,"Expanded, Standard and Word Notation",accuracy_minus_kept,0.0796,,,,assist2012
-dropped_by_skill,dropped,Surface Area Sphere,rows,2813.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Picking Equation and Inequality from Choices,accuracy_minus_kept,-0.1844,,,,assist2012
+dropped_by_skill,dropped,Surface Area Sphere,rows,2813.0,,,không có template diện tích mặt; area_* là hình phẳng; sửa lệch một dòng khi nhập phiếu,assist2012
 dropped_by_skill,dropped,Surface Area Sphere,accuracy,0.6626,,,,assist2012
-dropped_by_skill,dropped,Surface Area Sphere,accuracy_minus_kept,-0.0402,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Circle,rows,2633.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Properties and Classification Circle,accuracy,0.7847,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Circle,accuracy_minus_kept,0.0818,,,,assist2012
+dropped_by_skill,dropped,Surface Area Sphere,accuracy_minus_kept,-0.0383,,,,assist2012
 dropped_by_skill,dropped,Estimation,rows,2583.0,,,too few textual problems,assist2012
 dropped_by_skill,dropped,Estimation,accuracy,0.6531,,,,assist2012
-dropped_by_skill,dropped,Estimation,accuracy_minus_kept,-0.0498,,,,assist2012
-dropped_by_skill,dropped,Surface Area of Prism,rows,2454.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Estimation,accuracy_minus_kept,-0.0478,,,,assist2012
+dropped_by_skill,dropped,Surface Area of Prism,rows,2454.0,,,không có template diện tích mặt; area_* là hình phẳng; sửa lệch một dòng khi nhập phiếu,assist2012
 dropped_by_skill,dropped,Surface Area of Prism,accuracy,0.6769,,,,assist2012
-dropped_by_skill,dropped,Surface Area of Prism,accuracy_minus_kept,-0.026,,,,assist2012
-dropped_by_skill,dropped,Picking Expressions From Choices,rows,2413.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Picking Expressions From Choices,accuracy,0.6983,,,,assist2012
-dropped_by_skill,dropped,Picking Expressions From Choices,accuracy_minus_kept,-0.0046,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Prism,rows,2293.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Surface Area of Prism,accuracy_minus_kept,-0.0241,,,,assist2012
+dropped_by_skill,dropped,Properties and Classification Prism,rows,2293.0,,,"phân loại khối; không có template, cần hình; sửa lệch một dòng khi nhập phiếu",assist2012
 dropped_by_skill,dropped,Properties and Classification Prism,accuracy,0.6324,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Prism,accuracy_minus_kept,-0.0705,,,,assist2012
-dropped_by_skill,dropped,Composition of Function Adding,rows,2284.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Composition of Function Adding,accuracy,0.6659,,,,assist2012
-dropped_by_skill,dropped,Composition of Function Adding,accuracy_minus_kept,-0.0369,,,,assist2012
-dropped_by_skill,dropped,X-Y Graph Reading,rows,1770.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Properties and Classification Prism,accuracy_minus_kept,-0.0686,,,,assist2012
+dropped_by_skill,dropped,X-Y Graph Reading,rows,1770.0,,,cần đọc đồ thị,assist2012
 dropped_by_skill,dropped,X-Y Graph Reading,accuracy,0.5644,,,,assist2012
-dropped_by_skill,dropped,X-Y Graph Reading,accuracy_minus_kept,-0.1385,,,,assist2012
-dropped_by_skill,dropped,Line Plot,rows,1714.0,,,no rule written,assist2012
+dropped_by_skill,dropped,X-Y Graph Reading,accuracy_minus_kept,-0.1365,,,,assist2012
+dropped_by_skill,dropped,Line Plot,rows,1714.0,,,"biểu đồ chấm dữ liệu, cần hình; slope_of_a_line là hệ số góc, khác kỹ năng; sửa lệch một dòng khi nhập phiếu",assist2012
 dropped_by_skill,dropped,Line Plot,accuracy,0.5648,,,,assist2012
-dropped_by_skill,dropped,Line Plot,accuracy_minus_kept,-0.1381,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Rectangular Prisms,rows,1661.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Line Plot,accuracy_minus_kept,-0.1362,,,,assist2012
+dropped_by_skill,dropped,Properties and Classification Rectangular Prisms,rows,1661.0,,,"phân loại khối; không có template, cần hình",assist2012
 dropped_by_skill,dropped,Properties and Classification Rectangular Prisms,accuracy,0.8194,,,,assist2012
-dropped_by_skill,dropped,Properties and Classification Rectangular Prisms,accuracy_minus_kept,0.1165,,,,assist2012
-dropped_by_skill,dropped,Factoring Polynomials Standard,rows,1661.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Factoring Polynomials Standard,accuracy,0.8886,,,,assist2012
-dropped_by_skill,dropped,Factoring Polynomials Standard,accuracy_minus_kept,0.1857,,,,assist2012
-dropped_by_skill,dropped,Writine Expression from Diagrams,rows,1521.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Properties and Classification Rectangular Prisms,accuracy_minus_kept,0.1184,,,,assist2012
+dropped_by_skill,dropped,Writine Expression from Diagrams,rows,1521.0,,,cần sơ đồ; writing_expressions_* cho đề bằng lời,assist2012
 dropped_by_skill,dropped,Writine Expression from Diagrams,accuracy,0.6062,,,,assist2012
-dropped_by_skill,dropped,Writine Expression from Diagrams,accuracy_minus_kept,-0.0967,,,,assist2012
-dropped_by_skill,dropped,Definition Pi,rows,1140.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Writine Expression from Diagrams,accuracy_minus_kept,-0.0948,,,,assist2012
+dropped_by_skill,dropped,Definition Pi,rows,1140.0,,,không có template về định nghĩa số pi; new_definitions_* là phép toán tự định nghĩa,assist2012
 dropped_by_skill,dropped,Definition Pi,accuracy,0.6614,,,,assist2012
-dropped_by_skill,dropped,Definition Pi,accuracy_minus_kept,-0.0415,,,,assist2012
-dropped_by_skill,dropped,Distance Formula,rows,922.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Definition Pi,accuracy_minus_kept,-0.0395,,,,assist2012
+dropped_by_skill,dropped,Distance Formula,rows,922.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Distance Formula,accuracy,0.5933,,,,assist2012
-dropped_by_skill,dropped,Distance Formula,accuracy_minus_kept,-0.1096,,,,assist2012
-dropped_by_skill,dropped,Recognizing Equivalent Expressions,rows,820.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Distance Formula,accuracy_minus_kept,-0.1077,,,,assist2012
+dropped_by_skill,dropped,Recognizing Equivalent Expressions,rows,820.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Recognizing Equivalent Expressions,accuracy,0.4256,,,,assist2012
-dropped_by_skill,dropped,Recognizing Equivalent Expressions,accuracy_minus_kept,-0.2773,,,,assist2012
+dropped_by_skill,dropped,Recognizing Equivalent Expressions,accuracy_minus_kept,-0.2753,,,,assist2012
 dropped_by_skill,dropped,Stem and Leaf Plot,rows,800.0,,,chart reading; no textual counterpart,assist2012
 dropped_by_skill,dropped,Stem and Leaf Plot,accuracy,0.6288,,,,assist2012
-dropped_by_skill,dropped,Stem and Leaf Plot,accuracy_minus_kept,-0.0741,,,,assist2012
-dropped_by_skill,dropped,English and Metric Terminology,rows,783.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Stem and Leaf Plot,accuracy_minus_kept,-0.0722,,,,assist2012
+dropped_by_skill,dropped,English and Metric Terminology,rows,783.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,English and Metric Terminology,accuracy,0.6807,,,,assist2012
-dropped_by_skill,dropped,English and Metric Terminology,accuracy_minus_kept,-0.0222,,,,assist2012
-dropped_by_skill,dropped,Inverse Relations,rows,760.0,,,no rule written,assist2012
+dropped_by_skill,dropped,English and Metric Terminology,accuracy_minus_kept,-0.0202,,,,assist2012
+dropped_by_skill,dropped,Inverse Relations,rows,760.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Inverse Relations,accuracy,0.6566,,,,assist2012
-dropped_by_skill,dropped,Inverse Relations,accuracy_minus_kept,-0.0463,,,,assist2012
-dropped_by_skill,dropped,Commutative Property,rows,757.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Inverse Relations,accuracy_minus_kept,-0.0444,,,,assist2012
+dropped_by_skill,dropped,Commutative Property,rows,757.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Commutative Property,accuracy,0.6724,,,,assist2012
-dropped_by_skill,dropped,Commutative Property,accuracy_minus_kept,-0.0305,,,,assist2012
-dropped_by_skill,dropped,Subtraction Mixed Fractions,rows,703.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Commutative Property,accuracy_minus_kept,-0.0286,,,,assist2012
+dropped_by_skill,dropped,Subtraction Mixed Fractions,rows,703.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Subtraction Mixed Fractions,accuracy,0.4154,,,,assist2012
-dropped_by_skill,dropped,Subtraction Mixed Fractions,accuracy_minus_kept,-0.2875,,,,assist2012
-dropped_by_skill,dropped,Division Mixed Fractions,rows,694.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Subtraction Mixed Fractions,accuracy_minus_kept,-0.2856,,,,assist2012
+dropped_by_skill,dropped,Division Mixed Fractions,rows,694.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Division Mixed Fractions,accuracy,0.1686,,,,assist2012
-dropped_by_skill,dropped,Division Mixed Fractions,accuracy_minus_kept,-0.5343,,,,assist2012
-dropped_by_skill,dropped,Graphing Linear Equations,rows,680.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Division Mixed Fractions,accuracy_minus_kept,-0.5324,,,,assist2012
+dropped_by_skill,dropped,Graphing Linear Equations,rows,680.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Graphing Linear Equations,accuracy,0.9779,,,,assist2012
-dropped_by_skill,dropped,Graphing Linear Equations,accuracy_minus_kept,0.2751,,,,assist2012
-dropped_by_skill,dropped,Multiplication Division by Powers of 10,rows,654.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Graphing Linear Equations,accuracy_minus_kept,0.277,,,,assist2012
+dropped_by_skill,dropped,Multiplication Division by Powers of 10,rows,654.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Multiplication Division by Powers of 10,accuracy,0.4664,,,,assist2012
-dropped_by_skill,dropped,Multiplication Division by Powers of 10,accuracy_minus_kept,-0.2365,,,,assist2012
-dropped_by_skill,dropped,Circle Graph,rows,600.0,,,chart reading; no textual counterpart,assist2012
+dropped_by_skill,dropped,Multiplication Division by Powers of 10,accuracy_minus_kept,-0.2346,,,,assist2012
+dropped_by_skill,dropped,Circle Graph,rows,600.0,,,cần đọc biểu đồ hình quạt; Khan 2016 không có template,assist2012
 dropped_by_skill,dropped,Circle Graph,accuracy,0.8217,,,,assist2012
-dropped_by_skill,dropped,Circle Graph,accuracy_minus_kept,0.1188,,,,assist2012
-dropped_by_skill,dropped,Multiplication Mixed Fractions,rows,582.0,,,no rule written,assist2012
-dropped_by_skill,dropped,Multiplication Mixed Fractions,accuracy,0.1907,,,,assist2012
-dropped_by_skill,dropped,Multiplication Mixed Fractions,accuracy_minus_kept,-0.5122,,,,assist2012
-dropped_by_skill,dropped,Division Proper Fractions,rows,582.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Circle Graph,accuracy_minus_kept,0.1207,,,,assist2012
+dropped_by_skill,dropped,Division Proper Fractions,rows,582.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Division Proper Fractions,accuracy,0.2801,,,,assist2012
-dropped_by_skill,dropped,Division Proper Fractions,accuracy_minus_kept,-0.4228,,,,assist2012
-dropped_by_skill,dropped,Sampling Techniques,rows,556.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Division Proper Fractions,accuracy_minus_kept,-0.4209,,,,assist2012
+dropped_by_skill,dropped,Multiplication Mixed Fractions,rows,582.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
+dropped_by_skill,dropped,Multiplication Mixed Fractions,accuracy,0.1907,,,,assist2012
+dropped_by_skill,dropped,Multiplication Mixed Fractions,accuracy_minus_kept,-0.5102,,,,assist2012
+dropped_by_skill,dropped,Sampling Techniques,rows,556.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Sampling Techniques,accuracy,0.4982,,,,assist2012
-dropped_by_skill,dropped,Sampling Techniques,accuracy_minus_kept,-0.2047,,,,assist2012
-dropped_by_skill,dropped,Multiplication Proper Fractions,rows,555.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Sampling Techniques,accuracy_minus_kept,-0.2027,,,,assist2012
+dropped_by_skill,dropped,Multiplication Proper Fractions,rows,555.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Multiplication Proper Fractions,accuracy,0.6541,,,,assist2012
-dropped_by_skill,dropped,Multiplication Proper Fractions,accuracy_minus_kept,-0.0488,,,,assist2012
-dropped_by_skill,dropped,Multiplication Positive Decimals,rows,555.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Multiplication Proper Fractions,accuracy_minus_kept,-0.0469,,,,assist2012
+dropped_by_skill,dropped,Multiplication Positive Decimals,rows,555.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Multiplication Positive Decimals,accuracy,0.2649,,,,assist2012
-dropped_by_skill,dropped,Multiplication Positive Decimals,accuracy_minus_kept,-0.438,,,,assist2012
-dropped_by_skill,dropped,Nets of 3D Objects,rows,509.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Multiplication Positive Decimals,accuracy_minus_kept,-0.4361,,,,assist2012
+dropped_by_skill,dropped,Nets of 3D Objects,rows,509.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Nets of 3D Objects,accuracy,0.8959,,,,assist2012
-dropped_by_skill,dropped,Nets of 3D Objects,accuracy_minus_kept,0.193,,,,assist2012
-dropped_by_skill,dropped,Subtraction Proper Fractions,rows,507.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Nets of 3D Objects,accuracy_minus_kept,0.1949,,,,assist2012
+dropped_by_skill,dropped,Subtraction Proper Fractions,rows,507.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Subtraction Proper Fractions,accuracy,0.4162,,,,assist2012
-dropped_by_skill,dropped,Subtraction Proper Fractions,accuracy_minus_kept,-0.2867,,,,assist2012
-dropped_by_skill,dropped,Addition Proper Fractions,rows,501.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Subtraction Proper Fractions,accuracy_minus_kept,-0.2848,,,,assist2012
+dropped_by_skill,dropped,Addition Proper Fractions,rows,501.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Addition Proper Fractions,accuracy,0.4731,,,,assist2012
-dropped_by_skill,dropped,Addition Proper Fractions,accuracy_minus_kept,-0.2298,,,,assist2012
-dropped_by_skill,dropped,Addition Mixed Fractions,rows,501.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Addition Proper Fractions,accuracy_minus_kept,-0.2279,,,,assist2012
+dropped_by_skill,dropped,Addition Mixed Fractions,rows,501.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Addition Mixed Fractions,accuracy,0.2136,,,,assist2012
-dropped_by_skill,dropped,Addition Mixed Fractions,accuracy_minus_kept,-0.4893,,,,assist2012
-dropped_by_skill,dropped,Comparing and Identifying Slope/Rate of Change,rows,484.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Addition Mixed Fractions,accuracy_minus_kept,-0.4874,,,,assist2012
+dropped_by_skill,dropped,Comparing and Identifying Slope/Rate of Change,rows,484.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Comparing and Identifying Slope/Rate of Change,accuracy,0.6798,,,,assist2012
-dropped_by_skill,dropped,Comparing and Identifying Slope/Rate of Change,accuracy_minus_kept,-0.0231,,,,assist2012
-dropped_by_skill,dropped,Line of Best-Fit,rows,483.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Comparing and Identifying Slope/Rate of Change,accuracy_minus_kept,-0.0212,,,,assist2012
+dropped_by_skill,dropped,Line of Best-Fit,rows,483.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Line of Best-Fit,accuracy,0.7308,,,,assist2012
-dropped_by_skill,dropped,Line of Best-Fit,accuracy_minus_kept,0.028,,,,assist2012
-dropped_by_skill,dropped,Circle Concept,rows,481.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Line of Best-Fit,accuracy_minus_kept,0.0299,,,,assist2012
+dropped_by_skill,dropped,Circle Concept,rows,481.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Circle Concept,accuracy,0.4033,,,,assist2012
-dropped_by_skill,dropped,Circle Concept,accuracy_minus_kept,-0.2996,,,,assist2012
-dropped_by_skill,dropped,Symbolization,rows,466.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Circle Concept,accuracy_minus_kept,-0.2976,,,,assist2012
+dropped_by_skill,dropped,Symbolization,rows,466.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Symbolization,accuracy,0.5279,,,,assist2012
-dropped_by_skill,dropped,Symbolization,accuracy_minus_kept,-0.175,,,,assist2012
-dropped_by_skill,dropped,Concept Volume,rows,459.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Symbolization,accuracy_minus_kept,-0.1731,,,,assist2012
+dropped_by_skill,dropped,Concept Volume,rows,459.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Concept Volume,accuracy,0.4728,,,,assist2012
-dropped_by_skill,dropped,Concept Volume,accuracy_minus_kept,-0.2301,,,,assist2012
+dropped_by_skill,dropped,Concept Volume,accuracy_minus_kept,-0.2282,,,,assist2012
 dropped_by_skill,dropped,Table,rows,440.0,,,table reading; no textual counterpart,assist2012
 dropped_by_skill,dropped,Table,accuracy,0.6614,,,,assist2012
-dropped_by_skill,dropped,Table,accuracy_minus_kept,-0.0415,,,,assist2012
-dropped_by_skill,dropped,Finding Slope from Graph,rows,429.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Table,accuracy_minus_kept,-0.0396,,,,assist2012
+dropped_by_skill,dropped,Finding Slope from Graph,rows,429.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Finding Slope from Graph,accuracy,0.7343,,,,assist2012
-dropped_by_skill,dropped,Finding Slope from Graph,accuracy_minus_kept,0.0314,,,,assist2012
-dropped_by_skill,dropped,Surface Area Pyramid,rows,407.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Finding Slope from Graph,accuracy_minus_kept,0.0333,,,,assist2012
+dropped_by_skill,dropped,Surface Area Pyramid,rows,407.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Surface Area Pyramid,accuracy,0.2457,,,,assist2012
-dropped_by_skill,dropped,Surface Area Pyramid,accuracy_minus_kept,-0.4572,,,,assist2012
-dropped_by_skill,dropped,Volume of 3D Objects,rows,394.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Surface Area Pyramid,accuracy_minus_kept,-0.4552,,,,assist2012
+dropped_by_skill,dropped,Volume of 3D Objects,rows,394.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Volume of 3D Objects,accuracy,0.4822,,,,assist2012
-dropped_by_skill,dropped,Volume of 3D Objects,accuracy_minus_kept,-0.2207,,,,assist2012
-dropped_by_skill,dropped,Common Multiple,rows,375.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Volume of 3D Objects,accuracy_minus_kept,-0.2187,,,,assist2012
+dropped_by_skill,dropped,Common Multiple,rows,375.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Common Multiple,accuracy,0.712,,,,assist2012
-dropped_by_skill,dropped,Common Multiple,accuracy_minus_kept,0.0091,,,,assist2012
-dropped_by_skill,dropped,Finding Ratios,rows,360.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Common Multiple,accuracy_minus_kept,0.0111,,,,assist2012
+dropped_by_skill,dropped,Finding Ratios,rows,360.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Finding Ratios,accuracy,0.7667,,,,assist2012
-dropped_by_skill,dropped,Finding Ratios,accuracy_minus_kept,0.0638,,,,assist2012
-dropped_by_skill,dropped,Factoring Trinomials,rows,321.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Finding Ratios,accuracy_minus_kept,0.0657,,,,assist2012
+dropped_by_skill,dropped,Factoring Trinomials,rows,321.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Factoring Trinomials,accuracy,0.5358,,,,assist2012
-dropped_by_skill,dropped,Factoring Trinomials,accuracy_minus_kept,-0.1671,,,,assist2012
-dropped_by_skill,dropped,Graphing Inequalities on a number line,rows,315.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Factoring Trinomials,accuracy_minus_kept,-0.1651,,,,assist2012
+dropped_by_skill,dropped,Graphing Inequalities on a number line,rows,315.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Graphing Inequalities on a number line,accuracy,0.7016,,,,assist2012
-dropped_by_skill,dropped,Graphing Inequalities on a number line,accuracy_minus_kept,-0.0013,,,,assist2012
-dropped_by_skill,dropped,Surface Area of 3D Objects,rows,302.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Graphing Inequalities on a number line,accuracy_minus_kept,0.0006,,,,assist2012
+dropped_by_skill,dropped,Surface Area of 3D Objects,rows,302.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Surface Area of 3D Objects,accuracy,0.7285,,,,assist2012
-dropped_by_skill,dropped,Surface Area of 3D Objects,accuracy_minus_kept,0.0256,,,,assist2012
-dropped_by_skill,dropped,Transformation,rows,300.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Surface Area of 3D Objects,accuracy_minus_kept,0.0275,,,,assist2012
+dropped_by_skill,dropped,Transformation,rows,300.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Transformation,accuracy,0.5233,,,,assist2012
-dropped_by_skill,dropped,Transformation,accuracy_minus_kept,-0.1796,,,,assist2012
-dropped_by_skill,dropped,Square Roots,rows,288.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Transformation,accuracy_minus_kept,-0.1776,,,,assist2012
+dropped_by_skill,dropped,Square Roots,rows,288.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Square Roots,accuracy,0.6181,,,,assist2012
-dropped_by_skill,dropped,Square Roots,accuracy_minus_kept,-0.0848,,,,assist2012
-dropped_by_skill,dropped,Associative Property,rows,284.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Square Roots,accuracy_minus_kept,-0.0829,,,,assist2012
+dropped_by_skill,dropped,Associative Property,rows,284.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Associative Property,accuracy,0.4401,,,,assist2012
-dropped_by_skill,dropped,Associative Property,accuracy_minus_kept,-0.2627,,,,assist2012
-dropped_by_skill,dropped,Solving System of Equation,rows,248.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Associative Property,accuracy_minus_kept,-0.2608,,,,assist2012
+dropped_by_skill,dropped,Solving System of Equation,rows,248.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Solving System of Equation,accuracy,0.3105,,,,assist2012
-dropped_by_skill,dropped,Solving System of Equation,accuracy_minus_kept,-0.3924,,,,assist2012
-dropped_by_skill,dropped,Ordering Whole Numbers,rows,235.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Solving System of Equation,accuracy_minus_kept,-0.3905,,,,assist2012
+dropped_by_skill,dropped,Ordering Whole Numbers,rows,235.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Ordering Whole Numbers,accuracy,0.8681,,,,assist2012
-dropped_by_skill,dropped,Ordering Whole Numbers,accuracy_minus_kept,0.1652,,,,assist2012
-dropped_by_skill,dropped,Bar Graph,rows,219.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Ordering Whole Numbers,accuracy_minus_kept,0.1671,,,,assist2012
+dropped_by_skill,dropped,Bar Graph,rows,219.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Bar Graph,accuracy,0.863,,,,assist2012
-dropped_by_skill,dropped,Bar Graph,accuracy_minus_kept,0.1601,,,,assist2012
-dropped_by_skill,dropped,"Tree Diagrams, Lists for Counting",rows,180.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Bar Graph,accuracy_minus_kept,0.1621,,,,assist2012
+dropped_by_skill,dropped,"Tree Diagrams, Lists for Counting",rows,180.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,"Tree Diagrams, Lists for Counting",accuracy,0.7667,,,,assist2012
-dropped_by_skill,dropped,"Tree Diagrams, Lists for Counting",accuracy_minus_kept,0.0638,,,,assist2012
-dropped_by_skill,dropped,Common Factor,rows,139.0,,,no rule written,assist2012
+dropped_by_skill,dropped,"Tree Diagrams, Lists for Counting",accuracy_minus_kept,0.0657,,,,assist2012
+dropped_by_skill,dropped,Common Factor,rows,139.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Common Factor,accuracy,0.6403,,,,assist2012
-dropped_by_skill,dropped,Common Factor,accuracy_minus_kept,-0.0626,,,,assist2012
-dropped_by_skill,dropped,Quadratic Equation Solving,rows,114.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Common Factor,accuracy_minus_kept,-0.0607,,,,assist2012
+dropped_by_skill,dropped,Quadratic Equation Solving,rows,114.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Quadratic Equation Solving,accuracy,0.2368,,,,assist2012
-dropped_by_skill,dropped,Quadratic Equation Solving,accuracy_minus_kept,-0.466,,,,assist2012
-dropped_by_skill,dropped,Elapsed Time,rows,88.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Quadratic Equation Solving,accuracy_minus_kept,-0.4641,,,,assist2012
+dropped_by_skill,dropped,Elapsed Time,rows,88.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Elapsed Time,accuracy,0.7159,,,,assist2012
-dropped_by_skill,dropped,Elapsed Time,accuracy_minus_kept,0.013,,,,assist2012
-dropped_by_skill,dropped,Solve Quadratic Equations Using Factoring,rows,80.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Elapsed Time,accuracy_minus_kept,0.015,,,,assist2012
+dropped_by_skill,dropped,Solve Quadratic Equations Using Factoring,rows,80.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Solve Quadratic Equations Using Factoring,accuracy,0.85,,,,assist2012
-dropped_by_skill,dropped,Solve Quadratic Equations Using Factoring,accuracy_minus_kept,0.1471,,,,assist2012
-dropped_by_skill,dropped,Odd and Even Number,rows,75.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Solve Quadratic Equations Using Factoring,accuracy_minus_kept,0.1491,,,,assist2012
+dropped_by_skill,dropped,Odd and Even Number,rows,75.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Odd and Even Number,accuracy,0.8267,,,,assist2012
-dropped_by_skill,dropped,Odd and Even Number,accuracy_minus_kept,0.1238,,,,assist2012
-dropped_by_skill,dropped,Mean-Median-Mode-Range Differentiation,rows,63.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Odd and Even Number,accuracy_minus_kept,0.1257,,,,assist2012
+dropped_by_skill,dropped,Mean-Median-Mode-Range Differentiation,rows,63.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Mean-Median-Mode-Range Differentiation,accuracy,0.6984,,,,assist2012
-dropped_by_skill,dropped,Mean-Median-Mode-Range Differentiation,accuracy_minus_kept,-0.0045,,,,assist2012
-dropped_by_skill,dropped,Properties and Clasification of Pyramid,rows,60.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Mean-Median-Mode-Range Differentiation,accuracy_minus_kept,-0.0025,,,,assist2012
+dropped_by_skill,dropped,Properties and Clasification of Pyramid,rows,60.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Properties and Clasification of Pyramid,accuracy,0.4333,,,,assist2012
-dropped_by_skill,dropped,Properties and Clasification of Pyramid,accuracy_minus_kept,-0.2696,,,,assist2012
-dropped_by_skill,dropped,Geometric Definitions,rows,52.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Properties and Clasification of Pyramid,accuracy_minus_kept,-0.2676,,,,assist2012
+dropped_by_skill,dropped,Geometric Definitions,rows,52.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Geometric Definitions,accuracy,0.5,,,,assist2012
-dropped_by_skill,dropped,Geometric Definitions,accuracy_minus_kept,-0.2029,,,,assist2012
+dropped_by_skill,dropped,Geometric Definitions,accuracy_minus_kept,-0.2009,,,,assist2012
 dropped_by_skill,dropped,Reading a Ruler or Scale,rows,44.0,,,measurement depends on reading a visual scale; no suitable visual corpus is indexed,assist2012
 dropped_by_skill,dropped,Reading a Ruler or Scale,accuracy,0.6591,,,,assist2012
-dropped_by_skill,dropped,Reading a Ruler or Scale,accuracy_minus_kept,-0.0438,,,,assist2012
-dropped_by_skill,dropped,Equal As Balance Concept,rows,43.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Reading a Ruler or Scale,accuracy_minus_kept,-0.0419,,,,assist2012
+dropped_by_skill,dropped,Equal As Balance Concept,rows,43.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Equal As Balance Concept,accuracy,0.8605,,,,assist2012
-dropped_by_skill,dropped,Equal As Balance Concept,accuracy_minus_kept,0.1576,,,,assist2012
-dropped_by_skill,dropped,Perimeter of an Irregular Figure,rows,42.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Equal As Balance Concept,accuracy_minus_kept,0.1595,,,,assist2012
+dropped_by_skill,dropped,Perimeter of an Irregular Figure,rows,42.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Perimeter of an Irregular Figure,accuracy,0.2857,,,,assist2012
-dropped_by_skill,dropped,Perimeter of an Irregular Figure,accuracy_minus_kept,-0.4172,,,,assist2012
-dropped_by_skill,dropped,Calculation with + - * /,rows,40.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Perimeter of an Irregular Figure,accuracy_minus_kept,-0.4152,,,,assist2012
+dropped_by_skill,dropped,Calculation with + - * /,rows,40.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Calculation with + - * /,accuracy,0.675,,,,assist2012
-dropped_by_skill,dropped,Calculation with + - * /,accuracy_minus_kept,-0.0279,,,,assist2012
-dropped_by_skill,dropped,Similar Figures,rows,26.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Calculation with + - * /,accuracy_minus_kept,-0.0259,,,,assist2012
+dropped_by_skill,dropped,Similar Figures,rows,26.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Similar Figures,accuracy,0.6923,,,,assist2012
-dropped_by_skill,dropped,Similar Figures,accuracy_minus_kept,-0.0106,,,,assist2012
-dropped_by_skill,dropped,Recognizing Expressions or Equations from Diagrams,rows,24.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Similar Figures,accuracy_minus_kept,-0.0086,,,,assist2012
+dropped_by_skill,dropped,Recognizing Expressions or Equations from Diagrams,rows,24.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Recognizing Expressions or Equations from Diagrams,accuracy,0.5,,,,assist2012
-dropped_by_skill,dropped,Recognizing Expressions or Equations from Diagrams,accuracy_minus_kept,-0.2029,,,,assist2012
-dropped_by_skill,dropped,Properties of Numbers,rows,14.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Recognizing Expressions or Equations from Diagrams,accuracy_minus_kept,-0.2009,,,,assist2012
+dropped_by_skill,dropped,Properties of Numbers,rows,14.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Properties of Numbers,accuracy,0.5714,,,,assist2012
-dropped_by_skill,dropped,Properties of Numbers,accuracy_minus_kept,-0.1315,,,,assist2012
-dropped_by_skill,dropped,Line Symmetry,rows,12.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Properties of Numbers,accuracy_minus_kept,-0.1295,,,,assist2012
+dropped_by_skill,dropped,Line Symmetry,rows,12.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Line Symmetry,accuracy,0.6667,,,,assist2012
-dropped_by_skill,dropped,Line Symmetry,accuracy_minus_kept,-0.0362,,,,assist2012
-dropped_by_skill,dropped,Combinatorics,rows,4.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Line Symmetry,accuracy_minus_kept,-0.0343,,,,assist2012
+dropped_by_skill,dropped,Combinatorics,rows,4.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Combinatorics,accuracy,0.0,,,,assist2012
-dropped_by_skill,dropped,Combinatorics,accuracy_minus_kept,-0.7029,,,,assist2012
-dropped_by_skill,dropped,Co-ordinate Points,rows,1.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Combinatorics,accuracy_minus_kept,-0.7009,,,,assist2012
+dropped_by_skill,dropped,Co-ordinate Points,rows,1.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Co-ordinate Points,accuracy,1.0,,,,assist2012
-dropped_by_skill,dropped,Co-ordinate Points,accuracy_minus_kept,0.2971,,,,assist2012
-dropped_by_skill,dropped,Rotational Symmetry,rows,1.0,,,no rule written,assist2012
+dropped_by_skill,dropped,Co-ordinate Points,accuracy_minus_kept,0.2991,,,,assist2012
+dropped_by_skill,dropped,Rotational Symmetry,rows,1.0,,,không có trong bản nháp và dưới 1.000 dòng ở 2012 nên chưa rà template; SkillMapper chưa có quy tắc,assist2012
 dropped_by_skill,dropped,Rotational Symmetry,accuracy,1.0,,,,assist2012
-dropped_by_skill,dropped,Rotational Symmetry,accuracy_minus_kept,0.2971,,,,assist2012
+dropped_by_skill,dropped,Rotational Symmetry,accuracy_minus_kept,0.2991,,,,assist2012

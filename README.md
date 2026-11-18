@@ -40,6 +40,10 @@ python -m lmsrag.datasets.build --config configs/data.yaml --only assist2012   #
 python -m lmsrag.datasets.build --config configs/data.yaml --only junyi2015    # P1-03, khoảng 3 phút
 python -m lmsrag.corpus.build_corpus --config configs/data.yaml                  # P1-04, khoảng 35 giây
 python -m lmsrag.labels.review_draft                                             # P1-05: phiếu rà soát từ điển nháp
+python -m lmsrag.labels.review_recheck                                           # P1-05: phiếu D, xem lại các cặp bị bỏ
+python -m lmsrag.labels.build_skill_map                                          # P1-05: skill_map_v1.csv từ phiếu đã điền
+python -m lmsrag.labels.make_sheets                                              # P1-05: phiếu 150 cặp cho Người 2, Người 3
+python -m lmsrag.labels.agreement                                                # P1-05: κ, phân xử, a4_mapping_audit.csv
 ```
 
 Đầu ra: `lmsrag/artifacts/v2/interactions_<dataset>.parquet` (không commit) và bảng báo cáo `reports/tables/a1_*.csv`.

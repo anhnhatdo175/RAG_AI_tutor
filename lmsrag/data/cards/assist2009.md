@@ -14,12 +14,15 @@
 
 | | Trước làm sạch | Sau làm sạch |
 |---|---:|---:|
-| Dòng | 525.534 | 242.764 |
-| Sự kiện (`order_id` duy nhất) | 346.860 | 224.106 |
-| Người học | 4.217 | 2.065 |
-| Bài (`problem_id`) | 26.688 | 14.363 |
-| Kỹ năng (`skill_name`) | 110 | 96 (83 tag chuẩn) |
+| Dòng | 525.534 | 248.060 |
+| Sự kiện (`order_id` duy nhất) | 346.860 | 225.423 |
+| Người học | 4.217 | 2.078 |
+| Bài (`problem_id`) | 26.688 | 14.555 |
+| Kỹ năng (`skill_name`) | 110 | 97 (84 tag chuẩn) |
 | Tỷ lệ đúng | – | 0,656 |
+
+Số liệu tính với từ điển kỹ năng v1 (`skill_map_v1.csv`, P1-05). Với `SkillMapper` (trước P1-05): 242.764 dòng,
+2.065 người học, 38.639 dòng không ánh xạ (13,62%), khớp số kỳ vọng của thẻ P1-01.
 
 ## Quy tắc loại bỏ
 
@@ -35,31 +38,32 @@ Bảng đầy đủ: `reports/tables/a1_cleaning_assist2009.csv`. Thứ tự gi�
 | 3 | Bỏ `correct` ngoài {0, 1} | 421.318 | 421.318 | 0 | 0 | 4.151 |
 | 4 | Loại trùng theo (`order_id`, `skill_id`) | 421.318 | 300.389 | 120.929 | 28,70 | 4.151 |
 | 5 | Bỏ người học dưới 20 dòng | 300.389 | 283.687 | 16.702 | 5,56 | 2.219 |
-| 6 | Bỏ dòng có kỹ năng không ánh xạ được tag chuẩn | 283.687 | 245.048 | 38.639 | 13,62 | 2.219 |
-| 7 | Áp lại ngưỡng 20 dòng sau bước 6 | 245.048 | 242.764 | 2.284 | 0,93 | 2.065 |
+| 6 | Bỏ dòng có kỹ năng không có tag chuẩn trong `skill_map_v1.csv` | 283.687 | 250.183 | 33.504 | 11,81 | 2.219 |
+| 7 | Áp lại ngưỡng 20 dòng sau bước 6 | 250.183 | 248.060 | 2.123 | 0,85 | 2.078 |
 
-Bước 7 là bước mới so với pipeline cũ: sau khi bỏ dòng không ánh xạ, 154 người học còn dưới 20 dòng. Ở bước 4,
+Bước 7 là bước mới so với pipeline cũ: sau khi bỏ dòng không ánh xạ, 141 người học còn dưới 20 dòng. Ở bước 4,
 số bị loại (120.929) nhỏ hơn 123.778 vì một phần dòng trùng đã bị bỏ ở bước 1–2.
 
 ### Phần giữ so với phần bị loại ở bước 6
 
 Bảng: `reports/tables/a1_kept_vs_dropped.csv`.
 
-- Tỷ lệ đúng phần giữ 0,656 (245.048 dòng, 2.219 người học); phần bị loại 0,692 (38.639 dòng, 1.382 người học).
-- Chênh lệch giữ − loại = **−0,036**, khoảng tin cậy 95% [−0,045; −0,027] (bootstrap theo cụm người học, 1.000 lần,
-  `data_seed` 2026). Chi-bình phương χ² = 196,5, p < 10⁻⁴³; kiểm định này tính trên dòng nên coi các dòng độc lập,
+- Tỷ lệ đúng phần giữ 0,656 (250.183 dòng, 2.219 người học); phần bị loại 0,696 (33.504 dòng, 1.293 người học).
+- Chênh lệch giữ − loại = **−0,039**, khoảng tin cậy 95% [−0,048; −0,029] (bootstrap theo cụm người học, 1.000 lần,
+  `data_seed` 2026). Chi-bình phương χ² = 202,3, p < 10⁻⁴⁵; kiểm định này tính trên dòng nên coi các dòng độc lập,
   chỉ dùng để tham khảo, còn khoảng bootstrap mới là căn cứ.
-- **Kết luận: có lệch.** Bỏ 14 kỹ năng đọc hình làm tỷ lệ đúng của phần còn lại thấp hơn khoảng 3,6 điểm phần trăm.
-  Lệch đến từ các kỹ năng dễ: Scatter Plot (0,880), Box and Whisker (0,748), Table (0,742), Venn Diagram (0,718).
-  Hai kỹ năng khó hơn mức chung là Circle Graph (0,526) và Number Line (0,595).
+- **Kết luận: có lệch.** Bỏ 13 kỹ năng (phần lớn là kỹ năng đọc hình) làm tỷ lệ đúng của phần còn lại thấp hơn khoảng
+  3,9 điểm phần trăm. Lệch đến từ các kỹ năng dễ: Nets of 3D Figures (0,972), Congruence (0,894), Scatter Plot (0,880),
+  Estimation (0,791), Box and Whisker (0,748), Table (0,742). Kỹ năng khó hơn mức chung: Circle Graph (0,526),
+  Interpreting Coordinate Graphs (0,531) và Number Line (0,595).
 - Phân bố tỷ lệ đúng theo người học (người có ít nhất 5 dòng trong phần đó): trung vị 0,655 ở phần giữ và
-  0,714 ở phần loại.
+  0,717 ở phần loại.
 
 ## Cách chia và seed
 
 Theo từng người học, theo thứ tự `ts`: 70% sự kiện đầu là `history`, 15% tiếp là `validation`, 15% cuối là
 `test` (`lmsrag/datasets/splits.py`). Đơn vị chia là sự kiện (`user_id`, `ts`), không phải dòng, để các dòng của
-cùng một câu nhiều kỹ năng luôn nằm cùng một phần. Kết quả: history 171.138 dòng, validation 36.121, test 35.505.
+cùng một câu nhiều kỹ năng luôn nằm cùng một phần. Kết quả: history 174.687 dòng, validation 36.985, test 36.388.
 `data_seed` = 2026, dùng cho bootstrap; việc chia không có thành phần ngẫu nhiên. Hai lần chạy cho cùng một tệp.
 
 ## Đặc điểm cần biết khi đọc kết quả
@@ -69,28 +73,31 @@ cùng một câu nhiều kỹ năng luôn nằm cùng một phần. Kết quả:
   liên tiếp, nên chuỗi (người học, kỹ năng) thường kết thúc bằng lượt đúng. Giả thuyết ban đầu là baseline
   "Last Answer on Skill" được lợi nhân tạo; số đo bên dưới và so sánh với 2012 **không ủng hộ** giả thuyết này.
   Số đo (`reports/tables/a1_skill_builder.csv`):
-  - 29.976 chuỗi, độ dài trung vị 5;
-  - 82,7% chuỗi kết thúc bằng lượt đúng;
+  - 30.413 chuỗi, độ dài trung vị 5;
+  - 82,5% chuỗi kết thúc bằng lượt đúng;
   - 45,5% chuỗi kết thúc bằng 3 lượt đúng liên tiếp (65,3% nếu chỉ xét chuỗi dài từ 3 lượt);
-  - tỷ lệ đúng tăng từ 0,592 ở lượt đầu lên khoảng 0,69 ở lượt 4–5;
-  - AUC của "Last Answer on Skill" là 0,649 trên mọi dòng có lượt trước và 0,651 trên test.
+  - tỷ lệ đúng tăng từ 0,590 ở lượt đầu lên khoảng 0,69 ở lượt 4–5;
+  - AUC của "Last Answer on Skill" là 0,650 trên mọi dòng có lượt trước và 0,652 trên test.
 
   So với ASSISTments 2012 (`reports/tables/a1_skill_builder_assist2012.csv`, chi tiết trong `assist2012.md`):
 
   | | 2009 (toàn bộ Skill Builder) | 2012 MasterySection | 2012 ngoài MasterySection |
   |---|---:|---:|---:|
-  | Chuỗi kết thúc bằng 3 lượt đúng | 45,5% | 71,6% | 24,1% |
-  | Chuỗi kết thúc bằng lượt đúng | 82,7% | 90,0% | 67,6% |
-  | AUC "Last Answer", test | 0,651 | 0,633 | 0,646 |
+  | Chuỗi kết thúc bằng 3 lượt đúng | 45,5% | 70,8% | 23,7% |
+  | Chuỗi kết thúc bằng lượt đúng | 82,5% | 89,8% | 67,7% |
+  | AUC "Last Answer", test | 0,652 | 0,633 | 0,645 |
 
   Cơ chế dừng thấy rõ ở hình dạng chuỗi, nhưng không làm AUC của "Last Answer" cao hơn. Ảnh hưởng thật nằm ở
   phân bố: trong Skill Builder, chuỗi dừng ngay khi học sinh đạt yêu cầu, nên thiếu các lượt luyện sau khi đã thành
   thạo. Mọi chỉ số tính trên 2009 nên được đối chiếu với tập con ngoài MasterySection của 2012.
-- **Tỷ lệ đúng giảm dần theo phần:** 0,661 ở history, 0,654 ở validation, 0,632 ở test. Học sinh gặp bài khó hơn về
+- **Tỷ lệ đúng giảm dần theo phần:** 0,661 ở history, 0,654 ở validation, 0,635 ở test. Học sinh gặp bài khó hơn về
   sau, nên mọi so sánh phải dùng cùng một phần dữ liệu.
 - **Thời gian phản hồi:** 0,11% dòng có `rt_ms` thiếu (giá trị gốc ≤ 0); các giá trị còn lại được cắt về
   [500; 120.000] ms.
-- **Ánh xạ kỹ năng:** tag lấy từ `SkillMapper` hiện tại. Sẽ chạy lại khi có từ điển `skill_map_v1.csv` (P1-05).
+- **Ánh xạ kỹ năng:** tag lấy từ `skill_map_v1.csv` (cột `canonical_tag`; `configs/data.yaml`, khóa `skill_map`), so
+  tên kỹ năng không phân biệt hoa thường và khoảng trắng, vì log 2009 có tên như `Circumference ` (dấu cách cuối).
+  Kỹ năng không có trong từ điển dùng `SkillMapper`. So với `SkillMapper`, v1 thêm tag cho Pattern Finding
+  (5.135 dòng), là kỹ năng có template Khan đúng sau khi rà.
 
 ## Lệnh tái lập
 
