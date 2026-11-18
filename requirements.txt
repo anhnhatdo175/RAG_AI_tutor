@@ -2,6 +2,7 @@ pandas
 numpy
 pyarrow
 pyyaml
+matplotlib
 scipy
 scikit-learn
 faiss-cpu

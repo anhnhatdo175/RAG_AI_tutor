@@ -32,25 +32,26 @@ def n_tokens(text: str) -> int:
     return len(enc.encode(text)) if enc else len(_TOK.findall(text))
 
 
-def _split_recursive(text: str, budget: int, level: int = 0) -> list[str]:
-    if n_tokens(text) <= budget:
+def _split_recursive(text: str, budget: int, level: int = 0, count=None) -> list[str]:
+    count = count or n_tokens
+    if count(text) <= budget:
         return [text]
     if level >= len(_SEPS):                                 # a single over-long "word" (e.g. huge LaTeX blob): hard cut
         return [text[i:i + budget * 3] for i in range(0, len(text), budget * 3)]
     parts = [p for p in re.split(_SEPS[level], text) if p and p.strip()]
     if len(parts) == 1:
-        return _split_recursive(text, budget, level + 1)
+        return _split_recursive(text, budget, level + 1, count)
     out, cur = [], ""
     joiner = "\n\n" if level == 0 else "\n" if level == 1 else " "
     for p in parts:
         cand = f"{cur}{joiner}{p}" if cur else p
-        if n_tokens(cand) <= budget:
+        if count(cand) <= budget:
             cur = cand
         else:
             if cur:
                 out.append(cur)
-            if n_tokens(p) > budget:
-                out.extend(_split_recursive(p, budget, level + 1))
+            if count(p) > budget:
+                out.extend(_split_recursive(p, budget, level + 1, count))
                 cur = ""
             else:
                 cur = p
@@ -59,12 +60,17 @@ def _split_recursive(text: str, budget: int, level: int = 0) -> list[str]:
     return out
 
 
-def chunk_text(text: str, header: str = "", max_tokens: int = MAX_TOKENS, overlap_words: int = OVERLAP_WORDS) -> list[str]:
-    """Return chunks each with n_tokens <= max_tokens (overlap and header included)."""
+def chunk_text(text: str, header: str = "", max_tokens: int = MAX_TOKENS, overlap_words: int = OVERLAP_WORDS,
+               count=None) -> list[str]:
+    """Return chunks each with count(chunk) <= max_tokens (overlap and header included).
+
+    ``count`` is the token counter (default ``n_tokens``); pass the embedding model's tokenizer to budget for it.
+    """
+    n_tokens = count or globals()["n_tokens"]
     if n_tokens(text) <= max_tokens:
         return [text]
     head_budget = n_tokens(header) + 4 if header else 0
-    pieces = _split_recursive(text, max(64, max_tokens - 2 * overlap_words - head_budget))
+    pieces = _split_recursive(text, max(64, max_tokens - 2 * overlap_words - head_budget), count=n_tokens)
     out = [pieces[0]]
     for prev, cur in zip(pieces, pieces[1:]):
         words = prev.split()[-overlap_words:]

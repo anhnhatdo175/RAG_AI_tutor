@@ -56,6 +56,17 @@ class CleaningLog:
         return out
 
 
+def skill_counts(df: pd.DataFrame, dataset: str, skill_col: str = "source_skill", tag_col: str = "skill_tag") -> pd.DataFrame:
+    """Rows, learners and accuracy per source skill, taken before the skill filter (used by P1-04 and P1-05)."""
+    g = (df.groupby(skill_col, observed=True)
+         .agg(rows=("correct", "size"), users=("user_id", "nunique"), accuracy=("correct", "mean"),
+              skill_tag=(tag_col, "first"))
+         .reset_index().rename(columns={skill_col: "source_skill"}).sort_values("rows", ascending=False))
+    g["accuracy"] = g["accuracy"].round(4)
+    g.insert(0, "dataset", dataset)
+    return g
+
+
 def cluster_bootstrap_diff(kept: pd.DataFrame, dropped: pd.DataFrame, n_resamples: int, seed: int,
                            user_col: str = "user_id") -> tuple[float, float, float]:
     """Accuracy(kept) - accuracy(dropped) with a 95% percentile interval, resampling learners (clusters)."""
