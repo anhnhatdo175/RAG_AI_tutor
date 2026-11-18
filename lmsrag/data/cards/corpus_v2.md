@@ -16,13 +16,15 @@
 | Nguồn | Bài (tài liệu) | Chunk `worked_example` | Chunk `hint_step` | Kho bài tập |
 |---|---:|---:|---:|---:|
 | Khan | 2.064 (283 template) | 2.349 | 10.229 | 2.064 |
-| GSM8K | 1.983 | 1.983 | – | 1.983 |
-| MATH | 501 | 510 | – | – |
-| **Tổng** | **4.548** | **4.842** | **10.229** | **4.047** |
+| GSM8K | 1.892 | 1.892 | – | 1.892 |
+| MATH | 452 | 461 | – | – |
+| **Tổng** | **4.408** | **4.702** | **10.229** | **3.956** |
+
+Số liệu theo từ điển v1.1 (`map_version` 1.1, sau vòng κ đầu). Với v1.0: GSM8K 1.983, MATH 501 bài; xem mục Kỹ năng.
 
 - Mỗi bài là một chunk `worked_example` có `text = "Problem: …\nSolution: …\nAnswer: …"`. Bài dài hơn 512 token
   (đếm bằng tokenizer của `BAAI/bge-small-en-v1.5`, kể cả token đặc biệt) được cắt bằng `layer2_embedding/chunk.py`:
-  176 bài (171 Khan, 5 MATH), tức 3,9% số bài. Sau khi cắt, chunk dài nhất có đúng 512 token.
+  176 bài (171 Khan, 5 MATH), tức 4,0% số bài. Sau khi cắt, chunk dài nhất có đúng 512 token.
 - Mỗi bước gợi ý của Khan là một chunk `hint_step`, chỉ dùng cho hội thoại Socratic, không dùng trong đánh giá truy xuất.
   12 bước dài quá 512 token cũng được cắt, có id dạng `#h3.0`, `#h3.1`.
 - `chunk_id` = `<doc_id>#<số>`; vì `doc_id` đã có tên nguồn ở đầu (`khan:`, `gsm8k:`, `math:`), id này tương đương
@@ -37,10 +39,10 @@
 | Đúng 4 môn và Level 1–3 | – | 1.568 |
 | Bỏ bài có `[asy]` | – | 1.479 |
 | `clean_records` (chuẩn hóa, khử trùng chính xác và gần trùng MinHash) | gộp: 10.271 → 10.265 | |
-| Không gắn được kỹ năng bằng `SkillMapper.tag_text`, bỏ | 6.808 | 973 |
-| **Còn lại** | **1.983** | **501** |
+| Không gắn được kỹ năng bằng `SkillMapper.tag_text`, bỏ | 6.899 | 1.022 |
+| **Còn lại** | **1.892** | **452** |
 
-77% bài GSM8K không gắn được kỹ năng: quy tắc hiện tại chỉ nhận dạng các dạng bài gần với kỹ năng ASSISTments. Khử
+78% bài GSM8K không gắn được kỹ năng: quy tắc hiện tại chỉ nhận dạng các dạng bài gần với kỹ năng ASSISTments. Khử
 gần trùng chỉ chạy trên GSM8K và MATH; với Khan thì không, vì các bài cùng template chỉ khác số và sẽ bị xóa nhầm.
 
 ## Kỹ năng
@@ -50,12 +52,23 @@ gần trùng chỉ chạy trên GSM8K và MATH; với Khan thì không, vì các
   Template không có trong từ điển dùng `junyi:<topic>`, giống quy tắc của adapter Junyi, để chunk và lượt làm Junyi có
   cùng tag. Nếu vẫn không có, dùng quy tắc văn bản; cuối cùng là `khan:<slug>`. Từ điển v1 cũng liệt kê 32 template đã
   rà là không thuộc kỹ năng ASSISTments nào (ma trận, hóa học, lượng giác, phân thức đại số…), với tag `khan:<slug>`.
-  Kết quả: từ điển 1.338 bài, Junyi topic 534, `khan:<slug>` 184 (`template_only`), quy tắc 8. 8 bài quy tắc và một
-  phần `template_only` thuộc 3 template mà người rà đã bỏ khỏi kỹ năng duy nhất của chúng (`comparing_whole_numbers`,
-  `comparing_whole_numbers_2`, `multiplying_polynomials_0.5`).
+  Từ v1.1, một cặp có thể chỉ phủ một số dạng bài của template (cột `khan_types`), nên tag của bài Khan tính theo
+  (template, dạng bài): ví dụ `mean_median_and_mode` dạng `median` chỉ mang tag `Median`.
+  Kết quả: từ điển 1.302 bài, Junyi topic 562, `khan:<slug>` 184 (`template_only`), quy tắc 16. Bài quy tắc và một
+  phần `template_only` thuộc các template mà người rà đã bỏ khỏi kỹ năng duy nhất của chúng (`comparing_whole_numbers`,
+  `comparing_whole_numbers_2`, `multiplying_polynomials_0.5`; từ v1.1 thêm `integer_sums`, `geometric_sequences_2`,
+  `converting_between_point_slope_and_slope_intercept`, `simplifying_expressions_with_exponents`, `exponent_rules`).
+  Với v1.0: từ điển 1.338, Junyi topic 534, quy tắc 8.
   Bản nháp (`assistments_to_khan_draft.csv`) cho: từ điển 1.195, Junyi topic 586, quy tắc 205, `khan:<slug>` 78.
-- **GSM8K và MATH:** `SkillMapper.tag_text`, như pipeline cũ.
-- Có 139 tag có chunk (80 tag chuẩn); 50 tag có chunk ở ít nhất 3 mức khó (38 tag chuẩn). Số tag tăng và số tag đủ 3
+- **GSM8K và MATH:** `SkillMapper.tag_text`. Vòng κ đầu cho thấy quy tắc chỉ đúng 62% (31/50 cặp), nên v1.1 thu hẹp
+  các mẫu bắt theo từ khóa (bỏ câu định dạng đáp số "Express your answer as…" trước khi so; "average" phải là điều
+  được hỏi; làm tròn phải là yêu cầu chính; phân số có chữ ở mẫu không phải cộng trừ phân số; một phép tính đơn lẻ
+  không phải thứ tự phép tính…) và tách tag của ba kỹ năng trước dùng chung tag với kỹ năng khác
+  (`Order of Operations +,-,/,* () positive reals`, `Simplifying Expressions positive exponents`,
+  `Finding Slope from Ordered Pairs`). Trên 50 cặp của mẫu κ: 18/19 cặp sai đổi tag, cặp còn lại hết sai nhờ tách tag;
+  2/31 cặp đúng đổi sang tag cũng hợp lệ. Trên toàn bộ 10.265 bài: 179 bài đổi tag, 140 bài mất tag (chủ yếu
+  GSM8K chỉ cho sẵn một giá trị trung bình). Độ chính xác của quy tắc mới phải đo lại trên một mẫu mới.
+- Có 144 tag có chunk (85 tag chuẩn); 49 tag có chunk ở ít nhất 3 mức khó (37 tag chuẩn); v1.0: 139 (80), 50 (38). Số tag tăng và số tag đủ 3
   mức giảm so với bản nháp (105/65, 54/40) vì các template trước đây bị quy tắc gắn chung vào một tag nay mỗi template
   là một tag `khan:<slug>`.
 
@@ -63,8 +76,10 @@ gần trùng chỉ chạy trên GSM8K và MATH; với Khan thì không, vì các
 
 | | Kỹ năng có ít nhất một template Khan dùng được | Tag của kỹ năng có ít nhất một chunk (mọi nguồn) |
 |---|---:|---:|
-| ASSISTments 2009, từ điển v1 | **77,1%** | **81,6%** |
-| ASSISTments 2012, từ điển v1 | **82,4%** | **87,1%** |
+| ASSISTments 2009, từ điển v1.1 | **76,8%** | **81,9%** |
+| ASSISTments 2012, từ điển v1.1 | **81,5%** | **88,3%** |
+| ASSISTments 2009, từ điển v1.0 | 77,1% | 81,6% |
+| ASSISTments 2012, từ điển v1.0 | 82,4% | 87,1% |
 | ASSISTments 2009, bản nháp | 80,0% | 80,9% |
 | ASSISTments 2012, bản nháp | 84,1% | 82,4% |
 
@@ -85,8 +100,8 @@ còn template dùng được: Ordering Integers (1,19% lượt 2009 / 0,80% lư�
 |---|---:|---|
 | `junyi_history` | 1.273 Khan (172 template) | 1 − tỷ lệ đúng trên phần **history** của mẫu Junyi. Có 920 bài tính theo (template, dạng bài) khi đơn vị có từ 200 lượt, co về tỷ lệ đúng của template với m = 20; 353 bài tính theo mức template khi chỉ template đủ 200 lượt. Trường `p_correct_hist`, `difficulty_n` |
 | `khan_steps` | 791 Khan | hồi quy isotonic (tăng dần) từ số bước gợi ý sang độ khó gốc, fit trên 1.273 bài ở dòng trên: 1 bước → 0,19; 5 bước → 0,29; 9 bước → 0,42; từ 11 bước → 0,45 |
-| `gsm8k_steps` | 1.983 | số phép tính `<<…>>` trong lời giải gốc |
-| `math_level` | 501 | Level 1–3 |
+| `gsm8k_steps` | 1.892 | số phép tính `<<…>>` trong lời giải gốc |
+| `math_level` | 452 | Level 1–3 |
 
 - `difficulty` = hạng phần trăm giữa (mid-rank) trong từng nguồn, nên mỗi nguồn trải đều trên (0, 1).
 - `difficulty_level` = ngũ phân vị của `difficulty` trên toàn kho. Vì GSM8K và MATH có nhiều giá trị trùng, GSM8K không

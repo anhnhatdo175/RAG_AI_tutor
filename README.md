@@ -41,7 +41,7 @@ python -m lmsrag.datasets.build --config configs/data.yaml --only junyi2015    #
 python -m lmsrag.corpus.build_corpus --config configs/data.yaml                  # P1-04, khoảng 35 giây
 python -m lmsrag.labels.review_draft                                             # P1-05: phiếu rà soát từ điển nháp
 python -m lmsrag.labels.review_recheck                                           # P1-05: phiếu D, xem lại các cặp bị bỏ
-python -m lmsrag.labels.build_skill_map                                          # P1-05: skill_map_v1.csv từ phiếu đã điền
+python -m lmsrag.labels.build_skill_map                                          # P1-05: skill_map_v1.csv từ phiếu A–E (map_version 1.1)
 python -m lmsrag.labels.make_sheets                                              # P1-05: phiếu 150 cặp cho Người 2, Người 3
 python -m lmsrag.labels.agreement                                                # P1-05: κ, phân xử, a4_mapping_audit.csv
 ```

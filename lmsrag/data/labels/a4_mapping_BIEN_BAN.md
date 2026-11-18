@@ -82,8 +82,55 @@ lại, nên phải sửa quy tắc và đo lại trên một mẫu mới.
 | Sau vòng 1 | Lỗi đổi TeX: `\pink{{?}}` hiện thành "πnk?" ở m030 và m099 (cả hai người đều phát hiện, Người 2 ghi chú). Đã sửa trong `make_sheets.py` và thêm test; trong 150 đề chỉ hai đề này đổi | Không: cả hai người vẫn đọc được phép tính và cùng gán 1 |
 | Sau vòng 1 | m097: giải thích của D.4.8 trong `a4_skill_glossary.csv` hẹp hơn kỹ năng gốc, khiến Người 2 gán 0 | Đã phân xử; sửa giải thích trước vòng sau |
 
-## 7. Việc tiếp theo
+## 7. Sửa từ điển: v1.1 (19/11/2026)
 
-1. Sửa từ điển theo 8 cặp template Khan có nhãn 0, sửa quy tắc gắn tag GSM8K/MATH, tăng `map_version`.
-2. Chạy lại P1-03 và P1-04.
-3. Rút mẫu mới (seed khác hoặc loại trừ 150 cặp này) để đo lại độ chính xác của quy tắc đã sửa.
+Thực hiện theo bước cuối của thẻ P1-05. Nhánh `p1/P1-05-skillmap-v1.1`; `map_version` 1.1 trong
+`skill_map_v1.csv`.
+
+**Template Khan (8 cặp nhãn 0).** Ghi ở phiếu E `a4_review_E_audit_fixes.csv` (16 dòng, mỗi dòng dẫn mã item làm bằng
+chứng), áp dụng bởi `build_skill_map.py`. Khi xem đủ các dạng bài của từng template thì thấy hai nguyên nhân:
+
+| Nguyên nhân | Cặp | Cách sửa |
+|---|---|---|
+| Một template gồm nhiều dạng bài thuộc các kỹ năng khác nhau | m007 `mean_median_and_mode`, m065 `finding_percents`, m060 `discount_tax_and_tip_word_problems` | Cột mới `khan_types`: cặp chỉ phủ các dạng bài của kỹ năng đó (Mean ↔ `mean`, Median ↔ `median`…; dạng tính thuế chuyển sang Percent Of và Percent Increase or Decrease) |
+| Template không luyện kỹ năng | m009, m024, m067, m068, m115 | Bỏ cặp (`skill_map_v1_rejected.csv`, review `E:drop`); thêm `exponent_rules` cùng lý do với m115 (phân vân) |
+
+Lỗi thứ nhất cũng có trong log Junyi, vì Junyi ghi dạng bài theo tên. Ở v1.0, các lượt làm dạng `median` và `mode`
+mang tag `Mean`, còn các dạng tính thuế mang `Percent-Discount`. Từ v1.1, tag được tính theo (template, dạng bài).
+
+**Tag dùng chung.** Ở v1.0, ba kỹ năng ASSISTments dùng chung tag với một kỹ năng khác, nên học sinh của kỹ năng này
+được giao bài của kỹ năng kia (m068, m084, m115, m138, m025). v1.1 tách tag riêng cho
+`Order of Operations +,-,/,* () positive reals` (thêm `order_of_operations_2` các dạng chỉ có số dương),
+`Simplifying Expressions positive exponents` và `Finding Slope from Ordered Pairs`.
+
+**Quy tắc GSM8K/MATH (19 cặp nhãn 0).** Mỗi lỗi được quy về một mẫu từ khóa quá rộng, và mẫu đó được sửa cho cả kho,
+không vá riêng bài: bỏ câu định dạng đáp số trước khi so (m038), "average" phải là điều được hỏi (m071), làm tròn
+phải là yêu cầu chính (m092), phân số có chữ ở mẫu không phải cộng trừ phân số (m015, m110), cộng trừ số nguyên phải
+có số âm (m016), một phép tính đơn lẻ hoặc lũy thừa phân số không phải thứ tự phép tính (m056, m131, m149), loại hệ
+phương trình, định nghĩa hàm và phương trình chứa phần nguyên (m055, m126, m129), bỏ mẫu "solve for x" đứng một mình
+(m008), a(x + b) = c là hai bước (m144), "right triangle" không đủ để là Pythagore (m022), loại tỉ lệ nghịch (m112),
+loại số phức (m138). Kiểm tra trên mẫu κ: 18/19 cặp sai đổi tag (tag mới hoặc không còn tag), cặp còn lại (m084) hết
+sai nhờ tách tag; 2/31 cặp đúng đổi sang tag cũng hợp lệ (m062 sang Finding Slope from Ordered Pairs, m118 sang
+Order of Operations positive reals). Test: `lmsrag/tests/test_skill_rules.py`.
+
+Đây là sửa dựa trên chính mẫu đã dùng để đo, nên độ chính xác 62% của quy tắc **không được** cập nhật bằng cách chấm lại
+50 cặp này. Phải đo lại trên mẫu mới.
+
+**Ảnh hưởng (chạy lại P1-01 đến P1-04).**
+
+| | v1.0 | v1.1 |
+|---|---:|---:|
+| Cặp (kỹ năng, template) / dùng được | 284 / 210 | 280 / 206 |
+| Bài GSM8K / MATH có tag (vào kho) | 1.983 / 501 | 1.892 / 452 |
+| Bài Khan gắn qua từ điển / Junyi topic / quy tắc | 1.338 / 534 / 8 | 1.302 / 562 / 16 |
+| Lượt 2009 / 2012 thuộc kỹ năng có template dùng được | 77,1% / 82,4% | 76,8% / 81,5% |
+| Lượt 2009 / 2012 có tag có chunk | 81,6% / 87,1% | 81,9% / 88,3% |
+| Lượt Junyi có tag chuẩn | 44,8% (69 tag) | 44,7% (72 tag) |
+
+Số dòng, số người học và so sánh phần giữ/phần loại của hai bộ ASSISTments không đổi: tách tag chỉ đổi tên tag, không
+đổi kỹ năng nào có tag.
+
+## 8. Việc tiếp theo
+
+1. Đo lại quy tắc GSM8K/MATH trên một mẫu mới (seed khác, loại trừ 150 cặp vòng 1), hai người gán độc lập như vòng 1.
+2. Mẫu P1-06 và P1-07 rút từ kho đã build lại với v1.1.

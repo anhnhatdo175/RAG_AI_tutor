@@ -24,6 +24,15 @@ from dataclasses import dataclass, field
 from . import config
 
 FRAC = r"(?:\\d?frac\{[^{}]+\}\{[^{}]+\}|\b\d+/\d+\b)"
+# a negative number: a minus right after "$", "(" or another operator (a binary minus is not one)
+NEG = r"(?:[\$\(\+\-\*/=]|\\cdot|\\times|\\div)\s*-\s*\d"
+# "a op b" and nothing else: a single operation is not an order-of-operations problem
+ONE_OP = (r"\$\s*\(?\s*-?\d+(?:\.\d+)?\s*\)?\s*(?:\\cdot|\\times|\\div|\*|/|\+|-)\s*\(?\s*-?\d+(?:\.\d+)?\s*\)?"
+          r"\s*[\.\?]?\s*\$")
+# MATH answer-format boilerplate ("Express your answer as a common fraction.") says nothing about the skill
+ANSWER_FORMAT = re.compile(r"\b(?:express|give|write|enter|leave|round) (?:your|the|each|all) (?:final )?answers?\b"
+                           r"[^.?]*[.?]?", re.I)
+# kappa audit round 1 (a4_mapping_BIEN_BAN.md): rules that fired on a keyword but not on the skill are narrowed below
 
 
 def slugify(name: str) -> str:
@@ -47,7 +56,9 @@ CANONICAL: dict[str, dict] = {
     # ---- fractions / decimals / percents ------------------------------------
     "Addition and Subtraction Fractions": _e(
         "Fractions - Addition & Subtraction", [PRE, ALG, NT], gsm8k=True, conf="high",
-        include=[FRAC + r"\s*[\+\-]\s*" + FRAC, r"\b(add|subtract|sum|difference)\b[^.]{0,60}\bfractions?\b"]),
+        include=[FRAC + r"\s*[\+\-]\s*" + FRAC, r"\b(add|subtract|sum|difference)\b[^.]{0,60}\bfractions?\b"],
+        # a letter in a denominator is a rational equation or algebra (1/p + 1/q = 1), not fraction arithmetic
+        exclude=[r"\\d?frac\{[^{}]*\}\{[^{}]*[a-z][^{}]*\}", r"\b\d+/[a-z]\b"]),
     "Multiplication Fractions": _e(
         "Fractions - Multiplication", [PRE, ALG], gsm8k=True,
         include=[FRAC + r"\s*(?:\\cdot|\\times|\*)\s*" + FRAC, r"\b\d+/\d+ of\b",
@@ -75,7 +86,8 @@ CANONICAL: dict[str, dict] = {
         include=[r"\b\d+(?:\.\d+)?\s*(?:\\%|%|percent)\s+of\b", r"\bpercent of\b"]),
     "Proportion": _e(
         "Ratios & Proportions", [PRE, ALG, GEO], gsm8k=True,
-        include=[r"\bproportion", r"\bratio\b", r"\bin the ratio\b", r"\bdirectly proportional"]),
+        include=[r"\bproportion", r"\bratio\b", r"\bin the ratio\b", r"\bdirectly proportional"],
+        exclude=[r"\binversely proportional"]),
     "Unit Rate": _e(
         "Rates & Unit Rates", [PRE, ALG], gsm8k=True, aliases=["Rate"],
         include=[r"\bunit rate\b", r"\bper (?:hour|minute|gallon|pound|ounce|mile|day|week|second)\b",
@@ -83,22 +95,34 @@ CANONICAL: dict[str, dict] = {
     # ---- equations / expressions ---------------------------------------------
     "Equation Solving More Than Two Steps": _e(
         "Linear Equations - Multi-step", [PRE, ALG], levels=(2, 5), conf="high",
-        include=[r"\d*[a-z]\s*[\+\-]\s*\d+\s*=\s*-?\d*[a-z]\b", r"=\s*\d*\(\s*[a-z]", r"\d+\s*\(\s*[a-z]\s*[\+\-]\s*\d+\s*\)\s*[\+\-=]"],
-        exclude=[r"\bquadratic", r"\\sqrt", r"\^2"]),
+        # a(x + b) = c is two steps; a(x + b) + c = d is more
+        include=[r"\d*[a-z]\s*[\+\-]\s*\d+\s*=\s*-?\d*[a-z]\b", r"=\s*\d*\(\s*[a-z]", r"\d+\s*\(\s*[a-z]\s*[\+\-]\s*\d+\s*\)\s*[\+\-]"],
+        # systems, function definitions f(x) = ..., floor/ceiling
+        exclude=[r"\bquadratic", r"\\sqrt", r"\^2", r"\\begin\{align", r"\bordered pair", r"\bsystem\b",
+                 r"\b[a-z]\([a-z]\)\s*=", r"\\lceil|\\lfloor"]),
     "Equation Solving Two or Fewer Steps": _e(
         "Linear Equations - One or Two Steps", [PRE, ALG], levels=(1, 3), conf="high",
         include=[r"\$\s*-?\d*[a-z]\s*[\+\-]\s*\d+\s*=\s*-?\d+\s*\$", r"\$\s*-?\d+[a-z]\s*=\s*-?\d+\s*\$",
-                 r"\$\s*[a-z]\s*[\+\-]\s*\d+\s*=\s*-?\d+\s*\$", r"\bsolve for \$?[a-z]\$?[\.\?]?\s*$",
+                 r"\$\s*[a-z]\s*[\+\-]\s*\d+\s*=\s*-?\d+\s*\$",
+                 # (a bare "solve for x" is dropped: it fired on "441 + 2(21)(19) + 361 = x" and on floor equations)
                  r"^(?:solve for|find|what is the value of|if)\b[^=$]{0,40}\$[^$=^|\\()]*[a-z][^$=^|\\()]*=[^$=^|\\()a-z]*\$[^$=]{0,25}$",
                  r"\bvalue of \$?[a-z]\$? (?:in|that satisf\w+) the equation \$[^$=^|\\()]*=[^$=^|\\()]*\$"],
-        exclude=[r"\bquadratic", r"\\sqrt", r"\^"]),
+        exclude=[r"\bquadratic", r"\\sqrt", r"\^", r"\\lceil|\\lfloor", r"\bsystem\b", r"\\begin\{align"]),
     "Solving for a variable": _e(
         "Solving for a Variable (literal equations)", [ALG], aliases=["Algebraic Solving"],
         include=[r"\bsolve for \$?[a-z]\$? in terms of", r"\bin terms of\b[^.]{0,20}\$?[a-z]\$?"]),
+    # the 2009 skill on + - x / and brackets with positive numbers only has its own tag (it shared one with "All",
+    # so its students were sent problems with negative numbers and powers)
+    "Order of Operations +,-,/,* () positive reals": _e(
+        "Order of Operations - Positive Numbers", [PRE, ALG], conf="high",
+        include=[r"^(?:compute|evaluate|calculate|simplify|what is|find)[^a-z$]{0,3}\$(?=[^$]*\()(?=[^$]*(?:\\cdot|\\times|\\div|\*|/))[0-9\s\(\)\+\-\*/\\cdotimesdiv\.\{\},]+\$[\.\?]?\s*$"],
+        exclude=[NEG, r"\^", ONE_OP]),
     "Order of Operations All": _e(
-        "Order of Operations", [PRE, ALG], aliases=["Order of Operations +,-,/,* () positive reals"], conf="high",
+        "Order of Operations", [PRE, ALG], conf="high",
         include=[r"\border of operations", r"\bpemdas\b",
-                 r"^(?:compute|evaluate|calculate|simplify|what is|find)[^a-z$]{0,3}\$(?=[^$]*\()(?=[^$]*(?:\\cdot|\\times|\\div|\*|/))[0-9\s\(\)\+\-\*/\\cdotimesdiv\^\.\{\},]+\$[\.\?]?\s*$"]),
+                 r"^(?:compute|evaluate|calculate|simplify|what is|find)[^a-z$]{0,3}\$(?=[^$]*\()(?=[^$]*(?:\\cdot|\\times|\\div|\*|/))[0-9\s\(\)\+\-\*/\\cdotimesdiv\^\.\{\},]+\$[\.\?]?\s*$"],
+        # one operation on a bracketed negative ((-49) / 7) or a fractional power ((-125)^{4/3}) is not this skill
+        exclude=[ONE_OP, r"\^\{[^}]*/"]),
     "Exponents": _e(
         "Exponents & Powers", [PRE, ALG], conf="high",
         include=[r"\bexponents?\b", r"\b(?:evaluate|compute|calculate|simplify|what is)\b[^.$]{0,10}\$\s*\(?-?\d+\)?\^\{?-?\d+\}?[^$a-z]{0,6}\$"]),
@@ -117,16 +141,26 @@ CANONICAL: dict[str, dict] = {
     "Distributive Property": _e(
         "Distributive Property & Expanding", [PRE, ALG],
         include=[r"\bdistributive", r"\bexpand\b", r"^(?:simplify|expand)\b[^a-z$]{0,3}\$\s*\d*\s*\(\s*[a-z0-9\s\+\-]+\)\s*[\+\-]\s*\d*\s*\("]),
+    # its own tag: it shared "Algebraic Simplification" with like-term problems, and the audit asks for exponent rules
+    "Simplifying Expressions positive exponents": _e(
+        "Simplifying Expressions - Positive Exponents", [PRE, ALG], conf="medium",
+        include=[r"^(?:simplify|expand and simplify)\b[^$]{0,10}\$[^$]*[a-z]\s*\^\s*\{?\d[^$]*\$[\.\?]?\s*$"],
+        exclude=[r"\^\s*\{?\s*-", r"\\sqrt", r"\d\s*i\b", r"\bcomplex"]),
     "Algebraic Simplification": _e(
-        "Simplifying Algebraic Expressions", [PRE, ALG], aliases=["Simplifying Expressions positive exponents"],
-        include=[r"^(?:simplify|expand and simplify)\b[^$]{0,10}\$[^$]*[a-z][^$]*\$[\.\?]?\s*$"], exclude=[r"\\sqrt", r"\bfraction"]),
+        "Simplifying Algebraic Expressions", [PRE, ALG],
+        include=[r"^(?:simplify|expand and simplify)\b[^$]{0,10}\$[^$]*[a-z][^$]*\$[\.\?]?\s*$"],
+        exclude=[r"\\sqrt", r"\bfraction", r"\d\s*i\b", r"\bcomplex"]),  # (5 - 3i)(-4 + 3i) is complex arithmetic
     "Write Linear Equation from Ordered Pairs": _e(
         "Linear Functions - Writing Equations", [ALG], aliases=["Write Linear Equation from Graph", "Write Linear Equation from Situation"],
         include=[r"\bequation of the line", r"\bslope-intercept", r"\bline passing through", r"\bline through the points?"]),
+    # slope from two points has its own tag; it shared one with slope read off an equation
+    "Finding Slope from Ordered Pairs": _e(
+        "Linear Functions - Slope from Two Points", [ALG, GEO],
+        include=[r"\bslope\b[^.]{0,120}\bpoints?\b", r"\bslope\b[^.]{0,160}\(\s*-?\d+\s*,\s*-?\d+\s*\)"]),
     "Finding Slope From Equation": _e(
         "Linear Functions - Slope", [ALG],
-        aliases=["Finding Slope From Situation", "Finding Slope from Ordered Pairs", "Slope"],
-        include=[r"\bslope of\b", r"\bthe slope\b"]),
+        aliases=["Finding Slope From Situation", "Slope"],
+        include=[r"\bslope of\b", r"\bthe slope\b"], exclude=[r"\(\s*-?\d+\s*,\s*-?\d+\s*\)"]),
     "Midpoint": _e("Coordinate Geometry - Midpoint", [ALG, GEO], conf="high", include=[r"\bmidpoint"]),
     "Solving Systems of Linear Equations": _e(
         "Systems of Linear Equations", [ALG], aliases=["Solving Systems of Linear Equations by Graphing"], conf="high",
@@ -134,7 +168,9 @@ CANONICAL: dict[str, dict] = {
     # ---- geometry -----------------------------------------------------------------
     "Pythagorean Theorem": _e(
         "Pythagorean Theorem", [GEO, PRE, ALG], conf="high",
-        include=[r"\bpythagorean", r"\bhypotenuse", r"\bright triangle\b[^.]{0,80}\b(?:length|leg|side)"]),
+        # "right triangle ... side" alone also fires on area problems; ask for a missing side
+        include=[r"\bpythagorean", r"\bhypotenuse",
+                 r"\bright triangle\b[^?]{0,120}\b(?:length of the (?:third|other|missing|remaining) (?:side|leg)|other leg|third side)"]),
     "Area Trapezoid": _e("Area - Trapezoid", [GEO, PRE], conf="high", include=[r"\btrapezoid"], exclude=[r"\bperimeter\b"]),
     "Area Parallelogram": _e("Area - Parallelogram", [GEO, PRE], include=[r"\bparallelogram"]),
     "Area Triangle": _e("Area - Triangle", [GEO, PRE], include=[r"\barea of (?:a |the |an )?(?:right |isosceles |equilateral )?triangle"]),
@@ -177,7 +213,11 @@ CANONICAL: dict[str, dict] = {
         include=[r"\bhow many (?:different |distinct )?(?:ways|arrangements|outfits|combinations|committees|possible)",
                  r"\bpermutation", r"\bcombination", r"\bchoose\b", r"\barrangements?\b"]),
     "Median": _e("Statistics - Median", [PRE, ALG, CP], conf="high", include=[r"\bmedian\b"]),
-    "Mean": _e("Statistics - Mean/Average", [PRE, ALG, CP], gsm8k=True, include=[r"\barithmetic mean\b", r"\bmean\b[^.]{0,30}\b(?:of|is)\b", r"\baverage\b"]),
+    # "average" must be what is asked for; "seen for an average of 24 minutes" only gives one
+    "Mean": _e("Statistics - Mean/Average", [PRE, ALG, CP], gsm8k=True,
+               include=[r"\barithmetic mean\b", r"\bmean\b[^.]{0,30}\b(?:of|is)\b",
+                        r"\b(?:what(?: is|'s| was)?|find|calculate|compute|determine|how much|how many)\b[^.?]{0,60}\baverage\b",
+                        r"\bon average\b[^.?]*\?", r"\bneed(?:s)? to average\b"]),
     "Range": _e("Statistics - Range", [PRE, ALG, CP], include=[r"\bthe range of (?:the )?(?:data|set|numbers|values|scores)", r"\brange of (?:the )?(?:data|set|numbers|scores)"]),
     # ---- number sense ----------------------------------------------------------------------
     "Greatest Common Factor": _e("Number Theory - GCF", [NT, PRE, ALG], conf="high",
@@ -186,15 +226,18 @@ CANONICAL: dict[str, dict] = {
                                 include=[r"\bleast common multiple", r"\blcm\b"]),
     "Prime Number": _e("Number Theory - Primes", [NT, PRE], include=[r"\bprime (?:number|factor)", r"\bprime\b"]),
     "Divisibility Rules": _e("Number Theory - Divisibility", [NT, PRE], include=[r"\bdivisible by\b", r"\bmultiples? of\b"]),
-    "Rounding": _e("Rounding", [PRE, ALG], gsm8k=True, conf="high", include=[r"\bround(?:ed)? (?:to|it to)\b", r"\bnearest (?:tenth|hundredth|whole|integer|thousandth|ten|hundred)"]),
+    # rounding must be the task ("Round 563.5 to the nearest integer"), not the format of another answer
+    "Rounding": _e("Rounding", [PRE, ALG], gsm8k=True, conf="high",
+                   include=[r"^round\b", r"\bround (?:\$?-?[\d.,]+\$?|the number|each number|it) to\b"]),
     "Addition and Subtraction Integers": _e(
         "Integers - Addition & Subtraction", [PRE, ALG], conf="low",
         include=[r"^(?:compute|evaluate|calculate|what is|find)[^a-z$]{0,3}\$\s*-?\d+\s*[\+\-]\s*\(?-\d+\)?\s*\$",
-                 r"^(?:compute|evaluate|calculate|what is|find)[^a-z$]{0,3}\$[\s\d\+\-\(\)]*[\+\-][\s\d\+\-\(\)]*\$[\.\?]?\s*$"],
+                 r"^(?:compute|evaluate|calculate|what is|find)[^a-z$]{0,3}\$(?=[^$]*" + NEG + r"|\s*-\s*\d)[\s\d\+\-\(\)]*[\+\-][\s\d\+\-\(\)]*\$[\.\?]?\s*$"],
         note="negative-number arithmetic only; whole-number arithmetic is too unspecific in word problems"),
     "Multiplication and Division Integers": _e(
         "Integers - Multiplication & Division", [PRE, ALG], conf="low",
-        include=[r"^(?:compute|evaluate|calculate|what is|find)[^a-z$]{0,3}\$\s*-?\d+\s*(?:\\cdot|\\times|\\div|\*|/)\s*\(?-\d+\)?\s*\$"]),
+        include=[r"^(?:compute|evaluate|calculate|what is|find)[^a-z$]{0,3}\$\s*-?\d+\s*(?:\\cdot|\\times|\\div|\*|/)\s*\(?-\d+\)?\s*\$",
+                 r"^(?:compute|evaluate|calculate|what is|find)[^a-z$]{0,3}\$\s*\(?\s*-\d+\s*\)?\s*(?:\\cdot|\\times|\\div|\*|/)\s*\(?-?\d+\)?\s*[\.\?]?\s*\$"]),
     "Mode": _e("Statistics - Mode", [PRE, ALG, CP], conf="high",
                include=[r"\bmode of (?:the )?(?:given )?(?:data|set|values|numbers)\b",
                         r"\b(?:only )?mode is\b",
@@ -363,6 +406,7 @@ class SkillMapper:
     # --- corpus side ------------------------------------------------------------------
     def tag_text(self, text: str, subject: str | None, level: int | None, is_gsm8k: bool):
         """Return (skill_tag, topic_label, confidence) or (None,None,None)."""
+        text = ANSWER_FORMAT.sub(" ", text)
         best, best_score = None, 0
         for name, rule in self.canonical.items():
             if is_gsm8k:

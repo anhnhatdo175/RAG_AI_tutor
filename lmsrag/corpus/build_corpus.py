@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 from ..datasets.build import REPO, load_config
-from ..datasets.junyi2015 import DEFAULT_MAPPING, khan_tag_lists
+from ..datasets.junyi2015 import DEFAULT_MAPPING, khan_tag_lists, khan_type_tag_lists
 from ..datasets.skill_map import skill_key
 from ..layer2_embedding import chunk as chunker
 from ..layer2_embedding.clean import ASY_RE, clean_records
@@ -55,8 +55,12 @@ def khan_documents(mapping_csv: Path, mapper: SkillMapper) -> pd.DataFrame:
     topics = pd.read_csv(KHAN_DIR / "junyi_exercise_stats_survey.csv", usecols=["exercise", "topic"])
     topic = dict(zip(topics["exercise"], topics["topic"].astype(str)))
     tag_lists = khan_tag_lists(mapping_csv, mapper)
+    type_lists = khan_type_tag_lists(mapping_csv, KHAN_DIR / "khan_problem_types.csv")
 
-    def tags_for(slug: str, text: str) -> tuple[list[str], str]:
+    def tags_for(slug: str, type_key: str, text: str) -> tuple[list[str], str]:
+        if (slug, type_key) in type_lists:  # v1.1: a pair may cover only some problem types of the template
+            tags = type_lists[(slug, type_key)]
+            return (tags, "dictionary") if tags else ([f"khan:{slug}"], "template_only")
         if slug in tag_lists:  # v1 also lists templates reviewed as having no ASSISTments skill, as khan:<slug>
             tags = tag_lists[slug]
             return tags, "template_only" if all(t.startswith("khan:") for t in tags) else "dictionary"
@@ -66,7 +70,8 @@ def khan_documents(mapping_csv: Path, mapper: SkillMapper) -> pd.DataFrame:
         # last resort: the template itself is the skill; listed for the P1-05 review so it gets a real tag
         return ([tag], "rule") if tag else ([f"khan:{slug}"], "template_only")
 
-    tagged = [tags_for(s, q + "\n" + sol) for s, q, sol in zip(probs["slug"], probs["question"], probs["solution"])]
+    tagged = [tags_for(s, k, q + "\n" + sol)
+              for s, k, q, sol in zip(probs["slug"], probs["type_key"], probs["question"], probs["solution"])]
     return pd.DataFrame({
         "doc_id": probs["doc_id"], "source": "khan", "khan_slug": probs["slug"], "problem_type": probs["type_key"],
         "type_key": probs["type_key"], "title": probs["title"], "question": probs["question"],

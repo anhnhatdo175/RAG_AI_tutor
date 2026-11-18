@@ -1,0 +1,17 @@
+row,evidence,source_skill,khan_slug,decision,khan_types,note
+1,m007,Mean,mean_median_and_mode,types,mean,template có ba dạng bài: trung bình / trung vị / mốt; mỗi kỹ năng chỉ giữ dạng của nó
+2,m007,Median,mean_median_and_mode,types,median,m007: bài hỏi trung bình cộng bị ghép với Median (cả hai người gán 0)
+3,m007,Mode,mean_median_and_mode,types,mode,cùng lý do với dòng 1
+4,m065,Percent Of,finding_percents,types,type-1;type-2,dạng 1–2 hỏi a% của một số; dạng 3–4 hỏi một số là bao nhiêu phần trăm số khác
+5,m065,Percents,finding_percents,types,type-1;type-2,cùng tag với Percent Of
+6,m065,Finding Percents,finding_percents,types,type-3;type-4,m065: bài 'What is 60% of 5' bị ghép với Finding Percents (cả hai người gán 0)
+7,m060,Percent Discount,discount_tax_and_tip_word_problems,types,total-price-with-discount;simple-discount,m060: bài tính thuế bị ghép với Percent Discount (cả hai người gán 0); chỉ giữ hai dạng giảm giá
+8,m060,Percent Increase or Decrease,discount_tax_and_tip_word_problems,types,tax-total-cost;tip,giá sau thuế và tổng tiền kèm tiền boa là tăng theo phần trăm
+9,m060,Percent Of,discount_tax_and_tip_word_problems,add,simple-tax,dạng 'tiền thuế bao nhiêu' là tìm a% của một số; trước đây không thuộc kỹ năng nào đúng
+10,m068,"Order of Operations +,-,/,* () positive reals",order_of_operations,drop,,m068: cả 6 dạng bài đều có số âm (cả hai người gán 0); kỹ năng này nay có tag riêng
+11,m068,"Order of Operations +,-,/,* () positive reals",order_of_operations_2,add,order-of-operations;1;5,dạng 0 1 5 chỉ có + − × ÷ với số dương; dạng 2–4 có lũy thừa nên không thuộc kỹ năng này
+12,m115,Simplifying Expressions positive exponents,simplifying_expressions_with_exponents,drop,,m115: cả hai dạng bài đều dùng số mũ âm (phân xử 0); kỹ năng này nay có tag riêng
+13,m115,Simplifying Expressions positive exponents,exponent_rules,drop,,cùng lý do với m115: phần lớn bài của cả 4 dạng có số mũ âm; phân vân vì một số bài chỉ có số mũ dương
+14,m067,Addition and Subtraction Integers,integer_sums,drop,,m067: template duy nhất một dạng (tổng các số lẻ liên tiếp) không luyện cộng trừ số nguyên âm (cả hai người gán 0)
+15,m024,Pattern Finding,geometric_sequences_2,drop,,m024: chỉ thay chỉ số vào công thức số hạng cho sẵn; không tìm quy luật (cả hai người gán 0)
+16,m009,Write Linear Equation from Ordered Pairs,converting_between_point_slope_and_slope_intercept,drop,,m009: đổi dạng phương trình; không viết phương trình từ các điểm (cả hai người gán 0)

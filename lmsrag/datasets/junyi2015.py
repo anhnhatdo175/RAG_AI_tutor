@@ -66,6 +66,34 @@ def khan_tags(mapping_csv: Path, mapper: SkillMapper) -> dict[str, str]:
     return {slug: tags[0] for slug, tags in khan_tag_lists(mapping_csv, mapper).items()}
 
 
+def khan_type_tag_lists(mapping_csv: Path, problem_types_csv: Path) -> dict[tuple[str, str], list[str]]:
+    """(khan_slug, problem-type key) -> sorted canonical tags, for templates whose dictionary rows name types.
+
+    From map v1.1 a pair may cover only some problem types of a template (``khan_types``: type ids joined by ';'),
+    e.g. Median -> mean_median_and_mode only for type ``median``. A row with no types covers every type. The key is
+    the type id or its position, as Junyi logs either; a type no pair covers maps to an empty list.
+    """
+    if not mapping_csv.is_file() or not problem_types_csv.is_file():
+        return {}
+    m = pd.read_csv(mapping_csv, dtype=str, keep_default_na=False)
+    if "khan_types" not in m.columns:
+        return {}
+    m = m[(m["khan_slug"] != "") & (m["canonical_tag"] != "")]
+    split = set(m.loc[m["khan_types"] != "", "khan_slug"])
+    t = pd.read_csv(problem_types_csv, dtype=str)
+    out: dict[tuple[str, str], list[str]] = {}
+    by_index: dict[tuple[str, str], list[str]] = {}
+    for slug, tid, idx in zip(t["slug"], t["problem_id"], t["problem_index"]):
+        if slug not in split:
+            continue
+        rows = m[m["khan_slug"] == slug]
+        tags = sorted({tag for tag, types in zip(rows["canonical_tag"], rows["khan_types"])
+                       if not types or tid in {x.strip() for x in types.split(";")}})
+        out[(slug, tid)], by_index[(slug, idx)] = tags, tags
+    # a position never overrides a type id that reads the same (order_of_operations_2 has ids "1", "2", ...)
+    return {**by_index, **out}
+
+
 def template_types(problem_types_csv: Path) -> set[tuple[str, str]]:
     """(template slug, problem-type key) pairs; a key is the type's id or its position, as Junyi logs either.
 
@@ -95,10 +123,13 @@ def coverage(frame: pd.DataFrame, template_slugs: set, usable_slugs: set,
 
 
 def clean(raw: pd.DataFrame, exercises: pd.DataFrame, templates: pd.DataFrame, cfg: dict,
-          tags: dict[str, str] | None = None, khan_types: set[tuple[str, str]] | None = None) -> AdapterResult:
+          tags: dict[str, str] | None = None, khan_types: set[tuple[str, str]] | None = None,
+          type_tags: dict[str, str] | None = None) -> AdapterResult:
+    """``tags``: exercise -> tag; ``type_tags``: "exercise:problem_type" -> tag, for templates split by type
+    (wins over ``tags``; a type no dictionary pair covers falls back to the Junyi topic)."""
     ds = cfg["datasets"][DATASET]
     min_rows = int(cfg["split"]["min_user_interactions"])
-    tags, khan_types = tags or {}, khan_types or set()
+    tags, khan_types, type_tags = tags or {}, khan_types or set(), type_tags or {}
     log = CleaningLog(event_cols=["user_id", "time_done"])
 
     df = log.start(raw)
@@ -121,12 +152,16 @@ def clean(raw: pd.DataFrame, exercises: pd.DataFrame, templates: pd.DataFrame, c
     ex = df["exercise"].astype(str)
     ptype = df["problem_type"].astype(str)
     has_template = ex.isin(template_slugs)
+    item = ex + ":" + ptype
+    split_slugs = {k.split(":", 1)[0] for k in type_tags}
+    by_type = item.map(type_tags)
+    tag = by_type.where(ex.isin(split_slugs), ex.map(tags))  # a split template never falls back to its union of tags
     out = pd.DataFrame({
         "dataset": DATASET,
         "user_id": df["user_id"].astype(str),
-        "item_id": ex + ":" + ptype,
+        "item_id": item,
         "source_skill": ex,
-        "skill_tag": ex.map(tags).fillna("junyi:" + ex.map(topic).fillna("unknown")),
+        "skill_tag": tag.fillna("junyi:" + ex.map(topic).fillna("unknown")),
         "khan_slug": ex.where(has_template),
         "ts": (df["time_done"] // 1000).astype("int64"),
         "correct": df["correct"].astype("int8"),
@@ -163,5 +198,8 @@ def build(cfg: dict, repo: Path) -> AdapterResult:
     raw = read_raw(log_path, int(ds.get("chunksize", 2_000_000)))
     exercises = pd.read_csv(log_path.parent / "junyi_Exercise_table.csv", usecols=["name", "topic"])
     templates = pd.read_csv(repo / "lmsrag/data/khan_v2/khan_templates.csv")
-    tags = khan_tags(repo / ds.get("skill_map", DEFAULT_MAPPING), SkillMapper())
-    return clean(raw, exercises, templates, cfg, tags, template_types(repo / "lmsrag/data/khan_v2/khan_problem_types.csv"))
+    mapping = repo / ds.get("skill_map", DEFAULT_MAPPING)
+    types_csv = repo / "lmsrag/data/khan_v2/khan_problem_types.csv"
+    tags = khan_tags(mapping, SkillMapper())
+    type_tags = {f"{s}:{k}": t[0] for (s, k), t in khan_type_tag_lists(mapping, types_csv).items() if t}
+    return clean(raw, exercises, templates, cfg, tags, template_types(types_csv), type_tags)

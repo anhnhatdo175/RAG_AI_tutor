@@ -38,7 +38,7 @@ assist2009,Equivalent Fractions,2929,418,0.5142,Equivalent-Fractions
 assist2009,Exponents,2821,572,0.7586,Exponents
 assist2009,Divisibility Rules,2776,266,0.634,Divisibility-Rules
 assist2009,Mean,2660,560,0.5308,Mean
-assist2009,"Order of Operations +,-,/,* () positive reals",2100,596,0.6519,Order-of-Operations-All
+assist2009,"Order of Operations +,-,/,* () positive reals",2100,596,0.6519,Order-of-Operations-positive-reals
 assist2009,Multiplication and Division Positive Decimals,1962,346,0.7768,Multiplication-and-Division-Positive-Decimals
 assist2009,Write Linear Equation from Graph,1923,310,0.4129,Write-Linear-Equation-from-Ordered-Pairs
 assist2009,Number Line,1894,166,0.595,
@@ -88,7 +88,7 @@ assist2009,Solving Systems of Linear Equations,234,22,0.1923,Solving-Systems-of-
 assist2009,Greatest Common Factor,218,133,0.7477,Greatest-Common-Factor
 assist2009,Percents,117,41,0.3333,Percent-Of
 assist2009,Multiplication Whole Numbers,109,44,0.4404,Multiplication-Whole-Numbers
-assist2009,Simplifying Expressions positive exponents,108,5,0.6481,Algebraic-Simplification
+assist2009,Simplifying Expressions positive exponents,108,5,0.6481,Simplifying-Expressions-positive-exponents
 assist2009,Area Parallelogram,103,83,0.9223,Area-Parallelogram
 assist2009,Finding Slope From Equation,102,6,0.7255,Finding-Slope-From-Equation
 assist2009,Rate,91,39,0.3736,Unit-Rate
@@ -108,4 +108,4 @@ assist2009,Recognize Quadratic Pattern,8,2,0.625,Recognize-Quadratic-Pattern
 assist2009,Reading a Ruler or Scale,4,4,0.0,
 assist2009,Finding Slope From Situation,4,1,0.0,Finding-Slope-From-Equation
 assist2009,Quadratic Formula to Solve Quadratic Equation,3,1,0.0,Quadratic-Formula-to-Solve-Quadratic-Equation
-assist2009,Finding Slope from Ordered Pairs,1,1,0.0,Finding-Slope-From-Equation
+assist2009,Finding Slope from Ordered Pairs,1,1,0.0,Finding-Slope-from-Ordered-Pairs

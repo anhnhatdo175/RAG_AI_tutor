@@ -61,7 +61,10 @@ hơn bản Khan năm 2016, ví dụ `subtraction-2` hay `addition_3` nằm trong
 
 - `item_id` = `exercise:problem_type`; `source_skill` = `exercise`; `khan_slug` = `exercise` nếu có template.
 - `skill_tag`: tag chuẩn qua chiều ngược của từ điển kỹ năng v1 `skill_map_v1.csv` (P1-05, cột `canonical_tag`).
-  Nếu không có thì dùng `junyi:<topic>`. 44,8% lượt có tag chuẩn (69 tag); số còn lại thuộc 39 tag `junyi:<topic>`.
+  Nếu không có thì dùng `junyi:<topic>`. 44,7% lượt có tag chuẩn (72 tag); số còn lại thuộc 39 tag `junyi:<topic>`.
+  Từ v1.1, template gồm nhiều kỹ năng được tách theo dạng bài (cột `khan_types`): `mean_median_and_mode:median` mang
+  tag `Median` (v1.0 gắn `Mean` cho cả ba dạng), `discount_tax_and_tip_word_problems:simple-tax` mang `Percent-Of`
+  (v1.0: `Percent-Discount`). Với v1.0: 44,8% (69 tag).
   Template không dùng được (cần hình, không có gợi ý) vẫn gắn tag cho lượt làm, nên các cặp này được rà riêng ở phiếu D.
   Với bản nháp `assistments_to_khan_draft.csv`: 40,5% (62 tag).
 - `ts` = `time_done` (micro giây) chia 1000; `rt_ms` = `time_taken` × 1000, cắt về [500; 120.000] (0,21% thiếu).

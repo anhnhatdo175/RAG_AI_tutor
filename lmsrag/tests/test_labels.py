@@ -127,3 +127,44 @@ def test_plain_math_for_annotators():
     assert plain_math(r"$\Huge\blue{-5} + \green{-3}=\pink{{?}}$") == "-5 + -3=?"
     assert plain_math(r"$12\pi$ units") == "12π units"
     assert plain_math(r"$\sqrt{16} \leq 5$ and $\lvert -2 \rvert$, 15\% off \$20") == "√(16) ≤ 5 and | -2 |, 15% off $20"
+
+
+def test_sheet_e_drops_restricts_and_adds_pairs():
+    from lmsrag.labels.build_skill_map import apply_audit_fixes
+
+    a, b, c = _sheets([["1", "Mean", "mean_median_and_mode", "keep", "", ""],
+                       ["2", "Pattern Finding", "geometric_sequences_2", "keep", "", ""]])
+    rows, rejected, _ = collect(a, b, c)
+    e = pd.DataFrame([["1", "m007", "Mean", "mean_median_and_mode", "types", "mean", "ba dạng"],
+                      ["2", "m024", "Pattern Finding", "geometric_sequences_2", "drop", "", "thay công thức"],
+                      ["3", "", "Median", "mean_median_and_mode", "add", "median", ""],
+                      ["4", "", "Mode", "mean_median_and_mode", "types", "mode", ""],
+                      ["5", "", "Mean", "mean_median_and_mode", "fix", "", ""]],
+                     columns=["row", "evidence", "source_skill", "khan_slug", "decision", "khan_types", "note"])
+    errors = apply_audit_fixes(rows, rejected, e)
+    assert len(errors) == 2 and "E row 4" in errors[0] and "'fix'" in errors[1]
+    got = {(r["source_skill"], r["khan_slug"], r.get("khan_types", ""), r["review"]) for r in rows}
+    assert got == {("Mean", "mean_median_and_mode", "mean", "E:types"),
+                   ("Median", "mean_median_and_mode", "median", "E:add"),
+                   ("Pattern Finding", "", "", "E:all_dropped")}  # its only template was dropped
+    assert [(r["khan_slug"], r["review"]) for r in rejected] == [("geometric_sequences_2", "E:drop")]
+    assert rows[0]["note"] == "phiếu E (m007): ba dạng"
+
+
+def test_type_level_tags(tmp_path):
+    from lmsrag.datasets.junyi2015 import khan_type_tag_lists
+
+    m, t = tmp_path / "map.csv", tmp_path / "types.csv"
+    pd.DataFrame({"source_skill": ["Mean", "Median", "Order All", "Order Pos"],
+                  "canonical_tag": ["Mean", "Median", "OA", "OP"],
+                  "khan_slug": ["mmm", "mmm", "ops", "ops"],
+                  "khan_types": ["mean", "median", "", "a;1"]}).to_csv(m, index=False)
+    pd.DataFrame({"slug": ["mmm", "mmm", "mmm", "ops", "ops", "ops"],
+                  "problem_index": ["0", "1", "2", "0", "1", "2"],
+                  "problem_id": ["mean", "median", "mode", "a", "1", "2"]}).to_csv(t, index=False)
+    got = khan_type_tag_lists(m, t)
+    assert got[("mmm", "median")] == got[("mmm", "1")] == ["Median"]
+    assert got[("mmm", "mode")] == []  # no pair covers it
+    assert got[("ops", "0")] == ["OA", "OP"]
+    assert got[("ops", "1")] == ["OA", "OP"]  # type id "1", not position 1 (id "1" is also at position 1 here)
+    assert got[("ops", "2")] == ["OA"]

@@ -1,13 +1,15 @@
 """Build the skill dictionary v1 from the P1-05 review sheets (step 2, after Người 1 has filled them).
 
-Inputs (``lmsrag/data/labels/``): the three ``a4_review_*.csv`` sheets produced by ``review_draft`` and filled by
-hand. Outputs (``lmsrag/data/mappings/``):
+Inputs (``lmsrag/data/labels/``): the ``a4_review_*.csv`` sheets: A-C produced by ``review_draft`` and filled by
+hand, D (second look at dropped pairs) and, from map v1.1, E (fixes from the κ audit, ``a4_mapping_BIEN_BAN.md``).
+Outputs (``lmsrag/data/mappings/``):
 
 * ``skill_map_v1.csv``: one row per accepted (ASSISTments skill, Khan template) pair, plus a row with a reason for
   every other skill of the two ASSISTments logs (``khan_slug`` empty), plus the templates with no ASSISTments skill
   (``source_skill`` empty, tag ``khan:<slug>``). ``canonical_tag`` is the tag the adapters write to log rows and the
   corpus writes to chunks; empty means the skill is unmapped. Columns follow card P1-05 (``source_dataset,
-  source_skill, canonical_tag, khan_slug, method, confidence, note``), then provenance.
+  source_skill, canonical_tag, khan_slug, method, confidence, note``), then ``khan_types`` (v1.1: the problem-type
+  ids of the template the pair covers, joined by ';'; empty = every type), then provenance.
 * ``skill_map_v1_rejected.csv``: the draft pairs the reviewer dropped (used to sample negatives for the κ sheets).
 
 The script refuses to write anything when a sheet has an unknown decision, a slug that is not in
@@ -31,17 +33,19 @@ KHAN = REPO / "lmsrag" / "data" / "khan_v2"
 TABLES = REPO / "reports" / "tables"
 DRAFT = MAPPINGS / "assistments_to_khan_draft.csv"
 
-MAP_VERSION = "1.0"
+MAP_VERSION = "1.1"  # 1.0: sheets A-D; 1.1: sheet E (κ audit round 1) and split rule tags
 DECISIONS = {"A": {"keep", "drop", "fix", "none"}, "B": {"add", "none"}, "C": {"keep", "add", "none"}}
 # card P1-05 columns first, then provenance
 COLUMNS = ["source_dataset", "source_skill", "canonical_tag", "khan_slug", "method", "confidence", "note",
-           "template_status", "usable_problems", "junyi_responses", "junyi_accuracy", "review", "review_row",
+           "khan_types", "template_status", "usable_problems", "junyi_responses", "junyi_accuracy", "review", "review_row",
            "map_version"]
 # how each kind of row was decided (the κ audit reports accuracy per method)
 METHOD = {"A:keep": "manual_review", "D:keep": "manual_review", "A:drop": "manual_review",
           "D:drop": "manual_review", "A:fix_replaced": "manual_fix", "A:fix": "manual_fix", "B:add": "manual_add", "C:add": "manual_add",
           "C:keep": "rule_confirmed", "A:none": "no_template", "B:none": "no_template",
-          "A:all_dropped": "no_template", "C:none": "template_only", "unreviewed": "not_reviewed"}
+          "A:all_dropped": "no_template", "C:none": "template_only", "unreviewed": "not_reviewed",
+          "E:types": "manual_fix", "E:drop": "manual_review", "E:add": "manual_add", "E:all_dropped": "no_template"}
+E_DECISIONS = {"drop", "types", "add"}
 DOUBT = ("phân vân", "phan van")
 
 
@@ -174,6 +178,48 @@ def apply_recheck(a: pd.DataFrame, d: pd.DataFrame) -> tuple[pd.DataFrame, list[
     return a, errors
 
 
+def apply_audit_fixes(rows: list[dict], rejected: list[dict], e: pd.DataFrame) -> list[str]:
+    """Sheet E (fixes from the κ audit) edits the accepted pairs in place: ``drop`` moves a pair to the rejected
+    list, ``types`` restricts it to some problem types of the template, ``add`` creates a pair (optionally typed)."""
+    errors = []
+    before = {skill_key(r["source_skill"]) for r in rows if r["source_skill"]}
+    find = lambda skill, slug: [i for i, r in enumerate(rows)
+                                if skill_key(r["source_skill"]) == skill_key(skill) and r["khan_slug"] == slug]
+    for _, f in e.iterrows():
+        where = f"E row {f['row']}"
+        if f["decision"] not in E_DECISIONS:
+            errors.append(f"{where}: decision {f['decision']!r} not in {sorted(E_DECISIONS)}")
+            continue
+        if f["decision"] == "types" and not split_list(f["khan_types"]):
+            errors.append(f"{where}: types needs khan_types")
+            continue
+        note = f"phiếu E ({f['evidence']}): {f['note']}" if f["evidence"] else f"phiếu E: {f['note']}"
+        hit = find(f["source_skill"], f["khan_slug"])
+        if f["decision"] == "add":
+            if hit:
+                errors.append(f"{where}: pair already in the dictionary; use types")
+                continue
+            rows.append({"source_skill": f["source_skill"], "khan_slug": f["khan_slug"], "origin": "review_E",
+                         "review": "E:add", "review_row": int(f["row"]), "note": note,
+                         "khan_types": ";".join(split_list(f["khan_types"]))})
+        elif len(hit) != 1:
+            errors.append(f"{where}: pair ({f['source_skill']!r}, {f['khan_slug']!r}) not found once in sheets A-D")
+        elif f["decision"] == "drop":
+            r = rows.pop(hit[0])
+            rejected.append({**r, "review": "E:drop", "review_row": int(f["row"]), "note": note})
+        else:
+            rows[hit[0]].update(review="E:types", review_row=int(f["row"]), note=note,
+                                khan_types=";".join(split_list(f["khan_types"])))
+    # a skill whose last template was dropped stays in the dictionary, with no template
+    after = {skill_key(r["source_skill"]) for r in rows if r["source_skill"]}
+    for r in [r for r in rejected if r.get("review") == "E:drop"]:
+        if skill_key(r["source_skill"]) in before - after:
+            after.add(skill_key(r["source_skill"]))
+            rows.append({**r, "khan_slug": "", "khan_types": "", "review": "E:all_dropped",
+                         "note": "mọi template đã bị bỏ sau kiểm định κ (skill_map_v1_rejected.csv)"})
+    return errors
+
+
 def build(labels: Path = LABELS, out_dir: Path = MAPPINGS) -> pd.DataFrame:
     a = read_sheet(labels / "a4_review_A_draft_pairs.csv")
     b = read_sheet(labels / "a4_review_B_new_2012_skills.csv")
@@ -183,8 +229,11 @@ def build(labels: Path = LABELS, out_dir: Path = MAPPINGS) -> pd.DataFrame:
         a, d_errors = apply_recheck(a, read_sheet(labels / "a4_review_D_recheck_drops.csv"))
     rows, rejected, errors = collect(a, b, c)
     errors = d_errors + errors
+    if (labels / "a4_review_E_audit_fixes.csv").is_file():
+        errors += apply_audit_fixes(rows, rejected, read_sheet(labels / "a4_review_E_audit_fixes.csv"))
 
     templates = pd.read_csv(KHAN / "khan_templates.csv").set_index("slug")
+    type_ids = pd.read_csv(KHAN / "khan_problem_types.csv", dtype=str).groupby("slug")["problem_id"].agg(set)
     datasets: dict[str, set] = {}  # skill key -> logs it appears in
     log_skills: dict[str, str] = {}  # skill key -> label, whitespace trimmed
     for ds in ("assist2009", "assist2012"):
@@ -198,6 +247,9 @@ def build(labels: Path = LABELS, out_dir: Path = MAPPINGS) -> pd.DataFrame:
             errors.append(f"{where}: unknown khan slug {r['khan_slug']!r}")
         if r["source_skill"] and skill_key(r["source_skill"]) not in known:
             errors.append(f"{where}: unknown ASSISTments skill {r['source_skill']!r}")
+        bad = set(split_list(r.get("khan_types") or "")) - type_ids.get(r["khan_slug"], set())
+        if bad:
+            errors.append(f"{where}: {sorted(bad)} are not problem types of {r['khan_slug']!r}")
     if errors:
         raise SystemExit("skill_map_v1 not written:\n  " + "\n  ".join(errors))
 
@@ -216,6 +268,7 @@ def build(labels: Path = LABELS, out_dir: Path = MAPPINGS) -> pd.DataFrame:
         df = pd.DataFrame(records)
         if "canonical_tag" not in df.columns:
             df["canonical_tag"] = None
+        df["khan_types"] = df["khan_types"].fillna("") if "khan_types" in df.columns else ""
         df["canonical_tag"] = [t if isinstance(t, str) and t else tag_for(s) if s else ""
                                for t, s in zip(df["canonical_tag"], df["source_skill"])]
         sets = [datasets.get(skill_key(s), set()) for s in df["source_skill"]]
