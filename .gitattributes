@@ -1,0 +1,3 @@
+# label submissions are evidence (SHA-256 in a4_mapping_BIEN_BAN.md): store them byte for byte
+lmsrag/data/labels/a4_submissions/*.csv -text
+lmsrag/data/labels/a4_mapping_nguoi[23].csv -text
