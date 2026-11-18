@@ -12,6 +12,7 @@ from pathlib import Path
 import pandas as pd
 
 from ..skill_mapping import SkillMapper
+from .skill_map import MapTagger, tagger
 from . import schema
 from .cleaning import CleaningLog, kept_vs_dropped, skill_counts
 from .skill_builder import skill_builder_table
@@ -33,7 +34,8 @@ def read_raw(path: Path, encoding: str = "latin-1") -> pd.DataFrame:
     return pd.read_csv(path, encoding=encoding, usecols=COLS, low_memory=False)
 
 
-def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | None = None) -> AdapterResult:
+def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | MapTagger | None = None,
+          tag_source: str = "SkillMapper") -> AdapterResult:
     """Apply the cleaning rules in order and return the interactions plus the report tables."""
     mapper = mapper or SkillMapper()
     min_rows = int(cfg["split"]["min_user_interactions"])
@@ -60,7 +62,7 @@ def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | None = None) -> Ad
     comparison = kept_vs_dropped(df, mapped, n_boot, seed, reason=mapper.unmapped_reason)
     unmapped_rows = int((~mapped).sum())
     unmapped_pct = 100.0 * unmapped_rows / max(len(df), 1)
-    df = log.apply(df, df[mapped], "drop rows whose skill has no canonical tag (SkillMapper)")
+    df = log.apply(df, df[mapped], f"drop rows whose skill has no canonical tag ({tag_source})")
     n = df.groupby("user_id")["order_id"].transform("size")
     df = log.apply(df, df[n >= min_rows], f"re-apply: drop learners with < {min_rows} rows after the skill filter")
 
@@ -91,4 +93,5 @@ def clean(raw: pd.DataFrame, cfg: dict, mapper: SkillMapper | None = None) -> Ad
 
 def build(cfg: dict, repo: Path) -> AdapterResult:
     ds = cfg["datasets"][DATASET]
-    return clean(read_raw(repo / ds["path"], ds.get("encoding", "latin-1")), cfg)
+    tag, source = tagger(ds, repo)
+    return clean(read_raw(repo / ds["path"], ds.get("encoding", "latin-1")), cfg, mapper=tag, tag_source=source)

@@ -19,6 +19,7 @@ import pandas as pd
 
 from ..datasets.build import REPO, load_config
 from ..datasets.junyi2015 import DEFAULT_MAPPING, khan_tag_lists
+from ..datasets.skill_map import skill_key
 from ..layer2_embedding import chunk as chunker
 from ..layer2_embedding.clean import ASY_RE, clean_records
 from ..layer2_embedding.parse import parse_gsm8k, parse_math
@@ -56,8 +57,9 @@ def khan_documents(mapping_csv: Path, mapper: SkillMapper) -> pd.DataFrame:
     tag_lists = khan_tag_lists(mapping_csv, mapper)
 
     def tags_for(slug: str, text: str) -> tuple[list[str], str]:
-        if slug in tag_lists:
-            return tag_lists[slug], "dictionary"
+        if slug in tag_lists:  # v1 also lists templates reviewed as having no ASSISTments skill, as khan:<slug>
+            tags = tag_lists[slug]
+            return tags, "template_only" if all(t.startswith("khan:") for t in tags) else "dictionary"
         if slug in topic:  # same rule as the Junyi adapter, so chunks and Junyi responses share the tag
             return [f"junyi:{topic[slug]}"], "junyi_topic"
         tag, _, _ = mapper.tag_text(text.lower(), f"khan:{slug}", None, False)
@@ -204,7 +206,8 @@ def coverage_rows(docs: pd.DataFrame, tables_dir: Path, mapping_csv: Path) -> li
     skill_col = "source_skill" if "source_skill" in mapping.columns else "assistments_skill"
     templates = pd.read_csv(KHAN_DIR / "khan_templates.csv")
     usable = set(templates.loc[templates["status"] == "usable", "slug"])
-    with_khan = set(mapping.loc[mapping["khan_slug"].isin(usable), skill_col])
+    # compare on the normalised key: the 2009 log has labels with trailing spaces ("Circumference ")
+    with_khan = {skill_key(s) for s in mapping.loc[mapping["khan_slug"].isin(usable), skill_col].dropna()}
     chunk_tags = {t for tags in docs["skill_tags"] for t in tags}
     for ds in ("assist2009", "assist2012"):
         path = tables_dir / f"a1_skill_counts_{ds}.csv"
@@ -213,7 +216,8 @@ def coverage_rows(docs: pd.DataFrame, tables_dir: Path, mapping_csv: Path) -> li
         c = pd.read_csv(path)
         total = c["rows"].sum()
         rows.append({"section": "coverage", "source": ds, "key": "share_rows_skill_has_usable_khan_template",
-                     "value": round(float(c.loc[c["source_skill"].isin(with_khan), "rows"].sum() / total), 4)})
+                     "value": round(float(c.loc[c["source_skill"].map(skill_key).isin(with_khan), "rows"].sum()
+                                          / total), 4)})
         rows.append({"section": "coverage", "source": ds, "key": "share_rows_skill_tag_has_any_chunk",
                      "value": round(float(c.loc[c["skill_tag"].isin(chunk_tags), "rows"].sum() / total), 4)})
     return rows

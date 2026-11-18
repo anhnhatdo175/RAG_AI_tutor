@@ -6,5 +6,5 @@ assist2009,2,drop missing skill_id or skill_name,True,449220,421318,27902,6.2112
 assist2009,3,"drop correct outside {0, 1}",True,421318,421318,0,0.0,4151,251405
 assist2009,4,"drop duplicates on (order_id, skill_id)",True,421318,300389,120929,28.7025,4151,251405
 assist2009,5,drop learners with < 20 rows,True,300389,283687,16702,5.5601,2219,235957
-assist2009,6,drop rows whose skill has no canonical tag (SkillMapper),True,283687,245048,38639,13.6203,2219,226322
-assist2009,7,re-apply: drop learners with < 20 rows after the skill filter,True,245048,242764,2284,0.9321,2065,224106
+assist2009,6,drop rows whose skill has no canonical tag (skill_map_v1.csv),True,283687,250183,33504,11.8102,2219,227483
+assist2009,7,re-apply: drop learners with < 20 rows after the skill filter,True,250183,248060,2123,0.8486,2078,225423

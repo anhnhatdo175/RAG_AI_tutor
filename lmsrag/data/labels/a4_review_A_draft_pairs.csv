@@ -1,11 +1,11 @@
 ﻿row,priority,assistments_skill,rows_2009,rows_2012,khan_slug,template_title,template_status,usable_problems,junyi_accuracy,sample_question,sample_answer,decision,khan_slugs,note
-1,1,Table,6554,440,reading_tables_1,Reading tables 1,needs_figure,0,0.8676,How many 3rd grade students does Loyola Elementary School have?,80 students,,,
-2,1,Table,6554,440,reading_tables_2,Reading tables 2,needs_figure,0,0.8152,What number should go in the empty cell?,64 students,,,
+1,1,Table,6554,440,reading_tables_1,Reading tables 1,needs_figure,0,0.8676,How many 3rd grade students does Loyola Elementary School have?,80 students,keep,,
+2,1,Table,6554,440,reading_tables_2,Reading tables 2,needs_figure,0,0.8152,What number should go in the empty cell?,64 students,keep,,
 3,1,Unit Rate,3012,23766,rate_problems_2,Rate problems 2,usable,12,0.4684,"Starting at home, Tiffany traveled uphill to the toy store
 for $12$ minutes at just $15$ mph.
 She then traveled back home along the same path downhill at a speed of $30$ mph.
 What is her average speed for the entire trip from home to the toy store and back?
-mph",20 mph,,,
+mph",20 mph,drop,,
 4,1,Write Linear Equation from Graph,1923,10534,slope_intercept_form,Slope intercept form,usable,8,0.7225,"A line goes through the following points, and the equation of that line is written in $y = mx + b$ form.
 What is the equation of the line?
 $y = {}$ $x + {}$
@@ -14,88 +14,88 @@ $-8$ $9$
 $-5$ $3$
 $-3$ $-1$
 $-2$ $-3$
-$4$ $-15$",$y = {}$ -2 $x + {}$ -7,,,
-5,1,Estimation,1601,2583,rounding_whole_numbers,Rounding whole numbers,usable,8,0.8208,Round $7471$ to the nearest hundred.,7500,,,
+$4$ $-15$",$y = {}$ -2 $x + {}$ -7,keep,,
+5,1,Estimation,1601,2583,rounding_whole_numbers,Rounding whole numbers,usable,8,0.8208,Round $7471$ to the nearest hundred.,7500,drop,,
 6,1,Volume Cylinder,1232,7284,solid_geometry,Solid geometry,needs_figure,0,0.4838,"What is the volume of this object?
-Drag on the object to rotate it.",24 cubic units,,,
+Drag on the object to rotate it.",24 cubic units,drop,,
 7,1,Volume Sphere,770,3207,solid_geometry,Solid geometry,needs_figure,0,0.4838,"What is the volume of this object?
-Drag on the object to rotate it.",24 cubic units,,,
+Drag on the object to rotate it.",24 cubic units,drop,,
 8,1,Surface Area Cylinder,491,8882,solid_geometry,Solid geometry,needs_figure,0,0.4838,"What is the volume of this object?
-Drag on the object to rotate it.",24 cubic units,,,
-9,2,Conversion of Fraction Decimals Percents,17568,97025,converting_decimals_to_fractions_1,Converting decimals to fractions 1,usable,7,0.9027,Express $0.3$ as a fraction.,0.3,,,
-10,2,Conversion of Fraction Decimals Percents,17568,97025,converting_decimals_to_fractions_2,Converting decimals to fractions 2,usable,8,0.6986,Express $0.7471$ as a fraction.,0.7471,,,
+Drag on the object to rotate it.",24 cubic units,drop,,
+9,2,Conversion of Fraction Decimals Percents,17568,97025,converting_decimals_to_fractions_1,Converting decimals to fractions 1,usable,7,0.9027,Express $0.3$ as a fraction.,0.3,keep,,
+10,2,Conversion of Fraction Decimals Percents,17568,97025,converting_decimals_to_fractions_2,Converting decimals to fractions 2,usable,8,0.6986,Express $0.7471$ as a fraction.,0.7471,keep,,
 11,2,Conversion of Fraction Decimals Percents,17568,97025,converting_decimals_to_percents,Converting decimals to percents,usable,4,0.7623,"Express the decimal as a percent.
-$0.441$",0.441,,,
+$0.441$",0.441,keep,,
 12,2,Conversion of Fraction Decimals Percents,17568,97025,converting_fractions_to_decimals,Converting fractions to decimals,usable,8,0.5901,"Express the fraction as a decimal.
-$\dfrac{57}{5}$",11.4,,,
-13,2,Conversion of Fraction Decimals Percents,17568,97025,converting_fractions_to_decimals_0.5,Fractions as division by a power of 10,usable,3,,Express $\dfrac{57}{10}$ as a decimal.,5.7,,,
+$\dfrac{57}{5}$",11.4,keep,,
+13,2,Conversion of Fraction Decimals Percents,17568,97025,converting_fractions_to_decimals_0.5,Fractions as division by a power of 10,usable,3,,Express $\dfrac{57}{10}$ as a decimal.,5.7,keep,,
 14,2,Conversion of Fraction Decimals Percents,17568,97025,converting_percents_to_decimals,Converting percents to decimals,usable,4,0.8666,"Express the percent as a decimal.
-$44.1\%$",0.441,,,
+$44.1\%$",0.441,keep,,
 15,2,Conversion of Fraction Decimals Percents,17568,97025,converting_repeating_decimals_to_fractions_1,Converting 1-digit repeating decimals to fractions,usable,8,0.7815,"Rewrite as a simplified fraction.
-$\large{0.\overline{6} = {?}}$",0.6666666666666666,,,
+$\large{0.\overline{6} = {?}}$",0.6666666666666666,keep,,
 16,2,Conversion of Fraction Decimals Percents,17568,97025,converting_repeating_decimals_to_fractions_2,Converting multi-digit repeating decimals to fractions,usable,20,0.6715,"Rewrite as a simplified fraction.
-$\large{0.\overline{6} = {?}}$",0.6666666666666666,,,
-17,2,Conversion of Fraction Decimals Percents,17568,97025,fractions_as_division_by_a_multiple_of_10,Fractions as division by a multiple of 10,usable,11,,Rewrite $\dfrac{21}{300}$ as a decimal.,0.07,,,
+$\large{0.\overline{6} = {?}}$",0.6666666666666666,keep,,
+17,2,Conversion of Fraction Decimals Percents,17568,97025,fractions_as_division_by_a_multiple_of_10,Fractions as division by a multiple of 10,usable,11,,Rewrite $\dfrac{21}{300}$ as a decimal.,0.07,keep,,
 18,2,Equation Solving Two or Fewer Steps,15858,178944,one_step_equations,One step equations,usable,4,0.7052,"Solve for $n$ :
 $21 + n = 27$
-$n=$",$n=$ 6,,,
+$n=$",$n=$ 6,keep,,
 19,2,Equation Solving Two or Fewer Steps,15858,178944,one_step_equation_intuition,One step equation intuition,no_hints,0,,How much does Purple Pi weigh?,"[
 $(""input#answer"").val(),
 KhanUtil.scale.leftConst,
 KhanUtil.scale.rightConst
-]",,,
+]",keep,,
 20,2,Equation Solving Two or Fewer Steps,15858,178944,linear_equations_1,One-step equations with multiplication,usable,16,0.8609,"Solve for $x$ :
 $8x = 7$
-$x =$",$x =$ 0.875,,,
+$x =$",$x =$ 0.875,keep,,
 21,2,Equation Solving Two or Fewer Steps,15858,178944,linear_equations_2,2-step equations,usable,4,0.7511,"Solve for $x$ :
 $4x + 5 = 7$
-$x =$",$x =$ 0.5,,,
-22,2,Addition and Subtraction Integers,12164,142669,adding_negative_numbers,Adding negative numbers,usable,4,0.8541,$\Huge\blue{-5} + \green{-3}=\pink{{?}}$,-8,,,
-23,2,Addition and Subtraction Integers,12164,142669,adding_and_subtracting_negative_numbers,Adding and subtracting negative numbers,usable,8,0.731,$\Huge\blue{-5} + \green{-3}=\pink{{?}}$,-8,,,
+$x =$",$x =$ 0.5,keep,,
+22,2,Addition and Subtraction Integers,12164,142669,adding_negative_numbers,Adding negative numbers,usable,4,0.8541,$\Huge\blue{-5} + \green{-3}=\pink{{?}}$,-8,keep,,
+23,2,Addition and Subtraction Integers,12164,142669,adding_and_subtracting_negative_numbers,Adding and subtracting negative numbers,usable,8,0.731,$\Huge\blue{-5} + \green{-3}=\pink{{?}}$,-8,keep,,
 24,2,Addition and Subtraction Integers,12164,142669,integer_sums,Integer sums,usable,4,,"The sum of $5$ consecutive odd numbers is $145$ .
-What is the third number in this sequence?",29,,,
-25,2,Addition and Subtraction Fractions,9264,142904,adding_fractions,Adding fractions,usable,4,0.5667,$\dfrac{2}{3} + \dfrac{4}{8} = {?}$,1.1666666666666665,,,
-26,2,Addition and Subtraction Fractions,9264,142904,adding_fractions_0.5,Adding fractions 0.5,usable,4,,$\dfrac{14}{10} + \dfrac{5}{100} = {?}$,1.45,,,
-27,2,Addition and Subtraction Fractions,9264,142904,adding_fractions_with_common_denominators,Adding fractions with common denominators,usable,4,0.9152,$\dfrac{5}{4} + \dfrac{4}{4} = {?}$,2.25,,,
-28,2,Addition and Subtraction Fractions,9264,142904,subtracting_fractions,Subtracting fractions,usable,4,0.6571,$\dfrac{6}{3} - \dfrac{4}{8} = {?}$,1.5,,,
-29,2,Addition and Subtraction Fractions,9264,142904,subtracting_fractions_with_common_denominators,Subtracting fractions with common denominators,usable,4,0.9312,$\dfrac{4}{8} - \dfrac{3}{8} = {?}$,0.125,,,
-30,2,Addition and Subtraction Fractions,9264,142904,adding_and_subtracting_fractions,Adding and subtracting fractions,usable,4,0.6648,$-\dfrac{1}{6} + \dfrac{8}{5} = {?}$,1.4333333333333333,,,
+What is the third number in this sequence?",29,keep,,
+25,2,Addition and Subtraction Fractions,9264,142904,adding_fractions,Adding fractions,usable,4,0.5667,$\dfrac{2}{3} + \dfrac{4}{8} = {?}$,1.1666666666666665,keep,,
+26,2,Addition and Subtraction Fractions,9264,142904,adding_fractions_0.5,Adding fractions 0.5,usable,4,,$\dfrac{14}{10} + \dfrac{5}{100} = {?}$,1.45,keep,,
+27,2,Addition and Subtraction Fractions,9264,142904,adding_fractions_with_common_denominators,Adding fractions with common denominators,usable,4,0.9152,$\dfrac{5}{4} + \dfrac{4}{4} = {?}$,2.25,keep,,
+28,2,Addition and Subtraction Fractions,9264,142904,subtracting_fractions,Subtracting fractions,usable,4,0.6571,$\dfrac{6}{3} - \dfrac{4}{8} = {?}$,1.5,keep,,
+29,2,Addition and Subtraction Fractions,9264,142904,subtracting_fractions_with_common_denominators,Subtracting fractions with common denominators,usable,4,0.9312,$\dfrac{4}{8} - \dfrac{3}{8} = {?}$,0.125,keep,,
+30,2,Addition and Subtraction Fractions,9264,142904,adding_and_subtracting_fractions,Adding and subtracting fractions,usable,4,0.6648,$-\dfrac{1}{6} + \dfrac{8}{5} = {?}$,1.4333333333333333,keep,,
 31,2,Addition and Subtraction Fractions,9264,142904,adding_subtracting_mixed_numbers_0.5,Adding and subtracting mixed numbers 0.5,usable,4,0.7613,"Express your answer as a mixed number.
-$3\dfrac{2}{5} + 4\dfrac{2}{5} = {?}$",7.800000000000001,,,
+$3\dfrac{2}{5} + 4\dfrac{2}{5} = {?}$",7.800000000000001,keep,,
 32,2,Addition and Subtraction Fractions,9264,142904,adding_subtracting_mixed_numbers_1,Adding and subtracting mixed numbers 1,usable,8,0.6667,"Express your answer as a mixed number simplified to lowest terms.
 $
 14\dfrac{8}{10} - 6\dfrac{2}{4} = {?}
-$",8.3,,,
-33,2,Percent Of,8792,23861,finding_percents,Finding percents,usable,16,,What is $73\%$ of $300$ ?,219,,,
+$",8.3,keep,,
+33,2,Percent Of,8792,23861,finding_percents,Finding percents,usable,16,,What is $73\%$ of $300$ ?,219,keep,,
 34,2,Percent Of,8792,23861,markup_and_commission_word_problems,Markup and commission word problems,usable,12,0.6024,"Michael's Furniture Store buys a chair
 at a wholesale price of $$103.00$ .
 If the markup rate at Michael's Furniture Store is $70\%$ ,
 what is the markup for the chair?
-$\$\ $",$\$\ $ 72.1,,,
+$\$\ $",$\$\ $ 72.1,keep,,
 35,2,Proportion,8673,55759,proportions_1,Proportions 1,usable,8,0.753,"Solve for $n$ .
 $
 \dfrac{8}{3} = \dfrac{n}{7}
 $
 $n =$","$n =$
-18.666666666666668",,,
+18.666666666666668",keep,,
 36,2,Proportion,8673,55759,proportions_2,Proportions 2,usable,8,0.7654,"Solve for $n$ .
 $
 \dfrac{3}{4} = \dfrac{n - 3}{24}
 $
 $n =$","$n =$
-21",,,
+21",keep,,
 37,2,Proportion,8673,55759,writing_proportions,Writing proportions,usable,4,0.5788,"$4$ folders cost $\$5.92$ .
 Which equation would help determine the cost of $12$ folders?
 $\dfrac{4}{12} = \dfrac{x}{\$5.92}$
 $\dfrac{4}{\$5.92} = \dfrac{12}{x}$
 $\dfrac{12}{4} = \dfrac{\$5.92}{x}$
 $\dfrac{x}{12} = \dfrac{4}{\$5.92}$
-None of the above",$\dfrac{4}{\$5.92} = \dfrac{12}{x}$,,,
+None of the above",$\dfrac{4}{\$5.92} = \dfrac{12}{x}$,keep,,
 38,2,Proportion,8673,55759,ratio_word_problems,Ratio word problems,usable,24,0.7395,"In history class, the girl to boy ratio is $4$ to $8$ .
 If there are $16$ girls, how many boys are there?
-boys",32 boys,,,
+boys",32 boys,keep,,
 39,2,Proportion,8673,55759,expressing_ratios_as_fractions,Expressing ratios as fractions,usable,4,0.7866,"Jessica has 16 oranges for every 12 eggplants.
-Write the ratio of oranges to eggplants as a simplified fraction.",1.3333333333333333,,,
+Write the ratio of oranges to eggplants as a simplified fraction.",1.3333333333333333,keep,,
 40,2,Ordering Fractions,8193,22319,ordering_fractions,Ordering fractions,not_autogradable,0,0.5803,"Order the following fractions from least to greatest:
 \dfrac{4}{5}
 $\dfrac{4}{5}$
@@ -108,52 +108,52 @@ $\dfrac{1}{5}$
 \dfrac{1}{2}
 $\dfrac{1}{2}$","SORTER.getContent()
 if (SORTER.hasAttempted) {
-return guess.join("","") === FRACTI",,,
+return guess.join("","") === FRACTI",keep,,
 41,2,Ordering Fractions,8193,22319,comparing_fractions_1,Comparing fractions 1,usable,8,0.8356,"Compare.
 $\dfrac{3}{6}$
 ____ $\dfrac{3}{4}$
 $<$
 $>$
-$=$",$<$,,,
+$=$",$<$,keep,,
 42,2,Ordering Fractions,8193,22319,comparing_fractions_2,Comparing fractions 2,usable,4,0.7556,"Compare.
 $\dfrac{2}{3}$
 ____ $\dfrac{4}{8}$
 $<$
 $>$
-$=$",$>$,,,
+$=$",$>$,keep,,
 43,2,Ordering Fractions,8193,22319,comparing_fractions_with_the_same_denominator,Ordering fractions with the same denominator,usable,4,,"Compare.
 $\dfrac{5}{8}$ ____
 $\dfrac{3}{8}$
 $<$
 $>$
-$=$",$>$,,,
+$=$",$>$,keep,,
 44,2,Ordering Fractions,8193,22319,comparing_fractions_with_the_same_numerator,Ordering fractions with the same numerator,usable,3,,"Compare.
 $\dfrac{2}{6}$ ____
 $\dfrac{2}{4}$
 $<$
 $>$
-$=$",$<$,,,
+$=$",$<$,keep,,
 45,2,Ordering Fractions,8193,22319,comparing_improper_fractions_and_mixed_numbers,Comparing improper fractions and mixed numbers,usable,4,0.6686,"Fill in the blank to compare the mixed number and the fraction.
 $2\dfrac{6}{8}$
 ____ $\space \dfrac{10}{4}$
 $<$
 $>$
-$=$",$>$,,,
-46,2,Finding Percents,7494,25468,finding_percents,Finding percents,usable,16,,What is $73\%$ of $300$ ?,219,,,
-47,2,Probability of Two Distinct Events,7265,10243,independent_probability,Independent probability,usable,12,0.5626,"If you flip a coin and roll a 6-sided die, what is the probability that you will flip a heads and roll less than a 6?",0.4166666666666667,,,
+$=$",$>$,keep,,
+46,2,Finding Percents,7494,25468,finding_percents,Finding percents,usable,16,,What is $73\%$ of $300$ ?,219,keep,,
+47,2,Probability of Two Distinct Events,7265,10243,independent_probability,Independent probability,usable,12,0.5626,"If you flip a coin and roll a 6-sided die, what is the probability that you will flip a heads and roll less than a 6?",0.4166666666666667,keep,,
 48,2,Probability of Two Distinct Events,7265,10243,dependent_probability,Dependent probability,usable,12,0.661,"In a class of $7$ ,
 there are $4$ students who
 will visit Mars.
 If the teacher chooses $2$
 students, what is the probability that
 neither
-of them will visit Mars?",0.14285714285714285,,,
+of them will visit Mars?",0.14285714285714285,keep,,
 49,2,Probability of Two Distinct Events,7265,10243,dice_probability,Probability space,usable,4,,"You are given two dice to roll. One is black with six sides; the other is white with four sides.
 For a given roll, what is the probability that the dice display
 $5$ and $3$ ?
 If it helps, you may select the matching outcomes below. Your selections
 aren't checked with your answer:
-1 of 24 selected",0.041666666666666664,,,
+1 of 24 selected",0.041666666666666664,keep,,
 50,2,Probability of Two Distinct Events,7265,10243,coin_flip_sequences,Coin flip sequences,no_hints,0,,"Which method was used to generate this sequence of heads and tails?
 H
 T
@@ -321,7 +321,7 @@ T
 T
 H
 T
-",Fair coin,,,
+",Fair coin,drop,,
 51,2,Ordering Positive Decimals,6961,29356,ordering_decimals,Ordering decimals,not_autogradable,0,,"Order the following numbers from least to greatest:
 0.6007
 $0.6007$
@@ -334,60 +334,60 @@ $0.6700$
 0.7600
 $0.7600$","SORTER.getContent()
 return guess.join( "",\\ "" ) === DECIMAL_SORT_TEX;
-SORTER.set",,,
+SORTER.set",keep,,
 52,2,Ordering Positive Decimals,6961,29356,comparing_decimals_1,Comparing decimals 1,usable,12,,"Compare.
 $\large{0.25}$ ____
 $\large{0.72}$
 $<$
 $>$
-$=$",$<$,,,
+$=$",$<$,keep,,
 53,2,Ordering Positive Decimals,6961,29356,comparing_decimals_2,Comparing decimals 2,usable,8,,"Fill in the blank.
 $\large{7.452}$ ____ $\large{5.472}$
 $<$
 $>$
-$=$",$>$,,,
-54,2,Multiplication and Division Integers,6686,81107,multiplying_and_dividing_negative_numbers,Multiplying and dividing negative numbers,usable,8,0.869,$-5 \times 4 = ?$,-20,,,
-55,2,Absolute Value,6629,12515,absolute_value,Finding absolute values,usable,4,0.9502,What is $\lvert 7.4 \rvert$ ?,7.4,,,
+$=$",$>$,keep,,
+54,2,Multiplication and Division Integers,6686,81107,multiplying_and_dividing_negative_numbers,Multiplying and dividing negative numbers,usable,8,0.869,$-5 \times 4 = ?$,-20,keep,,
+55,2,Absolute Value,6629,12515,absolute_value,Finding absolute values,usable,4,0.9502,What is $\lvert 7.4 \rvert$ ?,7.4,keep,,
 56,2,Absolute Value,6629,12515,comparing_absolute_values,Comparing absolute values,usable,12,0.8715,"Fill in the blank.
 $\lvert5\rvert$ ____ $\lvert-5\rvert$
 $<$
 $>$
-$=$",$=$,,,
+$=$",$=$,keep,,
 57,2,Pythagorean Theorem,6476,29485,pythagorean_theorem_1,Pythagorean theorem,needs_figure,0,0.6597,"In the right triangle shown, $AC = 4$ and
 $BC = 7$ .
 What is $AB$ ?
-√",65,,,
+v",65,keep,,
 58,2,Pythagorean Theorem,6476,29485,pythagorean_theorem_2,Special right triangles,needs_figure,0,,"In the right triangle shown, $AC = BC = 3$ .
 What is $AB$ ?
-√",18,,,
-59,2,Circle Graph,6157,600,,,no_khan_template,0,,,,,,
-60,2,Square Root,5619,22218,square_roots,Square roots of perfect squares,usable,4,0.9502,$\Large{\sqrt{16} = \text{?}}$,4,,,
+v",18,drop,,
+59,2,Circle Graph,6157,600,,,no_khan_template,0,,,,drop,,cần đọc biểu đồ hình quạt; Khan 2016 không có template
+60,2,Square Root,5619,22218,square_roots,Square roots of perfect squares,usable,4,0.9502,$\Large{\sqrt{16} = \text{?}}$,4,keep,,
 61,2,Square Root,5619,22218,square_roots_2,Estimating square roots,usable,4,0.8409,"The value of $\sqrt{22}$ lies between which two consecutive integers?
 Integers that appear in order when counting, for example 2 and 3.
-$< \sqrt{22} <$",4 $< \sqrt{22} <$ 5,,,
-62,2,Subtraction Whole Numbers,5619,5074,subtraction_1,,needs_figure,0,0.9764,,,,,
-63,2,Subtraction Whole Numbers,5619,5074,subtraction_2,,needs_figure,0,0.9375,,,,,
-64,2,Subtraction Whole Numbers,5619,5074,subtraction_3,,no_hints,0,0.8852,,,,,
-65,2,Subtraction Whole Numbers,5619,5074,subtraction_4,,no_hints,0,0.8232,,,,,
-66,2,Subtraction Whole Numbers,5619,5074,subtraction_within_100,Subtract within 100,usable,8,,$\Large{37 - 4 = ?}$,33,,,
-67,2,Subtraction Whole Numbers,5619,5074,subtraction_within_1000,Subtract within 1000,usable,12,,$\Large{376 - 3 = ?}$,373,,,
-68,2,Venn Diagram,5573,6306,,,no_khan_template,0,,,,,,
+$< \sqrt{22} <$",4 $< \sqrt{22} <$ 5,keep,,
+62,2,Subtraction Whole Numbers,5619,5074,subtraction_1,,needs_figure,0,0.9764,,,drop,,
+63,2,Subtraction Whole Numbers,5619,5074,subtraction_2,,needs_figure,0,0.9375,,,drop,,
+64,2,Subtraction Whole Numbers,5619,5074,subtraction_3,,no_hints,0,0.8852,,,drop,,
+65,2,Subtraction Whole Numbers,5619,5074,subtraction_4,,no_hints,0,0.8232,,,drop,,
+66,2,Subtraction Whole Numbers,5619,5074,subtraction_within_100,Subtract within 100,usable,8,,$\Large{37 - 4 = ?}$,33,keep,,
+67,2,Subtraction Whole Numbers,5619,5074,subtraction_within_1000,Subtract within 1000,usable,12,,$\Large{376 - 3 = ?}$,373,keep,,
+68,2,Venn Diagram,5573,6306,,,no_khan_template,0,,,,drop,,cần sơ đồ Venn; Khan 2016 không có template
 69,2,Multiplication Fractions,5474,65183,multiplying_fractions,Multiplying fractions,usable,4,0.7801,"$
 -\dfrac{5}{7} \times
 \dfrac{1}{5}
-$",-0.14285714285714285,,,
-70,2,Multiplication Fractions,5474,65183,multiplying_fractions_0.5,Multiplying fractions 0.5,usable,4,0.7827,$\dfrac{5}{7} \times \dfrac{1}{8}$,0.08928571428571429,,,
-71,2,Multiplication Fractions,5474,65183,multiplying_fractions_by_integers,Multiplying fractions by integers,usable,4,,$\dfrac{5}{7} \times 2 = {?}$,1.4285714285714286,,,
+$",-0.142857143,keep,,
+70,2,Multiplication Fractions,5474,65183,multiplying_fractions_0.5,Multiplying fractions 0.5,usable,4,0.7827,$\dfrac{5}{7} \times \dfrac{1}{8}$,0.08928571428571429,keep,,
+71,2,Multiplication Fractions,5474,65183,multiplying_fractions_by_integers,Multiplying fractions by integers,usable,4,,$\dfrac{5}{7} \times 2 = {?}$,1.4285714285714286,keep,,
 72,2,Multiplication Fractions,5474,65183,multiplying_mixed_numbers_1,Multiplying mixed numbers 1,usable,4,0.6837,"Multiply, simplify to lowest terms, and write as a mixed number:
 $
 2\dfrac{3}{4} \times
 4\dfrac{1}{5}
-$",11.55,,,
-73,2,Calculations with Similar Figures,5437,14670,similar_triangles_1,Similar triangles 1,needs_figure,0,0.6443,Which triangles are similar to triangle $A$ ?,C,,,
-74,2,Calculations with Similar Figures,5437,14670,similar_triangles_2,Similar triangles 2,needs_figure,0,0.68,Which triangles are similar to triangle $ABC$ ?,$DEF$,,,
+$",11.55,keep,,
+73,2,Calculations with Similar Figures,5437,14670,similar_triangles_1,Similar triangles 1,needs_figure,0,0.6443,Which triangles are similar to triangle $A$ ?,C,keep,,
+74,2,Calculations with Similar Figures,5437,14670,similar_triangles_2,Similar triangles 2,needs_figure,0,0.68,Which triangles are similar to triangle $ABC$ ?,$DEF$,keep,,
 75,2,Calculations with Similar Figures,5437,14670,solving_similar_triangles_1,Solving similar triangles 1,needs_figure,0,0.7503,"Triangle $FGH$ is similar to triangle $PQR$ .
 Solve for $n$ .","5.5
-$n =$",,,
+$n =$",keep,,
 76,2,Calculations with Similar Figures,5437,14670,solving_similar_triangles_2,Solving similar triangles 2,usable,16,0.5447,"Given that:
 $
 \quad\begin{eqnarray}
@@ -397,9 +397,9 @@ $
 \overline{AB} &=& x \\
 \end{eqnarray}
 $
-What is the value of $x$ ?",22.5,,,
+What is the value of $x$ ?",22.5,keep,,
 77,2,Median,5361,19144,mean_median_and_mode,"Mean, median, and mode",usable,12,0.7518,"What is the arithmetic mean of the following numbers?
-$2, 4, 5, 4, 4, 2, 8, 4, 4$",4.111111111111111,,,
+$2, 4, 5, 4, 4, 2, 8, 4, 4$",4.111111111111111,drop,,
 78,2,Median,5361,19144,exploring_mean_and_median,Exploring mean and median,not_autogradable,0,0.4285,"Arrange the 10 orange points on the
 number line so the arithmetic mean
 is $1.9$
@@ -409,71 +409,71 @@ $2.5$ .
 The distance between adjacent tick marks is 1.","$.map(graph.points, function(el) {
 return el.coord[0];
 })
-if (roundTo(1, mean(gu",,,
+if (roundTo(1, mean(gu",keep,,
 79,2,Probability of a Single Event,5073,17911,probability_1,Probability 1,usable,8,0.6636,"A bag contains $8$ red jelly beans,
 $6$ green jelly beans, and $3$ blue jelly beans.
 If a jelly bean is randomly chosen, what is the probability
-that it is green?",0.35294117647058826,,,
-80,2,Addition and Subtraction Positive Decimals,4920,52989,adding_decimals,Adding decimals 1,no_hints,0,0.8199,$\Huge{3.19 + 74.7 = {?}}$,77.89,,,
-81,2,Addition and Subtraction Positive Decimals,4920,52989,adding_decimals_0.5,Adding decimals 0.5,no_hints,0,0.8449,$\Huge{3.1 + 7.4 = {?}}$,10.5,,,
+that it is green?",0.35294117647058826,keep,,
+80,2,Addition and Subtraction Positive Decimals,4920,52989,adding_decimals,Adding decimals 1,no_hints,0,0.8199,$\Huge{3.19 + 74.7 = {?}}$,77.89,keep,,
+81,2,Addition and Subtraction Positive Decimals,4920,52989,adding_decimals_0.5,Adding decimals 0.5,no_hints,0,0.8449,$\Huge{3.1 + 7.4 = {?}}$,10.5,keep,,
 82,2,Addition and Subtraction Positive Decimals,4920,52989,adding_decimals_2,Adding decimals 2,no_hints,0,0.8766,"$\Huge{
 3.19 +
-74.7 = ?}$",77.89,,,
-83,2,Addition and Subtraction Positive Decimals,4920,52989,subtracting_decimals,Subtracting decimals,usable,4,0.8247,$\Huge{6.12 - 4.89 = {?}}$,1.2300000000000004,,,
-84,2,Addition and Subtraction Positive Decimals,4920,52989,subtracting_decimals_0.5,Subtracting decimals 0.5,usable,4,0.8579,$\Huge{61.2 - 48.9 = {?}}$,12.300000000000004,,,
-85,2,Addition and Subtraction Positive Decimals,4920,52989,subtracting_decimals_2,Subtracting decimals,usable,4,,$\Huge{76.4 - 4.41 = {?}}$,71.99000000000001,,,
+74.7 = ?}$",77.89,keep,,
+83,2,Addition and Subtraction Positive Decimals,4920,52989,subtracting_decimals,Subtracting decimals,usable,4,0.8247,$\Huge{6.12 - 4.89 = {?}}$,1.2300000000000004,keep,,
+84,2,Addition and Subtraction Positive Decimals,4920,52989,subtracting_decimals_0.5,Subtracting decimals 0.5,usable,4,0.8579,$\Huge{61.2 - 48.9 = {?}}$,12.300000000000004,keep,,
+85,2,Addition and Subtraction Positive Decimals,4920,52989,subtracting_decimals_2,Subtracting decimals,usable,4,,$\Huge{76.4 - 4.41 = {?}}$,71.99000000000001,keep,,
 86,2,Addition and Subtraction Positive Decimals,4920,52989,adding_and_subtracting_decimals_word_problems,Adding and subtracting decimals word problems,usable,24,0.7855,"On a sunny morning, Ishaan
 rode his bicycle to a farm that sold baskets of eggplants for $$6.76$
 each and baskets of pomegranates for $$6.18$ each.
 Ishaan decided to buy a basket of eggplants and a basket of pomegranates because those were his favorite kinds of fruit.
 How much did Ishaan need to pay for his produce?
-$$$",$$$ 12.94,,,
+$$$",$$$ 12.94,keep,,
 87,2,Counting Methods,4748,6658,counting_1,Counting 1,usable,12,0.7649,"Tiffany had to read papers $27$
 through $61$ for homework last week.
 If Tiffany read all of the papers she was assigned, how many papers did she read?
-papers",35 papers,,,
+papers",35 papers,drop,,
 88,2,Counting Methods,4748,6658,counting_2,Counting 2,usable,12,0.7174,"Jessica starts counting at 42, and she counts by threes.
-If 42 is the 1st number that Jessica counts. what is the 12th number that she counts?",75,,,
-89,2,Counting Methods,4748,6658,permutations_1,Permutations,usable,8,0.777,How many unique ways are there to arrange the letters in the word CLAW?,24,,,
+If 42 is the 1st number that Jessica counts. what is the 12th number that she counts?",75,drop,,
+89,2,Counting Methods,4748,6658,permutations_1,Permutations,usable,8,0.777,How many unique ways are there to arrange the letters in the word CLAW?,24,keep,,
 90,2,Counting Methods,4748,6658,combinations_1,Combinations,usable,7,,"Jessica is packing her bags for her vacation. She has
 $8$ unique tigers, but only $4$ fit in her bag.
-How many different groups of $4$ tigers can she take?",70,,,
-91,2,Counting Methods,4748,6658,permutations_and_combinations_2,Permutations and combinations,usable,12,,How many unique ways are there to arrange the letters in the word PRIOR?,60,,,
-92,2,Addition Whole Numbers,4493,6465,addition_1,,needs_figure,0,0.9635,,,,,
-93,2,Addition Whole Numbers,4493,6465,addition_2,,needs_figure,0,0.9527,,,,,
-94,2,Addition Whole Numbers,4493,6465,addition_3,,no_hints,0,0.874,,,,,
-95,2,Addition Whole Numbers,4493,6465,addition_4,,no_hints,0,0.8459,,,,,
+How many different groups of $4$ tigers can she take?",70,keep,,
+91,2,Counting Methods,4748,6658,permutations_and_combinations_2,Permutations and combinations,usable,12,,How many unique ways are there to arrange the letters in the word PRIOR?,60,keep,,
+92,2,Addition Whole Numbers,4493,6465,addition_1,,needs_figure,0,0.9635,,,drop,,
+93,2,Addition Whole Numbers,4493,6465,addition_2,,needs_figure,0,0.9527,,,drop,,
+94,2,Addition Whole Numbers,4493,6465,addition_3,,no_hints,0,0.874,,,drop,,
+95,2,Addition Whole Numbers,4493,6465,addition_4,,no_hints,0,0.8459,,,drop,,
 96,2,Addition Whole Numbers,4493,6465,addition_within_100,Add within 100,usable,8,,"$\Large{
 2 + 36
-= ?}$",38,,,
+= ?}$",38,keep,,
 97,2,Addition Whole Numbers,4493,6465,addition_within_1000,Add within 1000,usable,12,,"$\Large{
 2 + 375
-= ?}$",377,,,
+= ?}$",377,keep,,
 98,2,Equation Solving More Than Two Steps,4467,51512,linear_equations_3,Equations with variables on both sides,usable,4,0.6824,"Solve for $x$ :
 $4x + 5 = 7x + 2$
-$x =$",$x =$ 1,,,
+$x =$",$x =$ 1,keep,,
 99,2,Equation Solving More Than Two Steps,4467,51512,linear_equations_4,Solving rational equations 1,usable,4,0.6124,"Solve for $n$ ,
 $
 \dfrac{3n + 7}{n - 3} = 5$
-$n =$",$n =$ 11,,,
+$n =$",$n =$ 11,keep,,
 100,2,Equation Solving More Than Two Steps,4467,51512,multistep_equations_with_distribution,Multistep equations with distribution,usable,16,,"Solve for $n$ :
 $\qquad
 \dfrac{3}{2} = 2n - \dfrac{1}{2}\left(6n - 1\right)
 $
-$n = $",$n = $ -1,,,
-101,2,Division Fractions,3882,61675,dividing_fractions,Dividing whole numbers by fractions,usable,4,0.7689,$\large{3 \div \dfrac{1}{7} = {?}}$,21,,,
-102,2,Division Fractions,3882,61675,dividing_fractions_0.5,Dividing fractions by whole numbers,usable,4,0.7724,$\large{\dfrac{1}{3} \div 8 = {?}}$,0.041666666666666664,,,
-103,2,Division Fractions,3882,61675,dividing_fractions_1.5,Dividing positive fractions,usable,4,,$\dfrac{3}{7} \div \dfrac{6}{5} = {?}$,0.35714285714285715,,,
+$n = $",$n = $ -1,keep,,
+101,2,Division Fractions,3882,61675,dividing_fractions,Dividing whole numbers by fractions,usable,4,0.7689,$\large{3 \div \dfrac{1}{7} = {?}}$,21,keep,,
+102,2,Division Fractions,3882,61675,dividing_fractions_0.5,Dividing fractions by whole numbers,usable,4,0.7724,$\large{\dfrac{1}{3} \div 8 = {?}}$,0.041666666666666664,keep,,
+103,2,Division Fractions,3882,61675,dividing_fractions_1.5,Dividing positive fractions,usable,4,,$\dfrac{3}{7} \div \dfrac{6}{5} = {?}$,0.35714285714285715,keep,,
 104,2,Division Fractions,3882,61675,dividing_fractions_2,Dividing positive and negative fractions,usable,4,,"Reduce to lowest terms:
 $
 -\dfrac{5}{7} \div \dfrac{1}{5} = {?}
-$",-3.5714285714285716,,,
+$",-3.571428571,keep,,
 105,2,Division Fractions,3882,61675,dividing_fractions_word_problems_2,Dividing fractions word problems 2,usable,24,,"Several of Jessica's friends wanted to try the candy bars
 she brought back from her trip, but there were only $16$ candy bars.
 Jessica decided to cut the candy bars into pieces so that each person could have
 $\frac{4}{5}$ of a candy bar.
-After cutting up the candy bars, to how many friends could Jessica give her candy, assuming she didn't eat any?",20,,,
-106,2,Range,3865,14249,,,no_khan_template,0,,,,,,
+After cutting up the candy bars, to how many friends could Jessica give her candy, assuming she didn't eat any?",20,keep,,
+106,2,Range,3865,14249,,,no_khan_template,0,,,,drop,,không tìm thấy template phù hợp trong khan_templates.csv (mean_median_and_mode không có dạng khoảng biến thiên)
 107,2,Stem and Leaf Plot,3746,800,reading_stem_and_leaf_plots,Reading stem and leaf plots,needs_figure,0,0.7546,"A zookeeper published the following stem-and-leaf plot
 showing the number of turtles at each major zoo in the country:
 $
@@ -495,7 +495,7 @@ $
 \vphantom{\Large{0}} \\
 1&3&3&4&5&6&
 \vphantom{\Large{0}} \\
-0&1&2&4",1 zoos,,,
+0&1&2&4",1 zoos,keep,,
 108,2,Box and Whisker,3657,9191,creating_box_and_whisker_plots,Creating box and whisker plots,not_autogradable,0,0.6558,"Represent the following data using a box-and-whiskers plot. Exclude the median when computing the quartiles:
 $8$
 $13$
@@ -510,7 +510,7 @@ If it helps, you may drag the numbers to put them in a different order. The orde
 graph.q0.coord[0],
 graph.q1Line.coordA[0],
 graph.medianLine.coordA[0],
-graph.q",,,
+graph.q",keep,,
 109,2,Ordering Integers,3386,19662,ordering_negative_numbers,Ordering negative numbers,not_autogradable,0,0.9155,"Order the following integers from least to greatest:
 -25
 $-25$
@@ -525,72 +525,72 @@ $63$
 -24
 $-24$","SORTER.getContent()
 if (SORTER.hasAttempted) {
-return guess.join("","") === NUMS_S",,,
+return guess.join("","") === NUMS_S",keep,,
 110,2,Ordering Integers,3386,19662,comparing_whole_numbers,Comparing whole numbers,usable,8,,"Fill in the blank.
 $\large{31}$ ____ $\large{74}$
 $<$
 $=$
-$>$",$<$,,,
+$>$",$<$,drop,,
 111,2,Ordering Integers,3386,19662,comparing_whole_numbers_2,Comparing whole numbers 2,usable,8,,"Fill in the blank.
 $\large{637}$ ____ $\large{367}$
 $<$
 $=$
-$>$",$>$,,,
+$>$",$>$,drop,,
 112,2,Least Common Multiple,3169,29733,least_common_multiple,Least common multiple,usable,4,0.7805,"What is the least common multiple of $4$ and $9$ ?
 Another way to say this is:
-$\lcm(4, 9) = {?}$",36,,,
+$\lcm(4, 9) = {?}$",36,keep,,
 113,2,Order of Operations All,3019,49810,order_of_operations,Order of operations,usable,24,0.6841,"Evaluate the following expression.
-$-5 + (5 \times 1)$",0,,,
+$-5 + (5 \times 1)$",0,keep,,
 114,2,Order of Operations All,3019,49810,order_of_operations_2,Order of operations 2,usable,24,,"Evaluate the following expression.
-$3 + 8 \times 6$",51,,,
+$3 + 8 \times 6$",51,keep,,
 115,2,Equivalent Fractions,2929,27030,equivalent_fractions,Equivalent fractions,usable,8,0.8805,"What number could replace $p$ below?
-$\dfrac{2}{3} = \dfrac{p}{6}$",4,,,
+$\dfrac{2}{3} = \dfrac{p}{6}$",4,keep,,
 116,2,Equivalent Fractions,2929,27030,equivalent_fractions_2,Equivalent fractions 2,usable,16,0.836,"What number could replace $q$ below?
-$\dfrac{3}{8} = \dfrac{18}{q}$",48,,,
+$\dfrac{3}{8} = \dfrac{18}{q}$",48,keep,,
 117,2,Equivalent Fractions,2929,27030,equivalent_fractions_3,Equivalent Fractions 3,not_autogradable,0,,"Find the pair of equivalent fractions below:
 $\dfrac{24}{66}$
 $\dfrac{8}{22}$
 $\dfrac{12}{25}$
 $\dfrac{18}{13}$
 $\dfrac{3}{25}$","_.map($(""input[type=checkbox]:checked""),function(object){
-return OPTIONSINC[pars",,,
+return OPTIONSINC[pars",keep,,
 118,2,Equivalent Fractions,2929,27030,simplifying_fractions,Simplifying fractions,usable,4,0.7305,"Simplify to lowest terms.
-$\dfrac{48}{42}$",1.1428571428571428,,,
-119,2,Exponents,2821,45498,exponents_1,Positive and zero exponents,usable,4,0.7501,$\Large{219^{1} = {?}}$,219,,,
+$\dfrac{48}{42}$",1.1428571428571428,drop,,
+119,2,Exponents,2821,45498,exponents_1,Positive and zero exponents,usable,4,0.7501,$\Large{219^{1} = {?}}$,219,keep,,
 120,2,Exponents,2821,45498,exponents_1.5,Positive exponents with positive and negative bases,usable,12,,"$\Large{(-4)^{3} = {?}}$
 $-4- 4- 4$
 $(-4)\cdot(-4)\cdot (-4)$
 $-4+3$
-None of the above",$(-4)\cdot(-4)\cdot (-4)$,,,
-121,2,Exponents,2821,45498,exponents_2,Positive and negative exponents,usable,4,0.713,$\Large{\left(\dfrac{8}{5}\right)^{-3} = {?}}$,0.244140625,,,
+None of the above",$(-4)\cdot(-4)\cdot (-4)$,keep,,
+121,2,Exponents,2821,45498,exponents_2,Positive and negative exponents,usable,4,0.713,$\Large{\left(\dfrac{8}{5}\right)^{-3} = {?}}$,0.244140625,keep,,
 122,2,Exponents,2821,45498,positive_and_zero_exponents,Positive and zero exponents,usable,12,,"$\Large{4^{3} = {?}}$
 $4+4+4$
 $3 \cdot 3 \cdot 3 \cdot 3$
 $4\cdot4\cdot 4$
-None of the above",$4\cdot4\cdot 4$,,,
+None of the above",$4\cdot4\cdot 4$,keep,,
 123,2,Divisibility Rules,2776,42681,divisibility,Divisibility,usable,4,0.6011,"All numbers divisible by both $13$ and $21$ are also divisible by which of the following?
 $109$
 $225$
 $39$
 $53$
-$105$",$39$,,,
+$105$",$39$,keep,,
 124,2,Divisibility Rules,2776,42681,divisibility_0.5,Divisibility 0.5,usable,8,0.7737,"Which of the following numbers is a factor of 72?
 $\large{3,5,7}$
 $3$
 $5$
-$7$",$3$,,,
+$7$",$3$,keep,,
 125,2,Divisibility Rules,2776,42681,divisibility_intuition,Divisibility intuition,needs_figure,0,0.8439,"What are the positive factors of $8$ ?
 You can resize this box with $8$ dots to help you find the factors:","1248
-Enter all the different factors you can find (one factor per box):",,,
+Enter all the different factors you can find (one factor per box):",keep,,
 126,2,Divisibility Rules,2776,42681,divisibility_tests,Divisibility tests,usable,4,0.765,"Is $\large{721888}$ divisible by
 $2$ ?
 Yes
-No",Yes,,,
+No",Yes,keep,,
 127,2,Mean,2660,20223,mean_median_and_mode,"Mean, median, and mode",usable,12,0.7518,"What is the arithmetic mean of the following numbers?
-$2, 4, 5, 4, 4, 2, 8, 4, 4$",4.111111111111111,,,
+$2, 4, 5, 4, 4, 2, 8, 4, 4$",4.111111111111111,keep,,đổi drop -> keep khi xem lại đủ các dạng bài của template (bài mẫu trên phiếu chỉ là dạng đầu tiên)
 128,2,Mean,2660,20223,average_word_problems,Average word problems,usable,12,0.6653,"In his geometry class, Christopher took $4$ quizzes.
 His scores were $76$ , $91$ , $79$ , and $98$ .
-What was his average score on the quizzes?",86,,,
+What was his average score on the quizzes?",86,keep,,đổi drop -> keep khi xem lại đủ các dạng bài của template (bài mẫu trên phiếu chỉ là dạng đầu tiên)
 129,2,Mean,2660,20223,exploring_mean_and_median,Exploring mean and median,not_autogradable,0,0.4285,"Arrange the 10 orange points on the
 number line so the arithmetic mean
 is $1.9$
@@ -600,86 +600,86 @@ $2.5$ .
 The distance between adjacent tick marks is 1.","$.map(graph.points, function(el) {
 return el.coord[0];
 })
-if (roundTo(1, mean(gu",,,
+if (roundTo(1, mean(gu",drop,,
 130,2,"Order of Operations +,-,/,* () positive reals",2100,32867,order_of_operations,Order of operations,usable,24,0.6841,"Evaluate the following expression.
-$-5 + (5 \times 1)$",0,,,
+$-5 + (5 \times 1)$",0,keep,,
 131,2,Multiplication and Division Positive Decimals,1962,67788,multiplying_decimals,Multiplying decimals,usable,4,0.7145,"$
 \Large{7.47 \times
 31.9 = {?}}
-$",238.293,,,
+$",238.293,keep,,
 132,2,Multiplication and Division Positive Decimals,1962,67788,multiplying_decimals_0.5,Multiplying decimals 0.5,usable,4,,"$
 \Large{1 \times
 0.6 = {?}}
-$",0.6,,,
+$",0.6,keep,,
 133,2,Multiplication and Division Positive Decimals,1962,67788,multiplying_decimals_1,Multiplying decimals,usable,4,,"$\Large{
 4.4 \times
 7 = {?}}
-$",30.8,,,
+$",30.8,keep,,
 134,2,Multiplication and Division Positive Decimals,1962,67788,dividing_decimals_0.5,Dividing completely,usable,3,0.7612,"$\Large{16 \div 10 = ?}$
-Please give your answer in decimal form.",1.6,,,
-135,2,Multiplication and Division Positive Decimals,1962,67788,dividing_decimals_1,Dividing decimals 1,usable,6,0.8099,$\large{6 \div 0.4 = {?}}$,15,,,
-136,2,Multiplication and Division Positive Decimals,1962,67788,dividing_decimals_2,Dividing decimals 2,usable,3,0.8406,$\large{3 \div 0.8 = {?}}$,3.75,,,
+Please give your answer in decimal form.",1.6,keep,,
+135,2,Multiplication and Division Positive Decimals,1962,67788,dividing_decimals_1,Dividing decimals 1,usable,6,0.8099,$\large{6 \div 0.4 = {?}}$,15,keep,,
+136,2,Multiplication and Division Positive Decimals,1962,67788,dividing_decimals_2,Dividing decimals 2,usable,3,0.8406,$\large{3 \div 0.8 = {?}}$,3.75,keep,,
 137,2,Multiplication and Division Positive Decimals,1962,67788,dividing_decimals_3,Dividing decimals 3,usable,4,,"$
 \Large{233.6 \div
 0.32 = ?}
-$",730,,,
+$",730,keep,,
 138,2,Multiplication and Division Positive Decimals,1962,67788,dividing_decimals_4,Dividing decimals,usable,4,,"$
 \Large{23.157 \div
 3.1 = ?}
-$",7.47,,,
+$",7.47,keep,,
 139,2,Number Line,1894,5386,number_line,Number line 1,not_autogradable,0,0.9309,"Where is $24$ on the number line?
 Move the orange dot to select your answer.
 Where is $24$ on the number line?","graph.movablePoint.coord[0]
 if (guess === 0) {
 return """";
 }
-return abs(NUMBER - ",,,
+return abs(NUMBER - ",keep,,
 140,2,Number Line,1894,5386,number_line_2,Negative numbers on the number line,not_autogradable,0,0.8206,"Move the $\orange{\text{orange dot}}$ to
 $\orange{2}$ on the number line.","graph.movablePoint.coord[0]
 if ( guess === 0 ) {
 return """";
 }
-return abs( NUMBER",,,
-141,2,Number Line,1894,5386,number_line_3,Number line 3,needs_figure,0,0.7452,The blue dot is at what value on the number line?,6,,,
+return abs( NUMBER",keep,,
+141,2,Number Line,1894,5386,number_line_3,Number line 3,needs_figure,0,0.7452,The blue dot is at what value on the number line?,6,keep,,
 142,2,Number Line,1894,5386,decimals_on_the_number_line_1,Decimals on the number line 1,not_autogradable,0,0.9085,Move the orange dot to $\pink{0.3}$ on the number line.,"graph.movablePoint.coord[0]
 if ( guess === 0 ) {
 return """";
 }
-return abs( SOLUTI",,,
+return abs( SOLUTI",keep,,
 143,2,Number Line,1894,5386,decimals_on_the_number_line_2,Decimals on the number line 2,not_autogradable,0,0.782,Move the orange dot to $\pink{2.47}$ on the number line.,"graph.movablePoint.coord[0]
 if (guess === 0) {
 return """";
 }
-return abs(SOLUTION ",,,
+return abs(SOLUTION ",keep,,
 144,2,Number Line,1894,5386,decimals_on_the_number_line_3,Decimals on the number line 3,not_autogradable,0,,Move the orange dot to $-8.1$ on the number line.,"graph.movablePoint.coord[0]
 if ( guess === MID_POINT ) {
 return """";
 }
-return abs",,,
+return abs",keep,,
 145,2,Number Line,1894,5386,fractions_on_the_number_line_1,Fractions on the number line 1,not_autogradable,0,0.9266,"Move the $\orange{\text{orange dot}}$ to
 $\orange{\dfrac{8}{3}}$ on the number line.","graph.movablePoint.coord[0]
 if ( guess === 0 ) {
 return """";
 }
-return abs( SOLUTI",,,
+return abs( SOLUTI",keep,,
 146,2,Number Line,1894,5386,fractions_on_the_number_line_3,Fractions on the number line 3,not_autogradable,0,0.8482,"Move the $\orange{\text{orange dot}}$ to
 $\orange{-\dfrac{8}{3}}$ on the number line.","graph.movablePoint.coord[0] / abs(DENOMINATOR)
 if (guess === 0) {
 return """";
 }
-r",,,
+r",keep,,
 147,2,Solving Inequalities,1893,3229,one_step_inequalities,One step inequalities,usable,4,0.7119,"Solve for $x$ :
 $-11x > 3$
 $x$
-<>≤≥","$x$
+<>==","$x$
 <
--0.2727272727272727",,,
+-0.2727272727272727",keep,,
 148,2,Solving Inequalities,1893,3229,linear_inequalities,Multi-step linear inequalities,usable,4,0.7267,"Solve for $x$ :
-$4x + 5 ≥ 7x + 2$
+$4x + 5 = 7x + 2$
 $x$
-<>≤≥","$x$
-≤
-1",,,
+<>==","$x$
+=
+1",keep,,
 149,2,Solving Inequalities,1893,3229,compound_inequalities,Compound inequalities,usable,4,0.6076,"Solve for $k$ :
 $\blue{3k-8>1}$ and
 $\pink{6k>18}$
@@ -688,21 +688,21 @@ $k>3$
 $k>3$
 $k>-5$
 $k>4$ and
-$k>3$",$k>3$,,,
-150,2,Solving Inequalities,1893,3229,inequalities_on_a_number_line,Inequalities on a number line,needs_figure,0,0.7608,Which graph on the number line represents $p ≥ 7.4$ ?,Graph E,,,
+$k>3$",$k>3$,keep,,
+150,2,Solving Inequalities,1893,3229,inequalities_on_a_number_line,Inequalities on a number line,needs_figure,0,0.7608,Which graph on the number line represents $p = 7.4$ ?,Graph E,keep,,
 151,2,Mode,1859,1287,mean_median_and_mode,"Mean, median, and mode",usable,12,0.7518,"What is the arithmetic mean of the following numbers?
-$2, 4, 5, 4, 4, 2, 8, 4, 4$",4.111111111111111,,,
+$2, 4, 5, 4, 4, 2, 8, 4, 4$",4.111111111111111,keep,,
 152,2,Solving for a variable,1774,24282,solving_for_a_variable,Solving equations in terms of a variable,usable,12,0.6304,"$7fgh + 5g + h - 1 = -9g + 6h - 3$
 Solve for $f$ .
 $f= \dfrac{-4g + 5h - 4}{7gh}$
 $f= \dfrac{-14g + 7h - 4}{7gh}$
 $f= \dfrac{-14g + 5h - 2}{7gh}$
-None of the above",$f= \dfrac{-14g + 5h - 2}{7gh}$,,,
+None of the above",$f= \dfrac{-14g + 5h - 2}{7gh}$,keep,,
 153,2,Histogram as Table or Graph,1758,12329,reading_bar_charts_1,Reading bar charts 1,needs_figure,0,0.9613,"At Hogwarts, there are four houses:
 Gryffindor, Hufflepuff, Ravenclaw, and Slytherin. The bar chart below shows the
 number of house points that each house received today.
 How many house points did Gryffindor receive?","0
-house points",,,
+house points",drop,,
 154,2,Histogram as Table or Graph,1758,12329,reading_bar_charts_2,Reading bar charts 2,needs_figure,0,0.8409,"Use the graph to answer the question:
 Which student's score improved the most between the midterm and final exams?
 Jessica
@@ -710,42 +710,42 @@ Gabriela
 Nadia
 Emily
 Christopher
-Which student's score improved the most between the midterm and final exams?",Jessica,,,
+Which student's score improved the most between the midterm and final exams?",Jessica,drop,,
 155,2,Histogram as Table or Graph,1758,12329,reading_bar_charts_3,Reading bar charts 3,needs_figure,0,0.5285,"Use the graph to answer the question:
 What was the average student score for the midterm?
-What was the average student score for the midterm?",74,,,
+What was the average student score for the midterm?",74,drop,,
 156,2,Histogram as Table or Graph,1758,12329,creating_bar_charts_1,Creating bar charts 1,not_autogradable,0,0.8725,Create a bar chart showing everyone's favorite animals:,"_.times(5, function(n) { return graph.lines[ n ].coordA[1]; })
-if ( _.isEqual( g",,,
+if ( _.isEqual( g",drop,,
 157,2,Scatter Plot,1748,7746,plotting_the_line_of_best_fit,Estimating the line of best fit,not_autogradable,0,0.722,"In the graph below, can a line fit the data well?
 Yes
 No
 If yes, fit a line to the data.
 If yes, fit a line to the data.","[
 KhanUtil.graphs.main.graph.pointA.coord,
-KhanUtil.graphs.main.graph.pointB.coo",,,
+KhanUtil.graphs.main.graph.pointB.coo",keep,,
 158,2,Scientific Notation,1647,18617,scientific_notation,Scientific notation,usable,8,0.7721,"Express this number in scientific notation.
 $0.002\;513$
 $ \times 10 $","2.513
 $ \times 10 $
--3",,,
+-3",keep,,
 159,2,Scientific Notation,1647,18617,scientific_notation_intuition,Scientific notation intuition,not_autogradable,0,0.9266,"Express the top number in scientific notation by dragging the decimal in the bottom number:
 As you move the decimal, the exponent will automatically change so both numbers are always equal.","E - graph.decimal.coord[0]
 if ( guess === 0 ) {
 return """";
 }
-return guess === E;",,,
+return guess === E;",keep,,
 160,2,Scientific Notation,1647,18617,multiplying_and_dividing_scientific_notation,Multiplying and dividing scientific notation,usable,8,0.6253,"Calculate the quotient below and give your answer in scientific notation.
 $\large{\dfrac{1.71\times 10^{3}}{3.0\times 10^{2}}} =\ ?$
 $ \times 10 $","5.7
 $ \times 10 $
-0",,,
-161,2,Estimation,1601,2583,estimation_with_decimals,Estimation with decimals,needs_figure,0,0.6924,Estimate how much she traveled in total by first rounding each amount to the nearest whole number and then summing all the rounded amounts.,31 miles,,,
-162,2,Ordering Real Numbers,1522,2329,,,no_khan_template,0,,,,,,
-163,2,Surface Area Rectangular Prism,1478,24848,,,no_khan_template,0,,,,,,
-164,2,Unit Conversion Within a System,1459,15027,,,no_khan_template,0,,,,,,
+0",keep,,
+161,2,Estimation,1601,2583,estimation_with_decimals,Estimation with decimals,needs_figure,0,0.6924,Estimate how much she traveled in total by first rounding each amount to the nearest whole number and then summing all the rounded amounts.,31 miles,keep,,
+162,2,Ordering Real Numbers,1522,2329,,,no_khan_template,0,,,,drop,,không tìm thấy template phù hợp trong khan_templates.csv (ordering_* đều not_autogradable)
+163,2,Surface Area Rectangular Prism,1478,24848,,,no_khan_template,0,,,,drop,,không có template diện tích mặt; area_* là hình phẳng
+164,2,Unit Conversion Within a System,1459,15027,,,no_khan_template,0,,,,drop,,không tìm thấy template phù hợp trong khan_templates.csv
 165,2,Complementary and Supplementary Angles,1293,25901,complementary_and_supplementary_angles,Complementary and supplementary angles,usable,8,0.8953,"If $\angle AOC$ is a right angle and $m \angle AOB = 64^\circ$ , what is $m \angle BOC$ ?
 $\Large{^\circ}$
-NOTE: Angles not necessarily drawn to scale.",26 $\Large{^\circ}$,,,
+NOTE: Angles not necessarily drawn to scale.",26 $\Large{^\circ}$,keep,,
 166,2,Write Linear Equation from Situation,1283,8594,linear_equation_word_problems,Linear equation and inequality word problems,not_autogradable,0,,"Jessica sells magazine subscriptions and earns
 $$8$ for every new subscriber
 she signs up. Jessica also earns a
@@ -758,134 +758,134 @@ $(""#guessans"").val(),
 $(""#firsttext"").val(),
 $(""#secondtext"").val()
 ]
-var corr",,,
+var corr",keep,,
 167,2,Write Linear Equation from Situation,1283,8594,interpreting_linear_equations,Interpreting linear relationships,needs_figure,0,0.8185,"How does the cost of producing folders change as the number of folders increases?
 Increases
 Decreases
-Stays the same",Increases,,,
-168,2,Area Circle,1102,16181,area_of_a_circle,Area of a circle,usable,11,0.6291,Suppose the radius of a circle is $\color{purple}{2}$ . What is its area?,12.566370614359172,,,
+Stays the same",Increases,keep,,
+168,2,Area Circle,1102,16181,area_of_a_circle,Area of a circle,usable,11,0.6291,Suppose the radius of a circle is $\color{purple}{2}$ . What is its area?,12.566370614359172,keep,,
 169,2,Area Circle,1102,16181,areas_of_circles_and_sectors,Areas of circles and sectors,usable,8,0.4003,"A circle with area $\blue{16\pi}$ has a sector
 with a central angle of
 $\purple{207^\circ}$ .
-What is the area of the sector?",28.902652413026093,,,
-170,2,Effect of Changing Dimensions of a Shape Prportionally,1090,412,,,no_khan_template,0,,,,,,
+What is the area of the sector?",28.902652413026093,keep,,
+170,2,Effect of Changing Dimensions of a Shape Prportionally,1090,412,,,no_khan_template,0,,,,drop,,không tìm thấy template phù hợp trong khan_templates.csv
 171,2,Write Linear Equation from Ordered Pairs,949,21863,point_slope_form,Point slope form,not_autogradable,0,0.7103,"A line passes through both $(\blue{-3}, \blue{2})$ and
 $(\green{1}, \green{-1})$ .
-Express the equation of the line in point slope form.","[$(""input#response1"").val(), $(""input#response2"").val(), $(""input#response3"").va",,,
+Express the equation of the line in point slope form.","[$(""input#response1"").val(), $(""input#response2"").val(), $(""input#response3"").va",keep,,
 172,2,Write Linear Equation from Ordered Pairs,949,21863,converting_between_point_slope_and_slope_intercept,Converting between point-slope and slope-intercept form,usable,4,0.8068,"Convert the following equation from point slope to slope intercept form.
 In other words, if the equation is rewritten to look like $y = mx + b$ , what are the values of $m$ and $b$ ?
 $y - 11 = -3(x + 3)$
-$y = \space$ $\space \cdot x + \space$",$y = \space$ -3 $\space \cdot x + \space$ 2,,,
-173,2,Rounding,940,33591,rounding_numbers,Rounding numbers,usable,8,0.7169,Round $19463$ to the nearest thousand.,19000,,,
-174,2,Rounding,940,33591,rounding_whole_numbers,Rounding whole numbers,usable,8,0.8208,Round $7471$ to the nearest hundred.,7500,,,
+$y = \space$ $\space \cdot x + \space$",$y = \space$ -3 $\space \cdot x + \space$ 2,keep,,
+173,2,Rounding,940,33591,rounding_numbers,Rounding numbers,usable,8,0.7169,Round $19463$ to the nearest thousand.,19000,keep,,
+174,2,Rounding,940,33591,rounding_whole_numbers,Rounding whole numbers,usable,8,0.8208,Round $7471$ to the nearest hundred.,7500,keep,,
 175,2,Rounding,940,33591,rounding_whole_numbers_0.5,Rounding whole numbers,not_autogradable,0,,Round $45$ to the nearest ten.,"graph.movablePoint.coord[0]
 var ans = ROUNDED < NUM ? 0 : 1;
-return abs(ans - gu",,,
-176,2,Interior Angles Figures with More than 3 Sides,934,14726,angles_of_a_polygon,Angles of a polygon,needs_figure,0,0.7135,What is the sum of this polygon's interior angles?,540 $\Large{^\circ}$,,,
-177,2,Interior Angles Figures with More than 3 Sides,934,14726,quadrilateral_angles,Quadrilateral angles,needs_figure,0,0.7794,What is the value of the angle marked with $x$ ?,63 $\Large{{}^\circ}$,,,
+return abs(ans - gu",keep,,
+176,2,Interior Angles Figures with More than 3 Sides,934,14726,angles_of_a_polygon,Angles of a polygon,needs_figure,0,0.7135,What is the sum of this polygon's interior angles?,540 $\Large{^\circ}$,keep,,
+177,2,Interior Angles Figures with More than 3 Sides,934,14726,quadrilateral_angles,Quadrilateral angles,needs_figure,0,0.7794,What is the value of the angle marked with $x$ ?,63 $\Large{{}^\circ}$,drop,,
 178,2,Area Trapezoid,893,12695,areas_of_trapezoids_rhombi_and_kites,Area of trapezoids,needs_figure,0,0.6473,What is the area of this figure?,"18
-square meters",,,
+square meters",keep,,
 179,2,Volume Rectangular Prism,857,13363,volume_1,Volume 1,usable,4,,"The volume of this rectangular prism is $105$ cubic units.
 What is the number labeled $x$ below?
-cm",5 cm,,,
-180,2,Volume Rectangular Prism,857,13363,volume_with_unit_cubes,Volume with unit cubes,needs_figure,0,,What is the volume of this rectangular prism?,18 cubic meters,,,
+cm",5 cm,keep,,
+180,2,Volume Rectangular Prism,857,13363,volume_with_unit_cubes,Volume with unit cubes,needs_figure,0,,What is the volume of this rectangular prism?,18 cubic meters,keep,,
 181,2,Volume Rectangular Prism,857,13363,volume_with_unit_cubes_2,Volume with unit cubes 2,usable,3,,"What is the volume of this rectangular prism?
 Each cube has $\dfrac{1}{3}$ meter sides.
-cubic meters",1.1851851851851851 cubic meters,,,
+cubic meters",1.1851851851851851 cubic meters,keep,,
 182,2,Volume Rectangular Prism,857,13363,volume_with_fractions,Volume 2,usable,4,,"The volume of this box is $\dfrac{5}{6} \text{ cm}^3$ .
 Find $x$ .
 $x = $
 $\text{ cm}$","$x = $
 0.3333333333333333
-$\text{ cm}$",,,
+$\text{ cm}$",keep,,
 183,2,Area Irregular Figure,750,8871,shaded_areas,Shaded areas,usable,16,0.5429,"A $\green{3 \times 7}$ rectangle
 sits inside a $\blue{9 \times 10}$ rectangle.
-What is the area of the shaded region?",69,,,
+What is the area of the shaded region?",69,keep,,
 184,2,Area Irregular Figure,750,8871,area_2,Area 2,needs_figure,0,,What is the area of the square?,"49
-square meters",,,
-185,2,Interior Angles Triangle,683,11730,triangle_angles_1,Triangle angles 1,needs_figure,0,0.7825,What is $X$ ?,$X =$ 28 $\Large{^\circ}$,,,
+square meters",drop,,
+185,2,Interior Angles Triangle,683,11730,triangle_angles_1,Triangle angles 1,needs_figure,0,0.7825,What is $X$ ?,$X =$ 28 $\Large{^\circ}$,drop,,
 186,2,Prime Number,635,13354,prime_numbers,Prime numbers,usable,4,0.7794,"Which of these numbers is prime?
 $\large{12,\ 17,\ 51,\ 65,\ 77}$
 $12$
 $17$
 $51$
 $65$
-$77$",$17$,,,
+$77$",$17$,keep,,
 187,2,Prime Number,635,13354,composite_numbers,Composite numbers,usable,4,0.818,"Which of these numbers is composite?
 $\large{5,\ 31,\ 47,\ 61,\ 77}$
 $5$
 $31$
 $47$
 $61$
-$77$",$77$,,,
-188,2,Fraction Of,598,1162,multiplying_fractions_by_integers,Multiplying fractions by integers,usable,4,,$\dfrac{5}{7} \times 2 = {?}$,1.4285714285714286,,,
+$77$",$77$,keep,,
+188,2,Fraction Of,598,1162,multiplying_fractions_by_integers,Multiplying fractions by integers,usable,4,,$\dfrac{5}{7} \times 2 = {?}$,1.4285714285714286,keep,,
 189,2,Fraction Of,598,1162,fraction_word_problems_1,Fraction word problems 1,usable,12,0.712,"Tiffany ate $1$ slice of pizza.
 Stephanie ate $1$ slice.
 If there were initially $3$ slices of equal size,
-what fraction of the pizza was eaten?",0.6666666666666666,,,
-190,2,Perimeter of a Polygon,535,15139,perimeter_1,Perimeter 1,needs_figure,0,0.8198,What is the perimeter of the square?,28 meters,,,
+what fraction of the pizza was eaten?",0.6666666666666666,keep,,
+190,2,Perimeter of a Polygon,535,15139,perimeter_1,Perimeter 1,needs_figure,0,0.8198,What is the perimeter of the square?,28 meters,keep,,
 191,2,Perimeter of a Polygon,535,15139,perimeter_of_squares_and_rectangles,Finding perimeter,usable,12,0.8409,"One side of a square is $6$
 meters long. What is its perimeter?
 meters","24
-meters",,,
-192,2,Congruence,529,5097,congruent_triangles_1,Congruent triangles 1,needs_figure,0,0.7855,Are these two triangles congruent?,No,,,
-193,2,Congruence,529,5097,congruent_triangles_2,Congruent triangles 2,needs_figure,0,0.7954,What is the value of the angle $x$ ?,$x = $ 97 $^\circ$,,,
+meters",keep,,
+192,2,Congruence,529,5097,congruent_triangles_1,Congruent triangles 1,needs_figure,0,0.7855,Are these two triangles congruent?,No,keep,,
+193,2,Congruence,529,5097,congruent_triangles_2,Congruent triangles 2,needs_figure,0,0.7954,What is the value of the angle $x$ ?,$x = $ 97 $^\circ$,keep,,
 194,2,Congruence,529,5097,congruency_postulates,Congruency postulates,not_autogradable,0,0.6537,"Is Side-Angle-Angle a triangle congruency
 postulate?
 Your triangle can be anywhere. There is no need to line
 up the two triangles.","[
 $( ""#solutionarea"" ).find( ""input:checked"" ).val(),
-interactiveTriangle.points",,,
+interactiveTriangle.points",keep,,
 195,2,Area Rectangle,449,13822,area_1,Area 1,needs_figure,0,0.9097,"What is the area of the shape? Each square in the grid is a
 $1 \times 1$ meter square.","10
-square meters",,,
+square meters",keep,,
 196,2,Area Rectangle,449,13822,area_of_squares_and_rectangles,Area problems,usable,12,0.8476,"One side of a square is $7$
 meters long. What is its area?
 square
 meters","49 square
-meters",,,
+meters",keep,,
 197,2,D.4.8-understanding-concept-of-probabilities,414,1746,probability_1,Probability 1,usable,8,0.6636,"A bag contains $8$ red jelly beans,
 $6$ green jelly beans, and $3$ blue jelly beans.
 If a jelly bean is randomly chosen, what is the probability
-that it is green?",0.35294117647058826,,,
-198,2,Reflection,396,1532,,,no_khan_template,0,,,,,,
+that it is green?",0.35294117647058826,keep,,
+198,2,Reflection,396,1532,,,no_khan_template,0,,,,drop,,"cần hình; rotation/translation_* not_autogradable, không có template phép đối xứng"
 199,2,Translations,393,1320,translations_of_points_and_polygons,Translations of polygons,not_autogradable,0,,"What is the image of the polygon below after the translation
 $T_{(3, -3)}$ ?","KhanUtil.currentGraph.graph.curPoints
-coordList = _.pluck(KhanUtil.currentGraph.",,,
+coordList = _.pluck(KhanUtil.currentGraph.",keep,,
 200,2,Polynomial Factors,392,21323,factoring_polynomials_1,Factoring quadratics 1,usable,4,0.7302,"Factor the expression below completely. All coefficients should be integers.
-$x^2 + 3x - 54$",(x--9)(x-6),,,
+$x^2 + 3x - 54$",(x--9)(x-6),keep,,
 201,2,Polynomial Factors,392,21323,factoring_polynomials_2,Factoring quadratics 2,usable,4,0.7058,"Factor the expression below completely. All coefficients should be integers.
 $
 2x^2 +
 6x - 108
-$",2(x--9)(x-6),,,
+$",2(x--9)(x-6),keep,,
 202,2,Polynomial Factors,392,21323,factoring_difference_of_squares_1,Factoring difference of squares 1,usable,4,0.8549,"Factor the expression below completely. All coefficients should be integers.
 $x^2$
 $-$
-$9$",(x + 3)(x - 3),,,
+$9$",(x + 3)(x - 3),keep,,
 203,2,Polynomial Factors,392,21323,factoring_difference_of_squares_2,Factoring difference of squares 2,usable,4,0.884,"Factor the expression below completely. All coefficients should be integers.
 $9x^2$
 $-$
-$49$",(3x + 7)(3x - 7),,,
+$49$",(3x + 7)(3x - 7),keep,,
 204,2,Polynomial Factors,392,21323,factoring_difference_of_squares_3,Factoring difference of squares 3,usable,4,0.767,"Factor the expression below completely. All coefficients should be integers.
-$27x^2 - 75$",3(3x + 5)(3x - 5),,,
+$27x^2 - 75$",3(3x + 5)(3x - 5),keep,,
 205,2,Polynomial Factors,392,21323,factoring_linear_binomials,Factoring linear binomials,usable,4,,"Factor the expression below completely. All coefficients should be integers.
-$3x+3$",3(x + 1),,,
+$3x+3$",3(x + 1),keep,,
 206,2,Polynomial Factors,392,21323,factoring_polynomials_by_grouping_1,Factoring polynomials by grouping,usable,4,0.5631,"Factor the expression below completely. All coefficients should be integers.
 $-5$ $x^2$
 $-1$ $x+$
-$4$",(-5x + 4)(x + 1),,,
+$4$",(-5x + 4)(x + 1),keep,,
 207,2,Algebraic Solving,385,2861,solving_for_a_variable,Solving equations in terms of a variable,usable,12,0.6304,"$7fgh + 5g + h - 1 = -9g + 6h - 3$
 Solve for $f$ .
 $f= \dfrac{-4g + 5h - 4}{7gh}$
 $f= \dfrac{-14g + 7h - 4}{7gh}$
 $f= \dfrac{-14g + 5h - 2}{7gh}$
-None of the above",$f= \dfrac{-14g + 5h - 2}{7gh}$,,,
+None of the above",$f= \dfrac{-14g + 5h - 2}{7gh}$,keep,,
 208,2,Rotations,362,226,rotation_of_polygons,Rotation of polygons,not_autogradable,0,,"What is the image of the polygon below after the rotation
 $T_{{90}^\circ{} }$ ?","_.map(graph.points, function(point) {
 return point.coord;
 })
-var closeEnough = f",,,
+var closeEnough = f",keep,,
 209,2,Solving Systems of Linear Equations by Graphing,352,16410,graphing_systems_of_equations,Graphing systems of equations,not_autogradable,0,0.4465,"Graph this system of equations and solve.
 $6x+3y = -12$
 $2x-6y = -18$
@@ -893,18 +893,18 @@ $x = $
 $y = $
 Drag the points to plot the system.","$x = $ -3
 $y = $ 2
-[ graph.pointA.coord, graph.pointB.coord, graph.pointC.coord,",,,
+[ graph.pointA.coord, graph.pointB.coord, graph.pointC.coord,",keep,,
 210,2,"Angles - Obtuse, Acute, and Right",300,10944,angle_types,Angle types,needs_figure,0,0.9286,"Is the shown angle acute, right, or obtuse?
 Acute
 Right
-Obtuse",Acute,,,
-211,2,Scale Factor,283,9436,,,no_khan_template,0,,,,,,
-212,2,Nets of 3D Figures,251,5707,,,no_khan_template,0,,,,,,
-213,2,Area Triangle,250,18121,,,no_khan_template,0,,,,,,
+Obtuse",Acute,keep,,
+211,2,Scale Factor,283,9436,,,no_khan_template,0,,,,drop,,không tìm thấy template phù hợp trong khan_templates.csv
+212,2,Nets of 3D Figures,251,5707,,,no_khan_template,0,,,,drop,,cần hình khai triển khối; không có template
+213,2,Area Triangle,250,18121,,,no_khan_template,0,,,,drop,,"không tìm thấy template phù hợp trong khan_templates.csv (area_1, area_2 cần hình)"
 214,2,Angles on Parallel Lines Cut by a Transversal,248,6247,parallel_lines_1,Parallel lines 1,needs_figure,0,0.8504,"If we know that the blue angle is $59^\circ$ ,
 what is the measure of angle $x$ ?
-$^\circ$",59 $^\circ$,,,
-215,2,Angles on Parallel Lines Cut by a Transversal,248,6247,parallel_lines_2,Parallel lines 2,needs_figure,0,0.7556,Solve for $x$ :,13 $^\circ$,,,
+$^\circ$",59 $^\circ$,keep,,
+215,2,Angles on Parallel Lines Cut by a Transversal,248,6247,parallel_lines_2,Parallel lines 2,needs_figure,0,0.7556,Solve for $x$ :,13 $^\circ$,keep,,
 216,2,Solving Systems of Linear Equations,234,16129,systems_of_equations,Systems of equations,usable,12,0.5189,"Solve for $x$ and $y$ .
 $\begin{align*}
 -3x+y &= 6 \\
@@ -912,53 +912,53 @@ $\begin{align*}
 \end{align*}$
 $x$ =
 $y$ =","$x$ = -2.3333333333333335
-$y$ = -1",,,
+$y$ = -1",keep,,
 217,2,Solving Systems of Linear Equations,234,16129,systems_of_equations_with_elimination,Systems of equations with elimination,usable,8,0.6387,"Solve for $x$ and $y$ using elimination.
 $\color{#6495ED}{-3x-2y = -25}$
 $\color{#28AE7B}{-x-5y = -43}$
 $x$ =
 $y$ =","$x$ = 3
-$y$ = 8",,,
+$y$ = 8",keep,,
 218,2,Solving Systems of Linear Equations,234,16129,systems_of_equations_with_elimination_0.5,Systems of equations with simple elimination,usable,8,0.7061,"Solve for $x$ and $y$ using elimination.
 $\color{#6495ED}{-2x+6y = 42}$
 $\color{#28AE7B}{2x-5y = -34}$
 $x$ =
 $y$ =","$x$ = 3
-$y$ = 8",,,
+$y$ = 8",keep,,
 219,2,Solving Systems of Linear Equations,234,16129,systems_of_equations_with_substitution,Systems of equations with substitution,usable,8,0.6031,"Solve for $x$ and $y$ using substitution.
 $\color{#6495ED}{-4x-2y = -2}$
 $\color{#28AE7B}{y = -4x-1}$
 $x$ =
 $y$ =","$x$ = -1
-$y$ = 3",,,
+$y$ = 3",keep,,
 220,2,Solving Systems of Linear Equations,234,16129,systems_of_equations_word_problems,Systems of equations word problems,usable,16,0.5058,"A group of adults and kids went to see a movie. Tickets cost $$6.50$ each for adults and $$3.00$ each for kids, and the group paid $$44.00$ in total. There were $2$ fewer adults than kids in the group.
 Find the number of adults and kids in the group.
 # of adults =
 # of kids =","# of adults = 4
-# of kids = 6",,,
+# of kids = 6",keep,,
 221,2,Greatest Common Factor,218,12558,greatest_common_divisor,Greatest common factor,usable,4,0.8298,"What is the greatest common factor of $18$ and $48$ ?
 Another way to say this is:
-$\operatorname{gcf}(18, 48) = {?}$",6,,,
-222,2,Percents,117,601,finding_percents,Finding percents,usable,16,,What is $73\%$ of $300$ ?,219,,,
-223,2,Multiplication Whole Numbers,109,5467,multiplication_0.5,Multiplying 1-digit numbers,usable,8,0.9587,$\Huge\blue{2}\times\green{7}=\pink?$,14,,,
+$\operatorname{gcf}(18, 48) = {?}$",6,keep,,
+222,2,Percents,117,601,finding_percents,Finding percents,usable,16,,What is $73\%$ of $300$ ?,219,keep,,
+223,2,Multiplication Whole Numbers,109,5467,multiplication_0.5,Multiplying 1-digit numbers,usable,8,0.9587,$\Huge\blue{2}\times\green{7}=\pink?$,14,keep,,
 224,2,Multiplication Whole Numbers,109,5467,multiplication_1,Multiplying by multiples of 10,usable,4,0.9629,"$\Huge{\blue{30} \times \green{7} = {?}}$
 $\Large{?} = {}$","$\Large{?} = {}$
-210",,,
-225,2,Multiplication Whole Numbers,109,5467,multiplication_1.5,Multiplication without regrouping,usable,4,0.9481,$\large{4 \times 102 = {?}}$,408,,,
-226,2,Multiplication Whole Numbers,109,5467,multiplication_2,Multiplication with regrouping,usable,4,0.8534,$\large{7 \times 611 = {?}}$,4277,,,
-227,2,Multiplication Whole Numbers,109,5467,multiplication_3,Multiplying 2 digits by 2 digits,usable,4,0.7514,$\large{74 \times 61 = {?}}$,4514,,,
-228,2,Multiplication Whole Numbers,109,5467,multiplication_4,Multi-digit multiplication,usable,4,0.8227,$\large{185 \times 440 = {?}}$,81400,,,
+210",keep,,
+225,2,Multiplication Whole Numbers,109,5467,multiplication_1.5,Multiplication without regrouping,usable,4,0.9481,$\large{4 \times 102 = {?}}$,408,keep,,
+226,2,Multiplication Whole Numbers,109,5467,multiplication_2,Multiplication with regrouping,usable,4,0.8534,$\large{7 \times 611 = {?}}$,4277,keep,,
+227,2,Multiplication Whole Numbers,109,5467,multiplication_3,Multiplying 2 digits by 2 digits,usable,4,0.7514,$\large{74 \times 61 = {?}}$,4514,keep,,
+228,2,Multiplication Whole Numbers,109,5467,multiplication_4,Multi-digit multiplication,usable,4,0.8227,$\large{185 \times 440 = {?}}$,81400,keep,,
 229,2,Simplifying Expressions positive exponents,108,27540,simplifying_expressions_with_exponents,Simplifying expressions with exponents,usable,8,0.6971,"Rewrite $\large{\dfrac{(x^{-1}r^{-4})^{-4}}{(x^{3}r^{-1})^{3}}}$ in the form
 $\large{x^nr^m}$ .
 Assume $x\neq 0, r\neq 0$ .","x^-5 * r^19
-x^-5 * r^19",,,
+x^-5 * r^19",keep,,
 230,2,Simplifying Expressions positive exponents,108,27540,exponent_rules,Exponent rules,usable,16,0.7381,"Rewrite $\large{(4^{10})(4^{-7})}$
-in the form $\large{4^n}$ .",4^3,,,
+in the form $\large{4^n}$ .",4^3,keep,,
 231,2,Area Parallelogram,103,9955,area_of_parallelograms,Area of parallelograms,usable,4,0.9517,"Suppose a parallelogram has base length $\red{6 \text{ m}}$
 and height $\blue{5 \text{ m}}$ .
 What is the parallelogram's area?
 square meters","30
-square meters",,,
+square meters",keep,,
 232,2,Finding Slope From Equation,102,20778,slope_intercept_form,Slope intercept form,usable,8,0.7225,"A line goes through the following points, and the equation of that line is written in $y = mx + b$ form.
 What is the equation of the line?
 $y = {}$ $x + {}$
@@ -967,25 +967,25 @@ $-8$ $9$
 $-5$ $3$
 $-3$ $-1$
 $-2$ $-3$
-$4$ $-15$",$y = {}$ -2 $x + {}$ -7,,,
+$4$ $-15$",$y = {}$ -2 $x + {}$ -7,keep,,
 233,2,Finding Slope From Equation,102,20778,converting_between_slope_intercept_and_standard_form,Converting between slope-intercept and standard form,usable,8,0.7355,"Convert the following equation from standard form to slope intercept form.
 In other words, if the equation is rewritten to look like $y = mx + b$ , what are the values of $m$ and $b$ ?
 $-3x + 2y = 1$
 $m$ =
 $b$ =","$m$ = 1.5
-$b$ = 0.5",,,
+$b$ = 0.5",keep,,
 234,2,Rate,91,2060,rate_problems_2,Rate problems 2,usable,12,0.4684,"Starting at home, Tiffany traveled uphill to the toy store
 for $12$ minutes at just $15$ mph.
 She then traveled back home along the same path downhill at a speed of $30$ mph.
 What is her average speed for the entire trip from home to the toy store and back?
-mph",20 mph,,,
+mph",20 mph,drop,,
 235,2,Algebraic Simplification,90,259,combining_like_terms_1,Combining like terms,usable,4,0.7325,"Combine the like terms to make a simpler expression:
-$\large{4n+n}$",5n,,,
+$\large{4n+n}$",5n,keep,,
 236,2,Algebraic Simplification,90,259,combining_like_terms_2,Combining like terms with distribution,usable,4,0.6278,"Expand the expression and combine the like terms:
-$\large{4n-9(n-2)}$",-5n+18,,,
-237,2,"Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable",77,2685,,,no_khan_template,0,,,,,,
+$\large{4n-9(n-2)}$",-5n+18,keep,,
+237,2,"Parts of a Polyomial, Terms, Coefficient, Monomial, Exponent, Variable",77,2685,,,no_khan_template,0,,,,drop,,không tìm thấy template phù hợp trong khan_templates.csv
 238,2,Choose an Equation from Given Information,64,429,writing_expressions_1,Writing expressions,usable,4,0.6549,"Write an expression to represent:
-Eight less than the product of one and a number $x$ .",1 * x + -8,,,
+Eight less than the product of one and a number $x$ .",1 * x + -8,keep,,
 239,2,Choose an Equation from Given Information,64,429,writing_expressions_2,Writing expressions 2,usable,8,0.5941,"First consider the expression for:
 Take the product of $\green{7}$ and $x$ and add $\blue{3}$ .
 Now select the answer that matches the following:
@@ -994,106 +994,106 @@ $6(3x+7)+4$
 $4(3x+7)+6$
 $3(4x+6)+7$
 $6(7x+3)+4$
-None of the above",$6(7x+3)+4$,,,
+None of the above",$6(7x+3)+4$,keep,,
 240,2,Intercept,64,0,solving_for_the_x-intercept,Solving for the x-intercept,usable,4,0.8601,"Given the equation:
 $-5x + 4y = -5$
 What is the $x$ -intercept?
-$\Large{(}$ $,\ 0\Large{)}$","$\Large{(}$ 1 $,\ 0\Large{)}$",,,
+$\Large{(}$ $,\ 0\Large{)}$","$\Large{(}$ 1 $,\ 0\Large{)}$",keep,,
 241,2,Intercept,64,0,solving_for_the_y-intercept,Solving for the y-intercept,usable,8,0.6879,"The following line passes through point $(-5, 1)$ :
 $y = -\dfrac{1}{5} x + b$
 What is the value of the $y$ -intercept $b$ ?
-$b =$",$b =$ 0,,,
+$b =$",$b =$ 0,keep,,
 242,2,Linear Equations,64,0,linear_equations_1,One-step equations with multiplication,usable,16,0.8609,"Solve for $x$ :
 $8x = 7$
-$x =$",$x =$ 0.875,,,
+$x =$",$x =$ 0.875,keep,,
 243,2,Linear Equations,64,0,linear_equations_2,2-step equations,usable,4,0.7511,"Solve for $x$ :
 $4x + 5 = 7$
-$x =$",$x =$ 0.5,,,
+$x =$",$x =$ 0.5,keep,,
 244,2,Linear Equations,64,0,linear_equations_3,Equations with variables on both sides,usable,4,0.6824,"Solve for $x$ :
 $4x + 5 = 7x + 2$
-$x =$",$x =$ 1,,,
+$x =$",$x =$ 1,keep,,
 245,2,Linear Equations,64,0,linear_equations_4,Solving rational equations 1,usable,4,0.6124,"Solve for $n$ ,
 $
 \dfrac{3n + 7}{n - 3} = 5$
-$n =$",$n =$ 11,,,
-246,2,Slope,64,0,slope_of_a_line,Identifying slope of a line,usable,3,0.6895,"What is the slope of the line through the points $(-9, 7)$ and $(-7, 8)$ ?",0.5,,,
+$n =$",$n =$ 11,drop,,
+246,2,Slope,64,0,slope_of_a_line,Identifying slope of a line,usable,3,0.6895,"What is the slope of the line through the points $(-9, 7)$ and $(-7, 8)$ ?",0.5,keep,,
 247,2,Slope,64,0,recognizing_slope,Recognizing slope of curves,not_autogradable,0,,"A function $f(x)$ is plotted below.
 Highlight an interval where $f^\prime(x) > 0$ .
 $f(x) = x^{3}+4x^{2}-x-4$","graph.slidingWindow.getX()
-var correct = _.reduce(_.range(guess, guess + 1, 0.02",,,
+var correct = _.reduce(_.range(guess, guess + 1, 0.02",drop,,
 248,2,Percent Discount,47,841,discount_tax_and_tip_word_problems,"Discount, tax, and tip word problems",usable,20,0.5489,"Michael buys a basket of oranges on sale for $\$9$ before tax. The sales tax is $15\%$ . What is the total price Michael pays for the basket of oranges?
-$\$\ $",$\$\ $ 10.35,,,
+$\$\ $",$\$\ $ 10.35,keep,,
 249,2,Recognize Linear Pattern,36,7696,arithmetic_sequences_1,Arithmetic sequences 1,usable,4,,"The first four terms of an arithmetic sequence are given:
 $-5,-2,1,4, \ldots$
-What is the fifth term in the sequence?",7,,,
+What is the fifth term in the sequence?",7,keep,,
 250,2,Midpoint,32,490,midpoint_formula,Midpoint formula,usable,8,0.7471,"Point $\blue{A}$ is at $\blue{(-5, -8)}$ and
 point $\green{B}$ is at $\green{(4, 5)}$ .
 What is the midpoint of line segment $\overline{AB}$ ?
-$($ , $)$","$($ -0.5, -1.5 $)$",,,
+$($ , $)$","$($ -0.5, -1.5 $)$",keep,,
 251,2,Midpoint,32,490,midpoint_of_a_segment,Midpoint of a segment,usable,4,0.7179,"$B$ is the midpoint of $\overline{AC}$
 If:
 $\qquad AB = 6x - 1$ and
 $\qquad BC = 2x + 27$
-Find $AC$ .",82,,,
-252,2,Computation with Real Numbers,20,2777,,,no_khan_template,0,,,,,,
+Find $AC$ .",82,keep,,
+252,2,Computation with Real Numbers,20,2777,,,no_khan_template,0,,,,drop,,không tìm thấy template phù hợp trong khan_templates.csv
 253,2,Distributive Property,9,35067,multiplying_expressions_0.5,Multiplying expressions 0.5,usable,4,0.771,"$\left(x + 5\right)^2 = \ ?$
 $x^2 + 10x + 10$
 $x^2 + 10x + 25$
 $x^2 + 25$
-None of the above",$x^2 + 10x + 25$,,,
+None of the above",$x^2 + 10x + 25$,keep,,
 254,2,Distributive Property,9,35067,multiplying_expressions_1,Multiplying expressions 1,usable,4,0.7817,"$\left(5x + 1\right)^2 = \ ?$
 $10x^2 + 10x + 1$
 $10x^2 + 1$
 $25x^2 + 10x + 1$
-None of the above",$25x^2 + 10x + 1$,,,
-255,2,Recognize Quadratic Pattern,8,6,,,no_khan_template,0,,,,,,
-256,2,Finding Slope From Situation,4,8107,,,no_khan_template,0,,,,,,
-257,2,Reading a Ruler or Scale,4,44,measuring_segments,Measuring segments,needs_figure,0,0.7629,What is the length of $\overline{CA}$ ?,3,,,
+None of the above",$25x^2 + 10x + 1$,keep,,
+255,2,Recognize Quadratic Pattern,8,6,,,no_khan_template,0,,,,drop,,không tìm thấy template phù hợp trong khan_templates.csv
+256,2,Finding Slope From Situation,4,8107,,,no_khan_template,0,,,,drop,,"không tìm thấy template phù hợp trong khan_templates.csv (slope_* cho đồ thị hoặc phương trình, không cho tình huống)"
+257,2,Reading a Ruler or Scale,4,44,measuring_segments,Measuring segments,needs_figure,0,0.7629,What is the length of $\overline{CA}$ ?,3,keep,,
 258,2,Quadratic Formula to Solve Quadratic Equation,3,1557,quadratic_equation,Using the quadratic formula,usable,4,0.6251,"$-5x^{2}+5x+1 = 0$
 Solve for $x$ .
 $x =\dfrac{4 \pm \sqrt{66}}{10}$
 $x =\dfrac{-5 \pm 3\sqrt{5}}{-10}$
 $x =\dfrac{-9 \pm \sqrt{241}}{-10}$
 $x =\dfrac{-5 \pm \sqrt{39}}{7}$
-None of the above",$x =\dfrac{-5 \pm 3\sqrt{5}}{-10}$,,,
+None of the above",$x =\dfrac{-5 \pm 3\sqrt{5}}{-10}$,keep,,
 259,2,Quadratic Formula to Solve Quadratic Equation,3,1557,solutions_to_quadratic_equations,Solutions to quadratic equations,usable,4,,"Describe the solutions to the following quadratic equation:
 $9x^{2}-6x+1 = 0$
 One rational solution
 Two rational solutions
 Two irrational solutions
 One complex solution
-Two complex solutions",One rational solution,,,
-260,2,Finding Slope from Ordered Pairs,1,18621,slope_of_a_line,Identifying slope of a line,usable,3,0.6895,"What is the slope of the line through the points $(-9, 7)$ and $(-7, 8)$ ?",0.5,,,
+Two complex solutions",One rational solution,keep,,
+260,2,Finding Slope from Ordered Pairs,1,18621,slope_of_a_line,Identifying slope of a line,usable,3,0.6895,"What is the slope of the line through the points $(-9, 7)$ and $(-7, 8)$ ?",0.5,keep,,
 261,2,Finding y-intercept from Linear Equation,0,21026,solving_for_the_y-intercept,Solving for the y-intercept,usable,8,0.6879,"The following line passes through point $(-5, 1)$ :
 $y = -\dfrac{1}{5} x + b$
 What is the value of the $y$ -intercept $b$ ?
-$b =$",$b =$ 0,,,
+$b =$",$b =$ 0,keep,,
 262,2,Substitution,0,19920,evaluating_expressions_1,Evaluating expressions in one variable,usable,4,0.8128,"Evaluate the following expression when
 $x = 3$ :
-$8$ $x$ ${} - 9$",15,,,
+$8$ $x$ ${} - 9$",15,keep,,
 263,2,Substitution,0,19920,evaluating_expressions_2,Evaluating expressions in 2 variables,usable,4,0.7,"Evaluate the following expression when
 $x = 5$ and
 $y = 1$ .
-$9$ $x$ ${} + 6$ $y$ ${} + 4$",55,,,
+$9$ $x$ ${} + 6$ $y$ ${} + 4$",55,keep,,
 264,2,Substitution,0,19920,plugging_in_values,Equations from tables,needs_figure,0,0.7842,"Some ordered pairs for a linear function of $\pink{x}$ are given in the table below.
-Which equation was used to generate this table?",$y = 2x + 8$,,,
-265,2,Circumference,0,19143,radius_diameter_and_circumference,"Radius, diameter, and circumference",usable,23,0.767,Suppose the radius of a circle is $\color{purple}{2}$ . What is its diameter?,4,,,
+Which equation was used to generate this table?",$y = 2x + 8$,drop,,
+265,2,Circumference,0,19143,radius_diameter_and_circumference,"Radius, diameter, and circumference",usable,23,0.767,Suppose the radius of a circle is $\color{purple}{2}$ . What is its diameter?,4,keep,,đổi drop -> keep khi xem lại đủ các dạng bài của template (bài mẫu trên phiếu chỉ là dạng đầu tiên)
 266,2,Combining Like Terms,0,18212,combining_like_terms_1,Combining like terms,usable,4,0.7325,"Combine the like terms to make a simpler expression:
-$\large{4n+n}$",5n,,,
+$\large{4n+n}$",5n,keep,,
 267,2,Combining Like Terms,0,18212,combining_like_terms_2,Combining like terms with distribution,usable,4,0.6278,"Expand the expression and combine the like terms:
-$\large{4n-9(n-2)}$",-5n+18,,,
+$\large{4n-9(n-2)}$",-5n+18,keep,,
 268,2,Pattern Finding,0,18082,arithmetic_sequences_1,Arithmetic sequences 1,usable,4,,"The first four terms of an arithmetic sequence are given:
 $-5,-2,1,4, \ldots$
-What is the fifth term in the sequence?",7,,,
+What is the fifth term in the sequence?",7,keep,,
 269,2,Pattern Finding,0,18082,arithmetic_sequences_2,Arithmetic sequences 2,usable,4,,"The arithmetic sequence $(a_i)$ is defined by the formula:
 $a_i = -5 + 4(i - 1)$
-What is $a_{10}$ , the tenth term in the sequence?",31,,,
+What is $a_{10}$ , the tenth term in the sequence?",31,keep,,
 270,2,Pattern Finding,0,18082,geometric_sequences_1,Geometric sequences 1,usable,4,,"The first three terms of a geometric sequence are given:
 $-4,-6,-9, \ldots$
-What is the fourth term in the sequence?",-13.5,,,
+What is the fourth term in the sequence?",-13.5,keep,,
 271,2,Pattern Finding,0,18082,geometric_sequences_2,Geometric sequences 2,usable,4,,"The geometric sequence $(a_i)$ is defined by the formula:
 $a_i = -4 \left(\dfrac{3}{2}\right)^{i - 1}$
-What is $a_{2}$ , the second term in the sequence?",-6,,,
+What is $a_{2}$ , the second term in the sequence?",-6,keep,,
 272,2,Write Linear Equation from Slope and y-intercept,0,11897,slope_intercept_form,Slope intercept form,usable,8,0.7225,"A line goes through the following points, and the equation of that line is written in $y = mx + b$ form.
 What is the equation of the line?
 $y = {}$ $x + {}$
@@ -1102,38 +1102,38 @@ $-8$ $9$
 $-5$ $3$
 $-3$ $-1$
 $-2$ $-3$
-$4$ $-15$",$y = {}$ -2 $x + {}$ -7,,,
+$4$ $-15$",$y = {}$ -2 $x + {}$ -7,keep,,
 273,2,Point Plotting,0,10383,graphing_points,Graphing points,not_autogradable,0,0.9089,Plot a point on the origin by clicking on the graph.,"graph.guess
 if (guess[0] === -1 && guess[1] === -1) {
-return ""You need to click ",,,
+return ""You need to click ",keep,,
 274,2,Point Plotting,0,10383,graphing_points_2,Graphing points and naming quadrants,not_autogradable,0,0.8054,"Plot $(-5, 5)$ and select the quadrant in which the point lies.
 The graph is part of your answer.","Graph the point then select the quadrant that contains it.
 Quadrant:
 QII
-graph.m",,,
+graph.m",keep,,
 275,2,Percent Increase or Decrease,0,8681,discount_tax_and_tip_word_problems,"Discount, tax, and tip word problems",usable,20,0.5489,"Michael buys a basket of oranges on sale for $\$9$ before tax. The sales tax is $15\%$ . What is the total price Michael pays for the basket of oranges?
-$\$\ $",$\$\ $ 10.35,,,
+$\$\ $",$\$\ $ 10.35,drop,,
 276,2,Percent Increase or Decrease,0,8681,markup_and_commission_word_problems,Markup and commission word problems,usable,12,0.6024,"Michael's Furniture Store buys a chair
 at a wholesale price of $$103.00$ .
 If the markup rate at Michael's Furniture Store is $70\%$ ,
 what is the markup for the chair?
-$\$\ $",$\$\ $ 72.1,,,
+$\$\ $",$\$\ $ 72.1,keep,,
 277,2,Multiplying non Monomial Polynomials,0,6732,multiplying_polynomials,Multiplying polynomials,usable,4,0.7724,"Expand the expression.
-$\large{(-3n^{4}-2n^{2})(-7n^{3}-5n)}$",21n^(7)+29n^(5)+10n^(3),,,
+$\large{(-3n^{4}-2n^{2})(-7n^{3}-5n)}$",21n^(7)+29n^(5)+10n^(3),keep,,
 278,2,Multiplying non Monomial Polynomials,0,6732,multiplying_polynomials_0.5,Multiplying polynomials 0.5,usable,12,,"Expand the expression.
-$-(2n-7)$",(-1 * 2)n + (-1 * -7),,,
+$-(2n-7)$",(-1 * 2)n + (-1 * -7),drop,,
 279,2,Volume Prism,0,6542,volume_1,Volume 1,usable,4,,"The volume of this rectangular prism is $105$ cubic units.
 What is the number labeled $x$ below?
-cm",5 cm,,,
+cm",5 cm,keep,,
 280,2,Volume Prism,0,6542,volume_with_fractions,Volume 2,usable,4,,"The volume of this box is $\dfrac{5}{6} \text{ cm}^3$ .
 Find $x$ .
 $x = $
 $\text{ cm}$","$x = $
 0.3333333333333333
-$\text{ cm}$",,,
+$\text{ cm}$",keep,,
 281,2,Making a Table from an Equation,0,6455,plugging_in_values,Equations from tables,needs_figure,0,0.7842,"Some ordered pairs for a linear function of $\pink{x}$ are given in the table below.
-Which equation was used to generate this table?",$y = 2x + 8$,,,
-282,2,Prime Factor,0,5744,prime_factorization,Prime factorization,usable,8,0.7379,What is the prime factorization of $17$ ?,17,,,
+Which equation was used to generate this table?",$y = 2x + 8$,keep,,
+282,2,Prime Factor,0,5744,prime_factorization,Prime factorization,usable,8,0.7379,What is the prime factorization of $17$ ?,17,keep,,
 283,2,Prime Factor,0,5744,the_fundamental_theorem_of_arithmetic,The fundamental theorem of arithmetic,not_autogradable,0,0.8839,"Find the prime factorization of $22$ .
 Use the arrows to change the exponent on each prime number below to see if you can find the
 prime factorization.
@@ -1142,27 +1142,27 @@ if (guess === 1) {
 return """";
 }
 return guess === NUMBER;
-",,,
+",keep,,
 284,2,Properties and Classification Triangles,0,4970,triangle_types,Triangle types,needs_figure,0,0.7986,"Is this triangle equilateral, isosceles, and/or scalene?","Select all that apply.
 true
 Equilateral
 true
 Isosceles
 false
-Scalene",,,
-285,2,Properties and Classification Triangles,0,4970,triangle_types_0.5,Triangle types,needs_figure,0,,"Is this triangle acute, obtuse or right triangle?",Right,,,
-286,2,Division Whole Numbers,0,3866,division_0.5,Basic division,usable,4,0.9229,$\Huge\blue{15}\div\green{5}=\pink{{?}}$,3,,,
-287,2,Division Whole Numbers,0,3866,division_1,,needs_figure,0,0.9488,,,,,
-288,2,Division Whole Numbers,0,3866,division_1.5,Multi-digit division without remainders,usable,4,0.9452,$\Large{615 \div 3 = ?}$,205,,,
+Scalene",keep,,
+285,2,Properties and Classification Triangles,0,4970,triangle_types_0.5,Triangle types,needs_figure,0,,"Is this triangle acute, obtuse or right triangle?",Right,keep,,
+286,2,Division Whole Numbers,0,3866,division_0.5,Basic division,usable,4,0.9229,$\Huge\blue{15}\div\green{5}=\pink{{?}}$,3,keep,,
+287,2,Division Whole Numbers,0,3866,division_1,,needs_figure,0,0.9488,,,drop,,
+288,2,Division Whole Numbers,0,3866,division_1.5,Multi-digit division without remainders,usable,4,0.9452,$\Large{615 \div 3 = ?}$,205,keep,,
 289,2,Division Whole Numbers,0,3866,division_2,Division with remainders,usable,4,0.8974,"$\Large{610 \div 3 = ?}$
 Write your answer as a whole number and remainder.
 $\text{ R }$","203 $\text{ R }$
-1",,,
-290,2,Division Whole Numbers,0,3866,division_3,Division by 2 digits,usable,4,0.8075,$\Large{589 \div 31 = ?}$,19,,,
+1",keep,,
+290,2,Division Whole Numbers,0,3866,division_3,Division by 2 digits,usable,4,0.8075,$\Large{589 \div 31 = ?}$,19,keep,,
 291,2,Division Whole Numbers,0,3866,division_4,Multi-digit division,usable,4,0.8219,"$\Large{5806 \div 340 = ?}$
 Write your answer as a whole number and remainder.
 $\text{ R }$","17 $\text{ R }$
-26",,,
+26",keep,,
 292,2,Interpreting Coordinate Graphs,0,3512,identifying_points_1,Points on the coordinate plane,needs_figure,0,0.8033,"Consider the following coordinate pairs:
 $(-3, -2)\qquad(6, -6)\qquad(6, -2)\qquad(1, -8)\qquad(-5, 4)$
 Which of those pairs is not graphed below?
@@ -1170,26 +1170,26 @@ $(-3, -2)$
 $(6, -6)$
 $(6, -2)$
 $(1, -8)$
-$(-5, 4)$","$(6, -6)$",,,
+$(-5, 4)$","$(6, -6)$",keep,,
 293,2,Interpreting Coordinate Graphs,0,3512,identifying_points_2,Ordered pair solutions to linear equations,usable,4,0.6974,"Which of the following ordered pairs represents a solution to the equation below?
 $y = -2x+1$
 $(-2, 3)$
 $(-1, 5)$
 $(0, 1)$
 $(1, 1)$
-$(2, -5)$","$(0, 1)$",,,
+$(2, -5)$","$(0, 1)$",drop,,
 294,2,Parallel and Perpendicular Lines,0,3262,line_relationships,Equations of parallel and perpendicular lines,usable,24,0.6511,"Find the slope and y-intercept of the line that is $\green{\text{perpendicular}}$ to $\blue{y =
 -\dfrac{2}{3}
 x
 + 1}$ and passes through the point $\red{(-5, -3)}$ .
 $m$ =
 $b$ =","$m$ = 1.5
-$b$ = 4.5",,,
+$b$ = 4.5",keep,,
 295,2,"Expanded, Standard and Word Notation",0,2942,place_value,Place value,usable,8,0.934,"What is the place value of $8$ in $5827$ ?
 Ones
 Tens
 Hundreds
-Thousands",Hundreds,,,
+Thousands",Hundreds,keep,,
 296,2,"Expanded, Standard and Word Notation",0,2942,understanding_decimals_place_value,Money and decimal place value intuition,not_autogradable,0,0.9087,"Choose the right number of each value to make
 $\Huge{
 \pink{3}
@@ -1265,4 +1265,4 @@ Hundredths
 0.01
 0.","digitsToInteger([
 $( ""#problemarea .thou-selected"" ).length,
-$( ""#problemarea .h",,,
+$( ""#problemarea .h",keep,,

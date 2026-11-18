@@ -45,25 +45,39 @@ gần trùng chỉ chạy trên GSM8K và MATH; với Khan thì không, vì các
 
 ## Kỹ năng
 
-- **Khan:** tra ngược từ điển ASSISTments → Khan (hiện dùng bản nháp `assistments_to_khan_draft.csv`). Một template có
-  thể thuộc nhiều kỹ năng: `skill_tags` là danh sách, còn `skill_tag` là phần tử đầu theo thứ tự chữ cái. Template không
-  có trong từ điển dùng `junyi:<topic>`, giống quy tắc của adapter Junyi, để chunk và lượt làm Junyi có cùng tag. Nếu
-  vẫn không có, dùng quy tắc văn bản; cuối cùng là `khan:<slug>`.
-  Kết quả: từ điển 1.195 bài, Junyi topic 586, quy tắc 205, `khan:<slug>` 78 (10 template, sẽ rà ở P1-05).
+- **Khan:** tra ngược từ điển kỹ năng v1 `lmsrag/data/mappings/skill_map_v1.csv` (P1-05, cột `canonical_tag`). Một
+  template có thể thuộc nhiều kỹ năng: `skill_tags` là danh sách, còn `skill_tag` là phần tử đầu theo thứ tự chữ cái.
+  Template không có trong từ điển dùng `junyi:<topic>`, giống quy tắc của adapter Junyi, để chunk và lượt làm Junyi có
+  cùng tag. Nếu vẫn không có, dùng quy tắc văn bản; cuối cùng là `khan:<slug>`. Từ điển v1 cũng liệt kê 32 template đã
+  rà là không thuộc kỹ năng ASSISTments nào (ma trận, hóa học, lượng giác, phân thức đại số…), với tag `khan:<slug>`.
+  Kết quả: từ điển 1.338 bài, Junyi topic 534, `khan:<slug>` 184 (`template_only`), quy tắc 8. 8 bài quy tắc và một
+  phần `template_only` thuộc 3 template mà người rà đã bỏ khỏi kỹ năng duy nhất của chúng (`comparing_whole_numbers`,
+  `comparing_whole_numbers_2`, `multiplying_polynomials_0.5`).
+  Bản nháp (`assistments_to_khan_draft.csv`) cho: từ điển 1.195, Junyi topic 586, quy tắc 205, `khan:<slug>` 78.
 - **GSM8K và MATH:** `SkillMapper.tag_text`, như pipeline cũ.
-- Có 105 tag có chunk (65 tag chuẩn); 54 tag có chunk ở ít nhất 3 mức khó (40 tag chuẩn).
+- Có 139 tag có chunk (80 tag chuẩn); 50 tag có chunk ở ít nhất 3 mức khó (38 tag chuẩn). Số tag tăng và số tag đủ 3
+  mức giảm so với bản nháp (105/65, 54/40) vì các template trước đây bị quy tắc gắn chung vào một tag nay mỗi template
+  là một tag `khan:<slug>`.
 
 **Độ phủ ASSISTments** (mẫu số: các lượt sau làm sạch, trước bước lọc kỹ năng; bảng `a1_skill_counts_*.csv`):
 
 | | Kỹ năng có ít nhất một template Khan dùng được | Tag của kỹ năng có ít nhất một chunk (mọi nguồn) |
 |---|---:|---:|
-| ASSISTments 2009 | 77,6% | 80,9% |
-| ASSISTments 2012 | 84,1% | 82,4% |
+| ASSISTments 2009, từ điển v1 | **77,1%** | **81,6%** |
+| ASSISTments 2012, từ điển v1 | **82,4%** | **87,1%** |
+| ASSISTments 2009, bản nháp | 80,0% | 80,9% |
+| ASSISTments 2012, bản nháp | 84,1% | 82,4% |
 
-Số kỳ vọng ghi trong kế hoạch là 80,4% (2009) và 84,1% (2012). Con số 2012 khớp. Với 2009, đã thử các mẫu số khác
-(bản gốc 73,5%, trước loại trùng 73,2%, sau loại trùng 78,1%, theo sự kiện 86,4%) nhưng không mẫu số nào cho 80,4%.
-Việc siết bộ lọc hình sau đợt khảo sát (`MANUAL_FIGURE`, 9 template hình học) chỉ giải thích được 0,8 điểm. Bảng
-dùng định nghĩa ghi trên. Con số sẽ thay đổi sau khi có từ điển v1.
+Tên kỹ năng được so không phân biệt hoa thường và khoảng trắng: log 2009 có tên như `Circumference ` (dấu cách cuối).
+Lần đo đầu ở P1-04 so chính xác từng ký tự nên cho 77,6% với bản nháp; số đúng là 80,0%, sát số kỳ vọng 80,4% của kế
+hoạch. 0,4 điểm còn lại có thể đến từ việc siết bộ lọc hình (`MANUAL_FIGURE`, 9 template hình học) sau đợt khảo sát,
+vốn ảnh hưởng tới 0,8 điểm; chưa tách riêng được.
+
+Cột thứ nhất giảm so với bản nháp vì người rà bỏ các cặp mà template không luyện đúng kỹ năng, khiến 5 kỹ năng không
+còn template dùng được: Ordering Integers (1,19% lượt 2009 / 0,80% lượt 2012), Unit Rate (1,06% / 0,97%), Estimation
+(0,56% / 0,11%), Rate (0,03% / 0,08%) và Interpreting Coordinate Graphs (0,01% / 0,14%). Bốn kỹ năng mới của 2012
+(phiếu B) thêm 0,37% lượt 2012. Cột thứ hai tăng vì adapter giờ lấy tag từ từ điển v1, nên các kỹ năng có template
+đúng nhưng `SkillMapper` không có quy tắc (ví dụ Substitution, Combining Like Terms) có tag và có chunk.
 
 ## Độ khó (`lmsrag/corpus/difficulty.py`)
 

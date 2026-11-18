@@ -105,12 +105,13 @@ def main() -> int:
     topics = set(pd.read_csv(KHAN / "junyi_exercise_stats_survey.csv")["exercise"])
     untagged = [s for s in usable if s not in tagged and s not in topics]
     chunks_path = REPO / "lmsrag" / "artifacts" / "v2" / "corpus_chunks.jsonl"
-    rule_tagged = set()
+    rule_tag: dict[str, str] = {}
     if chunks_path.is_file():
         ch = pd.read_json(chunks_path, lines=True)
-        rule_tagged = set(ch.loc[~ch["skill_tag"].str.startswith("khan:") & ch["khan_slug"].notna(), "khan_slug"])
+        ruled = ch[~ch["skill_tag"].str.startswith("khan:") & ch["khan_slug"].notna()]
+        rule_tag = ruled.groupby("khan_slug")["skill_tag"].agg(lambda t: t.mode().iloc[0]).to_dict()
     c = pd.DataFrame({"khan_slug": untagged})
-    c["tag_now"] = ["rule" if s in rule_tagged else f"khan:{s}" for s in c["khan_slug"]]
+    c["tag_now"] = [f"rule:{rule_tag[s]}" if s in rule_tag else f"khan:{s}" for s in c["khan_slug"]]
     c["template_title"] = c["khan_slug"].map(title)
     c["usable_problems"] = c["khan_slug"].map(templates["usable_problems"]).astype(int)
     c["sample_question"] = c["khan_slug"].map(lambda s: sample.get(s, ("", ""))[0])
@@ -120,8 +121,12 @@ def main() -> int:
     c["decision"], c["assistments_skill"], c["note"] = "", "", ""
 
     for name, frame in (("A_draft_pairs", a), ("B_new_2012_skills", b), ("C_untagged_templates", c)):
-        frame.to_csv(OUT / f"a4_review_{name}.csv", index=False, encoding="utf-8-sig")
-        print(f"a4_review_{name}.csv: {len(frame)} rows")
+        path = OUT / f"a4_review_{name}.csv"
+        if path.is_file() and pd.read_csv(path, encoding="utf-8-sig", dtype=str)["decision"].notna().any():
+            print(f"{path.name}: already has decisions, not overwritten")
+            continue
+        frame.to_csv(path, index=False, encoding="utf-8-sig")
+        print(f"{path.name}: {len(frame)} rows")
     return 0
 
 

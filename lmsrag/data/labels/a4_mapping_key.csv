@@ -1,0 +1,151 @@
+﻿item,pair_type,method,skill,canonical_tag,khan_slug,chunk_id,doc_id,weight
+m001,khan_template,manual_review,Distributive Property,Distributive-Property,multiplying_expressions_1,,khan:multiplying_expressions_1:0:37,17538.0
+m002,khan_template,manual_review,Distributive Property,Distributive-Property,multiplying_expressions_0.5,,khan:multiplying_expressions_0.5:0:74,17538.0
+m003,rule_chunk,rule_text,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,,math:test_algebra_1248#0,math:test_algebra_1248,114593.0
+m004,khan_template,manual_review,Probability of Two Distinct Events,Probability-of-Two-Distinct-Events,dependent_probability,,khan:dependent_probability:0:148,5836.0
+m005,khan_template,manual_review,Divisibility Rules,Divisibility-Rules,divisibility,,khan:divisibility:0:74,15152.33
+m006,rule_chunk,rule_text,Exponents,Exponents,,math:test_prealgebra_1781#0,math:test_prealgebra_1781,48319.0
+m007,khan_template,manual_review,Median,Median,mean_median_and_mode,,khan:mean_median_and_mode:0:148,24505.0
+m008,rule_chunk,rule_text,Equation Solving Two or Fewer Steps,Equation-Solving-Two-or-Fewer-Steps,,math:test_algebra_1937#0,math:test_algebra_1937,194802.0
+m009,khan_template,manual_review,Write Linear Equation from Ordered Pairs,Write-Linear-Equation-from-Ordered-Pairs,converting_between_point_slope_and_slope_intercept,,khan:converting_between_point_slope_and_slope_intercept:0:74,22812.0
+m010,khan_template,manual_review,Multiplication Fractions,Multiplication-Fractions,multiplying_fractions_by_integers,,khan:multiplying_fractions_by_integers:0:148,17664.25
+m011,rule_chunk,rule_text,Divisibility Rules,Divisibility-Rules,,math:test_prealgebra_1136#0,math:test_prealgebra_1136,45457.0
+m012,rule_chunk,rule_text,Exponents,Exponents,,math:test_prealgebra_2084#0,math:test_prealgebra_2084,48319.0
+m013,khan_template,manual_review,Division Fractions,Division-Fractions,dividing_fractions_word_problems_2,,khan:dividing_fractions_word_problems_2:4:115,10926.17
+m014,rule_chunk,rule_text,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,,math:test_prealgebra_1466#0,math:test_prealgebra_1466,152168.0
+m015,rule_chunk,rule_text,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,,math:test_algebra_1999#0,math:test_algebra_1999,152168.0
+m016,rule_chunk,rule_text,Addition and Subtraction Integers,Addition-and-Subtraction-Integers,,math:test_algebra_969#0,math:test_algebra_969,154833.0
+m017,khan_template,manual_review,Multiplication and Division Positive Decimals,Multiplication-and-Division-Positive-Decimals,dividing_decimals_4,,khan:dividing_decimals_4:0:74,8718.75
+m018,khan_template,manual_review,Volume Rectangular Prism,Volume-Rectangular-Prism,volume_with_unit_cubes_2,,khan:volume_with_unit_cubes_2:0:74,3555.0
+m019,khan_template,manual_review,Prime Factor,Prime-Factor,prime_factorization,,khan:prime_factorization:0:74,5744.0
+m020,khan_template,manual_review,Ordering Positive Decimals,Ordering-Positive-Decimals,comparing_decimals_1,,khan:comparing_decimals_1:0:37,18158.5
+m021,khan_template,manual_review,Calculations with Similar Figures,Calculations-with-Similar-Figures,solving_similar_triangles_2,,khan:solving_similar_triangles_2:1:112,20107.0
+m022,rule_chunk,rule_text,Pythagorean Theorem,Pythagorean-Theorem,,math:test_prealgebra_99#0,math:test_prealgebra_99,35961.0
+m023,khan_template,manual_review,Finding Slope from Ordered Pairs,Finding-Slope-From-Equation,slope_of_a_line,,khan:slope_of_a_line:0:74,18622.0
+m024,khan_template,manual_review,Pattern Finding,Pattern-Finding,geometric_sequences_2,,khan:geometric_sequences_2:0:37,5804.25
+m025,rule_chunk,rule_text,Finding Slope From Equation,Finding-Slope-From-Equation,,math:test_algebra_2330#0,math:test_algebra_2330,47677.0
+m026,khan_template,manual_review,Equivalent Fractions,Equivalent-Fractions,equivalent_fractions_2,,khan:equivalent_fractions_2:3:114,14979.5
+m027,khan_template,manual_review,Ordering Fractions,Ordering-Fractions,comparing_fractions_1,,khan:comparing_fractions_1:1:75,6102.4
+m028,khan_template,manual_review,Area Rectangle,Area-Rectangle,area_of_squares_and_rectangles,,khan:area_of_squares_and_rectangles:2:76,14271.0
+m029,khan_template,manual_review,Exponents,Exponents,exponents_1.5,,khan:exponents_1.5:2:39,12079.75
+m030,khan_template,manual_review,Addition and Subtraction Integers,Addition-and-Subtraction-Integers,adding_and_subtracting_negative_numbers,,khan:adding_and_subtracting_negative_numbers:0:148,51611.0
+m031,khan_template,manual_review,Addition and Subtraction Positive Decimals,Addition-and-Subtraction-Positive-Decimals,subtracting_decimals,,khan:subtracting_decimals:0:111,14477.25
+m032,khan_template,manual_review,Multiplication and Division Positive Decimals,Multiplication-and-Division-Positive-Decimals,multiplying_decimals_1,,khan:multiplying_decimals_1:0:74,8718.75
+m033,khan_template,manual_review,Absolute Value,Absolute-Value,absolute_value,,khan:absolute_value:0:111,9572.0
+m034,khan_template,manual_review,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,adding_subtracting_mixed_numbers_1,,khan:adding_subtracting_mixed_numbers_1:0:74,19021.0
+m035,rule_chunk,rule_text,Equation Solving Two or Fewer Steps,Equation-Solving-Two-or-Fewer-Steps,,math:test_prealgebra_2014#0,math:test_prealgebra_2014,194802.0
+m036,rule_chunk,rule_text,Equation Solving Two or Fewer Steps,Equation-Solving-Two-or-Fewer-Steps,,math:test_prealgebra_1121#0,math:test_prealgebra_1121,194802.0
+m037,khan_template,manual_review,Exponents,Exponents,exponents_1,,khan:exponents_1:0:74,12079.75
+m038,rule_chunk,rule_text,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,,math:test_prealgebra_1670#0,math:test_prealgebra_1670,114593.0
+m039,khan_template,manual_review,Scientific Notation,Scientific-Notation,multiplying_and_dividing_scientific_notation,,khan:multiplying_and_dividing_scientific_notation:0:37,10132.0
+m040,khan_template,manual_add,Simplifying Expressions positive exponents,Algebraic-Simplification,simplifying_rational_expressions_1,,khan:simplifying_rational_expressions_1:0:37,9216.0
+m041,khan_template,manual_review,Midpoint,Midpoint,midpoint_formula,,khan:midpoint_formula:1:112,261.0
+m042,khan_template,manual_add,Probability of a Single Event,Probability-of-a-Single-Event,probability_with_perm_comb,,khan:probability_with_perm_comb:0:148,11492.0
+m043,rule_chunk,rule_text,Finding Percents,Finding-Percents,,gsm8k:train:6830#0,gsm8k:train:6830,32962.0
+m044,rule_chunk,rule_text,Circumference,Circumference,,math:test_prealgebra_2051#0,math:test_prealgebra_2051,20897.0
+m045,rule_chunk,rule_text,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,,math:test_number_theory_782#0,math:test_number_theory_782,114593.0
+m046,khan_template,manual_review,Division Fractions,Division-Fractions,dividing_fractions_1.5,,khan:dividing_fractions_1.5:0:148,10926.17
+m047,khan_template,manual_review,Area Irregular Figure,Area-Irregular-Figure,shaded_areas,,khan:shaded_areas:0:37,9621.0
+m048,khan_template,manual_review,Proportion,Proportion,ratio_word_problems,,khan:ratio_word_problems:0:148,12886.4
+m049,khan_template,manual_review,Multiplying non Monomial Polynomials,Multiplying-non-Monomial-Polynomials,multiplying_polynomials,,khan:multiplying_polynomials:0:37,6732.0
+m050,khan_template,manual_review,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,fractions_as_division_by_a_multiple_of_10,,khan:fractions_as_division_by_a_multiple_of_10:1:149,10417.55
+m051,khan_template,manual_review,Proportion,Proportion,proportions_2,,khan:proportions_2:1:75,12886.4
+m052,khan_template,manual_review,Algebraic Solving,Solving-for-a-variable,solving_for_a_variable,,khan:solving_for_a_variable:2:113,3246.0
+m053,rule_chunk,rule_text,Circumference,Circumference,,math:test_prealgebra_1240#0,math:test_prealgebra_1240,20897.0
+m054,khan_template,manual_review,Addition and Subtraction Positive Decimals,Addition-and-Subtraction-Positive-Decimals,subtracting_decimals_0.5,,khan:subtracting_decimals_0.5:0:111,14477.25
+m055,rule_chunk,rule_text,Equation Solving More Than Two Steps,Equation-Solving-More-Than-Two-Steps,,math:test_algebra_2453#0,math:test_algebra_2453,55979.0
+m056,rule_chunk,rule_text,Order of Operations All,Order-of-Operations-All,,math:test_algebra_1438#0,math:test_algebra_1438,87796.0
+m057,khan_template,manual_review,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,converting_repeating_decimals_to_fractions_1,,khan:converting_repeating_decimals_to_fractions_1:1:112,10417.55
+m058,khan_template,manual_review,Divisibility Rules,Divisibility-Rules,divisibility_tests,,khan:divisibility_tests:0:148,15152.33
+m059,khan_template,manual_review,Equation Solving More Than Two Steps,Equation-Solving-More-Than-Two-Steps,linear_equations_3,,khan:linear_equations_3:0:37,18659.67
+m060,khan_template,manual_review,Percent Discount,Percent-Discount,discount_tax_and_tip_word_problems,,khan:discount_tax_and_tip_word_problems:0:74,888.0
+m061,khan_template,manual_review,Square Root,Square-Root,square_roots,,khan:square_roots:0:148,13918.5
+m062,rule_chunk,rule_text,Write Linear Equation from Ordered Pairs,Write-Linear-Equation-from-Ordered-Pairs,,math:test_algebra_2701#0,math:test_algebra_2701,45146.0
+m063,khan_template,manual_review,Combining Like Terms,Combining-Like-Terms,combining_like_terms_2,,khan:combining_like_terms_2:0:37,9106.0
+m064,rule_chunk,rule_text,Multiplication Fractions,Multiplication-Fractions,,gsm8k:train:4971#0,gsm8k:train:4971,70657.0
+m065,khan_template,manual_review,Finding Percents,Finding-Percents,finding_percents,,khan:finding_percents:1:38,32962.0
+m066,khan_template,manual_review,Area Circle,Area-Circle,area_of_a_circle,,khan:area_of_a_circle:1:149,8641.5
+m067,khan_template,manual_review,Addition and Subtraction Integers,Addition-and-Subtraction-Integers,integer_sums,,khan:integer_sums:0:148,51611.0
+m068,khan_template,manual_review,"Order of Operations +,-,/,* () positive reals",Order-of-Operations-All,order_of_operations,,khan:order_of_operations:1:75,34967.0
+m069,khan_template,manual_review,Order of Operations All,Order-of-Operations-All,order_of_operations_2,,khan:order_of_operations_2:0:148,26414.5
+m070,khan_template,manual_review,Divisibility Rules,Divisibility-Rules,divisibility_0.5,,khan:divisibility_0.5:0:37,15152.33
+m071,rule_chunk,rule_text,Mean,Mean,,gsm8k:test:129#0,gsm8k:test:129,22883.0
+m072,khan_template,manual_add,Addition Whole Numbers,Addition-Whole-Numbers,making_a_decade,,khan:making_a_decade:0:74,3652.67
+m073,khan_template,manual_review,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,adding_fractions,,khan:adding_fractions:0:148,19021.0
+m074,khan_template,manual_review,Addition and Subtraction Positive Decimals,Addition-and-Subtraction-Positive-Decimals,subtracting_decimals_2,,khan:subtracting_decimals_2:0:111,14477.25
+m075,rule_chunk,rule_text,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,,math:test_number_theory_209#0,math:test_number_theory_209,152168.0
+m076,khan_template,manual_review,Combining Like Terms,Combining-Like-Terms,combining_like_terms_1,,khan:combining_like_terms_1:0:148,9106.0
+m077,khan_template,manual_review,Multiplication and Division Positive Decimals,Multiplication-and-Division-Positive-Decimals,dividing_decimals_3,,khan:dividing_decimals_3:0:74,8718.75
+m078,rule_chunk,rule_text,Equation Solving Two or Fewer Steps,Equation-Solving-Two-or-Fewer-Steps,,math:test_prealgebra_2002#0,math:test_prealgebra_2002,194802.0
+m079,rule_chunk,rule_text,Percent Of,Percent-Of,,gsm8k:train:1988#0,gsm8k:train:1988,33371.0
+m080,rule_chunk,rule_text,Exponents,Exponents,,math:test_algebra_2307#0,math:test_algebra_2307,48319.0
+m081,khan_template,manual_review,Multiplication Fractions,Multiplication-Fractions,multiplying_fractions_0.5,,khan:multiplying_fractions_0.5:0:74,17664.25
+m082,khan_template,manual_review,Equation Solving Two or Fewer Steps,Equation-Solving-Two-or-Fewer-Steps,linear_equations_1,,khan:linear_equations_1:0:37,64934.0
+m083,khan_template,manual_review,Ordering Positive Decimals,Ordering-Positive-Decimals,comparing_decimals_2,,khan:comparing_decimals_2:0:111,18158.5
+m084,rule_chunk,rule_text,Simplifying Expressions positive exponents,Algebraic-Simplification,,math:test_algebra_1888#0,math:test_algebra_1888,27997.0
+m085,khan_template,manual_review,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,adding_subtracting_mixed_numbers_0.5,,khan:adding_subtracting_mixed_numbers_0.5:0:74,19021.0
+m086,khan_template,manual_review,Equation Solving Two or Fewer Steps,Equation-Solving-Two-or-Fewer-Steps,one_step_equations,,khan:one_step_equations:0:111,64934.0
+m087,rule_chunk,rule_text,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,,math:test_algebra_2735#0,math:test_algebra_2735,152168.0
+m088,rule_chunk,rule_text,Exponents,Exponents,,math:test_algebra_722#0,math:test_algebra_722,48319.0
+m089,khan_template,manual_review,Complementary and Supplementary Angles,Complementary-and-Supplementary-Angles,complementary_and_supplementary_angles,,khan:complementary_and_supplementary_angles:1:112,27194.0
+m090,rule_chunk,rule_text,Multiplication Fractions,Multiplication-Fractions,,gsm8k:train:5297#0,gsm8k:train:5297,70657.0
+m091,rule_chunk,rule_text,Division Fractions,Division-Fractions,,math:test_prealgebra_1812#0,math:test_prealgebra_1812,65557.0
+m092,rule_chunk,rule_text,Rounding,Rounding,,gsm8k:train:1842#0,gsm8k:train:1842,34531.0
+m093,khan_template,manual_review,Subtraction Whole Numbers,Subtraction-Whole-Numbers,subtraction_within_100,,khan:subtraction_within_100:0:111,5346.5
+m094,khan_template,manual_review,Solving for a variable,Solving-for-a-variable,solving_for_a_variable,,khan:solving_for_a_variable:1:112,26056.0
+m095,rule_chunk,rule_text,Rounding,Rounding,,math:test_prealgebra_1858#0,math:test_prealgebra_1858,34531.0
+m096,khan_template,manual_review,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,subtracting_fractions_with_common_denominators,,khan:subtracting_fractions_with_common_denominators:0:111,19021.0
+m097,khan_template,manual_review,D.4.8-understanding-concept-of-probabilities,Probability-of-a-Single-Event,probability_1,,khan:probability_1:0:37,2160.0
+m098,khan_template,manual_review,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,subtracting_fractions,,khan:subtracting_fractions:0:74,19021.0
+m099,khan_template,manual_review,Addition and Subtraction Integers,Addition-and-Subtraction-Integers,adding_negative_numbers,,khan:adding_negative_numbers:0:37,51611.0
+m100,khan_template,manual_review,Rounding,Rounding,rounding_numbers,,khan:rounding_numbers:1:38,17265.5
+m101,khan_template,manual_review,Percent Of,Percent-Of,finding_percents,,khan:finding_percents:0:111,16326.5
+m102,khan_template,manual_review,Area Parallelogram,Area-Parallelogram,area_of_parallelograms,,khan:area_of_parallelograms:0:74,10058.0
+m103,khan_template,manual_review,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,converting_repeating_decimals_to_fractions_2,,khan:converting_repeating_decimals_to_fractions_2:3:77,10417.55
+m104,khan_template,manual_review,Ordering Fractions,Ordering-Fractions,comparing_fractions_with_the_same_numerator,,khan:comparing_fractions_with_the_same_numerator:1:75,6102.4
+m105,khan_template,manual_review,Multiplication Fractions,Multiplication-Fractions,multiplying_fractions,,khan:multiplying_fractions:0:111,17664.25
+m106,khan_template,manual_review,Finding y-intercept from Linear Equation,Finding-y-intercept-from-Linear-Equation,solving_for_the_y-intercept,,khan:solving_for_the_y-intercept:1:38,21026.0
+m107,khan_template,manual_review,Multiplication and Division Positive Decimals,Multiplication-and-Division-Positive-Decimals,dividing_decimals_0.5,,khan:dividing_decimals_0.5:0:111,8718.75
+m108,khan_template,manual_review,Rounding,Rounding,rounding_whole_numbers,,khan:rounding_whole_numbers:0:111,17265.5
+m109,khan_template,manual_review,Subtraction Whole Numbers,Subtraction-Whole-Numbers,subtraction_within_1000,,khan:subtraction_within_1000:0:148,5346.5
+m110,rule_chunk,rule_text,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,,math:test_algebra_827#0,math:test_algebra_827,152168.0
+m111,khan_template,rule_confirmed,Division Fractions,Division-Fractions,dividing_rational_numbers,,khan:dividing_rational_numbers:0:111,10926.17
+m112,rule_chunk,rule_text,Proportion,Proportion,,math:test_algebra_1049#0,math:test_algebra_1049,64432.0
+m113,khan_template,manual_review,Perimeter of a Polygon,Perimeter-of-a-Polygon,perimeter_of_squares_and_rectangles,,khan:perimeter_of_squares_and_rectangles:2:150,15674.0
+m114,khan_template,manual_review,Proportion,Proportion,expressing_ratios_as_fractions,,khan:expressing_ratios_as_fractions:0:111,12886.4
+m115,khan_template,manual_review,Simplifying Expressions positive exponents,Algebraic-Simplification,simplifying_expressions_with_exponents,,khan:simplifying_expressions_with_exponents:1:112,9216.0
+m116,khan_template,manual_review,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,converting_fractions_to_decimals,,khan:converting_fractions_to_decimals:0:74,10417.55
+m117,khan_template,manual_review,Least Common Multiple,Least-Common-Multiple,least_common_multiple,,khan:least_common_multiple:0:111,32902.0
+m118,rule_chunk,rule_text,Order of Operations All,Order-of-Operations-All,,math:test_prealgebra_1510#0,math:test_prealgebra_1510,87796.0
+m119,rule_chunk,rule_text,Percent Of,Percent-Of,,gsm8k:train:1935#0,gsm8k:train:1935,33371.0
+m120,rule_chunk,rule_text,Square Root,Square-Root,,math:test_algebra_1303#0,math:test_algebra_1303,27837.0
+m121,rule_chunk,rule_text,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,,math:test_algebra_462#0,math:test_algebra_462,152168.0
+m122,khan_template,manual_review,Equation Solving Two or Fewer Steps,Equation-Solving-Two-or-Fewer-Steps,linear_equations_2,,khan:linear_equations_2:0:37,64934.0
+m123,rule_chunk,rule_text,Percent Of,Percent-Of,,gsm8k:train:1395#0,gsm8k:train:1395,33371.0
+m124,khan_template,manual_review,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,converting_fractions_to_decimals_0.5,,khan:converting_fractions_to_decimals_0.5:0:111,10417.55
+m125,khan_template,manual_review,Proportion,Proportion,writing_proportions,,khan:writing_proportions:0:148,12886.4
+m126,rule_chunk,rule_text,Equation Solving More Than Two Steps,Equation-Solving-More-Than-Two-Steps,,math:test_algebra_1220#0,math:test_algebra_1220,55979.0
+m127,khan_template,manual_review,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,converting_decimals_to_percents,,khan:converting_decimals_to_percents:0:37,10417.55
+m128,khan_template,manual_review,Order of Operations All,Order-of-Operations-All,order_of_operations,,khan:order_of_operations:0:74,26414.5
+m129,rule_chunk,rule_text,Equation Solving Two or Fewer Steps,Equation-Solving-Two-or-Fewer-Steps,,math:test_algebra_1770#0,math:test_algebra_1770,194802.0
+m130,khan_template,manual_review,Exponents,Exponents,exponents_2,,khan:exponents_2:0:111,12079.75
+m131,rule_chunk,rule_text,Order of Operations All,Order-of-Operations-All,,math:test_prealgebra_1212#0,math:test_prealgebra_1212,87796.0
+m132,rule_chunk,rule_text,Percent Of,Percent-Of,,gsm8k:train:4810#0,gsm8k:train:4810,33371.0
+m133,khan_template,manual_review,Probability of Two Distinct Events,Probability-of-Two-Distinct-Events,dice_probability,,khan:dice_probability:0:37,5836.0
+m134,khan_template,manual_review,Multiplication and Division Positive Decimals,Multiplication-and-Division-Positive-Decimals,multiplying_decimals,,khan:multiplying_decimals:0:37,8718.75
+m135,khan_template,manual_review,Division Whole Numbers,Division-Whole-Numbers,division_2,,khan:division_2:0:111,773.2
+m136,khan_template,manual_review,Multiplication and Division Integers,Multiplication-and-Division-Integers,multiplying_and_dividing_negative_numbers,,khan:multiplying_and_dividing_negative_numbers:0:111,87793.0
+m137,khan_template,manual_review,Substitution,Substitution,evaluating_expressions_1,,khan:evaluating_expressions_1:0:74,9960.0
+m138,rule_chunk,rule_text,Simplifying Expressions positive exponents,Algebraic-Simplification,,math:test_algebra_1341#0,math:test_algebra_1341,27997.0
+m139,rule_chunk,rule_text,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,,math:test_prealgebra_1541#0,math:test_prealgebra_1541,152168.0
+m140,khan_template,manual_review,Multiplication Fractions,Multiplication-Fractions,multiplying_mixed_numbers_1,,khan:multiplying_mixed_numbers_1:0:111,17664.25
+m141,rule_chunk,rule_text,Finding Percents,Finding-Percents,,gsm8k:train:1814#0,gsm8k:train:1814,32962.0
+m142,khan_template,manual_review,Addition and Subtraction Fractions,Addition-and-Subtraction-Fractions,adding_fractions_0.5,,khan:adding_fractions_0.5:0:111,19021.0
+m143,khan_template,manual_review,Mode,Mode,mean_median_and_mode,,khan:mean_median_and_mode:2:113,3146.0
+m144,rule_chunk,rule_text,Equation Solving More Than Two Steps,Equation-Solving-More-Than-Two-Steps,,math:test_prealgebra_1143#0,math:test_prealgebra_1143,55979.0
+m145,khan_template,manual_review,Mean,Mean,average_word_problems,,khan:average_word_problems:1:38,7627.67
+m146,rule_chunk,rule_text,Conversion of Fraction Decimals Percents,Conversion-of-Fraction-Decimals-Percents,,math:test_prealgebra_2019#0,math:test_prealgebra_2019,114593.0
+m147,khan_template,manual_review,Division Fractions,Division-Fractions,dividing_fractions_0.5,,khan:dividing_fractions_0.5:0:111,10926.17
+m148,khan_template,manual_review,Percent Increase or Decrease,Percent-Increase-or-Decrease,markup_and_commission_word_problems,,khan:markup_and_commission_word_problems:0:148,4340.5
+m149,rule_chunk,rule_text,Order of Operations All,Order-of-Operations-All,,math:test_prealgebra_1096#0,math:test_prealgebra_1096,87796.0
+m150,khan_template,manual_review,Ordering Fractions,Ordering-Fractions,comparing_fractions_with_the_same_denominator,,khan:comparing_fractions_with_the_same_denominator:1:112,6102.4

@@ -60,9 +60,10 @@ hơn bản Khan năm 2016, ví dụ `subtraction-2` hay `addition_3` nằm trong
 ## Trường của bảng tương tác
 
 - `item_id` = `exercise:problem_type`; `source_skill` = `exercise`; `khan_slug` = `exercise` nếu có template.
-- `skill_tag`: tag chuẩn qua chiều ngược của từ điển ASSISTments → Khan (hiện dùng bản nháp
-  `assistments_to_khan_draft.csv`, sẽ thay bằng `skill_map_v1.csv` sau P1-05). Nếu không có thì dùng
-  `junyi:<topic>`. 40,5% lượt có tag chuẩn (62 tag); số còn lại thuộc 39 tag `junyi:<topic>`.
+- `skill_tag`: tag chuẩn qua chiều ngược của từ điển kỹ năng v1 `skill_map_v1.csv` (P1-05, cột `canonical_tag`).
+  Nếu không có thì dùng `junyi:<topic>`. 44,8% lượt có tag chuẩn (69 tag); số còn lại thuộc 39 tag `junyi:<topic>`.
+  Template không dùng được (cần hình, không có gợi ý) vẫn gắn tag cho lượt làm, nên các cặp này được rà riêng ở phiếu D.
+  Với bản nháp `assistments_to_khan_draft.csv`: 40,5% (62 tag).
 - `ts` = `time_done` (micro giây) chia 1000; `rt_ms` = `time_taken` × 1000, cắt về [500; 120.000] (0,21% thiếu).
 - `correct` là cờ của Junyi: đúng ở lần đầu và không dùng gợi ý. Chỉ 18 dòng có `correct` = 1 mà `attempts` > 1.
 - `section_type` = `review` nếu `review_mode` (2,2% lượt), ngược lại `practice`.
