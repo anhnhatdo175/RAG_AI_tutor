@@ -16,12 +16,18 @@ import pandas as pd
 from sklearn.isotonic import IsotonicRegression
 
 
-def junyi_history_counts(interactions: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Responses and correct answers per (khan_slug, problem_type key) and per khan_slug, history split only."""
+def junyi_history_counts(interactions: pd.DataFrame,
+                         outside: pd.DataFrame | None = None) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Responses and correct answers per (khan_slug, problem_type key) and per khan_slug, history split only.
+
+    ``outside``: the same counts (columns khan_slug, type_key, n, k) for eligible learners outside the sample, who are in
+    no split; they are added to the history counts."""
     h = interactions[(interactions["split"] == "history") & interactions["khan_slug"].notna()]
-    h = h.assign(type_key=h["item_id"].str.split(":", n=1).str[1])
+    h = h.assign(type_key=h["item_id"].astype(str).str.split(":", n=1).str[1], khan_slug=h["khan_slug"].astype(str))
     unit = h.groupby(["khan_slug", "type_key"], observed=True)["correct"].agg(n="size", k="sum").reset_index()
-    template = h.groupby("khan_slug", observed=True)["correct"].agg(n="size", k="sum").reset_index()
+    if outside is not None and len(outside):
+        unit = pd.concat([unit, outside[["khan_slug", "type_key", "n", "k"]]]).groupby(["khan_slug", "type_key"], as_index=False)[["n", "k"]].sum()
+    template = unit.groupby("khan_slug", as_index=False)[["n", "k"]].sum()
     return unit, template
 
 

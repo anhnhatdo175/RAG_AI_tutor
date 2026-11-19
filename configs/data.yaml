@@ -2,7 +2,10 @@
 data_seed: 2026
 seeds: [0, 1, 2, 3, 4]
 split: {history: 0.70, validation: 0.15, test: 0.15, min_user_interactions: 20}
-difficulty: {shrinkage_m: 20, min_responses_unit: 200}
+# junyi_outside_sample: also count the answers of eligible Junyi learners outside the 20,000 sample (in no split, so no
+# test leak). Tried after P1-06: +221 Khan problems with a Junyi-based difficulty, but no better agreement with the
+# human ratings, so it stays off and the corpus keeps the difficulty P1-06 validated (a3_difficulty_BIEN_BAN.md, s. 9)
+difficulty: {shrinkage_m: 20, min_responses_unit: 200, junyi_outside_sample: false}
 rt_clip_ms: [500, 120000]
 bootstrap: {n_resamples: 1000}
 datasets:

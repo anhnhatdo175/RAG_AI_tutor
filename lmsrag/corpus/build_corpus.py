@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 from ..datasets.build import REPO, load_config
-from ..datasets.junyi2015 import DEFAULT_MAPPING, khan_tag_lists, khan_type_tag_lists
+from ..datasets.junyi2015 import DEFAULT_MAPPING, OUTSIDE_COUNTS, khan_tag_lists, khan_type_tag_lists
 from ..datasets.skill_map import skill_key
 from ..layer2_embedding import chunk as chunker
 from ..layer2_embedding.clean import ASY_RE, clean_records
@@ -114,7 +114,10 @@ def text_documents(raw_dir: Path, mapper: SkillMapper) -> tuple[pd.DataFrame, di
 
 
 # ---------------------------------------------------------------- difficulty
-def add_difficulty(docs: pd.DataFrame, junyi: pd.DataFrame | None, cfg: dict) -> tuple[pd.DataFrame, dict]:
+def add_difficulty(docs: pd.DataFrame, junyi: pd.DataFrame | None, cfg: dict,
+                   outside: pd.DataFrame | None = None) -> tuple[pd.DataFrame, dict]:
+    """``outside``: Junyi counts of eligible learners outside the sample (used when
+    ``difficulty.junyi_outside_sample`` is true)."""
     m = float(cfg["difficulty"]["shrinkage_m"])
     min_n = int(cfg["difficulty"]["min_responses_unit"])
     docs = docs.copy()
@@ -122,7 +125,8 @@ def add_difficulty(docs: pd.DataFrame, junyi: pd.DataFrame | None, cfg: dict) ->
     khan = docs["source"] == "khan"
     info: dict = {}
     if junyi is not None:
-        unit, template = D.junyi_history_counts(junyi)
+        unit, template = D.junyi_history_counts(junyi, outside)
+        info["junyi_outside_sample_rows_used"] = int(outside["n"].sum()) if outside is not None else 0
         hist = D.khan_history_difficulty(docs[khan].rename(columns={"khan_slug": "slug"}), unit, template, m, min_n)
         docs.loc[khan, ["p_correct_hist", "difficulty_n", "difficulty_unit"]] = hist.to_numpy()
         info["junyi_units_ge_min_n"] = int((unit["n"] >= min_n).sum())
@@ -161,12 +165,29 @@ def worked_text(d) -> str:
     return f"Problem: {d.question}\nSolution: {d.solution}\nAnswer: {d.answer}".strip()
 
 
+# P1-06 (a3_difficulty_BIEN_BAN.md): only the Junyi-based difficulty tracks human ratings well (Spearman 0.81; Khan hint
+# steps 0.59, GSM8K 0.42, MATH 0.47), and levels are not comparable across sources. The team chose to pick problems by
+# difficulty within one source, in this order of trust (choice (a) with a priority order):
+#   tier 1  Khan, from Junyi responses (Spearman 0.81)       -> difficulty_reliable = True
+#   tier 2  Khan, from the number of hint steps (0.59)
+#   tier 3  GSM8K operations (0.42) and MATH Level (0.47): worked examples first, difficulty only within the source
+# Never compare difficulty across two sources.
+DIFFICULTY_TIER = {"junyi_history": 1, "khan_steps": 2, "gsm8k_steps": 3, "math_level": 3}
+RELIABLE_DIFFICULTY = {s for s, t in DIFFICULTY_TIER.items() if t == 1}
+
+
+def difficulty_reliable(difficulty_source: str) -> bool:
+    return difficulty_source in RELIABLE_DIFFICULTY
+
+
 def make_chunks(docs: pd.DataFrame, count) -> tuple[list[dict], dict]:
     chunks, truncated, hints_split = [], 0, 0
     common = ["doc_id", "source", "khan_slug", "problem_type", "difficulty", "difficulty_level", "difficulty_source",
               "difficulty_n", "answer", "answer_type"]
     for d in docs.itertuples(index=False):
         base = {c: _py(getattr(d, c)) for c in common}
+        base["difficulty_reliable"] = difficulty_reliable(d.difficulty_source)
+        base["difficulty_tier"] = DIFFICULTY_TIER[d.difficulty_source]
         base["p_correct_hist"] = None if pd.isna(d.p_correct_hist) else round(float(d.p_correct_hist), 6)
         base.update(skill_tag=d.skill_tags[0], skill_tags=list(d.skill_tags), licence=LICENCE[d.source])
         text = worked_text(d)
@@ -197,6 +218,8 @@ def exercise_bank(docs: pd.DataFrame) -> list[dict]:
                     "skill_tags": list(d.skill_tags), "khan_slug": _py(d.khan_slug), "problem_type": _py(d.problem_type),
                     "content_type": "exercise", "difficulty": float(d.difficulty), "difficulty_level": int(d.difficulty_level),
                     "difficulty_source": d.difficulty_source, "difficulty_n": int(d.difficulty_n),
+                    "difficulty_reliable": difficulty_reliable(d.difficulty_source),
+                    "difficulty_tier": DIFFICULTY_TIER[d.difficulty_source],
                     "p_correct_hist": None if pd.isna(d.p_correct_hist) else round(float(d.p_correct_hist), 6),
                     "text": d.question, "answer": d.answer, "answer_type": d.answer_type, "licence": LICENCE[d.source]})
     return out
@@ -250,6 +273,17 @@ def summary(docs: pd.DataFrame, chunks: list[dict], info: dict, tables_dir: Path
              {"section": "skills", "source": "all", "key": "canonical_skills_with_chunks", "value": int(len(canonical))},
              {"section": "skills", "source": "all", "key": "canonical_skills_with_chunks_at_ge3_levels",
               "value": int((canonical >= 3).sum())}]
+    # P1-06 choice (a): how far each difficulty tier reaches. A skill counts at a tier when, within ONE source of that
+    # tier or better, its documents span at least 3 levels (levels are not compared across sources).
+    tier = long["difficulty_source"].map(DIFFICULTY_TIER)
+    for t in sorted(set(DIFFICULTY_TIER.values())):
+        sub = long[tier <= t]
+        per_source = sub.groupby(["skill_tags", "source"])["difficulty_level"].nunique().groupby("skill_tags").max()
+        canon = per_source[~per_source.index.str.contains(r"^(?:junyi|khan):", regex=True)]
+        rows += [{"section": "difficulty_tier", "source": "all", "key": f"tier_le{t}_docs",
+                  "value": int((docs["difficulty_source"].map(DIFFICULTY_TIER) <= t).sum())},
+                 {"section": "difficulty_tier", "source": "all", "key": f"tier_le{t}_canonical_skills_at_ge3_levels",
+                  "value": int((canon >= 3).sum())}]
     rows += coverage_rows(docs, tables_dir, mapping_csv)
     return pd.DataFrame(rows)
 
@@ -302,7 +336,13 @@ def main(argv: list[str] | None = None) -> int:
     docs = docs[docs["skill_tags"].map(len) > 0].reset_index(drop=True)
     junyi_path = out_dir / "interactions_junyi2015.parquet"
     junyi = pd.read_parquet(junyi_path, columns=["item_id", "khan_slug", "correct", "split"]) if junyi_path.is_file() else None
-    docs, diff_info = add_difficulty(docs, junyi, cfg)
+    outside = None
+    if cfg["difficulty"].get("junyi_outside_sample"):
+        path = out_dir / f"{OUTSIDE_COUNTS}.parquet"
+        if not path.is_file():
+            raise SystemExit(f"{path.name} missing: rebuild junyi2015 first (python -m lmsrag.datasets.build --only junyi2015)")
+        outside = pd.read_parquet(path)
+    docs, diff_info = add_difficulty(docs, junyi, cfg, outside)
     info.update(diff_info)
 
     chunks, chunk_info = make_chunks(docs, bge_counter())
