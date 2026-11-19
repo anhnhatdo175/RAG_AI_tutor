@@ -7,6 +7,7 @@ build,all,clean_input,10271
 build,all,clean_kept,10265
 build,all,clean_dropped_near_duplicate,6
 build,all,untagged_docs_dropped,"{""gsm8k"": 6899, ""math"": 1022}"
+build,all,junyi_outside_sample_rows_used,0
 build,all,junyi_units_ge_min_n,478
 build,all,isotonic_steps_to_difficulty,"{""1"": 0.186, ""2"": 0.2441, ""3"": 0.2481, ""4"": 0.2608, ""5"": 0.2904, ""6"": 0.3277, ""7"": 0.331, ""8"": 0.3398, ""9"": 0.4225, ""10"": 0.4292, ""11"": 0.4502, ""12"": 0.4502, ""13"": 0.4502, ""14"": 0.4502, ""15"": 0.4502, ""16"": 0.4502}"
 build,all,worked_docs_split_over_512_tokens,176
@@ -40,6 +41,12 @@ skills,all,skills_with_chunks,144
 skills,all,skills_with_chunks_at_ge3_levels,49
 skills,all,canonical_skills_with_chunks,85
 skills,all,canonical_skills_with_chunks_at_ge3_levels,37
+difficulty_tier,all,tier_le1_docs,1273
+difficulty_tier,all,tier_le1_canonical_skills_at_ge3_levels,17
+difficulty_tier,all,tier_le2_docs,2064
+difficulty_tier,all,tier_le2_canonical_skills_at_ge3_levels,21
+difficulty_tier,all,tier_le3_docs,4408
+difficulty_tier,all,tier_le3_canonical_skills_at_ge3_levels,33
 coverage,assist2009,share_rows_skill_has_usable_khan_template,0.768
 coverage,assist2009,share_rows_skill_tag_has_any_chunk,0.8188
 coverage,assist2012,share_rows_skill_has_usable_khan_template,0.815

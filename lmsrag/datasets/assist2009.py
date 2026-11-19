@@ -28,6 +28,7 @@ class AdapterResult:
     interactions: pd.DataFrame
     tables: dict[str, pd.DataFrame] = field(default_factory=dict)
     facts: dict[str, object] = field(default_factory=dict)
+    artifacts: dict[str, pd.DataFrame] = field(default_factory=dict)  # extra Parquet files in output_dir (not committed)
 
 
 def read_raw(path: Path, encoding: str = "latin-1") -> pd.DataFrame:

@@ -112,6 +112,11 @@ còn template dùng được: Ordering Integers (1,19% lượt 2009 / 0,80% lư�
   `difficulty_level`, bài GSM8K và MATH khó hơn bài Khan khoảng 1 điểm (thang 1–5) ở các mức thấp, và năm mức của GSM8K
   gần như không phân tầng (2,25 → 2,83). Giả định **không đứng**: chỉ nên so độ khó trong cùng một nguồn, hoặc hiệu
   chỉnh thang chung trên một mẫu riêng.
+- **Cách dùng độ khó (quyết định sau P1-06):** mỗi chunk và mỗi bài tập có `difficulty_tier` (1: Khan từ Junyi, 1.273 bài;
+  2: Khan từ số bước gợi ý, 791; 3: GSM8K và MATH, 2.344) và `difficulty_reliable` (bậc 1). Chọn bài theo mức khó ưu
+  tiên bậc 1, rồi bậc 2, rồi bậc 3; không so độ khó giữa hai nguồn. Kỹ năng chuẩn có bài ở ≥ 3 mức trong cùng một nguồn:
+  17 (bậc 1), 21 (tới bậc 2), 33 (tới bậc 3). Thử thêm người học Junyi ngoài mẫu không cải thiện độ khớp với người nên
+  không dùng (`difficulty.junyi_outside_sample: false`).
 - **Đáp án dạng căn:** 54 bài Khan trong kho bài tập có `answer_type` `radical` hoặc `cuberoot`; theo quy ước của Khan,
   `answer` chỉ lưu số dưới dấu căn ("147" nghĩa là √147 = 7√3). Bộ chấm phải dựng lại dấu căn trước khi so.
 - **Bộ lọc Khan (P1-06):** 92,0% [81,2; 96,9] bài làm được mà không cần hình; 100% [92,9; 100] đáp án lưu đúng.

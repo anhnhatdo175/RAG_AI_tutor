@@ -119,8 +119,44 @@ dạng căn chỉ lưu số dưới dấu căn. Hai bài cùng quy ước trong 
 
 ## 8. Việc tiếp theo
 
-1. Nhóm chọn một trong các đề xuất (a)–(c) ở mục 4 trước khi chạy P1-07 (gold set) và P1-09; ghi lựa chọn vào báo cáo.
+1. ~~Nhóm chọn một trong các đề xuất (a)–(c) ở mục 4~~: đã chọn (a) có thứ tự ưu tiên, mục 9.
 2. Đánh dấu `needs_figure` cho 4 template ở mục 5, xem lại các template cùng họ (`solving_similar_triangles_1`,
    `inscribed_angles_*`), rồi build lại kho. Làm sau khi đã chốt các số ở trên, để 92% vẫn là độ chính xác của bộ lọc
    lúc được đo.
 3. Bộ chấm tự động của kho bài tập phải hiểu `answer_type` `radical`/`cuberoot` (54 bài): "147" nghĩa là √147.
+
+## 9. Quyết định sau kiểm định (20/11/2026)
+
+**Phương án được chọn: (a) có thứ tự ưu tiên.** Chọn trước khi chạy P1-07 và P1-09, dựa trên các số ở mục 4, không
+dựa trên kết quả của tập test hay gold set.
+
+| Bậc (`difficulty_tier`) | Bài | Cách tính độ khó | Spearman với người (mục 4) | Dùng thế nào |
+|---|---:|---|---|---|
+| 1 (`difficulty_reliable` = true) | 1.273 | Khan, tỷ lệ đúng trên Junyi | 0,81 | Nguồn chính khi chọn bài theo mức khó (ZPD) |
+| 2 | 791 | Khan, từ số bước gợi ý | 0,59 | Khi kỹ năng không đủ bài bậc 1 |
+| 3 | 2.344 | GSM8K (số phép tính), MATH (Level) | 0,42; 0,47 | Ví dụ giải mẫu; độ khó chỉ so trong cùng nguồn, kết quả ghi là "độ khó kém tin cậy" |
+
+Quy tắc chung: **không bao giờ so độ khó giữa hai nguồn khác nhau**, và mọi chỉ số phụ thuộc độ khó báo cáo tách theo
+bậc. Hai trường `difficulty_tier` và `difficulty_reliable` có trong mọi chunk và mọi bài của kho bài tập (build
+`build_corpus.py`).
+
+Phạm vi phủ (kỹ năng chuẩn có bài ở ít nhất 3 mức khó **trong cùng một nguồn**, `a3_corpus_summary.csv`): chỉ bậc 1:
+17 kỹ năng; tới bậc 2: 21; tới bậc 3: 33. (Nếu cho phép ghép các mức của nhiều nguồn thì là 37, nhưng như vậy là so độ
+khó giữa các nguồn.)
+
+**Thử nghiệm không giữ lại: thêm người học Junyi ngoài mẫu.** Để tăng số bài bậc 1, đã thử tính độ khó Khan bằng cả
+câu trả lời của 76.521 người học đủ điều kiện nhưng không nằm trong mẫu 20.000 (19,9 triệu lượt; những người này không
+thuộc split nào nên không lộ dữ liệu test). Thử nghiệm được quyết theo cơ chế (thêm dữ liệu), không theo điểm của người
+chấm, rồi kiểm một lần trên 100 bài của P1-06:
+
+| Trên 100 bài P1-06 | n | Độ khó v1 (mẫu 20.000) | Thêm người học ngoài mẫu |
+|---|---:|---|---|
+| Tất cả | 100 | 0,581 [0,442; 0,691] | 0,538 [0,389; 0,664] |
+| Khan | 50 | 0,754 [0,617; 0,838] | 0,725 [0,569; 0,829] |
+| Khan bậc 1 theo v1 | 31 | 0,805 | 0,814 |
+
+Bài bậc 1 tăng từ 1.273 lên 1.494, kỹ năng bậc 1 có ≥ 3 mức từ 17 lên 20, nhưng độ khớp với người không tăng. Trong 6
+bài của mẫu chuyển sang bậc 1, 2 bài gần điểm của người hơn và 4 bài xa hơn (d053, d056, d088, d096); các template này
+ít được luyện trong mẫu, nên người làm chúng có thể không đại diện. Vì cách mới không cho thấy cải thiện và khiến các số
+P1-06 không còn mô tả đúng kho được dùng, kho giữ độ khó v1. Code giữ lại sau khóa `difficulty.junyi_outside_sample:
+false` (`configs/data.yaml`); kho build lại có mọi trường của 14.931 chunk trùng với bản đã kiểm định, chỉ thêm `difficulty_tier`.
