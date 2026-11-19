@@ -46,6 +46,9 @@ python -m lmsrag.labels.make_sheets                                             
 python -m lmsrag.labels.agreement                                                # P1-05: κ, phân xử, a4_mapping_audit.csv
 python -m lmsrag.labels.difficulty_sheets                                        # P1-06: phiếu chấm độ khó 100 bài
 python -m lmsrag.labels.difficulty_agreement                                     # P1-06: Spearman, κ, bộ lọc Khan, a3_difficulty_audit.csv
+python -m lmsrag.labels.gold_queries                                             # P1-07: 180 truy vấn gold set (một lần)
+python -m lmsrag.labels.gold_pool                                                # P1-07: pool từ pool_runs của P2-02, phiếu gán
+python -m lmsrag.labels.gold_finalize                                            # P1-07: κ, phân xử, đóng băng gold_v1.csv
 ```
 
 Đầu ra: `lmsrag/artifacts/v2/interactions_<dataset>.parquet` (không commit) và bảng báo cáo `reports/tables/a1_*.csv`.

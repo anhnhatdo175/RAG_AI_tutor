@@ -1,0 +1,181 @@
+query_id,skill_tag,skill_name,mastery,target_level,query,skill_rank,skill_source,rows_assist2009,rows_assist2012,worked_docs,levels_with_docs
+q001,Conversion-of-Fraction-Decimals-Percents,Conversion of Fraction Decimals Percents,0.2,2,A student with mastery 0.2 on Conversion of Fraction Decimals Percents needs a worked example at difficulty level 2 of 5.,1,assist2009,17559,96918,108,1;2;3;4;5
+q002,Conversion-of-Fraction-Decimals-Percents,Conversion of Fraction Decimals Percents,0.35,3,A student with mastery 0.35 on Conversion of Fraction Decimals Percents needs a worked example at difficulty level 3 of 5.,1,assist2009,17559,96918,108,1;2;3;4;5
+q003,Conversion-of-Fraction-Decimals-Percents,Conversion of Fraction Decimals Percents,0.5,4,A student with mastery 0.5 on Conversion of Fraction Decimals Percents needs a worked example at difficulty level 4 of 5.,1,assist2009,17559,96918,108,1;2;3;4;5
+q004,Conversion-of-Fraction-Decimals-Percents,Conversion of Fraction Decimals Percents,0.65,4,A student with mastery 0.65 on Conversion of Fraction Decimals Percents needs a worked example at difficulty level 4 of 5.,1,assist2009,17559,96918,108,1;2;3;4;5
+q005,Conversion-of-Fraction-Decimals-Percents,Conversion of Fraction Decimals Percents,0.8,5,A student with mastery 0.8 on Conversion of Fraction Decimals Percents needs a worked example at difficulty level 5 of 5.,1,assist2009,17559,96918,108,1;2;3;4;5
+q006,Equation-Solving-Two-or-Fewer-Steps,Equation Solving Two or Fewer Steps,0.2,2,A student with mastery 0.2 on Equation Solving Two or Fewer Steps needs a worked example at difficulty level 2 of 5.,2,assist2009,15775,178791,31,1;2;3;4
+q007,Equation-Solving-Two-or-Fewer-Steps,Equation Solving Two or Fewer Steps,0.35,3,A student with mastery 0.35 on Equation Solving Two or Fewer Steps needs a worked example at difficulty level 3 of 5.,2,assist2009,15775,178791,31,1;2;3;4
+q008,Equation-Solving-Two-or-Fewer-Steps,Equation Solving Two or Fewer Steps,0.5,4,A student with mastery 0.5 on Equation Solving Two or Fewer Steps needs a worked example at difficulty level 4 of 5.,2,assist2009,15775,178791,31,1;2;3;4
+q009,Equation-Solving-Two-or-Fewer-Steps,Equation Solving Two or Fewer Steps,0.65,4,A student with mastery 0.65 on Equation Solving Two or Fewer Steps needs a worked example at difficulty level 4 of 5.,2,assist2009,15775,178791,31,1;2;3;4
+q010,Equation-Solving-Two-or-Fewer-Steps,Equation Solving Two or Fewer Steps,0.8,5,A student with mastery 0.8 on Equation Solving Two or Fewer Steps needs a worked example at difficulty level 5 of 5.,2,assist2009,15775,178791,31,1;2;3;4
+q011,Addition-and-Subtraction-Integers,Addition and Subtraction Integers,0.2,2,A student with mastery 0.2 on Addition and Subtraction Integers needs a worked example at difficulty level 2 of 5.,3,assist2009,12164,142439,12,1;2;4
+q012,Addition-and-Subtraction-Integers,Addition and Subtraction Integers,0.35,3,A student with mastery 0.35 on Addition and Subtraction Integers needs a worked example at difficulty level 3 of 5.,3,assist2009,12164,142439,12,1;2;4
+q013,Addition-and-Subtraction-Integers,Addition and Subtraction Integers,0.5,4,A student with mastery 0.5 on Addition and Subtraction Integers needs a worked example at difficulty level 4 of 5.,3,assist2009,12164,142439,12,1;2;4
+q014,Addition-and-Subtraction-Integers,Addition and Subtraction Integers,0.65,4,A student with mastery 0.65 on Addition and Subtraction Integers needs a worked example at difficulty level 4 of 5.,3,assist2009,12164,142439,12,1;2;4
+q015,Addition-and-Subtraction-Integers,Addition and Subtraction Integers,0.8,5,A student with mastery 0.8 on Addition and Subtraction Integers needs a worked example at difficulty level 5 of 5.,3,assist2009,12164,142439,12,1;2;4
+q016,Addition-and-Subtraction-Fractions,Addition and Subtraction Fractions,0.2,2,A student with mastery 0.2 on Addition and Subtraction Fractions needs a worked example at difficulty level 2 of 5.,4,assist2009,9264,142753,48,1;2;3;4;5
+q017,Addition-and-Subtraction-Fractions,Addition and Subtraction Fractions,0.35,3,A student with mastery 0.35 on Addition and Subtraction Fractions needs a worked example at difficulty level 3 of 5.,4,assist2009,9264,142753,48,1;2;3;4;5
+q018,Addition-and-Subtraction-Fractions,Addition and Subtraction Fractions,0.5,4,A student with mastery 0.5 on Addition and Subtraction Fractions needs a worked example at difficulty level 4 of 5.,4,assist2009,9264,142753,48,1;2;3;4;5
+q019,Addition-and-Subtraction-Fractions,Addition and Subtraction Fractions,0.65,4,A student with mastery 0.65 on Addition and Subtraction Fractions needs a worked example at difficulty level 4 of 5.,4,assist2009,9264,142753,48,1;2;3;4;5
+q020,Addition-and-Subtraction-Fractions,Addition and Subtraction Fractions,0.8,5,A student with mastery 0.8 on Addition and Subtraction Fractions needs a worked example at difficulty level 5 of 5.,4,assist2009,9264,142753,48,1;2;3;4;5
+q021,Percent-Of,Percent Of,0.2,2,A student with mastery 0.2 on Percent Of needs a worked example at difficulty level 2 of 5.,5,assist2009,8772,24439,474,1;2;3;4;5
+q022,Percent-Of,Percent Of,0.35,3,A student with mastery 0.35 on Percent Of needs a worked example at difficulty level 3 of 5.,5,assist2009,8772,24439,474,1;2;3;4;5
+q023,Percent-Of,Percent Of,0.5,4,A student with mastery 0.5 on Percent Of needs a worked example at difficulty level 4 of 5.,5,assist2009,8772,24439,474,1;2;3;4;5
+q024,Percent-Of,Percent Of,0.65,4,A student with mastery 0.65 on Percent Of needs a worked example at difficulty level 4 of 5.,5,assist2009,8772,24439,474,1;2;3;4;5
+q025,Percent-Of,Percent Of,0.8,5,A student with mastery 0.8 on Percent Of needs a worked example at difficulty level 5 of 5.,5,assist2009,8772,24439,474,1;2;3;4;5
+q026,Proportion,Proportion,0.2,2,A student with mastery 0.2 on Proportion needs a worked example at difficulty level 2 of 5.,6,assist2009,8664,55482,116,1;2;3;4;5
+q027,Proportion,Proportion,0.35,3,A student with mastery 0.35 on Proportion needs a worked example at difficulty level 3 of 5.,6,assist2009,8664,55482,116,1;2;3;4;5
+q028,Proportion,Proportion,0.5,4,A student with mastery 0.5 on Proportion needs a worked example at difficulty level 4 of 5.,6,assist2009,8664,55482,116,1;2;3;4;5
+q029,Proportion,Proportion,0.65,4,A student with mastery 0.65 on Proportion needs a worked example at difficulty level 4 of 5.,6,assist2009,8664,55482,116,1;2;3;4;5
+q030,Proportion,Proportion,0.8,5,A student with mastery 0.8 on Proportion needs a worked example at difficulty level 5 of 5.,6,assist2009,8664,55482,116,1;2;3;4;5
+q031,Ordering-Fractions,Ordering Fractions,0.2,2,A student with mastery 0.2 on Ordering Fractions needs a worked example at difficulty level 2 of 5.,7,assist2009,8186,22283,23,1;2;3;4
+q032,Ordering-Fractions,Ordering Fractions,0.35,3,A student with mastery 0.35 on Ordering Fractions needs a worked example at difficulty level 3 of 5.,7,assist2009,8186,22283,23,1;2;3;4
+q033,Ordering-Fractions,Ordering Fractions,0.5,4,A student with mastery 0.5 on Ordering Fractions needs a worked example at difficulty level 4 of 5.,7,assist2009,8186,22283,23,1;2;3;4
+q034,Ordering-Fractions,Ordering Fractions,0.65,4,A student with mastery 0.65 on Ordering Fractions needs a worked example at difficulty level 4 of 5.,7,assist2009,8186,22283,23,1;2;3;4
+q035,Ordering-Fractions,Ordering Fractions,0.8,5,A student with mastery 0.8 on Ordering Fractions needs a worked example at difficulty level 5 of 5.,7,assist2009,8186,22283,23,1;2;3;4
+q036,Finding-Percents,Finding Percents,0.2,2,A student with mastery 0.2 on Finding Percents needs a worked example at difficulty level 2 of 5.,8,assist2009,7447,25201,84,1;2;3;4;5
+q037,Finding-Percents,Finding Percents,0.35,3,A student with mastery 0.35 on Finding Percents needs a worked example at difficulty level 3 of 5.,8,assist2009,7447,25201,84,1;2;3;4;5
+q038,Finding-Percents,Finding Percents,0.5,4,A student with mastery 0.5 on Finding Percents needs a worked example at difficulty level 4 of 5.,8,assist2009,7447,25201,84,1;2;3;4;5
+q039,Finding-Percents,Finding Percents,0.65,4,A student with mastery 0.65 on Finding Percents needs a worked example at difficulty level 4 of 5.,8,assist2009,7447,25201,84,1;2;3;4;5
+q040,Finding-Percents,Finding Percents,0.8,5,A student with mastery 0.8 on Finding Percents needs a worked example at difficulty level 5 of 5.,8,assist2009,7447,25201,84,1;2;3;4;5
+q041,Probability-of-Two-Distinct-Events,Probability of Two Distinct Events,0.2,2,A student with mastery 0.2 on Probability of Two Distinct Events needs a worked example at difficulty level 2 of 5.,9,assist2009,7259,10169,44,2;3;4;5
+q042,Probability-of-Two-Distinct-Events,Probability of Two Distinct Events,0.35,3,A student with mastery 0.35 on Probability of Two Distinct Events needs a worked example at difficulty level 3 of 5.,9,assist2009,7259,10169,44,2;3;4;5
+q043,Probability-of-Two-Distinct-Events,Probability of Two Distinct Events,0.5,4,A student with mastery 0.5 on Probability of Two Distinct Events needs a worked example at difficulty level 4 of 5.,9,assist2009,7259,10169,44,2;3;4;5
+q044,Probability-of-Two-Distinct-Events,Probability of Two Distinct Events,0.65,4,A student with mastery 0.65 on Probability of Two Distinct Events needs a worked example at difficulty level 4 of 5.,9,assist2009,7259,10169,44,2;3;4;5
+q045,Probability-of-Two-Distinct-Events,Probability of Two Distinct Events,0.8,5,A student with mastery 0.8 on Probability of Two Distinct Events needs a worked example at difficulty level 5 of 5.,9,assist2009,7259,10169,44,2;3;4;5
+q046,Square-Root,Square Root,0.2,2,A student with mastery 0.2 on Square Root needs a worked example at difficulty level 2 of 5.,10,assist2009,5607,21735,13,1;2;4
+q047,Square-Root,Square Root,0.35,3,A student with mastery 0.35 on Square Root needs a worked example at difficulty level 3 of 5.,10,assist2009,5607,21735,13,1;2;4
+q048,Square-Root,Square Root,0.5,4,A student with mastery 0.5 on Square Root needs a worked example at difficulty level 4 of 5.,10,assist2009,5607,21735,13,1;2;4
+q049,Square-Root,Square Root,0.65,4,A student with mastery 0.65 on Square Root needs a worked example at difficulty level 4 of 5.,10,assist2009,5607,21735,13,1;2;4
+q050,Square-Root,Square Root,0.8,5,A student with mastery 0.8 on Square Root needs a worked example at difficulty level 5 of 5.,10,assist2009,5607,21735,13,1;2;4
+q051,Multiplication-Fractions,Multiplication Fractions,0.2,2,A student with mastery 0.2 on Multiplication Fractions needs a worked example at difficulty level 2 of 5.,11,assist2009,5474,65158,364,1;2;3;4;5
+q052,Multiplication-Fractions,Multiplication Fractions,0.35,3,A student with mastery 0.35 on Multiplication Fractions needs a worked example at difficulty level 3 of 5.,11,assist2009,5474,65158,364,1;2;3;4;5
+q053,Multiplication-Fractions,Multiplication Fractions,0.5,4,A student with mastery 0.5 on Multiplication Fractions needs a worked example at difficulty level 4 of 5.,11,assist2009,5474,65158,364,1;2;3;4;5
+q054,Multiplication-Fractions,Multiplication Fractions,0.65,4,A student with mastery 0.65 on Multiplication Fractions needs a worked example at difficulty level 4 of 5.,11,assist2009,5474,65158,364,1;2;3;4;5
+q055,Multiplication-Fractions,Multiplication Fractions,0.8,5,A student with mastery 0.8 on Multiplication Fractions needs a worked example at difficulty level 5 of 5.,11,assist2009,5474,65158,364,1;2;3;4;5
+q056,Probability-of-a-Single-Event,Probability of a Single Event,0.2,2,A student with mastery 0.2 on Probability of a Single Event needs a worked example at difficulty level 2 of 5.,12,assist2009,5399,19513,69,1;2;3;4;5
+q057,Probability-of-a-Single-Event,Probability of a Single Event,0.35,3,A student with mastery 0.35 on Probability of a Single Event needs a worked example at difficulty level 3 of 5.,12,assist2009,5399,19513,69,1;2;3;4;5
+q058,Probability-of-a-Single-Event,Probability of a Single Event,0.5,4,A student with mastery 0.5 on Probability of a Single Event needs a worked example at difficulty level 4 of 5.,12,assist2009,5399,19513,69,1;2;3;4;5
+q059,Probability-of-a-Single-Event,Probability of a Single Event,0.65,4,A student with mastery 0.65 on Probability of a Single Event needs a worked example at difficulty level 4 of 5.,12,assist2009,5399,19513,69,1;2;3;4;5
+q060,Probability-of-a-Single-Event,Probability of a Single Event,0.8,5,A student with mastery 0.8 on Probability of a Single Event needs a worked example at difficulty level 5 of 5.,12,assist2009,5399,19513,69,1;2;3;4;5
+q061,Counting-Methods,Counting Methods,0.2,2,A student with mastery 0.2 on Counting Methods needs a worked example at difficulty level 2 of 5.,13,assist2009,4709,6590,111,1;2;3;4;5
+q062,Counting-Methods,Counting Methods,0.35,3,A student with mastery 0.35 on Counting Methods needs a worked example at difficulty level 3 of 5.,13,assist2009,4709,6590,111,1;2;3;4;5
+q063,Counting-Methods,Counting Methods,0.5,4,A student with mastery 0.5 on Counting Methods needs a worked example at difficulty level 4 of 5.,13,assist2009,4709,6590,111,1;2;3;4;5
+q064,Counting-Methods,Counting Methods,0.65,4,A student with mastery 0.65 on Counting Methods needs a worked example at difficulty level 4 of 5.,13,assist2009,4709,6590,111,1;2;3;4;5
+q065,Counting-Methods,Counting Methods,0.8,5,A student with mastery 0.8 on Counting Methods needs a worked example at difficulty level 5 of 5.,13,assist2009,4709,6590,111,1;2;3;4;5
+q066,Median,Median,0.2,2,A student with mastery 0.2 on Median needs a worked example at difficulty level 2 of 5.,14,assist2009,4684,19035,10,1;3;4
+q067,Median,Median,0.35,3,A student with mastery 0.35 on Median needs a worked example at difficulty level 3 of 5.,14,assist2009,4684,19035,10,1;3;4
+q068,Median,Median,0.5,4,A student with mastery 0.5 on Median needs a worked example at difficulty level 4 of 5.,14,assist2009,4684,19035,10,1;3;4
+q069,Median,Median,0.65,4,A student with mastery 0.65 on Median needs a worked example at difficulty level 4 of 5.,14,assist2009,4684,19035,10,1;3;4
+q070,Median,Median,0.8,5,A student with mastery 0.8 on Median needs a worked example at difficulty level 5 of 5.,14,assist2009,4684,19035,10,1;3;4
+q071,Equation-Solving-More-Than-Two-Steps,Equation Solving More Than Two Steps,0.2,2,A student with mastery 0.2 on Equation Solving More Than Two Steps needs a worked example at difficulty level 2 of 5.,15,assist2009,4394,51395,30,2;3;4
+q072,Equation-Solving-More-Than-Two-Steps,Equation Solving More Than Two Steps,0.35,3,A student with mastery 0.35 on Equation Solving More Than Two Steps needs a worked example at difficulty level 3 of 5.,15,assist2009,4394,51395,30,2;3;4
+q073,Equation-Solving-More-Than-Two-Steps,Equation Solving More Than Two Steps,0.5,4,A student with mastery 0.5 on Equation Solving More Than Two Steps needs a worked example at difficulty level 4 of 5.,15,assist2009,4394,51395,30,2;3;4
+q074,Equation-Solving-More-Than-Two-Steps,Equation Solving More Than Two Steps,0.65,4,A student with mastery 0.65 on Equation Solving More Than Two Steps needs a worked example at difficulty level 4 of 5.,15,assist2009,4394,51395,30,2;3;4
+q075,Equation-Solving-More-Than-Two-Steps,Equation Solving More Than Two Steps,0.8,5,A student with mastery 0.8 on Equation Solving More Than Two Steps needs a worked example at difficulty level 5 of 5.,15,assist2009,4394,51395,30,2;3;4
+q076,Division-Fractions,Division Fractions,0.2,2,A student with mastery 0.2 on Division Fractions needs a worked example at difficulty level 2 of 5.,16,assist2009,3882,61643,62,1;2;3;4;5
+q077,Division-Fractions,Division Fractions,0.35,3,A student with mastery 0.35 on Division Fractions needs a worked example at difficulty level 3 of 5.,16,assist2009,3882,61643,62,1;2;3;4;5
+q078,Division-Fractions,Division Fractions,0.5,4,A student with mastery 0.5 on Division Fractions needs a worked example at difficulty level 4 of 5.,16,assist2009,3882,61643,62,1;2;3;4;5
+q079,Division-Fractions,Division Fractions,0.65,4,A student with mastery 0.65 on Division Fractions needs a worked example at difficulty level 4 of 5.,16,assist2009,3882,61643,62,1;2;3;4;5
+q080,Division-Fractions,Division Fractions,0.8,5,A student with mastery 0.8 on Division Fractions needs a worked example at difficulty level 5 of 5.,16,assist2009,3882,61643,62,1;2;3;4;5
+q081,Unit-Rate,Unit Rate,0.2,2,A student with mastery 0.2 on Unit Rate needs a worked example at difficulty level 2 of 5.,17,assist2009,3096,25774,639,1;2;3;4;5
+q082,Unit-Rate,Unit Rate,0.35,3,A student with mastery 0.35 on Unit Rate needs a worked example at difficulty level 3 of 5.,17,assist2009,3096,25774,639,1;2;3;4;5
+q083,Unit-Rate,Unit Rate,0.5,4,A student with mastery 0.5 on Unit Rate needs a worked example at difficulty level 4 of 5.,17,assist2009,3096,25774,639,1;2;3;4;5
+q084,Unit-Rate,Unit Rate,0.65,4,A student with mastery 0.65 on Unit Rate needs a worked example at difficulty level 4 of 5.,17,assist2009,3096,25774,639,1;2;3;4;5
+q085,Unit-Rate,Unit Rate,0.8,5,A student with mastery 0.8 on Unit Rate needs a worked example at difficulty level 5 of 5.,17,assist2009,3096,25774,639,1;2;3;4;5
+q086,Exponents,Exponents,0.2,2,A student with mastery 0.2 on Exponents needs a worked example at difficulty level 2 of 5.,18,assist2009,2820,45230,42,1;2;3;4
+q087,Exponents,Exponents,0.35,3,A student with mastery 0.35 on Exponents needs a worked example at difficulty level 3 of 5.,18,assist2009,2820,45230,42,1;2;3;4
+q088,Exponents,Exponents,0.5,4,A student with mastery 0.5 on Exponents needs a worked example at difficulty level 4 of 5.,18,assist2009,2820,45230,42,1;2;3;4
+q089,Exponents,Exponents,0.65,4,A student with mastery 0.65 on Exponents needs a worked example at difficulty level 4 of 5.,18,assist2009,2820,45230,42,1;2;3;4
+q090,Exponents,Exponents,0.8,5,A student with mastery 0.8 on Exponents needs a worked example at difficulty level 5 of 5.,18,assist2009,2820,45230,42,1;2;3;4
+q091,Divisibility-Rules,Divisibility Rules,0.2,2,A student with mastery 0.2 on Divisibility Rules needs a worked example at difficulty level 2 of 5.,19,assist2009,2774,42631,77,1;2;4;5
+q092,Divisibility-Rules,Divisibility Rules,0.35,3,A student with mastery 0.35 on Divisibility Rules needs a worked example at difficulty level 3 of 5.,19,assist2009,2774,42631,77,1;2;4;5
+q093,Divisibility-Rules,Divisibility Rules,0.5,4,A student with mastery 0.5 on Divisibility Rules needs a worked example at difficulty level 4 of 5.,19,assist2009,2774,42631,77,1;2;4;5
+q094,Divisibility-Rules,Divisibility Rules,0.65,4,A student with mastery 0.65 on Divisibility Rules needs a worked example at difficulty level 4 of 5.,19,assist2009,2774,42631,77,1;2;4;5
+q095,Divisibility-Rules,Divisibility Rules,0.8,5,A student with mastery 0.8 on Divisibility Rules needs a worked example at difficulty level 5 of 5.,19,assist2009,2774,42631,77,1;2;4;5
+q096,Mean,Mean,0.2,2,A student with mastery 0.2 on Mean needs a worked example at difficulty level 2 of 5.,20,assist2009,2536,20040,198,1;2;3;4;5
+q097,Mean,Mean,0.35,3,A student with mastery 0.35 on Mean needs a worked example at difficulty level 3 of 5.,20,assist2009,2536,20040,198,1;2;3;4;5
+q098,Mean,Mean,0.5,4,A student with mastery 0.5 on Mean needs a worked example at difficulty level 4 of 5.,20,assist2009,2536,20040,198,1;2;3;4;5
+q099,Mean,Mean,0.65,4,A student with mastery 0.65 on Mean needs a worked example at difficulty level 4 of 5.,20,assist2009,2536,20040,198,1;2;3;4;5
+q100,Mean,Mean,0.8,5,A student with mastery 0.8 on Mean needs a worked example at difficulty level 5 of 5.,20,assist2009,2536,20040,198,1;2;3;4;5
+q101,Multiplication-and-Division-Positive-Decimals,Multiplication and Division Positive Decimals,0.2,2,A student with mastery 0.2 on Multiplication and Division Positive Decimals needs a worked example at difficulty level 2 of 5.,21,assist2009,1962,67654,32,1;2;3
+q102,Multiplication-and-Division-Positive-Decimals,Multiplication and Division Positive Decimals,0.35,3,A student with mastery 0.35 on Multiplication and Division Positive Decimals needs a worked example at difficulty level 3 of 5.,21,assist2009,1962,67654,32,1;2;3
+q103,Multiplication-and-Division-Positive-Decimals,Multiplication and Division Positive Decimals,0.5,4,A student with mastery 0.5 on Multiplication and Division Positive Decimals needs a worked example at difficulty level 4 of 5.,21,assist2009,1962,67654,32,1;2;3
+q104,Multiplication-and-Division-Positive-Decimals,Multiplication and Division Positive Decimals,0.65,4,A student with mastery 0.65 on Multiplication and Division Positive Decimals needs a worked example at difficulty level 4 of 5.,21,assist2009,1962,67654,32,1;2;3
+q105,Multiplication-and-Division-Positive-Decimals,Multiplication and Division Positive Decimals,0.8,5,A student with mastery 0.8 on Multiplication and Division Positive Decimals needs a worked example at difficulty level 5 of 5.,21,assist2009,1962,67654,32,1;2;3
+q106,Circumference,Circumference,0.2,2,A student with mastery 0.2 on Circumference needs a worked example at difficulty level 2 of 5.,22,assist2009,1754,19104,25,1;3;4;5
+q107,Circumference,Circumference,0.35,3,A student with mastery 0.35 on Circumference needs a worked example at difficulty level 3 of 5.,22,assist2009,1754,19104,25,1;3;4;5
+q108,Circumference,Circumference,0.5,4,A student with mastery 0.5 on Circumference needs a worked example at difficulty level 4 of 5.,22,assist2009,1754,19104,25,1;3;4;5
+q109,Circumference,Circumference,0.65,4,A student with mastery 0.65 on Circumference needs a worked example at difficulty level 4 of 5.,22,assist2009,1754,19104,25,1;3;4;5
+q110,Circumference,Circumference,0.8,5,A student with mastery 0.8 on Circumference needs a worked example at difficulty level 5 of 5.,22,assist2009,1754,19104,25,1;3;4;5
+q111,Scientific-Notation,Scientific Notation,0.2,2,A student with mastery 0.2 on Scientific Notation needs a worked example at difficulty level 2 of 5.,23,assist2009,1641,18479,16,1;2;4;5
+q112,Scientific-Notation,Scientific Notation,0.35,3,A student with mastery 0.35 on Scientific Notation needs a worked example at difficulty level 3 of 5.,23,assist2009,1641,18479,16,1;2;4;5
+q113,Scientific-Notation,Scientific Notation,0.5,4,A student with mastery 0.5 on Scientific Notation needs a worked example at difficulty level 4 of 5.,23,assist2009,1641,18479,16,1;2;4;5
+q114,Scientific-Notation,Scientific Notation,0.65,4,A student with mastery 0.65 on Scientific Notation needs a worked example at difficulty level 4 of 5.,23,assist2009,1641,18479,16,1;2;4;5
+q115,Scientific-Notation,Scientific Notation,0.8,5,A student with mastery 0.8 on Scientific Notation needs a worked example at difficulty level 5 of 5.,23,assist2009,1641,18479,16,1;2;4;5
+q116,Area-Circle,Area Circle,0.2,2,A student with mastery 0.2 on Area Circle needs a worked example at difficulty level 2 of 5.,24,assist2009,1101,16153,19,3;4;5
+q117,Area-Circle,Area Circle,0.35,3,A student with mastery 0.35 on Area Circle needs a worked example at difficulty level 3 of 5.,24,assist2009,1101,16153,19,3;4;5
+q118,Area-Circle,Area Circle,0.5,4,A student with mastery 0.5 on Area Circle needs a worked example at difficulty level 4 of 5.,24,assist2009,1101,16153,19,3;4;5
+q119,Area-Circle,Area Circle,0.65,4,A student with mastery 0.65 on Area Circle needs a worked example at difficulty level 4 of 5.,24,assist2009,1101,16153,19,3;4;5
+q120,Area-Circle,Area Circle,0.8,5,A student with mastery 0.8 on Area Circle needs a worked example at difficulty level 5 of 5.,24,assist2009,1101,16153,19,3;4;5
+q121,Rounding,Rounding,0.2,2,A student with mastery 0.2 on Rounding needs a worked example at difficulty level 2 of 5.,25,assist2009,940,33573,22,1;2;3;4
+q122,Rounding,Rounding,0.35,3,A student with mastery 0.35 on Rounding needs a worked example at difficulty level 3 of 5.,25,assist2009,940,33573,22,1;2;3;4
+q123,Rounding,Rounding,0.5,4,A student with mastery 0.5 on Rounding needs a worked example at difficulty level 4 of 5.,25,assist2009,940,33573,22,1;2;3;4
+q124,Rounding,Rounding,0.65,4,A student with mastery 0.65 on Rounding needs a worked example at difficulty level 4 of 5.,25,assist2009,940,33573,22,1;2;3;4
+q125,Rounding,Rounding,0.8,5,A student with mastery 0.8 on Rounding needs a worked example at difficulty level 5 of 5.,25,assist2009,940,33573,22,1;2;3;4
+q126,Prime-Number,Prime Number,0.2,2,A student with mastery 0.2 on Prime Number needs a worked example at difficulty level 2 of 5.,26,assist2009,635,13317,40,1;2;4
+q127,Prime-Number,Prime Number,0.35,3,A student with mastery 0.35 on Prime Number needs a worked example at difficulty level 3 of 5.,26,assist2009,635,13317,40,1;2;4
+q128,Prime-Number,Prime Number,0.5,4,A student with mastery 0.5 on Prime Number needs a worked example at difficulty level 4 of 5.,26,assist2009,635,13317,40,1;2;4
+q129,Prime-Number,Prime Number,0.65,4,A student with mastery 0.65 on Prime Number needs a worked example at difficulty level 4 of 5.,26,assist2009,635,13317,40,1;2;4
+q130,Prime-Number,Prime Number,0.8,5,A student with mastery 0.8 on Prime Number needs a worked example at difficulty level 5 of 5.,26,assist2009,635,13317,40,1;2;4
+q131,Solving-Systems-of-Linear-Equations,Solving Systems of Linear Equations,0.2,2,A student with mastery 0.2 on Solving Systems of Linear Equations needs a worked example at difficulty level 2 of 5.,27,assist2009,586,32474,55,3;4;5
+q132,Solving-Systems-of-Linear-Equations,Solving Systems of Linear Equations,0.35,3,A student with mastery 0.35 on Solving Systems of Linear Equations needs a worked example at difficulty level 3 of 5.,27,assist2009,586,32474,55,3;4;5
+q133,Solving-Systems-of-Linear-Equations,Solving Systems of Linear Equations,0.5,4,A student with mastery 0.5 on Solving Systems of Linear Equations needs a worked example at difficulty level 4 of 5.,27,assist2009,586,32474,55,3;4;5
+q134,Solving-Systems-of-Linear-Equations,Solving Systems of Linear Equations,0.65,4,A student with mastery 0.65 on Solving Systems of Linear Equations needs a worked example at difficulty level 4 of 5.,27,assist2009,586,32474,55,3;4;5
+q135,Solving-Systems-of-Linear-Equations,Solving Systems of Linear Equations,0.8,5,A student with mastery 0.8 on Solving Systems of Linear Equations needs a worked example at difficulty level 5 of 5.,27,assist2009,586,32474,55,3;4;5
+q136,Perimeter-of-a-Polygon,Perimeter of a Polygon,0.2,2,A student with mastery 0.2 on Perimeter of a Polygon needs a worked example at difficulty level 2 of 5.,28,assist2009,535,15100,25,1;2;4;5
+q137,Perimeter-of-a-Polygon,Perimeter of a Polygon,0.35,3,A student with mastery 0.35 on Perimeter of a Polygon needs a worked example at difficulty level 3 of 5.,28,assist2009,535,15100,25,1;2;4;5
+q138,Perimeter-of-a-Polygon,Perimeter of a Polygon,0.5,4,A student with mastery 0.5 on Perimeter of a Polygon needs a worked example at difficulty level 4 of 5.,28,assist2009,535,15100,25,1;2;4;5
+q139,Perimeter-of-a-Polygon,Perimeter of a Polygon,0.65,4,A student with mastery 0.65 on Perimeter of a Polygon needs a worked example at difficulty level 4 of 5.,28,assist2009,535,15100,25,1;2;4;5
+q140,Perimeter-of-a-Polygon,Perimeter of a Polygon,0.8,5,A student with mastery 0.8 on Perimeter of a Polygon needs a worked example at difficulty level 5 of 5.,28,assist2009,535,15100,25,1;2;4;5
+q141,Polynomial-Factors,Polynomial Factors,0.2,2,A student with mastery 0.2 on Polynomial Factors needs a worked example at difficulty level 2 of 5.,29,assist2009,392,21317,53,1;2;3;4;5
+q142,Polynomial-Factors,Polynomial Factors,0.35,3,A student with mastery 0.35 on Polynomial Factors needs a worked example at difficulty level 3 of 5.,29,assist2009,392,21317,53,1;2;3;4;5
+q143,Polynomial-Factors,Polynomial Factors,0.5,4,A student with mastery 0.5 on Polynomial Factors needs a worked example at difficulty level 4 of 5.,29,assist2009,392,21317,53,1;2;3;4;5
+q144,Polynomial-Factors,Polynomial Factors,0.65,4,A student with mastery 0.65 on Polynomial Factors needs a worked example at difficulty level 4 of 5.,29,assist2009,392,21317,53,1;2;3;4;5
+q145,Polynomial-Factors,Polynomial Factors,0.8,5,A student with mastery 0.8 on Polynomial Factors needs a worked example at difficulty level 5 of 5.,29,assist2009,392,21317,53,1;2;3;4;5
+q146,Greatest-Common-Factor,Greatest Common Factor,0.2,2,A student with mastery 0.2 on Greatest Common Factor needs a worked example at difficulty level 2 of 5.,30,assist2009,198,12533,22,1;2;4
+q147,Greatest-Common-Factor,Greatest Common Factor,0.35,3,A student with mastery 0.35 on Greatest Common Factor needs a worked example at difficulty level 3 of 5.,30,assist2009,198,12533,22,1;2;4
+q148,Greatest-Common-Factor,Greatest Common Factor,0.5,4,A student with mastery 0.5 on Greatest Common Factor needs a worked example at difficulty level 4 of 5.,30,assist2009,198,12533,22,1;2;4
+q149,Greatest-Common-Factor,Greatest Common Factor,0.65,4,A student with mastery 0.65 on Greatest Common Factor needs a worked example at difficulty level 4 of 5.,30,assist2009,198,12533,22,1;2;4
+q150,Greatest-Common-Factor,Greatest Common Factor,0.8,5,A student with mastery 0.8 on Greatest Common Factor needs a worked example at difficulty level 5 of 5.,30,assist2009,198,12533,22,1;2;4
+q151,Finding-Slope-From-Equation,Finding Slope From Equation,0.2,2,A student with mastery 0.2 on Finding Slope From Equation needs a worked example at difficulty level 2 of 5.,31,assist2009,170,28729,21,2;3;4;5
+q152,Finding-Slope-From-Equation,Finding Slope From Equation,0.35,3,A student with mastery 0.35 on Finding Slope From Equation needs a worked example at difficulty level 3 of 5.,31,assist2009,170,28729,21,2;3;4;5
+q153,Finding-Slope-From-Equation,Finding Slope From Equation,0.5,4,A student with mastery 0.5 on Finding Slope From Equation needs a worked example at difficulty level 4 of 5.,31,assist2009,170,28729,21,2;3;4;5
+q154,Finding-Slope-From-Equation,Finding Slope From Equation,0.65,4,A student with mastery 0.65 on Finding Slope From Equation needs a worked example at difficulty level 4 of 5.,31,assist2009,170,28729,21,2;3;4;5
+q155,Finding-Slope-From-Equation,Finding Slope From Equation,0.8,5,A student with mastery 0.8 on Finding Slope From Equation needs a worked example at difficulty level 5 of 5.,31,assist2009,170,28729,21,2;3;4;5
+q156,Algebraic-Simplification,Algebraic Simplification,0.2,2,A student with mastery 0.2 on Algebraic Simplification needs a worked example at difficulty level 2 of 5.,32,assist2009,90,259,20,1;2;3;4;5
+q157,Algebraic-Simplification,Algebraic Simplification,0.35,3,A student with mastery 0.35 on Algebraic Simplification needs a worked example at difficulty level 3 of 5.,32,assist2009,90,259,20,1;2;3;4;5
+q158,Algebraic-Simplification,Algebraic Simplification,0.5,4,A student with mastery 0.5 on Algebraic Simplification needs a worked example at difficulty level 4 of 5.,32,assist2009,90,259,20,1;2;3;4;5
+q159,Algebraic-Simplification,Algebraic Simplification,0.65,4,A student with mastery 0.65 on Algebraic Simplification needs a worked example at difficulty level 4 of 5.,32,assist2009,90,259,20,1;2;3;4;5
+q160,Algebraic-Simplification,Algebraic Simplification,0.8,5,A student with mastery 0.8 on Algebraic Simplification needs a worked example at difficulty level 5 of 5.,32,assist2009,90,259,20,1;2;3;4;5
+q161,Linear-Equations,Linear Equations,0.2,2,A student with mastery 0.2 on Linear Equations needs a worked example at difficulty level 2 of 5.,33,assist2009,64,0,24,1;2;3
+q162,Linear-Equations,Linear Equations,0.35,3,A student with mastery 0.35 on Linear Equations needs a worked example at difficulty level 3 of 5.,33,assist2009,64,0,24,1;2;3
+q163,Linear-Equations,Linear Equations,0.5,4,A student with mastery 0.5 on Linear Equations needs a worked example at difficulty level 4 of 5.,33,assist2009,64,0,24,1;2;3
+q164,Linear-Equations,Linear Equations,0.65,4,A student with mastery 0.65 on Linear Equations needs a worked example at difficulty level 4 of 5.,33,assist2009,64,0,24,1;2;3
+q165,Linear-Equations,Linear Equations,0.8,5,A student with mastery 0.8 on Linear Equations needs a worked example at difficulty level 5 of 5.,33,assist2009,64,0,24,1;2;3
+q166,Percent-Discount,Percent Discount,0.2,2,A student with mastery 0.2 on Percent Discount needs a worked example at difficulty level 2 of 5.,34,assist2009,47,723,181,1;2;3;4;5
+q167,Percent-Discount,Percent Discount,0.35,3,A student with mastery 0.35 on Percent Discount needs a worked example at difficulty level 3 of 5.,34,assist2009,47,723,181,1;2;3;4;5
+q168,Percent-Discount,Percent Discount,0.5,4,A student with mastery 0.5 on Percent Discount needs a worked example at difficulty level 4 of 5.,34,assist2009,47,723,181,1;2;3;4;5
+q169,Percent-Discount,Percent Discount,0.65,4,A student with mastery 0.65 on Percent Discount needs a worked example at difficulty level 4 of 5.,34,assist2009,47,723,181,1;2;3;4;5
+q170,Percent-Discount,Percent Discount,0.8,5,A student with mastery 0.8 on Percent Discount needs a worked example at difficulty level 5 of 5.,34,assist2009,47,723,181,1;2;3;4;5
+q171,Midpoint,Midpoint,0.2,2,A student with mastery 0.2 on Midpoint needs a worked example at difficulty level 2 of 5.,35,assist2009,32,489,25,1;2;3;4
+q172,Midpoint,Midpoint,0.35,3,A student with mastery 0.35 on Midpoint needs a worked example at difficulty level 3 of 5.,35,assist2009,32,489,25,1;2;3;4
+q173,Midpoint,Midpoint,0.5,4,A student with mastery 0.5 on Midpoint needs a worked example at difficulty level 4 of 5.,35,assist2009,32,489,25,1;2;3;4
+q174,Midpoint,Midpoint,0.65,4,A student with mastery 0.65 on Midpoint needs a worked example at difficulty level 4 of 5.,35,assist2009,32,489,25,1;2;3;4
+q175,Midpoint,Midpoint,0.8,5,A student with mastery 0.8 on Midpoint needs a worked example at difficulty level 5 of 5.,35,assist2009,32,489,25,1;2;3;4
+q176,Distributive-Property,Distributive Property,0.2,2,A student with mastery 0.2 on Distributive Property needs a worked example at difficulty level 2 of 5.,36,assist2009,9,35038,29,1;2;3;4
+q177,Distributive-Property,Distributive Property,0.35,3,A student with mastery 0.35 on Distributive Property needs a worked example at difficulty level 3 of 5.,36,assist2009,9,35038,29,1;2;3;4
+q178,Distributive-Property,Distributive Property,0.5,4,A student with mastery 0.5 on Distributive Property needs a worked example at difficulty level 4 of 5.,36,assist2009,9,35038,29,1;2;3;4
+q179,Distributive-Property,Distributive Property,0.65,4,A student with mastery 0.65 on Distributive Property needs a worked example at difficulty level 4 of 5.,36,assist2009,9,35038,29,1;2;3;4
+q180,Distributive-Property,Distributive Property,0.8,5,A student with mastery 0.8 on Distributive Property needs a worked example at difficulty level 5 of 5.,36,assist2009,9,35038,29,1;2;3;4
