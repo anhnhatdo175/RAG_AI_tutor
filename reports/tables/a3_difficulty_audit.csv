@@ -1,0 +1,113 @@
+level,group,n,metric,value,ci_low,ci_high
+all,all,100,spearman_difficulty_vs_mean_rating,0.5809,0.442,0.6909
+all,all,100,spearman_between_raters,0.8965,0.845,0.9374
+all,all,100,weighted_kappa_between_raters,0.8931,0.8347,0.9363
+all,all,100,spearman_difficulty_vs_nguoi2,0.5582,,
+all,all,100,spearman_difficulty_vs_nguoi3,0.5868,,
+all,all,100,exact_agreement,0.79,,
+all,all,100,within_one_agreement,1.0,,
+all,all,100,rating_gap_ge2,0.0,,
+all,all,100,mean_rating_nguoi2,2.54,,
+all,all,100,mean_rating_nguoi3,2.45,,
+source,gsm8k,25,spearman_difficulty_vs_mean_rating,0.4172,0.0636,0.7416
+source,gsm8k,25,spearman_between_raters,0.6805,0.3727,0.9047
+source,gsm8k,25,weighted_kappa_between_raters,0.6359,0.3671,0.8521
+source,gsm8k,25,spearman_difficulty_vs_nguoi2,0.3345,,
+source,gsm8k,25,spearman_difficulty_vs_nguoi3,0.4435,,
+source,gsm8k,25,exact_agreement,0.76,,
+source,gsm8k,25,within_one_agreement,1.0,,
+source,gsm8k,25,rating_gap_ge2,0.0,,
+source,gsm8k,25,mean_rating_nguoi2,2.52,,
+source,gsm8k,25,mean_rating_nguoi3,2.52,,
+source,khan,50,spearman_difficulty_vs_mean_rating,0.7541,0.6171,0.8379
+source,khan,50,spearman_between_raters,0.9199,0.8561,0.9643
+source,khan,50,weighted_kappa_between_raters,0.9127,0.8482,0.9615
+source,khan,50,spearman_difficulty_vs_nguoi2,0.7553,,
+source,khan,50,spearman_difficulty_vs_nguoi3,0.7227,,
+source,khan,50,exact_agreement,0.8,,
+source,khan,50,within_one_agreement,1.0,,
+source,khan,50,rating_gap_ge2,0.0,,
+source,khan,50,mean_rating_nguoi2,2.34,,
+source,khan,50,mean_rating_nguoi3,2.22,,
+source,math,25,spearman_difficulty_vs_mean_rating,0.4667,0.0487,0.7504
+source,math,25,spearman_between_raters,0.903,0.7815,0.9806
+source,math,25,weighted_kappa_between_raters,0.9051,0.7615,0.9778
+source,math,25,spearman_difficulty_vs_nguoi2,0.4013,,
+source,math,25,spearman_difficulty_vs_nguoi3,0.5917,,
+source,math,25,exact_agreement,0.8,,
+source,math,25,within_one_agreement,1.0,,
+source,math,25,rating_gap_ge2,0.0,,
+source,math,25,mean_rating_nguoi2,2.96,,
+source,math,25,mean_rating_nguoi3,2.84,,
+difficulty_source,gsm8k_steps,25,spearman_difficulty_vs_mean_rating,0.4172,0.0636,0.7416
+difficulty_source,gsm8k_steps,25,spearman_between_raters,0.6805,0.3727,0.9047
+difficulty_source,gsm8k_steps,25,weighted_kappa_between_raters,0.6359,0.3671,0.8521
+difficulty_source,gsm8k_steps,25,spearman_difficulty_vs_nguoi2,0.3345,,
+difficulty_source,gsm8k_steps,25,spearman_difficulty_vs_nguoi3,0.4435,,
+difficulty_source,gsm8k_steps,25,exact_agreement,0.76,,
+difficulty_source,gsm8k_steps,25,within_one_agreement,1.0,,
+difficulty_source,gsm8k_steps,25,rating_gap_ge2,0.0,,
+difficulty_source,gsm8k_steps,25,mean_rating_nguoi2,2.52,,
+difficulty_source,gsm8k_steps,25,mean_rating_nguoi3,2.52,,
+difficulty_source,junyi_history,31,spearman_difficulty_vs_mean_rating,0.8054,0.6632,0.8775
+difficulty_source,junyi_history,31,spearman_between_raters,0.9084,0.8279,0.959
+difficulty_source,junyi_history,31,weighted_kappa_between_raters,0.8833,0.8,0.9415
+difficulty_source,junyi_history,31,spearman_difficulty_vs_nguoi2,0.8082,,
+difficulty_source,junyi_history,31,spearman_difficulty_vs_nguoi3,0.7654,,
+difficulty_source,junyi_history,31,exact_agreement,0.7097,,
+difficulty_source,junyi_history,31,within_one_agreement,1.0,,
+difficulty_source,junyi_history,31,rating_gap_ge2,0.0,,
+difficulty_source,junyi_history,31,mean_rating_nguoi2,2.3871,,
+difficulty_source,junyi_history,31,mean_rating_nguoi3,2.1613,,
+difficulty_source,khan_steps,19,spearman_difficulty_vs_mean_rating,0.5922,0.188,0.818
+difficulty_source,khan_steps,19,spearman_between_raters,0.9683,0.8607,1.0
+difficulty_source,khan_steps,19,weighted_kappa_between_raters,0.9736,0.8889,1.0
+difficulty_source,khan_steps,19,spearman_difficulty_vs_nguoi2,0.6172,,
+difficulty_source,khan_steps,19,spearman_difficulty_vs_nguoi3,0.5493,,
+difficulty_source,khan_steps,19,exact_agreement,0.9474,,
+difficulty_source,khan_steps,19,within_one_agreement,1.0,,
+difficulty_source,khan_steps,19,rating_gap_ge2,0.0,,
+difficulty_source,khan_steps,19,mean_rating_nguoi2,2.2632,,
+difficulty_source,khan_steps,19,mean_rating_nguoi3,2.3158,,
+difficulty_source,math_level,25,spearman_difficulty_vs_mean_rating,0.4667,0.0487,0.7504
+difficulty_source,math_level,25,spearman_between_raters,0.903,0.7815,0.9806
+difficulty_source,math_level,25,weighted_kappa_between_raters,0.9051,0.7615,0.9778
+difficulty_source,math_level,25,spearman_difficulty_vs_nguoi2,0.4013,,
+difficulty_source,math_level,25,spearman_difficulty_vs_nguoi3,0.5917,,
+difficulty_source,math_level,25,exact_agreement,0.8,,
+difficulty_source,math_level,25,within_one_agreement,1.0,,
+difficulty_source,math_level,25,rating_gap_ge2,0.0,,
+difficulty_source,math_level,25,mean_rating_nguoi2,2.96,,
+difficulty_source,math_level,25,mean_rating_nguoi3,2.84,,
+level_source,L1 gsm8k,6,mean_rating,2.25,,
+level_source,L1 khan,8,mean_rating,1.1875,,
+level_source,L1 math,6,mean_rating,2.1667,,
+level_source,L2 gsm8k,6,mean_rating,2.3333,,
+level_source,L2 khan,8,mean_rating,1.5,,
+level_source,L2 math,6,mean_rating,2.6667,,
+level_source,L3 gsm8k,7,mean_rating,2.6429,,
+level_source,L3 khan,13,mean_rating,2.1923,,
+level_source,L4 khan,7,mean_rating,2.5714,,
+level_source,L4 math,13,mean_rating,3.3462,,
+level_source,L5 gsm8k,6,mean_rating,2.8333,,
+level_source,L5 khan,14,mean_rating,3.2857,,
+level_source,L1 all,20,mean_rating,1.8,,
+level_source,L2 all,20,mean_rating,2.1,,
+level_source,L3 all,20,mean_rating,2.35,,
+level_source,L4 all,20,mean_rating,3.075,,
+level_source,L5 all,20,mean_rating,3.15,,
+khan_filter,figure_ok,50,kappa_between_raters,1.0,1.0,1.0
+khan_filter,figure_ok,50,agreement_between_raters,1.0,,
+khan_filter,figure_ok,50,pabak_between_raters,1.0,,
+khan_filter,figure_ok,50,share_yes_nguoi2,0.92,,
+khan_filter,figure_ok,50,share_yes_nguoi3,0.92,,
+khan_filter,figure_ok,50,pairs_to_adjudicate,0.0,,
+khan_filter,figure_ok,50,accuracy_after_adjudication,0.92,0.8116,0.9685
+khan_filter,answer_ok,50,kappa_between_raters,0.0,0.0,0.0
+khan_filter,answer_ok,50,agreement_between_raters,0.98,,
+khan_filter,answer_ok,50,pabak_between_raters,0.96,,
+khan_filter,answer_ok,50,share_yes_nguoi2,1.0,,
+khan_filter,answer_ok,50,share_yes_nguoi3,0.98,,
+khan_filter,answer_ok,50,pairs_to_adjudicate,1.0,,
+khan_filter,answer_ok,50,accuracy_after_adjudication,1.0,0.9287,1.0
+khan_filter,both,50,accuracy_after_adjudication,0.92,0.8116,0.9685

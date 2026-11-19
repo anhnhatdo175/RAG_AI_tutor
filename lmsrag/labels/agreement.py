@@ -46,10 +46,14 @@ def pabak(a, b) -> float:
     return 2.0 * agreement_rate(a, b) - 1.0
 
 
-def cohen_kappa(a, b, weights: str | None = None) -> float:
-    """Cohen's κ of two label vectors; ``weights='quadratic'`` gives the weighted κ for ordinal labels."""
+def cohen_kappa(a, b, weights: str | None = None, categories=None) -> float:
+    """Cohen's κ of two label vectors; ``weights='quadratic'`` gives the weighted κ for ordinal labels.
+
+    ``categories``: the full ordered scale (e.g. 1-5). Without it the scale is the labels seen, which for weighted κ
+    shrinks the distance between, say, 2 and 4 when nobody used 3 (scikit-learn's default does the same).
+    """
     a, b = np.asarray(a), np.asarray(b)
-    cats = np.union1d(a, b)
+    cats = np.union1d(a, b) if categories is None else np.asarray(categories)
     k = len(cats)
     idx = {c: i for i, c in enumerate(cats)}
     obs = np.zeros((k, k))
