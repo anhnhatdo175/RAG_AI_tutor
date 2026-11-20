@@ -1,0 +1,4 @@
+rule,policy,n_learners,eta_low,eta_high,median_turns,mean_turns_reached,share_reached,max_turns,turns_at_p07_mean_learner,turns_at_p07_mean_over_learners
+flat,random_in_skill,1000,0.0218,0.0871,19,21.86,1,400,18.37,21.21
+info,random_in_skill,1000,0.0218,0.0871,40,51.23,1,400,21.86,25.25
+zpd,random_in_skill,1000,0.0218,0.0871,38,49.06,0.99,400,18.37,21.21

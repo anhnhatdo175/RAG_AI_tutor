@@ -49,6 +49,7 @@ python -m lmsrag.labels.difficulty_agreement                                    
 python -m lmsrag.labels.gold_queries                                             # P1-07: 180 truy vấn gold set (một lần)
 python -m lmsrag.labels.gold_pool                                                # P1-07: pool từ pool_runs của P2-02, phiếu gán
 python -m lmsrag.labels.gold_finalize                                            # P1-07: κ, phân xử, đóng băng gold_v1.csv
+python -m lmsrag.sim.calibrate --config configs/sim.yaml                        # P1-08: học sinh mô phỏng, so tỷ lệ đúng với Junyi
 ```
 
 Đầu ra: `lmsrag/artifacts/v2/interactions_<dataset>.parquet` (không commit) và bảng báo cáo `reports/tables/a1_*.csv`.
