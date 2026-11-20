@@ -7,6 +7,7 @@
     env.step(u, item_id) -> 0 or 1     # answer, then learn
     env.true_p(u, item_id)             # metrics only
     env.true_theta(u, skill_tag)       # metrics only
+    env.true_mastery(u, item_id), env.median_item(skill_tag)   # metrics only (P1-09)
 
 Random numbers: ``reset(seed)`` draws all learners from one generator, so the learners do not depend on the learning
 rule; each learner then has its own answer stream (``SeedSequence(seed).spawn``), so a learner's answers depend only
@@ -18,7 +19,7 @@ from typing import NamedTuple
 
 import numpy as np
 
-from .model import RULES, World, learning_gain, p_correct
+from .model import RULES, World, learning_gain, p_correct, sigmoid
 
 
 class Observation(NamedTuple):
@@ -86,9 +87,27 @@ class SimEnv:
         self._check(u)
         return self._p(u, self._item(item_id))
 
+    def true_p_many(self, u: int, item_ids) -> np.ndarray:
+        """``true_p`` for several items at once (the oracle reference of P1-09); metrics only."""
+        self._check(u)
+        i = np.fromiter((self._item(x) for x in item_ids), dtype=np.int64)
+        return p_correct(self._theta[u, self._k[i]], self._a[i], self._b[i], self._g[i], self._s[i])
+
     def true_theta(self, u: int, skill_tag: str) -> float:
         self._check(u)
         return float(self._theta[u, self._skill[skill_tag]])
+
+    def true_mastery(self, u: int, item_id: str) -> float:
+        """sigmoid(a_i (theta_{u,k} - b_i)): the part of P without guess and slip (P1-09 "turns to mastery")."""
+        self._check(u)
+        i = self._item(item_id)
+        return float(sigmoid(self._a[i] * (self._theta[u, self._k[i]] - self._b[i])))
+
+    def median_item(self, skill_tag: str) -> str:
+        """The item of the skill with the median true b (the lower one for an even count); metrics only."""
+        rows = np.flatnonzero(self._k == self._skill[skill_tag])
+        order = rows[np.argsort(self._b[rows], kind="mergesort")]
+        return self._world.items["item_id"].iat[int(order[(len(order) - 1) // 2])]
 
     # ---- internals ---------------------------------------------------------------------------------------------
     def _p(self, u: int, i: int) -> float:
