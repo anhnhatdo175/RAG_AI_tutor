@@ -188,8 +188,27 @@ def clean(raw: pd.DataFrame, exercises: pd.DataFrame, templates: pd.DataFrame, c
         "share_rows_with_mapped_tag": round(float((~out["skill_tag"].str.startswith("junyi:")).mean()), 4),
         "share_review_rows": round(float((out["section_type"] == "review").mean()), 4),
     }
+    outside = outside_sample_counts(eligible, df)
+    facts["outside_sample_learners"] = int(eligible["user_id"].nunique() - df["user_id"].nunique())
+    facts["outside_sample_rows"] = int(outside["n"].sum())
     cov_table = pd.DataFrame([{"dataset": DATASET, "metric": k, "value": v} for k, v in facts.items()])
-    return AdapterResult(out, {"a2_cleaning_junyi2015": log.table(DATASET), "a2_coverage_junyi2015": cov_table}, facts)
+    return AdapterResult(out, {"a2_cleaning_junyi2015": log.table(DATASET), "a2_coverage_junyi2015": cov_table}, facts,
+                         {OUTSIDE_COUNTS: outside})
+
+
+OUTSIDE_COUNTS = "junyi2015_outside_sample_counts"
+
+
+def outside_sample_counts(eligible: pd.DataFrame, sample: pd.DataFrame) -> pd.DataFrame:
+    """Responses and correct answers per (exercise, problem_type) of the learners who pass every cleaning step but were
+    not drawn into the 20,000-learner sample. They take no part in any split, so their answers can inform item
+    difficulty without leaking test rows (P1-06 follow-up: the sample alone leaves 25 templates under 200 responses)."""
+    out = eligible[~eligible["user_id"].isin(sample["user_id"].unique())]
+    g = out.groupby([out["exercise"].astype(str), out["problem_type"].astype(str)], observed=True)["correct"]
+    counts = g.agg(n="size", k="sum").reset_index()
+    counts.columns = ["khan_slug", "type_key", "n", "k"]
+    counts["k"] = counts["k"].astype("int64")
+    return counts
 
 
 def build(cfg: dict, repo: Path) -> AdapterResult:

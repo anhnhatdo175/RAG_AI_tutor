@@ -70,6 +70,14 @@ python -m lmsrag.labels.review_recheck                                          
 python -m lmsrag.labels.build_skill_map                                          # P1-05: skill_map_v1.csv từ phiếu A–E (map_version 1.1)
 python -m lmsrag.labels.make_sheets                                              # P1-05: phiếu 150 cặp cho Người 2, Người 3
 python -m lmsrag.labels.agreement                                                # P1-05: κ, phân xử, a4_mapping_audit.csv
+python -m lmsrag.labels.difficulty_sheets                                        # P1-06: phiếu chấm độ khó 100 bài
+python -m lmsrag.labels.difficulty_agreement                                     # P1-06: Spearman, κ, bộ lọc Khan, a3_difficulty_audit.csv
+python -m lmsrag.labels.gold_queries                                             # P1-07: 180 truy vấn gold set (một lần)
+python -m lmsrag.labels.gold_pool                                                # P1-07: pool từ pool_runs của P2-02, phiếu gán
+python -m lmsrag.labels.gold_finalize                                            # P1-07: κ, phân xử, đóng băng gold_v1.csv
+python -m lmsrag.sim.calibrate --config configs/sim.yaml                        # P1-08: học sinh mô phỏng, so tỷ lệ đúng với Junyi
+python -m lmsrag.sim.design_check --config configs/sim.yaml                   # P1-09: chọn cách giao kỹ năng (world chỉnh tham số)
+python -m lmsrag.sim.run --config configs/sim.yaml --world tune                # P1-09: vòng kín trên world chỉnh tham số (final: sau Mốc B)
 ```
 
 Đầu ra: `lmsrag/artifacts/v2/interactions_<dataset>.parquet` (không commit) và bảng báo cáo `reports/tables/a1_*.csv`.

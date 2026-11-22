@@ -41,9 +41,13 @@ GLOSSARY = LABELS / "a4_skill_glossary.csv"
 # problem_tex. Order matters: macros with arguments first, then symbols, then leftover braces and dollars.
 _TEX_ARG = [
     (r"\\(?:color)\{[^{}]*\}\{([^{}]*)\}", r"\1"),
-    (r"\\(?:blue|green|pink|red|purple|orange|gray|grey|BLUE|GREEN|PINK|RED)\{([^{}]*)\}", r"\1"),
-    (r"\\(?:text|textbf|mathrm|mathbf|textit|mbox)\{([^{}]*)\}", r"\1"),
-    (r"\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}", r"(\1)/(\2)"),
+    (r"\\(?:phantom|hphantom|vphantom)\{[^{}]*\}", ""),
+    # Khan colour macros, standard and custom (\leadingColor, \exponentColor, ...)
+    (r"\\(?:blue|green|pink|red|purple|orange|gray|grey|BLUE|GREEN|PINK|RED|[a-z]+Color)\{([^{}]*)\}", r"\1"),
+    (r"\\(?:text|textbf|mathrm|mathbf|textit|mbox|boxed|cancel|bf|it|operatorname)\{([^{}]*)\}", r"\1"),
+    (r"\\cancelto\{[^{}]*\}\{([^{}]*)\}", r"\1"),
+    (r"\\binom\{([^{}]*)\}\{([^{}]*)\}", r"C(\1, \2)"),
+    (r"\\[dt]?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}", r"(\1)/(\2)"),  # Khan splits some over two lines
     (r"\\sqrt\[3\]\{([^{}]*)\}", r"∛(\1)"),
     (r"\\sqrt\{([^{}]*)\}", r"√(\1)"),
     # \overline: repeating digits of a decimal, or a segment in geometry
@@ -54,22 +58,28 @@ _TEX_ARG = [
 ]
 _TEX_SYM = [
     # a colour whose argument still holds braces, e.g. \pink{{?}}: drop the command, the braces go at the end
-    (r"\\(?:blue|green|pink|red|purple|orange|gray|grey|BLUE|GREEN|PINK|RED)(?![a-zA-Z])", ""),
+    (r"\\(?:blue|green|pink|red|purple|orange|gray|grey|BLUE|GREEN|PINK|RED|[a-z]+Color)(?![a-zA-Z])", ""),
+    (r"\\\\", " "),  # a line break first, or "\ " below would leave one of its backslashes
     (r"&=&", "="), (r"&", ""), (r"\\\[|\\\]", ""), (r"\\lvert|\\rvert", "|"), (r"\\lceil", "⌈"), (r"\\rceil", "⌉"),
     (r"\\lfloor", "⌊"), (r"\\rfloor", "⌋"), (r"\\ldots|\\dots|\\cdots", "…"), (r"\\angle\s*", "∠"), (r"\\lcm", "lcm"),
     (r"\\gcd", "gcd"), (r"\\ ", " "),
     (r"\\left|\\right", ""), (r"\\times", "×"), (r"\\div", "÷"), (r"\\cdot", "·"), (r"\\pm", "±"),
     (r"\\leq?(?![a-z])", "≤"), (r"\\geq?(?![a-z])", "≥"), (r"\\neq", "≠"), (r"\\approx", "≈"), (r"\\pi(?![a-zA-Z])", "π"),
     (r"\^\\circ|\\circ", "°"), (r"\\%", "%"), (r"\\(?:Huge|huge|LARGE|Large|large|small|displaystyle)", ""),
-    (r"\\(?:qquad|quad|space|,|;|!|:)", " "), (r"\\\\", " "),
+    (r"\\(?:qquad|quad|space|,|;|!|:)", " "),
+    (r"\\(?:Bigg|bigg|Big|big)[lr]?", ""), (r"\\mid", "|"), (r"\\in(?![a-zA-Z])", "∈"), (r"\\RR|\\mathbb R", "ℝ"),
+    (r"\\star", "⋆"), (r"\\Rightarrow|\\implies", "⇒"), (r"\\rightarrow|\\to(?![a-zA-Z])", "→"),
+    (r"\\triangle", "△"), (r"\\theta", "θ"), (r"\\alpha", "α"), (r"\\beta", "β"),
+    (r"\\(sin|cos|tan|log|ln)(?![a-zA-Z])", r"\1"), (r"\\infty", "∞"), (r"\\equiv", "≡"),
 ]
 
 
 def plain_math(text: str) -> str:
     import re
 
-    out = str(text).replace("\\$", "\x00")  # an escaped dollar is money; bare dollars only delimit maths
-    for _ in range(4):  # nested arguments, e.g. a fraction inside a colour
+    # an escaped dollar is money (bare dollars only delimit maths); escaped braces are set braces
+    out = str(text).replace("\\$", "\x00").replace("\\{", "\x01").replace("\\}", "\x02")
+    for _ in range(8):  # nested arguments, e.g. a fraction inside a colour
         before = out
         for pat, rep in _TEX_ARG:
             out = re.sub(pat, rep, out)
@@ -77,7 +87,8 @@ def plain_math(text: str) -> str:
             break
     for pat, rep in _TEX_SYM:
         out = re.sub(pat, rep, out)
-    out = out.replace("$", "").replace("{", "").replace("}", "").replace("\x00", "$")
+    out = out.replace("$", "").replace("{", "").replace("}", "")
+    out = out.replace("\x00", "$").replace("\x01", "{").replace("\x02", "}")
     return re.sub(r"[ \t]+", " ", out).strip()
 
 

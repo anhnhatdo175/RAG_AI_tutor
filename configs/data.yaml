@@ -2,7 +2,10 @@
 data_seed: 2026
 seeds: [0, 1, 2, 3, 4]
 split: {history: 0.70, validation: 0.15, test: 0.15, min_user_interactions: 20}
-difficulty: {shrinkage_m: 20, min_responses_unit: 200}
+# junyi_outside_sample: also count the answers of eligible Junyi learners outside the 20,000 sample (in no split, so no
+# test leak). Tried after P1-06: +221 Khan problems with a Junyi-based difficulty, but no better agreement with the
+# human ratings, so it stays off and the corpus keeps the difficulty P1-06 validated (a3_difficulty_BIEN_BAN.md, s. 9)
+difficulty: {shrinkage_m: 20, min_responses_unit: 200, junyi_outside_sample: false}
 rt_clip_ms: [500, 120000]
 bootstrap: {n_resamples: 1000}
 datasets:
@@ -14,3 +17,7 @@ datasets:
               skill_map: lmsrag/data/mappings/skill_map_v1.csv}   # P1-05; draft: assistments_to_khan_draft.csv
 output_dir: lmsrag/artifacts/v2
 tables_dir: reports/tables
+# P1-07 gold set pools: top-k of each system (runs from P2-02 in <output_dir>/pool_runs/<system>.csv), plus random
+# checks; merged, deduplicated, at most pool_max chunks; under pool_min, filled round-robin from ranks up to fill_depth
+gold: {systems: [bm25, lsa, bge_ce, adaptive_old], top_k: 5, random_same_skill: 2, random_other_skill: 1,
+       pool_min: 10, pool_max: 15, fill_depth: 10, pilot_queries: 20, annotators: [nguoi1, nguoi3]}

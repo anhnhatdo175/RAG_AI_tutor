@@ -49,6 +49,8 @@ def main(argv: list[str] | None = None) -> int:
         result.interactions.to_parquet(target, index=False)
         for table, frame in result.tables.items():
             frame.to_csv(tables_dir / f"{table}.csv", index=False)
+        for artifact, frame in result.artifacts.items():
+            frame.to_parquet(out_dir / f"{artifact}.parquet", index=False)
         df = result.interactions
         shares = df["split"].value_counts(normalize=True).round(4).to_dict()
         print(f"{name}: {len(df):,} rows, {df.user_id.nunique():,} learners, accuracy {df.correct.mean():.4f}, "

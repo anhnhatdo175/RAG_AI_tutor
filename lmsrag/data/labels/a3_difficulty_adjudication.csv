@@ -1,0 +1,3 @@
+﻿item,check,problem,answer,nguoi2,nguoi3,note_nguoi2,note_nguoi3,final,note_final
+d066,answer_ok,"∛(192) = ?
+∛()",192,có,không,"Đáp án lưu 192 là số dưới dấu căn trong ô ∛( ); ∛192 có cùng giá trị với 4∛3 theo lời giải, dù chưa rút gọn.","Đáp án lưu là 192 (số dưới căn), giá trị đúng là 4∛3 nên sai",có,"answer_type cuberoot: đáp án lưu 192 nghĩa là ∛192 = 4∛3, đúng; phiếu hiện thiếu dấu căn (lần đầu quyết không theo cách hiểu sai đó)"

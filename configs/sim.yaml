@@ -1,0 +1,42 @@
+# P1-08 simulated learners (plan tab "Người 1", card P1-08). Paths are relative to the repository root.
+# Every formula is written out in lmsrag/data/cards/simulation.md.
+world_seed: 2026            # = data_seed of configs/data.yaml; draws the item discriminations a_i. P1-09 tunes on 2027
+items: lmsrag/artifacts/v2/exercise_bank_v2.jsonl            # P1-04 exercise bank, one simulated item per exercise
+junyi: lmsrag/artifacts/v2/interactions_junyi2015.parquet    # P1-03; only the history split is read
+min_junyi_responses: 200    # a skill enters the simulation when Junyi history has at least this many responses on it
+p_clip: [0.01, 0.99]        # p_correct_hist is clipped before b_i = logit(1 - p)
+discrimination_log_sd: 0.3  # a_i ~ LogNormal(0, 0.3)
+guess: {radio: 0.20, default: 0.02}   # multiple choice (answer_type radio) / typed answers
+slip: 0.05
+theta_sd: 1.0               # theta_{u,k} ~ Normal(mu_k, theta_sd)
+eta: [0.0218, 0.0871]       # eta_u ~ Uniform(low, high), per learner and the same for all skills. Plan: [0.02, 0.08]
+                            # (33 turns); tuned 20/11/2026 by --tune-eta (a6_sim_eta_tuning.csv), rounded
+# calibrate.py --tune-eta: scale `start` (keeping high / low = 4) until the median turns to +1 theta, pooled over the
+# three learning rules with random items in a skill, is target_turns; searched on world_seed + 1
+eta_tuning: {start: [0.02, 0.08], target_turns: 30}
+learning_rules: [flat, info, zpd]
+zpd: {center: 0.7, width: 0.15}   # zpd rule G = exp(-(P - center)^2 / (2 width^2))
+zpd_band: [0.6, 0.8]        # "hit" band of the ZPD hit rate (P1-09); not used by the learning rules
+n_learners: 1000
+check: {n_learners: 10000, seed: 0, max_turns: 400}   # calibrate.py: initial accuracy and turns per theta unit
+# P1-09 closed-loop experiment (lmsrag/sim/run.py). Each learner practises one skill drawn uniformly from the simulated
+# skills; a policy sees only observe(u) and the public catalog rows of that skill (plus, for most_popular, Junyi
+# history counts). --world tune runs on world_seed + 1 (choose the parameters of proposed there), --world final on
+# world_seed, after Mốc B.
+closed_loop:
+  n_learners: 1000
+  turns: 50
+  seeds: [0, 1, 2, 3, 4]
+  policies: [random, fixed, most_popular, proposed]
+  references: [oracle]   # reads the true P, nearest to 0.7: the reachable ZPD hit rate; not a policy, not in H6
+  # chosen 20/11/2026 on world 2027 by lmsrag.sim.design_check (rule written before the run; c5_design_check_tune.csv):
+  # no learner practises a skill mastered before turn 1; uniform 26% did; sensitivity 34.8 vs 31.0 junyi_unmastered
+  skill_assignment: uniform_unmastered
+  proposed: lmsrag.sim.policies:ProposedPolicy   # P2-08 (Người 2); skipped with a notice on --world tune if missing
+  fixed_level: 3
+  zpd_band: [0.6, 0.8]
+  # "turns to mastery": the plan's P >= 0.95 on the median item can never happen (P < 1 - slip = 0.95), so the
+  # threshold is on the part of P without guess and slip, sigmoid(a_m (theta - b_m)) >= 0.95, m = median-b item
+  mastery_threshold: 0.95
+  n_resamples: 1000
+  compare_to: fixed     # H6: proposed vs fixed difficulty, per learning rule

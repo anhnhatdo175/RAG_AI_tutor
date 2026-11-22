@@ -82,6 +82,8 @@ def test_make_chunks_ids_split_and_hint_steps():
     assert k["content_type"] == "worked_example" and k["text"].startswith("Problem: What is 1 + 2?\nSolution:")
     assert chunks[1]["content_type"] == "hint_step" and "Hint 1 of 2: Add." in chunks[1]["text"]
     assert gsm[0]["p_correct_hist"] is None and gsm[0]["licence"] == "MIT"
+    assert k["difficulty_reliable"] is True and gsm[0]["difficulty_reliable"] is False  # P1-06 choice (a)
+    assert k["difficulty_tier"] == 1 and gsm[0]["difficulty_tier"] == 3
     for c in chunks:
         json.dumps(c)  # plain JSON, no numpy scalars or NaN
     long_hint = docs_frame().iloc[[0]].copy()
@@ -95,9 +97,31 @@ def test_exercise_bank_has_statement_only():
     bank = exercise_bank(docs_frame())
     assert [b["chunk_id"] for b in bank] == ["khan:t:0:37#q", "gsm8k:test:4#q"]
     assert bank[0]["text"] == "What is 1 + 2?" and bank[0]["answer"] == "3"
+    assert [b["difficulty_reliable"] for b in bank] == [True, False]
     json.dumps(bank)
 
 
 def test_py_converts_numpy_and_nan():
     assert _py(np.int64(3)) == 3 and type(_py(np.int64(3))) is int
     assert _py(float("nan")) is None and _py("x") == "x"
+
+
+def test_history_counts_add_outside_sample_learners():
+    inter = pd.DataFrame({"item_id": ["t:a", "t:a", "t:b", "t:a"], "khan_slug": ["t", "t", "t", "t"],
+                          "correct": [1, 0, 1, 1], "split": ["history", "history", "history", "test"]})
+    unit, template = D.junyi_history_counts(inter)
+    assert unit.set_index("type_key").loc["a", "n"] == 2  # the test row is not counted
+    outside = pd.DataFrame({"khan_slug": ["t", "u"], "type_key": ["a", "x"], "n": [10, 5], "k": [7, 5]})
+    unit, template = D.junyi_history_counts(inter, outside)
+    u = unit.set_index(["khan_slug", "type_key"])
+    assert (u.loc[("t", "a"), "n"], u.loc[("t", "a"), "k"]) == (12, 8)
+    assert template.set_index("khan_slug").loc["t", "n"] == 13 and ("u", "x") in u.index
+
+
+def test_outside_sample_counts_exclude_sampled_learners():
+    from lmsrag.datasets.junyi2015 import outside_sample_counts
+
+    eligible = pd.DataFrame({"user_id": [1, 1, 2, 3], "exercise": ["t"] * 4, "problem_type": ["a", "a", "a", "b"],
+                             "correct": [True, False, True, True]})
+    counts = outside_sample_counts(eligible, eligible[eligible["user_id"] == 1])
+    assert counts.set_index("type_key")[["n", "k"]].to_dict("index") == {"a": {"n": 1, "k": 1}, "b": {"n": 1, "k": 1}}

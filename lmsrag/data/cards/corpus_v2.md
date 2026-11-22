@@ -106,8 +106,20 @@ còn template dùng được: Ordering Integers (1,19% lượt 2009 / 0,80% lư�
 - `difficulty` = hạng phần trăm giữa (mid-rank) trong từng nguồn, nên mỗi nguồn trải đều trên (0, 1).
 - `difficulty_level` = ngũ phân vị của `difficulty` trên toàn kho. Vì GSM8K và MATH có nhiều giá trị trùng, GSM8K không
   có bài ở mức 4 và MATH chỉ có các mức 1, 2, 4 (hình `a3_difficulty_by_source.png`).
-- **Giả định cần kiểm:** coi hạng trong từng nguồn là so sánh được giữa các nguồn. Giả định này được kiểm ở P1-06 bằng
-  Spearman với đánh giá của người.
+- **Giả định đã kiểm (P1-06, `a3_difficulty_BIEN_BAN.md`):** coi hạng trong từng nguồn là so sánh được giữa các nguồn.
+  Hai người chấm 100 bài (κ có trọng số 0,89). Spearman giữa `difficulty` và điểm của người: Khan `junyi_history`
+  0,81 [0,66; 0,88], Khan `khan_steps` 0,59 [0,19; 0,82], GSM8K 0,42 [0,06; 0,74], MATH 0,47 [0,05; 0,75]. Cùng một
+  `difficulty_level`, bài GSM8K và MATH khó hơn bài Khan khoảng 1 điểm (thang 1–5) ở các mức thấp, và năm mức của GSM8K
+  gần như không phân tầng (2,25 → 2,83). Giả định **không đứng**: chỉ nên so độ khó trong cùng một nguồn, hoặc hiệu
+  chỉnh thang chung trên một mẫu riêng.
+- **Cách dùng độ khó (quyết định sau P1-06):** mỗi chunk và mỗi bài tập có `difficulty_tier` (1: Khan từ Junyi, 1.273 bài;
+  2: Khan từ số bước gợi ý, 791; 3: GSM8K và MATH, 2.344) và `difficulty_reliable` (bậc 1). Chọn bài theo mức khó ưu
+  tiên bậc 1, rồi bậc 2, rồi bậc 3; không so độ khó giữa hai nguồn. Kỹ năng chuẩn có bài ở ≥ 3 mức trong cùng một nguồn:
+  17 (bậc 1), 21 (tới bậc 2), 33 (tới bậc 3). Thử thêm người học Junyi ngoài mẫu không cải thiện độ khớp với người nên
+  không dùng (`difficulty.junyi_outside_sample: false`).
+- **Đáp án dạng căn:** 54 bài Khan trong kho bài tập có `answer_type` `radical` hoặc `cuberoot`; theo quy ước của Khan,
+  `answer` chỉ lưu số dưới dấu căn ("147" nghĩa là √147 = 7√3). Bộ chấm phải dựng lại dấu căn trước khi so.
+- **Bộ lọc Khan (P1-06):** 92,0% [81,2; 96,9] bài làm được mà không cần hình; 100% [92,9; 100] đáp án lưu đúng.
 - Thống kê `junyi_*_survey.csv` (tính trên toàn log) **không** được dùng ở đây.
 
 ## Kho bài tập
