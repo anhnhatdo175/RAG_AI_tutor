@@ -5,6 +5,16 @@ from lmsrag.layer2_embedding import chunk, clean, embed, index, parse
 from lmsrag.layer2_embedding.profile_vector import DecayedProfile, profile_vector_direct
 
 
+def _require_faiss():
+    try:
+        import faiss
+    except ImportError as exc:
+        if "Application Control policy has blocked" not in str(exc):
+            raise
+        pytest.skip("Windows Code Integrity blocked the FAISS native extension")
+    return faiss
+
+
 def test_chunker_respects_budget_and_overlap():
     text = "\n\n".join(" ".join(f"w{p}_{i}" for i in range(250)) + "." for p in range(8))
     ch = chunk.chunk_text(text, header="[Problem: x ...]")
@@ -52,6 +62,8 @@ def test_recency_decay_prefers_recent():
 
 
 def test_index_alignment(tmp_path, monkeypatch):
+    _require_faiss()
+
     from lmsrag import config
 
     monkeypatch.setattr(config, "ART", tmp_path)
@@ -91,6 +103,8 @@ def test_grade_metadata_rules():
 
 
 def test_vectorstore_exact_subject_grade_filter():
+    _require_faiss()
+
     from lmsrag.vectorstore import VectorStore
 
     vectors = np.eye(3, dtype="float32")

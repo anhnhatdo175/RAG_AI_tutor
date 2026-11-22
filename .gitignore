@@ -4,6 +4,7 @@
 !lmsrag/.env.example
 .venv/
 .venv-*/
+.venv311/
 .python311-portable/
 .python311-installer.exe
 .python311-embed.zip

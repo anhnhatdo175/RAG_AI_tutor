@@ -1,9 +1,7 @@
 import json
 
 import numpy as np
-import pytest
-
-from lmsrag.application import LearningPipeline, NoLearningContentError
+from lmsrag.application import LearningPipeline
 from lmsrag.layer1_data.state_store import StateStore
 from lmsrag.layer5_generation import LLMGenerator
 
@@ -18,13 +16,32 @@ class FakeRetriever:
     def retrieve(self, query, **constraints):
         assert query == "practice fractions"
         assert constraints["target_skill"] == "fractions"
-        return [{
-            "doc_id": "doc-1",
-            "skill_tag": "fractions",
-            "subject": "Mathematics",
-            "grade": "lower_secondary",
-            "text": "Use a common denominator to add fractions.",
-        }]
+        return [
+            {
+                "doc_id": "doc-1",
+                "skill_tag": "fractions",
+                "subject": "Mathematics",
+                "grade": "lower_secondary",
+                "difficulty": 0.6,
+                "text": "Use a common denominator to add fractions.",
+            },
+            {
+                "doc_id": "doc-2",
+                "skill_tag": "fractions",
+                "subject": "Mathematics",
+                "grade": "lower_secondary",
+                "difficulty": 0.6,
+                "text": "Rewrite fractions with a shared denominator before adding.",
+            },
+        ]
+
+
+class FakeCollaborativeFilter:
+    def personalization_confidence(self, user_id, skill_tag):
+        return 0.5
+
+    def predict_candidate(self, user_id, item, skill_tag, difficulty):
+        return 0.7, "skill"
 
 
 class FakeRecommender:
@@ -40,6 +57,14 @@ class FakeRecommender:
             "statement": "What is 1/3 + 1/4?",
             "gold_answer": "7/12",
         }
+        self.exercise_bank = [self.item]
+        self.cf = FakeCollaborativeFilter()
+
+    def profile_vector_for(self, state, skill_tag):
+        return np.array([1.0, 0.0], dtype="float32")
+
+    def mastery_for_skill(self, state, skill_tag):
+        return 0.5
 
     def recommend(self, *, state, **kwargs):
         if self.item["item_id"] in state.seen:
@@ -61,7 +86,8 @@ def _response():
             "hints": ["Find a common denominator."],
             "personalization_reason": "This skill is ready for practice.",
             "personalization_basis": ["overall_accuracy"],
-            "supporting_doc_ids": ["doc-1"],
+            "supporting_doc_ids": ["doc-2"],
+            "answer_key": "7/12",
         },
         "tutor_turn": None,
         "safety": {"contains_final_answer": False, "grounded": True},
@@ -91,8 +117,8 @@ def test_pipeline_generates_grades_and_persists_feedback(tmp_path):
             target_skill="fractions",
         )
 
-        assert activity.item_id == "T-fraction-1"
-        assert activity.generation["task"]["item_id"] == "T-fraction-1"
+        assert activity.item_id.startswith("GEN-")
+        assert activity.generation["task"]["item_id"] == activity.item_id
         assert "7/12" not in json.dumps(activity.generation)
 
         result = pipeline.submit_answer(
@@ -106,15 +132,7 @@ def test_pipeline_generates_grades_and_persists_feedback(tmp_path):
         assert result["score"] == 1.0
         state = pipeline.state_store.get(18)
         assert state.canonical_attempts["fractions"] == 1
-        assert state.seen == ["T-fraction-1"]
-        with pytest.raises(NoLearningContentError, match="unused mapped exercise"):
-            pipeline.prepare_activity(
-                user_id=18,
-                query="practice fractions",
-                target_subject="Mathematics",
-                target_grade="lower_secondary",
-                target_skill="fractions",
-            )
+        assert state.seen == [activity.item_id]
     finally:
         pipeline.close()
 

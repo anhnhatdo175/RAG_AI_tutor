@@ -111,8 +111,14 @@ class LLMGenerator:
                 result = self._parse_json(raw)
                 result = self._bind_bank_task(result, context)
                 self._bind_initial_turn(result, mode)
+                normalized_safety = False
                 if (result.get("status") == "insufficient_context"
                         and result.get("task") is None and result.get("tutor_turn") is None):
+                    expected_safety = {
+                        "contains_final_answer": False,
+                        "grounded": False,
+                    }
+                    normalized_safety = result.get("safety") != expected_safety
                     result["safety"] = {
                         "contains_final_answer": False,
                         "grounded": False,
@@ -134,6 +140,7 @@ class LLMGenerator:
                             answer_pattern and answer_pattern.search(visible_text)
                         )
                 self._validate_response(result, context, mode)
+                result["normalized_safety"] = normalized_safety
                 return result
             except ValueError as exc:
                 if attempt == 1:

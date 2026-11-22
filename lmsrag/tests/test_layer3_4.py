@@ -20,6 +20,16 @@ class FakeReranker:
         return [float(i) for i, _ in enumerate(documents)]
 
 
+def _require_faiss():
+    try:
+        import faiss
+    except ImportError as exc:
+        if "Application Control policy has blocked" not in str(exc):
+            raise
+        pytest.skip("Windows Code Integrity blocked the FAISS native extension")
+    return faiss
+
+
 def test_query_rewriter_corrects_typos_expands_abbreviations_and_preserves_math():
     rewriter = QueryRewriter()
 
@@ -30,6 +40,8 @@ def test_query_rewriter_corrects_typos_expands_abbreviations_and_preserves_math(
 
 
 def test_adaptive_retriever_hard_filters_and_reranks():
+    _require_faiss()
+
     store = VectorStore(
         np.eye(3, dtype="float32"),
         [
@@ -102,6 +114,8 @@ def test_skill_cf_uses_history_and_skill_level():
 
 
 def test_hybrid_recommender_applies_constraints_zpd_and_hybrid_formula():
+    _require_faiss()
+
     store = VectorStore(
         np.array([[1.0, 0.0], [0.0, 1.0]], dtype="float32"),
         [

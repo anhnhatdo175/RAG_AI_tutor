@@ -177,7 +177,7 @@ def test_generator_preserves_bank_statement_and_difficulty():
     assert result["task"]["difficulty"] == 0.9
 
 
-def test_generator_rejects_inconsistent_insufficient_context_safety():
+def test_generator_normalizes_inconsistent_insufficient_context_safety():
     response = {
         "schema_version": "1.0",
         "status": "insufficient_context",
@@ -188,8 +188,26 @@ def test_generator_rejects_inconsistent_insufficient_context_safety():
     }
     generator = LLMGenerator(lambda prompt, **kwargs: json.dumps(response))
 
-    with pytest.raises(ValueError, match="grounded=false"):
-        generator.generate(_context())
+    result = generator.generate(_context())
+
+    assert result["safety"] == {"contains_final_answer": False, "grounded": False}
+    assert result["normalized_safety"] is True
+
+
+def test_generator_marks_valid_insufficient_context_safety_as_not_normalized():
+    response = {
+        "schema_version": "1.0",
+        "status": "insufficient_context",
+        "mode": "practice",
+        "task": None,
+        "tutor_turn": None,
+        "safety": {"contains_final_answer": False, "grounded": False},
+    }
+    generator = LLMGenerator(lambda prompt, **kwargs: json.dumps(response))
+
+    result = generator.generate(_context())
+
+    assert result["normalized_safety"] is False
 
 
 def test_socratic_generation_requires_no_answer_leakage():

@@ -21,6 +21,32 @@ output/                                              # kết quả smoke test LL
 
 Chạy test: `python -m pytest lmsrag/tests -q`
 
+Một số test kiểm thử trực tiếp FAISS cần Windows cho phép nạp extension native `_swigfaiss.pyd`. Nếu Code Integrity trên máy này chặn extension, các test phụ thuộc FAISS sẽ hiện là skipped; chạy lại sau khi policy Windows được cấu hình để tin cậy các binary cần thiết. Không tắt toàn bộ chính sách bảo mật. Python 3.11 cũng cần được phép nạp các extension nhị phân của thư viện (ví dụ pandas).
+
+## Cấu hình môi trường
+
+`lmsrag.settings.load("data")` đọc `configs/data.yaml`, kiểm tra các khóa bắt buộc và chuyển đường dẫn cấu hình thành đường dẫn tuyệt đối. Dùng `lmsrag.settings.seeds()` và `lmsrag.settings.data_seed()` để lấy seed thống nhất.
+
+Cài các phụ thuộc theo mục đích:
+
+```powershell
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-render.txt
+python -m pip install -r requirements-kaggle.txt
+```
+
+`requirements-render.txt` chỉ dành cho sinh corpus bằng Playwright. `requirements-kaggle.txt` bổ sung `pykt-toolkit` cho notebook GPU.
+
+Trong môi trường Windows mới:
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pytest lmsrag/tests -q
+.\.venv\Scripts\python.exe -m lmsrag.app --help
+```
+
 ## Chạy pipeline `lmsrag` (Layer 1–2)
 
 ```powershell
