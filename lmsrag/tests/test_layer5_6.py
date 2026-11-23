@@ -151,6 +151,9 @@ def test_context_builder_limits_sources_and_hides_private_task_fields():
     assert [task["item_id"] for task in context.candidate_tasks] == ["task-1"]
     prompt = LLMGenerator._build_prompt(context)
     assert "private" not in prompt
+    assert "Không tạo bài mới" in prompt
+    assert "hãy tạo bài mới" not in prompt.casefold()
+    assert "hãy tạo biến thể" not in prompt.casefold()
 
 
 @pytest.mark.parametrize(("top_k", "top_n"), [(0, 1), (1, 0), (1.5, 1), (True, 1)])
