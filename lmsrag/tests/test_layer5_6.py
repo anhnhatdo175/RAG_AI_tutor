@@ -62,8 +62,32 @@ def test_generator_builds_context_and_validates_response():
     result = LLMGenerator(fake_generate).generate(_context())
 
     assert result["task"]["personalization_reason"]
+    assert result["generation_attempts"] == 1
     assert received["json_mode"] is True
     assert '"canonical_mastery"' in received["prompt"]
+
+
+def test_generator_reports_schema_repair_attempts():
+    responses = iter([json.dumps({"invalid": True}), json.dumps(_generation())])
+
+    def fake_generate(prompt, *, json_mode):
+        return next(responses)
+
+    result = LLMGenerator(fake_generate).generate(_context())
+    assert result["generation_attempts"] == 2
+
+
+def test_generator_reports_failed_schema_attempts():
+    from lmsrag.layer5_generation.generator import GenerationValidationError
+    from lmsrag.llm_eval.text_metrics import generation_validation_metrics
+
+    def fake_generate(prompt, *, json_mode):
+        return json.dumps({"invalid": True})
+
+    with pytest.raises(GenerationValidationError) as error:
+        LLMGenerator(fake_generate).generate(_context())
+    assert error.value.attempts == 2
+    assert generation_validation_metrics(error.value)["retry_count"] == 1
 
 
 def test_default_generator_supplies_context_bound_ollama_schema(monkeypatch):
