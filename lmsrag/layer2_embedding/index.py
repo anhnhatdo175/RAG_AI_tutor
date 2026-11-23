@@ -6,7 +6,6 @@ import json
 import time
 from collections import Counter
 
-import faiss
 import numpy as np
 
 from .. import config
@@ -18,6 +17,8 @@ REQUIRED_META = ("chunk_id", "doc_id", "text", "skill_tag", "canonical_skill_id"
 
 
 def save_index(chunks: list[dict], V: np.ndarray, embedder_info: dict) -> dict:
+    import faiss
+
     for c in chunks:
         missing = [k for k in REQUIRED_META if k not in c]
         if missing:

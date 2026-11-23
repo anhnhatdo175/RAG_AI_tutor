@@ -5,12 +5,13 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-import faiss
 import numpy as np
 
 
 class VectorStore:
     def __init__(self, vectors: np.ndarray, meta: list[dict]):
+        import faiss
+
         assert len(vectors) == len(meta)
         self.vectors = np.ascontiguousarray(vectors, dtype="float32")
         self.meta = meta
@@ -38,6 +39,8 @@ class VectorStore:
         if where_skill_tag is None:
             D, I = self.index.search(q, k)
         else:
+            import faiss
+
             ids = self.ids_by_tag.get(where_skill_tag)
             if ids is None or len(ids) == 0:
                 return []
@@ -81,6 +84,8 @@ class VectorStore:
     def search_ids(self, qvec: np.ndarray, ids: np.ndarray, k: int):
         if len(ids) == 0:
             return []
+        import faiss
+
         params = faiss.SearchParameters()
         params.sel = faiss.IDSelectorBatch(ids)
         q = np.ascontiguousarray(qvec.reshape(1, -1), dtype="float32")
