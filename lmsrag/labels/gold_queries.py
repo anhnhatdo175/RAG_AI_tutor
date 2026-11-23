@@ -16,13 +16,13 @@ Queries are in English because the corpus and the encoders are.
 from __future__ import annotations
 
 import argparse
-import math
 from pathlib import Path
 
 import pandas as pd
 
 from ..datasets.build import REPO, load_config
 from ..skill_mapping import CANONICAL, slugify
+from .rubric import target_level
 
 GOLD = REPO / "lmsrag" / "data" / "gold"
 N_SKILLS = 36
@@ -31,11 +31,6 @@ MIN_LEVELS = 3
 TEMPLATE = ("A student with mastery {mastery} on {skill} needs a worked example at difficulty level {level} of 5.")
 COLUMNS = ["query_id", "skill_tag", "skill_name", "mastery", "target_level", "query", "skill_rank", "skill_source",
            "rows_assist2009", "rows_assist2012", "worked_docs", "levels_with_docs"]
-
-
-def target_level(mastery: float) -> int:
-    """The fixed rule of rubric v1 (half-up rounding, so 0.5 -> 3.5 -> 4)."""
-    return int(min(5, max(1, math.floor(1 + 5 * mastery + 0.5))))
 
 
 def worked_docs(chunks: pd.DataFrame) -> pd.DataFrame:

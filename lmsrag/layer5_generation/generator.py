@@ -75,6 +75,14 @@ class GenerationContext:
 GeneratorCallable = Callable[..., str | tuple[str, float]]
 
 
+class GenerationValidationError(ValueError):
+    """A response failed both schema-validation attempts."""
+
+    def __init__(self, message: str, attempts: int):
+        super().__init__(message)
+        self.attempts = attempts
+
+
 class LLMGenerator:
     """Generate and validate a JSON learning activity from retrieved context."""
 
@@ -141,10 +149,11 @@ class LLMGenerator:
                         )
                 self._validate_response(result, context, mode)
                 result["normalized_safety"] = normalized_safety
+                result["generation_attempts"] = attempt + 1
                 return result
             except ValueError as exc:
                 if attempt == 1:
-                    raise
+                    raise GenerationValidationError(str(exc), attempts=attempt + 1) from exc
                 duplicate_repair = (
                     "The new prompt must be different from every reference and retrieved example. "
                     "Change all operands and rewrite the wording; do not repeat or merely prefix an example.\n"

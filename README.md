@@ -168,6 +168,14 @@ updated_state = state_store.apply_canonical_event(
 
 Implementation có thể gọi trực tiếp qua `lmsrag.layer5_generation` (`GenerationContext`, `LLMGenerator`, `SocraticTutor`) và `lmsrag.layer6_feedback` (`FeedbackLoop`, `GradingResult`). Layer 5 dùng backend đã cấu hình; Layer 6 nhận `StateStore` live và trả learner state/snapshot mới sau khi chấm.
 
+Tạo bộ yêu cầu cố định P3-02 (60 kỹ năng, 360 yêu cầu; seed lấy từ `configs/data.yaml`):
+
+```powershell
+python -m lmsrag.llm_eval.requests --config llm_eval
+```
+
+Tập `dev` và `eval` được chia theo kỹ năng; lệnh chỉ chấp nhận ghi lại `requests_v1.jsonl` nếu nội dung tái tạo trùng hoàn toàn.
+
 Để chạy inference LLM local thật qua Layer 5 (không dùng mock), cài Ollama, pull model rồi chạy:
 
 ```powershell
