@@ -85,6 +85,7 @@ Chạy `python -m lmsrag.sim.calibrate --config configs/sim.yaml` (khoảng 20 g
 - **Test (`test_sim.py`):** cùng seed cho cùng chuỗi, kể cả khi đổi thứ tự đi qua người học; đúng/sai khớp `true_p`
   trên 10.000 lượt trong 4 sai số chuẩn, cả trên toàn bộ và theo từng khoảng P; `observe` chỉ trả `(t, item_id,
   correct)`; `catalog` không có a, b, g, s; mỗi lượt chỉ θ của kỹ năng vừa làm thay đổi, đúng một lượng η · G(P).
+
 ## Tốc độ học (chọn η)
 
 Kế hoạch: η_u ~ Uniform(0,02; 0,08), "chọn sao cho học sinh trung bình cần khoảng 30 lượt để lên một đơn vị θ".
@@ -131,7 +132,9 @@ bài tạo khác biệt trong P1-09. Với 50 lượt, người học trung bìn
   - `most_popular`: bài có nhiều lượt nhất trong history Junyi, tính theo đơn vị (template, dạng bài), rồi theo
     template. Junyi ghi dạng bài lúc theo mã, lúc theo số thứ tự (`khan_problem_types.csv`), nên một đơn vị cộng cả
     hai cách ghi; 64,6% bài Khan có số lượt ở mức đơn vị. Bài GSM8K có số lượt 0 nên xếp cuối.
-  - `proposed`: P2-08 của Người 2, hạn 14/12, chưa có.
+  - `proposed`: `ProposedPolicy` của P2-08 (Người 2, `lmsrag/sim/policies.py`): ước lượng mastery theo Elo và chọn
+    bài theo xác suất đúng dự đoán gần 0,7. Tham số chọn ngày 26/11/2026 trên world 2027 bằng
+    `python -m lmsrag.sim.tune_proposed` (`proposed_params` trong `sim.yaml`, nhật ký `c5_proposed_tuning_tune.csv`).
   - `oracle` (dòng tham chiếu, `references`): đọc P thật của mọi bài ứng viên và đưa bài có P gần 0,7 nhất,
     được lặp bài. Đây là trần của tỷ lệ trúng ZPD có thể đạt, không phải một chính sách, và không nằm trong H6.
 - **Chỉ số:**
@@ -178,24 +181,27 @@ Chọn `uniform_unmastered`. Rút theo số lượt Junyi gần thực tế hơn
 Bảng đầy đủ: `c5_design_check_tune.csv`. Việc chọn dùng tham số thật để dựng thí nghiệm (θ trước lượt 1), giống giáo
 viên giao bài; chính sách vẫn chỉ thấy `observe(u)`.
 
-### Lần chạy trên world chỉnh tham số (2027), 20/11/2026
+### Lần chạy trên world chỉnh tham số (2027)
 
-`c5_closed_loop_tune.csv`, 5 seed, khoảng 95% bootstrap theo học sinh. Đây là kết quả mô phỏng, chưa phải lần chạy
-cuối, và chưa có `proposed`:
+`c5_closed_loop_tune.csv`, 5 seed, khoảng 95% bootstrap theo học sinh. Ba baseline và oracle chạy ngày 20/11/2026;
+dòng `proposed` thêm sau P2-08. Đây là kết quả mô phỏng, chưa phải lần chạy cuối:
 
 | Quy tắc | Chính sách | Trúng ZPD | Tăng θ | Lượt đến thành thạo | Chưa đạt |
 |---|---|---|---|---|---:|
 | flat | random | 0,226 [0,221; 0,231] | 2,71 [2,68; 2,73] | 34,2 [33,7; 34,6] | 36,8% |
 | flat | fixed | 0,231 [0,226; 0,237] | 2,71 [2,68; 2,73] | 34,2 [33,7; 34,6] | 36,8% |
 | flat | most_popular | 0,223 [0,218; 0,228] | 2,71 [2,68; 2,73] | 34,2 [33,7; 34,6] | 36,8% |
+| flat | proposed | 0,266 [0,260; 0,271] | 2,71 [2,68; 2,73] | 34,2 [33,7; 34,6] | 36,8% |
 | flat | *oracle (trần)* | *0,585 [0,576; 0,594]* | *2,71 [2,68; 2,73]* | *34,2 [33,7; 34,6]* | *36,8%* |
 | info | random | 0,290 [0,285; 0,296] | 1,52 [1,50; 1,54] | 42,3 [41,9; 42,6] | 67,3% |
 | info | fixed | 0,295 [0,288; 0,301] | 1,51 [1,50; 1,53] | 42,2 [41,8; 42,5] | 67,2% |
 | info | most_popular | 0,288 [0,282; 0,294] | 1,51 [1,50; 1,53] | 42,3 [42,0; 42,7] | 67,2% |
+| info | proposed | 0,338 [0,332; 0,344] | 1,55 [1,54; 1,57] | 41,9 [41,6; 42,3] | 66,4% |
 | info | *oracle (trần)* | *0,664 [0,655; 0,673]* | *1,92 [1,91; 1,94]* | *38,8 [38,4; 39,2]* | *53,1%* |
 | zpd | random | 0,234 [0,228; 0,240] | 1,43 [1,41; 1,45] | 41,0 [40,6; 41,4] | 62,6% |
 | zpd | fixed | 0,229 [0,223; 0,235] | 1,42 [1,41; 1,44] | 40,9 [40,5; 41,3] | 62,6% |
 | zpd | most_popular | 0,232 [0,226; 0,237] | 1,43 [1,41; 1,44] | 41,0 [40,6; 41,4] | 62,7% |
+| zpd | proposed | 0,280 [0,274; 0,286] | 1,55 [1,53; 1,56] | 40,5 [40,1; 40,9] | 60,4% |
 | zpd | *oracle (trần)* | *0,571 [0,561; 0,580]* | *2,08 [2,06; 2,10]* | *36,5 [36,1; 36,9]* | *45,9%* |
 
 - **Ba baseline gần như bằng nhau:** trúng ZPD chênh so với `fixed` không quá 0,8 điểm phần trăm. Với `flat`, tăng θ
@@ -203,8 +209,12 @@ cuối, và chưa có `proposed`:
   kiểm tra của mã.
 - **Trần:** oracle trúng ZPD 0,57–0,66, hơn `fixed` 0,34–0,37 (khoảng 95% rộng ±0,007). Trần thấp hơn 1 vì có kỹ năng
   mà không bài nào có P trong vùng: ở θ = μ_k, 77% kỹ năng có ít nhất một bài trong [0,6; 0,8], và P của các bài trong
-  một kỹ năng trải rộng 0,21 (trung vị). Khi có `proposed`, báo cáo thêm phần khoảng cách nó lấp được:
-  (proposed − fixed) / (oracle − fixed).
+  một kỹ năng trải rộng 0,21 (trung vị).
+- **`proposed`:** trúng ZPD hơn `fixed` 3,4 / 4,4 / 5,1 điểm phần trăm (flat / info / zpd; khoảng 95% ghép cặp
+  [3,1; 3,7], [4,1; 4,7], [4,8; 5,5]; `c5_closed_loop_vs_fixed_tune.csv`). Như vậy nó lấp 9,7% / 11,8% / 15,1% khoảng
+  cách (proposed − fixed) / (oracle − fixed). Tăng θ hơn `fixed` 0,04 [0,035; 0,045] với `info` và 0,12 [0,11; 0,13]
+  với `zpd`; với `flat` thì bằng nhau, như mọi chính sách. Tham số của `proposed` được chọn trên chính world này, nên
+  các số trên lạc quan; kết luận H6 chỉ lấy từ lần chạy cuối trên world 2026.
 - **Lượt đến thành thạo là chỉ số yếu ở 50 lượt:** 37–67% học sinh chưa đạt, nên trung bình gần như là số lượt bị cắt
   ở 50. Kết luận nên dựa vào trúng ZPD và tăng θ; chỉ số này giữ theo kế hoạch, kèm tỷ lệ chưa đạt.
 

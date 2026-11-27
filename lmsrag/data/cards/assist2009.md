@@ -3,8 +3,11 @@
 - **Nguồn và đường dẫn tải:** ASSISTments, bộ "2009-2010 ASSISTment Data – Skill Builder",
   https://sites.google.com/site/assistmentsdata/home/2009-2010-assistment-data. Tệp dùng: `skill_builder_data.csv`
   (bản gốc, chưa phải bản `_corrected`), lưu tại `lmsrag/data/assistments/skill_builder_data.csv`.
-- **Ngày tải:**  25/09/2026 (commit `955ad28`). 
-- **SHA-256 tệp gốc:** `F22E3FB7872C1784CE93B0F9EBABBE0CBCAC4F896FD8B4A11667B9715D77DBDC`
+- **Ngày tải:** 25/09/2026 (commit `955ad28`).
+- **SHA-256 tệp gốc:** `F22E3FB7872C1784CE93B0F9EBABBE0CBCAC4F896FD8B4A11667B9715D77DBDC` với xuống dòng CRLF, tức bản
+  checkout trên Windows khi `core.autocrlf=true`. Git lưu tệp với LF, nên bản checkout trên Linux hoặc Kaggle có
+  SHA-256 `408698925FC3488672431E4C19B9B16808B6A25760F8E41AD4D3D6257AD0832A`. Hai bản chỉ khác ký tự xuống dòng và
+  `pandas.read_csv` đọc ra cùng một bảng (525.534 × 30).
 - **Giấy phép và trích dẫn bắt buộc:** dữ liệu được ASSISTments cho phép dùng cho nghiên cứu, không phân phối lại.
   Trích dẫn: Feng, M., Heffernan, N. T., & Koedinger, K. R. (2009). Addressing the assessment challenge with an online
   system that tutors as it assesses. *User Modeling and User-Adapted Interaction, 19*(3), 243–266.
@@ -107,3 +110,8 @@ python -m lmsrag.datasets.build --config configs/data.yaml --only assist2009   #
 
 Đầu ra: `lmsrag/artifacts/v2/interactions_assist2009.parquet` cùng ba bảng `reports/tables/a1_cleaning_assist2009.csv`,
 `a1_kept_vs_dropped.csv` và `a1_skill_builder.csv`.
+
+**Data v1** (tag `data-v1`): mã băm các tệp đầu ra nằm trong `lmsrag/data/cards/data_v1.sha256`; kiểm bằng
+`sha256sum -c lmsrag/data/cards/data_v1.sha256` từ gốc repo. Bản này build bằng pandas 3.0.6, pyarrow 26.0.1, numpy
+2.4.6; build lại ngày 27/11/2026 ra đúng từng byte, kể cả các bảng trong `reports/tables/`. Với phiên bản thư viện khác,
+parquet sẽ khác byte (vì ghi phiên bản pandas vào metadata), nên khi đó phải so nội dung.

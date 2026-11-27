@@ -107,6 +107,7 @@ def test_adjudication_finalize_and_freeze(tmp_path):
     prereg = tmp_path / "prereg" / "hypotheses.md"
     digest = freeze(gold, tmp_path, prereg)
     assert digest in (tmp_path / "gold_v1.sha256").read_text() and digest in prereg.read_text(encoding="utf-8")
+    assert (tmp_path / "gold_v1.sha256").read_bytes() == f"{digest}  gold_v1.csv\n".encode()  # LF: sha256sum -c
     assert freeze(gold, tmp_path, prereg) == digest  # same labels: allowed, prereg not duplicated
     assert prereg.read_text(encoding="utf-8").count(digest) == 1
     changed = gold.assign(label_final=[2, 2, 0, 2])

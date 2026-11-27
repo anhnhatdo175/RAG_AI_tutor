@@ -129,7 +129,8 @@ def freeze(gold: pd.DataFrame, gold_dir: Path, prereg: Path) -> str:
         raise SystemExit("gold_v1.csv is frozen and differs from the labels now; do not edit it after the gold-v1 tag")
     path.write_bytes(data)
     digest = hashlib.sha256(data).hexdigest()
-    (gold_dir / "gold_v1.sha256").write_text(f"{digest}  gold_v1.csv\n", encoding="utf-8")
+    # LF on every OS: sha256sum -c reads a CRLF line as a file name ending in \r
+    (gold_dir / "gold_v1.sha256").write_text(f"{digest}  gold_v1.csv\n", encoding="utf-8", newline="\n")
     prereg.parent.mkdir(parents=True, exist_ok=True)
     text = prereg.read_text(encoding="utf-8") if prereg.is_file() else "# Giả thuyết và tiêu chí kết luận\n"
     line = f"- Gold set đóng băng: `lmsrag/data/gold/gold_v1.csv`, SHA-256 `{digest}` (tag `gold-v1`)."
