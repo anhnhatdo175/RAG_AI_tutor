@@ -23,4 +23,5 @@ psycopg[binary]==3.3.9
 lightgbm==4.7.0
 implicit==0.7.3
 rank-bm25==0.2.2
+numba==0.68.1
 SQLAlchemy==2.1.9
