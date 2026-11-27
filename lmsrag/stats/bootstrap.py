@@ -9,6 +9,8 @@
   and for AUC the share of the reference model's lift over chance (``(AUC_a - AUC_b) / (AUC_b - 0.5)``).
 
     python -m lmsrag.stats.bootstrap --dataset assist2009      # reads predictions of P2-01/P2-03
+
+DKT/SAKT predictions (``predictions/b1_deep_<model>_<dataset>.parquet``, Kaggle) are added when present.
 """
 from __future__ import annotations
 
@@ -109,7 +111,13 @@ def main(argv: list[str] | None = None) -> int:
     cfg = load_config(REPO / args.config)
     out_root = REPO / cfg["output_dir"]
     pred = pd.read_parquet(out_root / "predictions" / f"b1v_{args.dataset}.parquet")
-    base = [m for m in ("ema", "bkt", "pfa", "pfa_item", "afm", "majority") if m in pred.columns]
+    for kind in ("dkt", "sakt"):  # Kaggle runs of lmsrag.mastery.deep_kt, when present
+        f = out_root / "predictions" / f"b1_deep_{kind}_{args.dataset}.parquet"
+        if f.exists():
+            deep = pd.read_parquet(f, columns=["row", kind])
+            pred = pred.merge(deep, on="row", how="left")
+            pred = pred[(pred["split"] != "test") | pred[kind].notna()]
+    base = [m for m in ("ema", "bkt", "pfa", "pfa_item", "afm", "dkt", "sakt", "majority") if m in pred.columns]
     models = [args.proposed, *base]
     pairs = [(args.proposed, b) for b in base]
     n = int(cfg.get("bootstrap", {}).get("n_resamples", 1000))
