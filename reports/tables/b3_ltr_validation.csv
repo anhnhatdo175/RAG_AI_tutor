@@ -1,0 +1,11 @@
+model,ndcg@5,num_leaves,label
+random,0.4201,,"held-out learners, log labels (validation split); not the gold evaluation"
+bm25,0.4356,,"held-out learners, log labels (validation split); not the gold evaluation"
+lsa,0.421,,"held-out learners, log labels (validation split); not the gold evaluation"
+zpd_level_only,0.4219,,"held-out learners, log labels (validation split); not the gold evaluation"
+zpd_p_only,0.3482,,"held-out learners, log labels (validation split); not the gold evaluation"
+cf_popularity_only,0.5497,,"held-out learners, log labels (validation split); not the gold evaluation"
+ltr_all,0.612,15.0,"held-out learners, log labels (validation split); not the gold evaluation"
+ltr_without_semantic,0.612,15.0,"held-out learners, log labels (validation split); not the gold evaluation"
+ltr_without_zpd,0.5774,15.0,"held-out learners, log labels (validation split); not the gold evaluation"
+ltr_without_cf,0.6158,15.0,"held-out learners, log labels (validation split); not the gold evaluation"
