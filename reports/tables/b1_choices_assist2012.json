@@ -1,5 +1,6 @@
 {
   "ema_alpha": 0.1,
   "pfa_C": 0.1,
+  "pfa_item_C": 1.0,
   "afm_C": 0.1
 }

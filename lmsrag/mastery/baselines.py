@@ -15,7 +15,7 @@ Protocol (same for every log and every model):
 Models: ``majority``, ``global_mean``, ``skill_mean``, ``user_mean`` (cumulative, smoothed), ``last_answer`` (last answer
 of the learner on the skill, else the skill mean), ``ema`` (Layer 1 EMA: prior = skill mean of history, alpha picked on
 validation), ``bkt`` (per-skill L0, T, G, S fitted by maximum likelihood, G and S <= 0.3), ``pfa`` (Pavlik et al. 2009),
-``afm`` (Cen et al. 2006; learner intercept + skill easiness + skill learning rate x opportunities).
+``pfa_item`` (PFA plus one easiness weight per item: the item-aware baseline), ``afm`` (Cen et al. 2006; learner intercept + skill easiness + skill learning rate x opportunities).
 DKT / SAKT / AKT are run on Kaggle with pykt (``requirements-kaggle.txt``) on the same splits.
 
 Outputs: ``reports/tables/b1_baselines_<dataset>.csv`` (validation and test metrics), ``b1_reliability_<dataset>.csv``,
@@ -188,10 +188,13 @@ def _design(d: pd.DataFrame, kind: str) -> sparse.csr_matrix:
     r = np.arange(n)
     k = d["k"].to_numpy()
     blocks = [sparse.csr_matrix((np.ones(n), (r, k)), shape=(n, K))]
-    if kind == "pfa":
+    if kind in ("pfa", "pfa_item"):
         blocks += [sparse.csr_matrix((np.log1p(d["s_prev"].to_numpy()), (r, k)), shape=(n, K)),
                    sparse.csr_matrix((np.log1p(d["f_prev"].to_numpy()), (r, k)), shape=(n, K))]
-    else:  # afm
+    if kind == "pfa_item":  # PFA + one easiness weight per item (an item-aware baseline, as fair as ema+item)
+        items = pd.factorize(d["item_id"])[0]
+        blocks.append(sparse.csr_matrix((np.ones(n), (r, items)), shape=(n, int(items.max()) + 1)))
+    elif kind == "afm":
         U = int(d["u"].max()) + 1
         blocks += [sparse.csr_matrix((np.ones(n), (r, d["u"].to_numpy())), shape=(n, U)),
                    sparse.csr_matrix((np.log1p(d["n_prev"].to_numpy()), (r, k)), shape=(n, K))]
@@ -233,7 +236,7 @@ def run(df: pd.DataFrame, seed: int = 2026, models: tuple[str, ...] | None = Non
             best = (ll, a, p)
     preds["ema"], choices["ema_alpha"] = best[2], best[1]
     preds["bkt"], bkt_params = bkt(d)
-    for kind in ("pfa", "afm"):
+    for kind in ("pfa", "pfa_item", "afm"):
         preds[kind], choices[f"{kind}_C"] = logistic_model(d, kind, seed)
     if models:
         preds = {m: p for m, p in preds.items() if m in models}

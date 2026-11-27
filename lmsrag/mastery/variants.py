@@ -167,7 +167,7 @@ def run(df: pd.DataFrame, seed: int = 2026, baseline_preds: pd.DataFrame | None 
         preds[f"{best_raw}+{name}"] = p
     if baseline_preds is not None:  # P2-01 predictions, aligned on the original row id
         bp = baseline_preds.set_index("row").loc[ctx.d["row"]]
-        for m in ("bkt", "pfa", "afm", "majority"):
+        for m in ("bkt", "pfa", "pfa_item", "afm", "majority"):
             if m in bp:
                 preds[m] = bp[m].to_numpy(dtype="float64")
     rows = []

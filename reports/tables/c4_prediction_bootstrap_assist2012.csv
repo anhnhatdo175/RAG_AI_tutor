@@ -1,0 +1,13 @@
+model,vs,metric,value_model,value_vs,diff,ci_low,ci_high,p_boot,n_learners,n_resamples,rel_lift_over_chance,p_holm,significant_holm_0.05
+ema_skill+item,ema,AUC,0.71798,0.68306,0.03492,0.0331,0.03666,0.0,17289,1000,0.19077,0.0,True
+ema_skill+item,ema,logloss,0.55156,0.57143,-0.01987,-0.02093,-0.0188,0.0,17289,1000,,0.0,True
+ema_skill+item,bkt,AUC,0.71798,0.66813,0.04985,0.04765,0.05226,0.0,17289,1000,0.2965,0.0,True
+ema_skill+item,bkt,logloss,0.55156,0.57513,-0.02357,-0.02503,-0.02202,0.0,17289,1000,,0.0,True
+ema_skill+item,pfa,AUC,0.71798,0.68303,0.03495,0.03292,0.03704,0.0,17289,1000,0.19096,0.0,True
+ema_skill+item,pfa,logloss,0.55156,0.56717,-0.01561,-0.01682,-0.01428,0.0,17289,1000,,0.0,True
+ema_skill+item,pfa_item,AUC,0.71798,0.72372,-0.00574,-0.00706,-0.00439,0.0,17289,1000,-0.02564,0.0,True
+ema_skill+item,pfa_item,logloss,0.55156,0.54557,0.00599,0.00501,0.00702,0.0,17289,1000,,0.0,True
+ema_skill+item,afm,AUC,0.71798,0.67062,0.04737,0.0445,0.05037,0.0,17289,1000,0.27763,0.0,True
+ema_skill+item,afm,logloss,0.55156,0.57478,-0.02322,-0.02484,-0.02148,0.0,17289,1000,,0.0,True
+ema_skill+item,majority,AUC,0.71798,0.5,0.21798,0.2152,0.22069,0.0,17289,1000,,0.0,True
+ema_skill+item,majority,logloss,0.55156,0.61499,-0.06343,-0.06571,-0.06132,0.0,17289,1000,,0.0,True
