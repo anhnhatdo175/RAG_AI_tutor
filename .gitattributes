@@ -7,3 +7,5 @@ lmsrag/data/labels/a5_submissions/*.csv -text
 lmsrag/data/labels/a5_gold_*nguoi[13].csv -text
 # the frozen gold set is hashed byte for byte (SHA-256 in gold_v1.sha256 and prereg/hypotheses.md)
 lmsrag/data/gold/gold_v1.csv -text
+# checksum lists are read by sha256sum -c, which fails on CRLF
+*.sha256 -text

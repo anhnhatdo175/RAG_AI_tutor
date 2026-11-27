@@ -14,7 +14,7 @@
 |---|---:|---:|
 | Dòng (mỗi dòng một `problem_log_id`) | 6.123.270 | 2.289.624 |
 | Người học | 46.674 | 17.289 |
-| Bài (`problem_id`) | – | 41.100 |
+| Bài (`problem_id`) | 179.999 | 41.100 |
 | Kỹ năng | 198 chuỗi (196 sau khi bỏ khoảng trắng thừa) | 109 (97 tag chuẩn) |
 | Thời gian | 01/09/2012 – 31/08/2013 | như bên trái |
 | Tỷ lệ đúng | – | 0,701 |
@@ -93,3 +93,8 @@ Giống 2009: theo từng người học, theo `ts`, tỷ lệ 70/15/15 theo s�
 ```powershell
 python -m lmsrag.datasets.build --config configs/data.yaml --only assist2012   # khoảng 1 phút, đọc theo khối 400.000 dòng
 ```
+
+**Data v1** (tag `data-v1`): mã băm các tệp đầu ra nằm trong `lmsrag/data/cards/data_v1.sha256`; kiểm bằng
+`sha256sum -c lmsrag/data/cards/data_v1.sha256` từ gốc repo. Bản này build bằng pandas 3.0.6, pyarrow 26.0.1, numpy
+2.4.6; build lại ngày 27/11/2026 ra đúng từng byte, kể cả các bảng trong `reports/tables/`. Với phiên bản thư viện khác,
+parquet sẽ khác byte (vì ghi phiên bản pandas vào metadata), nên khi đó phải so nội dung.
