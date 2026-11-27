@@ -1,0 +1,29 @@
+{
+  "ema": {
+    "alpha": 0.1
+  },
+  "ema_count": {
+    "a_min": 0.05,
+    "c": 4.0
+  },
+  "ema_skill": {
+    "fallback_alpha": 0.1
+  },
+  "ema_diff": {
+    "alpha": 0.05,
+    "lam": 0.5
+  },
+  "ema_count_diff": {
+    "a_min": 0.05,
+    "c": 4.0,
+    "lam": 0.5
+  },
+  "best_raw": "ema_skill",
+  "item_coef(intercept,logitM,logit_e,log1p_n,se)": [
+    0.9917,
+    0.6779,
+    0.3301,
+    -0.1365,
+    -4.4278
+  ]
+}

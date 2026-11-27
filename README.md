@@ -74,6 +74,7 @@ python -m lmsrag.labels.difficulty_sheets                                       
 python -m lmsrag.labels.difficulty_agreement                                     # P1-06: Spearman, κ, bộ lọc Khan, a3_difficulty_audit.csv
 python -m lmsrag.labels.gold_queries                                             # P1-07: 180 truy vấn gold set (một lần)
 python -m lmsrag.mastery.baselines --dataset assist2009                          # P2-01: baseline dự đoán (cũng junyi2015, assist2012)
+python -m lmsrag.mastery.variants --dataset assist2009                           # P2-03: biến thể EMA, hiệu chỉnh, p̂(u, i)
 python -m lmsrag.retrieval.pool_runs --config configs/data.yaml                 # P2-02: top-10 của bm25, lsa, bge_ce, adaptive_old (bge_ce/adaptive_old cần HuggingFace)
 python -m lmsrag.labels.gold_pool                                                # P1-07: pool từ pool_runs của P2-02, phiếu gán
 python -m lmsrag.labels.gold_finalize                                            # P1-07: κ, phân xử, đóng băng gold_v1.csv
