@@ -385,6 +385,8 @@ def test_sync_accepts_submissions_and_persists_profile(service) -> None:
     assert synced.status_code == 200
     assert_no_answer_key(synced)
     assert synced.json()["accepted"] == 1
+    assert synced.json()["rejected"] == 0
+    assert synced.json()["results"][0]["idempotency_key"] == "offline-attempt"
     assert synced.json()["results"][0]["score"] == 1.0
     profile = client.get("/profile/offline-user", headers=headers())
     assert profile.status_code == 200
@@ -394,3 +396,284 @@ def test_sync_accepts_submissions_and_persists_profile(service) -> None:
     assert decision_count(database, "review") == 1
     assert decision_count(database, "sync") == 1
     assert decision_count(database, "profile") == 1
+
+
+def generate_task(client, *, mode: str = "practice", teacher: str = "teacher-x") -> dict:
+    response = client.post(
+        "/generate",
+        headers=headers(),
+        json={
+            "teacher_id": teacher,
+            "course_id": "course-x",
+            "skill_tag": "Unit-Rate",
+            "difficulty": 0.6,
+            "mode": mode,
+        },
+    )
+    assert response.status_code == 200
+    assert_no_answer_key(response)
+    return response.json()["tasks"][0]
+
+
+def approve(client, task_id: str):
+    response = client.post(
+        f"/tasks/{task_id}/review",
+        headers=headers(),
+        json={"action": "approve"},
+    )
+    assert_no_answer_key(response)
+    return response
+
+
+def test_exception_new_learner_starts_neutral_with_largest_variance(service) -> None:
+    client, _, database = service
+    recommended = client.post(
+        "/recommend",
+        headers=headers(),
+        json={"user_id": 987654, "skill_tag": "Unit-Rate"},
+    )
+    profile = client.get("/profile/987654", headers=headers())
+    assert recommended.status_code == profile.status_code == 200
+    reason = recommended.json()["recommendations"][0]["reason"]
+    assert reason["cold_start"] is True
+    assert reason["mastery"] == 0.5
+    assert profile.json()["mastery"] == {"Unit-Rate": 0.5}
+    assert profile.json()["variance"] == 0.25
+    assert profile.json()["total_attempts"] == 0
+    assert_no_answer_key(recommended)
+    assert_no_answer_key(profile)
+    assert decision_count(database, "recommend") == 1
+    assert decision_count(database, "profile") == 1
+
+
+def test_exception_invalid_llm_json_is_logged_with_its_failure(service) -> None:
+    client, pipeline, database = service
+    pipeline.fail_generation = True
+    task = generate_task(client)
+    assert task["status"] == "needs_review"
+    assert task["prompt"] == ""
+    with database.engine.connect() as connection:
+        reasons = connection.execute(
+            select(decision_log.c.reasons).where(decision_log.c.endpoint == "generate")
+        ).scalar_one()
+    assert reasons["status"] == "needs_review"
+    assert "invalid after repair" in reasons["failure"]
+
+
+def test_exception_needs_review_task_is_withheld_until_teacher_fixes_it(service) -> None:
+    client, pipeline, _ = service
+    pipeline.fail_generation = True
+    task = generate_task(client)
+
+    premature = approve(client, task["task_id"])
+    assert premature.status_code == 409
+
+    edited = client.post(
+        f"/tasks/{task['task_id']}/review",
+        headers=headers(),
+        json={
+            "action": "edit",
+            "edit": {
+                "prompt": "Một xe đi 120 km trong 2 giờ. Vận tốc là bao nhiêu km/h?",
+                "answer_key": "60",
+            },
+        },
+    )
+    assert edited.status_code == 200
+    assert edited.json()["task"]["status"] == "draft"
+    assert_no_answer_key(edited)
+
+    blocked = client.post("/submit", headers=headers(), json={
+        "user_id": "learner-review", "task_id": task["task_id"],
+        "answer": "60", "idempotency_key": "draft-attempt",
+    })
+    assert blocked.status_code == 409
+
+    assert approve(client, task["task_id"]).status_code == 200
+    graded = client.post("/submit", headers=headers(), json={
+        "user_id": "learner-review", "task_id": task["task_id"],
+        "answer": "60", "idempotency_key": "approved-attempt",
+    })
+    assert graded.status_code == 200
+    assert graded.json()["correct"] is True
+    assert_no_answer_key(graded)
+
+
+def test_exception_duplicate_submission_does_not_update_mastery_twice(service) -> None:
+    client, _, database = service
+    task = generate_task(client)
+    assert approve(client, task["task_id"]).status_code == 200
+    payload = {
+        "user_id": "learner-dup", "task_id": task["task_id"],
+        "answer": "41", "idempotency_key": "same-key", "rt_ms": 900,
+    }
+    responses = [client.post("/submit", headers=headers(), json=payload) for _ in range(3)]
+    assert {response.status_code for response in responses} == {200}
+    assert responses[0].json() == responses[1].json() == responses[2].json()
+    assert responses[0].json()["correct"] is False
+    profile = client.get("/profile/learner-dup", headers=headers()).json()
+    assert profile["total_attempts"] == 1
+    with database.engine.connect() as connection:
+        replays = connection.execute(
+            select(decision_log.c.reasons).where(decision_log.c.endpoint == "submit")
+        ).scalars().all()
+    assert sum(bool(reason.get("idempotent_replay")) for reason in replays) == 2
+
+
+def test_rejected_task_cannot_be_submitted_or_reviewed_again(service) -> None:
+    client, _, _ = service
+    task = generate_task(client)
+    rejected = client.post(
+        f"/tasks/{task['task_id']}/review",
+        headers=headers(),
+        json={"action": "reject"},
+    )
+    assert rejected.status_code == 200
+    assert rejected.json()["task"]["status"] == "rejected"
+    assert approve(client, task["task_id"]).status_code == 409
+    submitted = client.post("/submit", headers=headers(), json={
+        "user_id": "learner-r", "task_id": task["task_id"],
+        "answer": "42", "idempotency_key": "rejected-attempt",
+    })
+    assert submitted.status_code == 409
+    assert_no_answer_key(submitted)
+
+
+def test_edit_action_requires_edit_fields(service) -> None:
+    client, _, database = service
+    task = generate_task(client)
+    response = client.post(
+        f"/tasks/{task['task_id']}/review",
+        headers=headers(),
+        json={"action": "edit"},
+    )
+    assert response.status_code == 422
+    assert decision_count(database, "/tasks/{task_id}/review") == 1
+
+
+def test_unknown_task_and_skill_return_not_found(service) -> None:
+    client, _, database = service
+    missing = "00000000-0000-0000-0000-000000000000"
+    responses = [
+        client.post(f"/tasks/{missing}/review", headers=headers(), json={"action": "reject"}),
+        client.post("/submit", headers=headers(), json={
+            "user_id": "u", "task_id": missing, "answer": "1", "idempotency_key": "k",
+        }),
+        client.post("/tutor", headers=headers(), json={
+            "user_id": "u", "task_id": missing, "session_id": "s", "message": "1",
+        }),
+        client.post("/recommend", headers=headers(), json={
+            "user_id": "u", "skill_tag": "No-Such-Skill",
+        }),
+        client.post("/generate", headers=headers(), json={
+            "teacher_id": "t", "course_id": "c", "skill_tag": "Unit-Rate", "difficulty": 0.05,
+        }),
+    ]
+    assert [response.status_code for response in responses] == [404] * 5
+    for response in responses:
+        assert_no_answer_key(response)
+    assert decision_count(database, "/submit") == 1
+    assert decision_count(database, "/tutor") == 1
+
+
+def test_tutor_rejects_practice_tasks_and_completed_sessions(service) -> None:
+    client, _, _ = service
+    practice = generate_task(client)
+    assert approve(client, practice["task_id"]).status_code == 200
+    wrong_mode = client.post("/tutor", headers=headers(), json={
+        "user_id": "u", "task_id": practice["task_id"], "session_id": "s", "message": "42",
+    })
+    assert wrong_mode.status_code == 409
+
+    socratic = generate_task(client, mode="socratic", teacher="teacher-s")
+    assert approve(client, socratic["task_id"]).status_code == 200
+    body = {"user_id": "u", "task_id": socratic["task_id"], "session_id": "s2", "message": "42"}
+    assert client.post("/tutor", headers=headers(), json=body).json()["complete"] is True
+    again = client.post("/tutor", headers=headers(), json=body)
+    assert again.status_code == 409
+    assert_no_answer_key(again)
+
+
+def test_sync_rejects_bad_events_without_blocking_good_ones(service) -> None:
+    client, _, database = service
+    task = generate_task(client)
+    assert approve(client, task["task_id"]).status_code == 200
+    events = {"events": [
+        {"user_id": "s1", "task_id": task["task_id"], "answer": "42", "idempotency_key": "e1"},
+        {"user_id": "s2", "task_id": "missing-task", "answer": "42", "idempotency_key": "e2"},
+        {"user_id": "s3", "task_id": task["task_id"], "answer": "7", "idempotency_key": "e3"},
+    ]}
+    first = client.post("/sync", headers=headers(), json=events)
+    replay = client.post("/sync", headers=headers(), json=events)
+    assert first.status_code == replay.status_code == 200
+    assert first.json() == replay.json()
+    assert first.json()["accepted"] == 2
+    assert first.json()["rejected"] == 1
+    statuses = {item["idempotency_key"]: item["status"] for item in first.json()["results"]}
+    assert statuses == {"e1": "graded", "e2": "rejected", "e3": "graded"}
+    assert first.json()["results"][1]["error"] == "Task was not found"
+    assert_no_answer_key(first)
+    with database.engine.connect() as connection:
+        assert connection.execute(select(func.count()).select_from(submissions)).scalar_one() == 2
+    assert client.get("/profile/s1", headers=headers()).json()["total_attempts"] == 1
+
+
+def test_every_protected_endpoint_requires_the_bearer_token(service) -> None:
+    client, _, database = service
+    calls = [
+        ("post", "/recommend", {"user_id": "u"}),
+        ("post", "/generate", {"teacher_id": "t", "course_id": "c",
+                               "skill_tag": "Unit-Rate", "difficulty": 0.6}),
+        ("post", "/tasks/x/review", {"action": "approve"}),
+        ("post", "/submit", {"user_id": "u", "task_id": "x", "answer": 1,
+                             "idempotency_key": "k"}),
+        ("get", "/profile/u", None),
+        ("post", "/tutor", {"user_id": "u", "task_id": "x", "session_id": "s",
+                            "message": "m"}),
+        ("post", "/sync", {"events": []}),
+    ]
+    for method, path, body in calls:
+        kwargs = {"json": body} if body is not None else {}
+        wrong = getattr(client, method)(
+            path, headers={"Authorization": "Bearer wrong-token"}, **kwargs
+        )
+        missing = getattr(client, method)(path, **kwargs)
+        assert wrong.status_code == missing.status_code == 401, path
+    with database.engine.connect() as connection:
+        logged = connection.execute(
+            select(func.count()).select_from(decision_log)
+        ).scalar_one()
+    assert logged == 2 * len(calls)
+
+
+def test_unexpected_errors_return_500_and_are_still_logged(service) -> None:
+    client, pipeline, database = service
+
+    def broken_encoder(_queries):
+        raise RuntimeError("encoder crashed")
+
+    pipeline.encoder.encode_queries = broken_encoder
+    safe_client = TestClient(client.app, raise_server_exceptions=False)
+    response = safe_client.post(
+        "/recommend",
+        headers=headers(),
+        json={"user_id": "u", "skill_tag": "Unit-Rate"},
+    )
+    assert response.status_code == 500
+    assert "encoder crashed" not in response.text
+    with database.engine.connect() as connection:
+        reasons = connection.execute(
+            select(decision_log.c.reasons).where(decision_log.c.endpoint == "/recommend")
+        ).scalar_one()
+    assert reasons == {"http_status": 500}
+
+
+def test_external_ids_are_validated(service) -> None:
+    client, _, _ = service
+    for user_id in ["", " ", "x" * 201, True]:
+        response = client.post(
+            "/recommend",
+            headers=headers(),
+            json={"user_id": user_id, "skill_tag": "Unit-Rate"},
+        )
+        assert response.status_code == 422, user_id

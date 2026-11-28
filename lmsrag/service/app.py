@@ -33,6 +33,7 @@ from lmsrag.service.schemas import (
     SubmitResponse,
     SyncRequest,
     SyncResponse,
+    SyncResult,
     TutorRequest,
     TutorResponse,
 )
@@ -82,25 +83,35 @@ def create_app(
     @app.middleware("http")
     async def ensure_decision_log(request: Request, call_next) -> Response:
         started = time.perf_counter()
-        response = await call_next(request)
-        if not getattr(request.state, "decision_recorded", False):
+
+        def record_fallback(http_status: int) -> None:
+            if getattr(request.state, "decision_recorded", False):
+                return
             active_engine = getattr(request.app.state, "service_engine", None)
-            if active_engine is not None:
-                route = request.scope.get("route")
-                endpoint = getattr(route, "path", "unmatched")
-                elapsed_ms = (time.perf_counter() - started) * 1000
-                active_engine.database.add_decision(
-                    decision_id=str(uuid.uuid4()),
-                    learner_hash=None,
-                    endpoint=endpoint,
-                    query=None,
-                    retrieved_chunks=[],
-                    scores={},
-                    reasons={"http_status": response.status_code},
-                    model=None,
-                    stage_latency_ms={"request": elapsed_ms},
-                    latency_ms=elapsed_ms,
-                )
+            if active_engine is None:
+                return
+            route = request.scope.get("route")
+            endpoint = getattr(route, "path", "unmatched")
+            elapsed_ms = (time.perf_counter() - started) * 1000
+            active_engine.database.add_decision(
+                decision_id=str(uuid.uuid4()),
+                learner_hash=None,
+                endpoint=endpoint,
+                query=None,
+                retrieved_chunks=[],
+                scores={},
+                reasons={"http_status": http_status},
+                model=None,
+                stage_latency_ms={"request": elapsed_ms},
+                latency_ms=elapsed_ms,
+            )
+
+        try:
+            response = await call_next(request)
+        except Exception:
+            record_fallback(500)
+            raise
+        record_fallback(response.status_code)
         return response
 
     def require_bearer(
@@ -284,9 +295,11 @@ def create_app(
             request.state.decision_recorded = True
         except (ServiceNotFoundError, ServiceConflictError, ValueError) as exc:
             raise map_error(exc) from exc
+        accepted = sum(result["status"] != "rejected" for result in results)
         return SyncResponse(
-            accepted=len(results),
-            results=[SubmitResponse(**result) for result in results],
+            accepted=accepted,
+            rejected=len(results) - accepted,
+            results=[SyncResult(**result) for result in results],
         )
 
     return app

@@ -198,19 +198,19 @@ Implementation có thể gọi trực tiếp qua `lmsrag.layer5_generation` (`Ge
 
 Để chạy inference LLM local thật qua Layer 5 (không dùng mock), cài Ollama, pull model rồi chạy:
 
-Mặc định dùng `qwen3:30b` (bản Q4_K_M khoảng 19 GB); cần RAM khả dụng lớn hơn dung lượng weights để chạy inference.
+Mặc định dùng `qwen3:8b` (Q4_K_M khoảng 5,2 GB), đúng model chốt ở P3-03. Không dùng tag `qwen3:30b` vì đó là bản Thinking luôn bật suy nghĩ; nếu nhóm đổi sang 30B thì dùng `qwen3:30b-instruct` trên Kaggle T4 x2 (Quy ước chung mục 6).
 
 ```powershell
 $env:OLLAMA_HOST = "127.0.0.1:11435"
 $env:OLLAMA_MODELS = "D:\OllamaModels"
-ollama pull qwen3:30b
+ollama pull qwen3:8b
 ollama serve
 ```
 
 Ở một PowerShell khác trong thư mục repository:
 
 ```powershell
-./.venv/Scripts/python.exe -m lmsrag.layer5_generation.live_smoke_test --model qwen3:30b --base-url http://127.0.0.1:11435 --output output/layer5_live_llm_smoke_test.json
+./.venv/Scripts/python.exe -m lmsrag.layer5_generation.live_smoke_test --model qwen3:8b --base-url http://127.0.0.1:11435 --output output/layer5_live_llm_smoke_test.json
 ```
 
 Lệnh này gọi model local thật, kiểm tra schema qua Layer 5 và lưu model, endpoint, thời gian chạy cùng kết quả vào JSON.
@@ -230,7 +230,7 @@ Khởi động Ollama trong một PowerShell riêng:
 
 ```powershell
 $env:OLLAMA_HOST = "127.0.0.1:11435"
-ollama pull qwen3:30b
+ollama pull qwen3:8b
 ollama serve
 ```
 
@@ -238,7 +238,7 @@ Trong PowerShell khác, tại thư mục repository, cấu hình backend và b�
 
 ```powershell
 $env:LLM_BACKEND = "ollama"
-$env:GENERATION_MODEL = "qwen3:30b"
+$env:GENERATION_MODEL = "qwen3:8b"
 $env:OLLAMA_BASE_URL = "http://127.0.0.1:11435"
 python -m lmsrag.app --user-id 123 --skill Addition-and-Subtraction-Fractions
 ```
@@ -261,11 +261,11 @@ Copy-Item deploy\.env.example .env
 docker compose -f deploy\docker-compose.yml up --build
 ```
 
-Compose khởi động PostgreSQL, chờ DB khỏe rồi chạy API tại `http://localhost:8000`. Endpoint `/health` không yêu cầu xác thực; các endpoint còn lại yêu cầu `Authorization: Bearer <SERVICE_TOKEN>`. Ví dụ PowerShell:
+Compose khởi động PostgreSQL, chờ DB khỏe rồi chạy API tại `http://localhost:8800` (đổi bằng `SERVICE_PORT` trong `.env`; plugin Moodle trong container gọi `http://host.docker.internal:8800`). Endpoint `/health` không yêu cầu xác thực; các endpoint còn lại yêu cầu `Authorization: Bearer <SERVICE_TOKEN>`. Ví dụ PowerShell:
 
 ```powershell
 $headers = @{ Authorization = "Bearer <SERVICE_TOKEN>" }
-Invoke-RestMethod -Method Post -Uri http://localhost:8000/recommend `
+Invoke-RestMethod -Method Post -Uri http://localhost:8800/recommend `
   -Headers $headers -ContentType "application/json" `
   -Body '{"user_id":"moodle-user-123","skill_tag":"Unit-Rate","k":5}'
 ```

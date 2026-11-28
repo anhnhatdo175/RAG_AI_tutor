@@ -154,9 +154,21 @@ class SyncRequest(APIModel):
     events: list[SyncEvent] = Field(max_length=500)
 
 
+class SyncResult(APIModel):
+    idempotency_key: str
+    status: Literal["graded", "needs_review", "processing", "rejected"]
+    correct: bool | None
+    score: float | None
+    feedback: str
+    mastery_before: dict[str, float] | None = None
+    mastery_after: dict[str, float] | None = None
+    error: str | None = None
+
+
 class SyncResponse(APIModel):
     accepted: int
-    results: list[SubmitResponse]
+    rejected: int
+    results: list[SyncResult]
 
 
 class HealthResponse(APIModel):

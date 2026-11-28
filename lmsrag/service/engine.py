@@ -69,6 +69,10 @@ class ServiceEngine:
             }
             for item in self.pipeline.recommender.store.meta
         ]
+        self._chunk_meta_by_id = {
+            str(item["chunk_id"]): item
+            for item in self.pipeline.recommender.store.meta
+        }
         with self.database.engine.begin() as connection:
             insert_ignore_many(
                 connection,
@@ -388,13 +392,7 @@ class ServiceEngine:
             with self.database.engine.begin() as connection:
                 connection.execute(insert(tasks).values(**task_values))
                 for citation in {item["chunk_id"]: item for item in citations}.values():
-                    source_meta = next(
-                        (
-                            meta for meta in self.pipeline.recommender.store.meta
-                            if meta["chunk_id"] == citation["chunk_id"]
-                        ),
-                        None,
-                    )
+                    source_meta = self._chunk_meta_by_id.get(citation["chunk_id"])
                     if source_meta is not None:
                         connection.execute(insert(task_citations).values(
                             task_id=task_id,
@@ -847,23 +845,42 @@ class ServiceEngine:
         }
 
     def sync(self, events: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """Apply Moodle attempts one by one; a rejected event never blocks the rest.
+
+        Each result carries the event's idempotency key so the Moodle task can
+        mark accepted attempts as sent and keep rejected ones for a teacher.
+        """
         started = time.perf_counter()
         results = []
         for event in events:
-            results.append(self.submit(
-                user_id=event["user_id"],
-                task_id=event["task_id"],
-                answer=event["answer"],
-                idempotency_key=event["idempotency_key"],
-                rt_ms=float(event.get("rt_ms", 0.0)),
-            ))
+            try:
+                outcome = self.submit(
+                    user_id=event["user_id"],
+                    task_id=event["task_id"],
+                    answer=event["answer"],
+                    idempotency_key=event["idempotency_key"],
+                    rt_ms=float(event.get("rt_ms", 0.0)),
+                )
+                outcome = {**outcome, "error": None}
+            except (ServiceNotFoundError, ServiceConflictError, ValueError) as exc:
+                outcome = {
+                    "status": "rejected",
+                    "correct": None,
+                    "score": None,
+                    "feedback": "",
+                    "mastery_before": None,
+                    "mastery_after": None,
+                    "error": str(exc),
+                }
+            results.append({"idempotency_key": event["idempotency_key"], **outcome})
+        accepted = sum(result["status"] != "rejected" for result in results)
         self.database.add_decision(
             decision_id=str(uuid.uuid4()),
             learner_hash=None,
             endpoint="sync",
             query=None,
             retrieved_chunks=[],
-            scores={"accepted": len(results)},
+            scores={"accepted": accepted, "rejected": len(results) - accepted},
             reasons={"event_count": len(events)},
             model=None,
             stage_latency_ms={"submission_processing": (time.perf_counter() - started) * 1000},
