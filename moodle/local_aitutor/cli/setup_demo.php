@@ -63,7 +63,7 @@ foreach ($people as [$username, $firstname, $lastname, $role]) {
             'password' => $options['password'],
             'firstname' => $firstname,
             'lastname' => $lastname,
-            'email' => $username . '@example.invalid',
+            'email' => $username . '@example.com',
             'auth' => 'manual',
             'confirmed' => 1,
             'mnethostid' => $CFG->mnet_localhost_id,
