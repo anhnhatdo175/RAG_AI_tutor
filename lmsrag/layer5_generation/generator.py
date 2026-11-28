@@ -78,6 +78,10 @@ GeneratorCallable = Callable[..., str | tuple[str, float]]
 class GenerationValidationError(ValueError):
     """The model response remained invalid after the repair attempts."""
 
+    def __init__(self, message: str, attempts: int = 3):
+        super().__init__(message)
+        self.attempts = attempts
+
 
 class LLMGenerator:
     """Generate and validate a JSON learning activity from retrieved context."""
@@ -145,10 +149,11 @@ class LLMGenerator:
                         )
                 self._validate_response(result, context, mode)
                 result["normalized_safety"] = normalized_safety
+                result["generation_attempts"] = attempt + 1
                 return result
             except ValueError as exc:
                 if attempt == 2:
-                    raise GenerationValidationError(str(exc)) from exc
+                    raise GenerationValidationError(str(exc), attempts=attempt + 1) from exc
                 duplicate_repair = (
                     "The new prompt must be different from every reference and retrieved example. "
                     "Change all operands and rewrite the wording; do not repeat or merely prefix an example.\n"
@@ -415,7 +420,14 @@ class LLMGenerator:
             )
         task_instruction = (
             "Chọn candidate_task đầu tiên và giữ nguyên item_id, skill_tag, difficulty, prompt "
-            "và response_type của bài mẫu. Chỉ tạo hints, personalization_reason và câu hỏi Socratic.\n"
+            "và response_type của bài mẫu. Không tạo bài mới; chỉ tạo hints, personalization_reason "
+            "và câu hỏi Socratic theo mode.\n"
+        )
+        candidate_support_instruction = (
+            "candidate_task đầu tiên đã là bài được chọn. Dùng retrieved_docs để hỗ trợ hints và "
+            "giải thích cho chính bài đó; không yêu cầu tài liệu phải cung cấp một bài mới hoặc đáp án "
+            "mới. Nếu candidate_task và tài liệu liên quan đều có mặt, trả status=ok; chỉ trả "
+            "insufficient_context nếu thiếu candidate hoặc không có tài liệu hỗ trợ kỹ năng.\n"
         )
         return (
             "Bạn là trợ giảng học tập. Chỉ tạo nội dung dựa trên CONTEXT bên dưới.\n"
@@ -426,9 +438,7 @@ class LLMGenerator:
             + task_instruction
             + "Giữ skill_tag đúng bằng constraints.target_skill; difficulty phải nằm trong khoảng "
             "target_difficulty ±0.10. supporting_doc_ids chỉ được lấy từ retrieved_docs. "
-            "Chỉ trả insufficient_context khi retrieved_docs thật sự không đủ dữ kiện để tạo bài có đáp án; "
-            "nếu có căn cứ phù hợp thì hãy tạo bài mới. Nếu tài liệu có bài mẫu kèm lời giải cho phương pháp, "
-            "hãy tạo biến thể đổi số liệu và tự tính đáp án; việc đề mới khác đề mẫu không phải lý do từ chối.\n"
+            + candidate_support_instruction
             + "Với mode=socratic, chỉ hỏi bước hiện tại, đặt wait_for_learner=true và không tiết lộ đáp án. "
             "Nếu thiếu căn cứ hoặc task phù hợp, trả status=insufficient_context, task=null và "
             "tutor_turn=null. Ngoài mode=socratic, tutor_turn phải là null.\n"

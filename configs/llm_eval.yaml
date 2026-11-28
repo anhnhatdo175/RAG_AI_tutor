@@ -1,0 +1,6 @@
+skill_map: lmsrag/data/mappings/skill_map_v1.csv
+output_dir: lmsrag/data/llm_eval
+skill_count: 60
+dev_skill_count: 10
+mastery_levels: [0.3, 0.55, 0.8]
+modes: [practice, socratic]
