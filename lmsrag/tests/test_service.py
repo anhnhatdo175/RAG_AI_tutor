@@ -78,8 +78,10 @@ class FakePipeline:
         self.recommender = FakeRecommender()
         self.encoder = FakeEncoder()
         self.fail_generation = False
+        self.generation_calls: list[dict[str, object]] = []
 
     def prepare_activity(self, **kwargs: object) -> LearningActivity:
+        self.generation_calls.append(kwargs)
         if self.fail_generation:
             raise GenerationValidationError("model JSON remained invalid after repair")
         mode = str(kwargs["mode"])
@@ -113,6 +115,7 @@ class FakePipeline:
                 "skill_tag": "Unit-Rate",
                 "difficulty": 0.6,
                 "response_type": "exact",
+                "reference_item_id": f"bank-item-{len(self.generation_calls)}",
             },
             stage_latency_ms={"retrieval": 1.0, "generation": 2.0},
         )
@@ -677,3 +680,16 @@ def test_external_ids_are_validated(service) -> None:
             json={"user_id": user_id, "skill_tag": "Unit-Rate"},
         )
         assert response.status_code == 422, user_id
+
+
+def test_generate_batch_uses_a_different_source_exercise_per_task(service) -> None:
+    client, pipeline, _ = service
+    response = client.post(
+        "/generate",
+        headers=headers(),
+        json={"teacher_id": "t", "course_id": "c", "skill_tag": "Unit-Rate",
+              "difficulty": 0.6, "count": 3},
+    )
+    assert response.status_code == 200
+    excluded = [set(call["exclude_item_ids"]) for call in pipeline.generation_calls]
+    assert excluded == [set(), {"bank-item-1"}, {"bank-item-1", "bank-item-2"}]

@@ -324,6 +324,7 @@ class ServiceEngine:
             requested_grade=grade,
         )
         generated = []
+        used_source_items: set[str] = set()
         for _ in range(count):
             task_nonce = str(uuid.uuid4())
             runtime_id = self._generation_identity(teacher_hash, course_hash, task_nonce)
@@ -341,7 +342,10 @@ class ServiceEngine:
                     allow_new_task_generation=True,
                     target_difficulty=difficulty,
                     issue_task=False,
+                    exclude_item_ids=frozenset(used_source_items),
                 )
+                if activity.internal_task is not None:
+                    used_source_items.add(str(activity.internal_task.get("reference_item_id", "")))
             except (GenerationValidationError, NoLearningContentError) as exc:
                 failure = str(exc)
 

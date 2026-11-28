@@ -273,6 +273,7 @@ class LearningPipeline:
         allow_new_task_generation: bool = True,
         target_difficulty: float | None = None,
         issue_task: bool = True,
+        exclude_item_ids: set[str] | frozenset[str] | None = None,
     ) -> LearningActivity:
         if not query.strip():
             raise ValueError("query must not be empty")
@@ -355,6 +356,10 @@ class LearningPipeline:
                 abs(float(item["difficulty"]) - float(target_difficulty)),
                 -float(item.get("ranking_score", item.get("final_score", 0.0))),
             ))
+        if exclude_item_ids:
+            # Several tasks generated in one batch must not reuse the same source exercise.
+            unused = [item for item in recommendations if str(item["item_id"]) not in exclude_item_ids]
+            recommendations = unused or recommendations
         stage_latency_ms["recommendation"] = (time.perf_counter() - stage_started) * 1000
         if not recommendations:
             raise NoLearningContentError(
