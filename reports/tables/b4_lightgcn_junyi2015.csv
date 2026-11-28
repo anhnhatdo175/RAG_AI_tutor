@@ -1,0 +1,2 @@
+setting,model,recall@10,ndcg@10,mrr@10,zpd_gap@10,skill_cover@10,new_item_recall@10,n_learners,ndcg_sd,n_seeds
+all,lightgcn,0.23027,0.16796,0.19374,0.17188,6.97232,0.0,2919.0,0.00072,5

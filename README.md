@@ -88,11 +88,24 @@ python -m lmsrag.labels.agreement                                               
 python -m lmsrag.labels.difficulty_sheets                                        # P1-06: phiếu chấm độ khó 100 bài
 python -m lmsrag.labels.difficulty_agreement                                     # P1-06: Spearman, κ, bộ lọc Khan, a3_difficulty_audit.csv
 python -m lmsrag.labels.gold_queries                                             # P1-07: 180 truy vấn gold set (một lần)
+python -m lmsrag.mastery.baselines --dataset assist2009                          # P2-01: baseline dự đoán (cũng junyi2015, assist2012)
+python -m lmsrag.mastery.variants --dataset assist2009                           # P2-03: biến thể EMA, hiệu chỉnh, p̂(u, i)
+python -m lmsrag.mastery.zpd --dataset assist2009                                # P2-04: ZPD theo p̂(u, i) so với hàm ngưỡng cũ
+python -m lmsrag.sim.tune_proposed                                               # P2-08: chọn tham số ProposedPolicy trên world tune
+python -m lmsrag.retrieval.pool_runs --config configs/data.yaml                 # P2-02: top-10 của bm25, lsa, bge_ce, adaptive_old (bge_ce/adaptive_old cần HuggingFace)
 python -m lmsrag.labels.gold_pool                                                # P1-07: pool từ pool_runs của P2-02, phiếu gán
 python -m lmsrag.labels.gold_finalize                                            # P1-07: κ, phân xử, đóng băng gold_v1.csv
 python -m lmsrag.sim.calibrate --config configs/sim.yaml                        # P1-08: học sinh mô phỏng, so tỷ lệ đúng với Junyi
 python -m lmsrag.sim.design_check --config configs/sim.yaml                   # P1-09: chọn cách giao kỹ năng (world chỉnh tham số)
 python -m lmsrag.sim.run --config configs/sim.yaml --world tune                # P1-09: vòng kín trên world chỉnh tham số (final: sau Mốc B)
+python -m lmsrag.stats.bootstrap --dataset assist2009                          # P2-10: bootstrap ghép cặp theo người học, Holm (kèm DKT/SAKT nếu có)
+python -m lmsrag.retrieval.ltr --config configs/data.yaml                       # P2-05: LTR học trên log Junyi (validation), run cho truy vấn gold
+python -m lmsrag.retrieval.gold_eval                                            # P2-05: chấm cuối trên gold-v1 (một lần)
+python -m lmsrag.ranking.tasks --dataset assist2009 --cold                      # P2-06: xếp hạng bài tập (junyi2015/assist2012: --sample-users 4000)
+python -m lmsrag.ranking.ablation --dataset assist2009                          # P2-07: ablation bộ xếp hạng bài tập
+python -m lmsrag.retrieval.gold_ablation --encoder lexical                      # P2-07: ablation điểm truy xuất trên gold (--encoder bge cần HuggingFace)
+python -m lmsrag.kaggle_bundle pack D:\kaggle_bundle.zip                        # gói dữ liệu cho notebooks/kaggle_*.ipynb (LightGCN, DKT/SAKT)
+python -m lmsrag.kaggle_bundle unpack D:\results_lightgcn.zip                   # đưa kết quả Kaggle về repo
 ```
 
 Đầu ra: `lmsrag/artifacts/v2/interactions_<dataset>.parquet` (không commit) và bảng báo cáo `reports/tables/a1_*.csv`.

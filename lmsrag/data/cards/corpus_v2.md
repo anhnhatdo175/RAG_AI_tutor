@@ -5,8 +5,22 @@
     `lmsrag/data_tools/render_khan.py` và lọc bằng `build_khan_corpus.py`. Đầu vào: `lmsrag/data/khan_v2/khan_problems.jsonl`.
   - GSM8K: train và test, tải bằng `python -m lmsrag.data_tools.download_data`.
   - MATH: tập test, 4 môn Prealgebra, Algebra, Number Theory, Counting & Probability, Level 1–3, bỏ bài có `[asy]`.
-- **Giấy phép:** Khan CC BY-NC-SA 3.0 (chỉ phi thương mại, phải ghi nguồn, chia sẻ cùng giấy phép); GSM8K MIT; MATH MIT.
-  Trường `licence` có ở mọi chunk.
+- **Ngày tải và SHA-256 tệp gốc:** tệp đã commit được băm theo nội dung lưu trong git (xuống dòng LF); bản checkout
+  trên Windows với `core.autocrlf=true` có CRLF nên cho mã khác.
+
+  | Tệp | Tải từ | Ngày | SHA-256 |
+  |---|---|---|---|
+  | `lmsrag/data/raw/gsm8k_train.jsonl` | [openai/grade-school-math, `train.jsonl`](https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/train.jsonl) | 20/10/2026 | `17F347DC51477C50D4EFB83959DBB7C56297ABA886E5544EE2AAED3024813465` |
+  | `lmsrag/data/raw/gsm8k_test.jsonl` | [openai/grade-school-math, `test.jsonl`](https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl) | 20/10/2026 | `3730D312F6E3440559ACE48831E51066ACACA737F6EABEC99BCCB9E4B3C39D14` |
+  | `lmsrag/data/raw/math_test.jsonl` | [QwenLM/Qwen2.5-Math, `math/test.jsonl`](https://raw.githubusercontent.com/QwenLM/Qwen2.5-Math/main/evaluation/data/math/test.jsonl) (5.000 bài test của MATH) | 20/10/2026 | `0E9257F4E3481C45C1BA0AE3B09A14C7A751ED30A018F41F317C64537DAC8A5A` |
+  | `lmsrag/data/khan_v2/khan_problems.jsonl` (commit) | sinh từ khan-exercises `001b27a5^` | 17/11/2026 | `4ED7F5147B5FD7392D3894FDB8F54E83F3ABB562EC139BC143A8CD0478C2C49F` |
+  | `lmsrag/data/khan_v2/khan_templates.csv` (commit) | như trên | 17/11/2026 | `1653E18C85DBC6FA2FFD7A26E517D1AADC80AF6585FEEA5C21A8CDDEBFE9CD19` |
+
+  Ngày của GSM8K và MATH là ngày sửa của tệp do `python -m lmsrag.data_tools.download_data` ghi.
+- **Giấy phép và trích dẫn:** Khan CC BY-NC-SA 3.0 (chỉ phi thương mại, phải ghi nguồn, chia sẻ cùng giấy phép); GSM8K MIT;
+  MATH MIT. Trường `licence` có ở mọi chunk. Trích dẫn: Cobbe, K., et al. (2021). *Training Verifiers to Solve Math
+  Word Problems.* arXiv:2110.14168 (GSM8K); Hendrycks, D., et al. (2021). *Measuring Mathematical Problem Solving With
+  the MATH Dataset.* NeurIPS Datasets and Benchmarks (MATH); Khan Academy, `Khan/khan-exercises` trên GitHub.
 - **Đầu ra (không commit, sinh lại bằng lệnh bên dưới):** `lmsrag/artifacts/v2/corpus_chunks.jsonl`,
   `lmsrag/artifacts/v2/exercise_bank_v2.jsonl`. Báo cáo: `reports/tables/a3_corpus_summary.csv`,
   `reports/figures/a3_difficulty_by_source.png`.
@@ -127,9 +141,20 @@ còn template dùng được: Ordering Integers (1,19% lượt 2009 / 0,80% lư�
 `exercise_bank_v2.jsonl`: bài Khan và GSM8K có đáp án chấm tự động, cùng trường với chunk nhưng `text` chỉ gồm đề
 (`chunk_id` = `<doc_id>#q`). Đáp án Khan chấm theo `answer_type`; GSM8K là số.
 
+## Cách chia và seed
+
+Kho không chia theo history/validation/test. Build không có bước ngẫu nhiên: khử gần trùng dùng `MinHash` của
+`datasketch` với seed mặc định 1. Độ khó Khan chỉ tính từ phần history của mẫu Junyi, mà mẫu này rút bằng `data_seed`
+2026 (P1-03).
+
 ## Lệnh tái lập
 
 ```powershell
 python -m lmsrag.datasets.build --config configs/data.yaml   # cần interactions_junyi2015.parquet và a1_skill_counts_*
 python -m lmsrag.corpus.build_corpus --config configs/data.yaml   # khoảng 35 giây
 ```
+
+**Data v1** (tag `data-v1`): mã băm các tệp đầu ra nằm trong `lmsrag/data/cards/data_v1.sha256`; kiểm bằng
+`sha256sum -c lmsrag/data/cards/data_v1.sha256` từ gốc repo. Bản này build bằng pandas 3.0.6, pyarrow 26.0.1, numpy
+2.4.6; build lại ngày 27/11/2026 ra đúng từng byte, kể cả `a3_corpus_summary.csv` và hình `a3_difficulty_by_source.png`.
+Mọi `chunk_id` của gold set (`gold_v1.csv`, 1.007 chunk) đều có trong `corpus_chunks.jsonl`.

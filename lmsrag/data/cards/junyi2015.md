@@ -4,7 +4,8 @@
   https://huggingface.co/datasets/Lucy9999/junyi2015. Tệp dùng: `junyi_ProblemLog_original.csv` (2,7 GB) và
   `junyi_Exercise_table.csv`, lưu tại `lmsrag/data/raw/junyi_2015/` (không commit).
 - **Ngày tải:** 16/11/2026 (đợt khảo sát dữ liệu).
-- **SHA-256 tệp log:** `A7C99EDE1F9B19648FDCD953B6CA0B0282BD31F2F913BD9D26B23AA9FCB36A25`
+- **SHA-256 tệp gốc:** log `A7C99EDE1F9B19648FDCD953B6CA0B0282BD31F2F913BD9D26B23AA9FCB36A25`; bảng bài tập
+  `13292CC2C809985ABBACEDABA434E39AEB02A7FCB2A32F17B60C4D3F4D769546`.
 - **Giấy phép và trích dẫn bắt buộc:** chỉ dùng phi thương mại cho nghiên cứu. Trích dẫn: Chang, H.-S., Hsu, H.-J., &
   Chen, K.-T. (2015). Modeling Exercise Relationships in E-Learning: A Unified Approach. *Proceedings of the 8th
   International Conference on Educational Data Mining (EDM 2015)*. Bản đã làm sạch chỉ để trong Kaggle Dataset riêng tư.
@@ -22,8 +23,11 @@ Junyi chạy chính các template của khan-exercises (bản tiếng Trung), n�
 | Dòng | 25.925.992 | 25.013.101 | 5.111.317 |
 | Người học | 247.606 | 96.521 | 20.000 |
 | Tỷ lệ đúng | 0,828 | 0,831 | 0,832 |
+| Bài tập (`exercise`) | 722 | – | 706 |
+| Item (`exercise:problem_type`) | 2.835 | – | 2.474 |
+| Tag kỹ năng | – | – | 111 (72 tag chuẩn, 39 `junyi:<topic>`) |
 
-Mẫu gồm 706 bài tập (`exercise`) và 2.474 item (`exercise:problem_type`). Dữ liệu từ 12/10/2012 đến 11/01/2015.
+Bảng bài tập có 837 bài thuộc 40 topic; log dùng 722 bài trong số đó. Dữ liệu từ 12/10/2012 đến 11/01/2015.
 Tỷ lệ đúng của mẫu (0,832) gần với tỷ lệ của mọi người học đủ điều kiện (0,831), nên mẫu không bị lệch rõ.
 
 ## Quy tắc loại bỏ
@@ -90,3 +94,8 @@ Giống ASSISTments: theo từng người học, theo `ts`, tỷ lệ 70/15/15. 
 ```powershell
 python -m lmsrag.datasets.build --config configs/data.yaml --only junyi2015   # khoảng 3 phút
 ```
+
+**Data v1** (tag `data-v1`): mã băm các tệp đầu ra nằm trong `lmsrag/data/cards/data_v1.sha256`; kiểm bằng
+`sha256sum -c lmsrag/data/cards/data_v1.sha256` từ gốc repo. Bản này build bằng pandas 3.0.6, pyarrow 26.0.1, numpy
+2.4.6; build lại ngày 27/11/2026 ra đúng từng byte, kể cả các bảng trong `reports/tables/`. Với phiên bản thư viện khác,
+parquet sẽ khác byte (vì ghi phiên bản pandas vào metadata), nên khi đó phải so nội dung.

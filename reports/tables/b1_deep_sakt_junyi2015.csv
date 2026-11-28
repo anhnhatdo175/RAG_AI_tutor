@@ -1,0 +1,3 @@
+model,split,AUC,logloss,RMSE,n
+sakt,test,0.7799,0.4054,0.3559,757274
+sakt,validation,0.7839,0.3796,0.3423,767370
