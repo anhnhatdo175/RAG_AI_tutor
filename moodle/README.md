@@ -104,12 +104,16 @@ Script tạo khóa **"Toán – Demo"** (`TOAN-DEMO`), giáo viên `gv.demo` và
 | --- | --- | --- | --- |
 | 1 | `gv.demo` | Khóa Toán – Demo → *More → AI tutor: tasks* (`/local/aitutor/teacher.php?courseid=<id>`) | Form sinh bài |
 | 2 | `gv.demo` | Chọn kỹ năng, mức khó 1–3, số bài → *Generate* | Bài mới ở trạng thái *Draft* hoặc *Needs review* |
-| 3 | `gv.demo` | Bấm ✓ (*Approve*); bài *Needs review* thì sửa ✎ trước (thêm đáp án nếu cần) | Trạng thái *Approved* |
+| 3 | `gv.demo` | Tự giải bài; nếu đáp án sai hoặc bài *Needs review* thì sửa ✎ trước, rồi bấm ✓ (*Approve*) | Trạng thái *Approved* |
 | 4 | `hs01` | *More → AI tutor: practice* | Danh sách bài đã duyệt |
 | 5 | `hs01` | *Start* → nhập câu trả lời → *Submit answer* | Đúng/sai, phản hồi, bảng mastery trước/sau |
 | 6 | `hs01` hoặc `gv.demo` | *More → AI tutor: profile* | Mastery theo kỹ năng, kỹ năng yếu/mạnh, lịch sử |
 
 Ngân hàng bài của dịch vụ chỉ có ba mức khó (0,3 / 0,6 / 0,9), nên form có ba mức 1 (dễ), 2 (trung bình), 3 (khó), gửi sang dịch vụ đúng ba giá trị đó. Dịch vụ tìm bài gốc trong khoảng ±0,10. Ví dụ kỹ năng có đủ cả ba mức: `Unit-Rate`, `Percent-Of`, `Multiplication-Fractions`, `Mean`. Nếu báo lỗi 404 "No mapped source exercise…", hãy chọn kỹ năng hoặc mức khó khác.
+
+Ở bước 3, giáo viên luôn phải tự kiểm tra đáp án. Khi chạy thử ngày 28/11/2026, `qwen3:8b` sinh đáp án sai ở cả 3 bài được kiểm tra tay (xem `reports/RESULTS.md`, dòng P3-06). Trang sửa bài không hiện đáp án cũ, vì Moodle không bao giờ nhận `answer_key`. Muốn đổi đáp án thì nhập đáp án đúng; để trống thì dịch vụ giữ đáp án cũ.
+
+Trên Docker Desktop cho Windows, mã Moodle được gắn từ ổ Windows vào container nên mỗi trang mất 20–60 giây, nhất là lần mở đầu tiên sau khi khởi động. Đó là do Docker, không phải lỗi plugin. Sinh bài trên Kaggle T4 mất khoảng 2–3 phút mỗi bài, nên đừng bấm *Generate* hai lần.
 
 Nếu dịch vụ tắt khi học sinh nộp bài, bài làm vẫn được lưu ở trạng thái *Waiting to be sent*, và tác vụ định kỳ sẽ gửi lại sau.
 
