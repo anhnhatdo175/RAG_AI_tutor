@@ -45,7 +45,7 @@ if ($hassiteconfig) {
             'local_aitutor/skills',
             get_string('skills', 'local_aitutor'),
             get_string('skills_desc', 'local_aitutor'),
-            "Addition-and-Subtraction-Fractions\nUnit-Rate"
+            "Unit-Rate\nPercent-Of\nMultiplication-Fractions\nMean\nPercent-Discount\nProportion"
         ));
     }
 }

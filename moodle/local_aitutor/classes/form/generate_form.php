@@ -39,11 +39,11 @@ class generate_form extends \moodleform {
         $mform->addHelpButton('skilltag', 'skilltag', 'local_aitutor');
 
         $levels = [];
-        for ($i = 1; $i <= 5; $i++) {
+        foreach (array_keys(\local_aitutor\store::LEVELS) as $i) {
             $levels[$i] = get_string('level' . $i, 'local_aitutor');
         }
         $mform->addElement('select', 'level', get_string('level', 'local_aitutor'), $levels);
-        $mform->setDefault('level', 3);
+        $mform->setDefault('level', 2);
 
         $counts = array_combine(range(1, 10), range(1, 10));
         $mform->addElement('select', 'count', get_string('count', 'local_aitutor'), $counts);

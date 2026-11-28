@@ -9,7 +9,7 @@ Học sinh  ─ practice.php ┼─ classes/client.php ──┼─ /submit
 Cron ─ task\sync_attempts ───────────────────────┴─ /sync
 ```
 
-Luồng bắt buộc: giáo viên đặt kỹ năng, mức khó và số bài → `/generate` → giáo viên **duyệt** bài (dịch vụ chỉ nhận bài làm cho bài đã duyệt) → học sinh mở trang luyện tập và làm bài → `/submit` chấm ở dịch vụ → trang hiện đúng/sai, phản hồi và mastery trước/sau.
+Luồng bắt buộc: giáo viên đặt kỹ năng, mức khó (1–3) và số bài → `/generate` → giáo viên **duyệt** bài (dịch vụ chỉ nhận bài làm cho bài đã duyệt) → học sinh mở trang luyện tập và làm bài → `/submit` chấm ở dịch vụ → trang hiện đúng/sai, phản hồi và mastery trước/sau.
 
 Các mục "nên có" đã làm: trang hồ sơ năng lực, giáo viên sửa hoặc loại bài trước khi giao, hiện lý do giao bài và nguồn trích dẫn, tác vụ định kỳ gửi bài làm quiz sang `/sync`.
 
@@ -24,6 +24,22 @@ Các mục "nên có" đã làm: trang hồ sơ năng lực, giáo viên sửa h
   docker compose -f deploy\docker-compose.yml up --build -d
   Invoke-RestMethod http://localhost:8800/health   # {"status":"ok"}
   ```
+
+### LLM trên Kaggle (khi máy không đủ RAM/VRAM)
+
+Moodle, dịch vụ và `qwen3:8b` cùng chạy trên máy 8 GB RAM thì không đủ bộ nhớ. Khi đó để LLM chạy trên Kaggle:
+
+1. Tải `notebooks/kaggle_ollama_tunnel.ipynb` lên Kaggle. Bật *Accelerator* = GPU T4 x2 và *Internet* = On, rồi *Run all*.
+2. Ô 3 in ra `OLLAMA_BASE_URL = https://<tên>.trycloudflare.com`.
+3. Trên máy local, khởi động lại dịch vụ với địa chỉ đó:
+
+   ```powershell
+   $env:GENERATION_MODEL = "qwen3:8b"
+   $env:OLLAMA_BASE_URL = "https://<tên>.trycloudflare.com"
+   docker compose -f deploy\docker-compose.yml --env-file .env up -d service
+   ```
+
+Đường hầm không có mật khẩu, nên chỉ bật trong lúc demo. Mỗi phiên Kaggle có địa chỉ mới, nên mỗi lần chạy lại notebook phải làm lại bước 3.
 
 ## 2. Dựng Moodle bằng `moodlehq/moodle-docker`
 
@@ -87,13 +103,13 @@ Script tạo khóa **"Toán – Demo"** (`TOAN-DEMO`), giáo viên `gv.demo` và
 | Bước | Ai | Ở đâu | Kết quả mong đợi |
 | --- | --- | --- | --- |
 | 1 | `gv.demo` | Khóa Toán – Demo → *More → AI tutor: tasks* (`/local/aitutor/teacher.php?courseid=<id>`) | Form sinh bài |
-| 2 | `gv.demo` | Chọn kỹ năng, mức khó 1–5, số bài → *Generate* | Bài mới ở trạng thái *Draft* hoặc *Needs review* |
+| 2 | `gv.demo` | Chọn kỹ năng, mức khó 1–3, số bài → *Generate* | Bài mới ở trạng thái *Draft* hoặc *Needs review* |
 | 3 | `gv.demo` | Bấm ✓ (*Approve*); bài *Needs review* thì sửa ✎ trước (thêm đáp án nếu cần) | Trạng thái *Approved* |
 | 4 | `hs01` | *More → AI tutor: practice* | Danh sách bài đã duyệt |
 | 5 | `hs01` | *Start* → nhập câu trả lời → *Submit answer* | Đúng/sai, phản hồi, bảng mastery trước/sau |
 | 6 | `hs01` hoặc `gv.demo` | *More → AI tutor: profile* | Mastery theo kỹ năng, kỹ năng yếu/mạnh, lịch sử |
 
-Mức khó 1–5 được gửi sang dịch vụ thành `difficulty` 0,1 / 0,3 / 0,5 / 0,7 / 0,9. Dịch vụ tìm bài gốc trong khoảng ±0,10 quanh giá trị đó. Nếu báo lỗi 404 "No mapped source exercise…", hãy chọn kỹ năng hoặc mức khó khác.
+Ngân hàng bài của dịch vụ chỉ có ba mức khó (0,3 / 0,6 / 0,9), nên form có ba mức 1 (dễ), 2 (trung bình), 3 (khó), gửi sang dịch vụ đúng ba giá trị đó. Dịch vụ tìm bài gốc trong khoảng ±0,10. Ví dụ kỹ năng có đủ cả ba mức: `Unit-Rate`, `Percent-Of`, `Multiplication-Fractions`, `Mean`. Nếu báo lỗi 404 "No mapped source exercise…", hãy chọn kỹ năng hoặc mức khó khác.
 
 Nếu dịch vụ tắt khi học sinh nộp bài, bài làm vẫn được lưu ở trạng thái *Waiting to be sent*, và tác vụ định kỳ sẽ gửi lại sau.
 

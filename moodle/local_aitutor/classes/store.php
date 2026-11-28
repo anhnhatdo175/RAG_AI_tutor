@@ -10,27 +10,34 @@ namespace local_aitutor;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class store {
-    /** Difficulty sent to the service for each teacher level (the service matches within 0.10). */
-    const LEVELS = [1 => 0.1, 2 => 0.3, 3 => 0.5, 4 => 0.7, 5 => 0.9];
+    /** Difficulty sent to the service for each level: the exercise bank uses 0.3, 0.6 and 0.9
+     * and the service matches source exercises within 0.10. */
+    const LEVELS = [1 => 0.3, 2 => 0.6, 3 => 0.9];
 
     /**
-     * Service difficulty for a level 1..5.
+     * Service difficulty for a level 1..3.
      *
      * @param int $level
      * @return float
      */
     public static function difficulty_for_level(int $level): float {
-        return self::LEVELS[min(5, max(1, $level))];
+        return self::LEVELS[min(3, max(1, $level))];
     }
 
     /**
-     * Nearest level 1..5 for a service difficulty.
+     * Nearest level 1..3 for a service difficulty.
      *
      * @param float $difficulty
      * @return int
      */
     public static function level_for_difficulty(float $difficulty): int {
-        return (int)min(5, max(1, (int)floor($difficulty * 5) + 1));
+        $best = 1;
+        foreach (self::LEVELS as $level => $value) {
+            if (abs($difficulty - $value) < abs($difficulty - self::LEVELS[$best])) {
+                $best = $level;
+            }
+        }
+        return $best;
     }
 
     /**

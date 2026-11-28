@@ -4,7 +4,9 @@ from __future__ import annotations
 import copy
 import json
 import math
+import functools
 import sqlite3
+import threading
 import time
 import uuid
 from dataclasses import dataclass, field
@@ -42,9 +44,21 @@ class NoLearningContentError(RuntimeError):
     """Raised when the current filters leave no grounded lesson or exercise."""
 
 
+def _serialized(method):
+    """Run a store method under the store lock (one thread uses the connection at a time)."""
+    @functools.wraps(method)
+    def wrapper(self, *args, **kwargs):
+        with self._lock:
+            return method(self, *args, **kwargs)
+    return wrapper
+
+
 class _IssuedTaskStore:
+    # FastAPI runs sync endpoints in a thread pool, so the connection is shared
+    # across threads; the lock keeps each method (and its transaction) atomic.
     def __init__(self, path: str | Path):
-        self.db = sqlite3.connect(str(path), timeout=30)
+        self._lock = threading.RLock()
+        self.db = sqlite3.connect(str(path), timeout=30, check_same_thread=False)
         self.db.execute(
             "CREATE TABLE IF NOT EXISTS issued_learning_tasks ("
             "task_id TEXT PRIMARY KEY, user_id INTEGER NOT NULL, item_id TEXT NOT NULL, "
@@ -57,6 +71,7 @@ class _IssuedTaskStore:
         )
         self.db.commit()
 
+    @_serialized
     def get_open(self, user_id: int) -> tuple[str, str, dict[str, Any]] | None:
         row = self.db.execute(
             "SELECT task_id,item_id,payload,status FROM issued_learning_tasks "
@@ -70,6 +85,7 @@ class _IssuedTaskStore:
         payload["status"] = row[3]
         return str(row[0]), str(row[1]), payload
 
+    @_serialized
     def issue(
         self, user_id: int, item_id: str, task_payload: dict[str, Any],
         generation: dict[str, Any],
@@ -90,6 +106,7 @@ class _IssuedTaskStore:
             )
         return task_id
 
+    @_serialized
     def get(self, task_id: str, user_id: int) -> tuple[dict[str, Any], str, str | None, str | None, float | None]:
         row = self.db.execute(
             "SELECT payload,status,event_id,response,rt_ms FROM issued_learning_tasks "
@@ -100,6 +117,7 @@ class _IssuedTaskStore:
             raise ValueError("Task does not exist or does not belong to this learner")
         return json.loads(row[0]), str(row[1]), row[2], row[3], row[4]
 
+    @_serialized
     def begin_submission(
         self, task_id: str, event_id: str, response: Any, rt_ms: float,
     ) -> None:
@@ -112,6 +130,7 @@ class _IssuedTaskStore:
             if cursor.rowcount != 1:
                 raise RuntimeError("Task is no longer in the issued state")
 
+    @_serialized
     def complete(self, task_id: str, status: str) -> None:
         with self.db:
             cursor = self.db.execute(
@@ -122,6 +141,7 @@ class _IssuedTaskStore:
             if cursor.rowcount != 1:
                 raise RuntimeError("Could not persist the task's completed status")
 
+    @_serialized
     def close(self) -> None:
         self.db.close()
 
