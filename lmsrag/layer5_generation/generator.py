@@ -75,6 +75,10 @@ class GenerationContext:
 GeneratorCallable = Callable[..., str | tuple[str, float]]
 
 
+class GenerationValidationError(ValueError):
+    """The model response remained invalid after the repair attempts."""
+
+
 class LLMGenerator:
     """Generate and validate a JSON learning activity from retrieved context."""
 
@@ -106,7 +110,7 @@ class LLMGenerator:
 
         generated = generate_response(prompt)
         raw = generated[0] if isinstance(generated, tuple) else generated
-        for attempt in range(2):
+        for attempt in range(3):
             try:
                 result = self._parse_json(raw)
                 result = self._bind_bank_task(result, context)
@@ -143,8 +147,8 @@ class LLMGenerator:
                 result["normalized_safety"] = normalized_safety
                 return result
             except ValueError as exc:
-                if attempt == 1:
-                    raise
+                if attempt == 2:
+                    raise GenerationValidationError(str(exc)) from exc
                 duplicate_repair = (
                     "The new prompt must be different from every reference and retrieved example. "
                     "Change all operands and rewrite the wording; do not repeat or merely prefix an example.\n"

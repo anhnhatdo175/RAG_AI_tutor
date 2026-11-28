@@ -7,7 +7,7 @@ import math
 import sqlite3
 import time
 import uuid
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -34,6 +34,8 @@ class LearningActivity:
     item_id: str | None
     generation: dict[str, Any]
     status: str = "generated"
+    internal_task: dict[str, Any] | None = field(default=None, repr=False, compare=False)
+    stage_latency_ms: dict[str, float] = field(default_factory=dict, repr=False, compare=False)
 
 
 class NoLearningContentError(RuntimeError):
@@ -150,7 +152,13 @@ class LearningPipeline:
         self.issued_tasks = _IssuedTaskStore(task_database or state_store.path)
 
     @classmethod
-    def from_artifacts(cls) -> "LearningPipeline":
+    def from_artifacts(
+        cls,
+        *,
+        state_store: Any | None = None,
+        initialize_state_snapshot: bool = True,
+        task_database: str | Path | None = None,
+    ) -> "LearningPipeline":
         """Load built artifacts and prepare a separate persistent online state DB."""
         bank_path = config.ART / "exercise_bank.jsonl"
         live_path = config.ART / "learner_state_live.sqlite"
@@ -201,19 +209,23 @@ class LearningPipeline:
                 or not math.isfinite(feedback_alpha) or not 0 <= feedback_alpha <= 1):
             raise ValueError("layer1_report.json must contain a valid tuned learner_state_P_u.ema_alpha")
 
-        state_store = StateStore(live_path)
+        owns_state_store = state_store is None
+        if state_store is None:
+            state_store = StateStore(live_path)
         try:
-            if state_store.count() == 0:
+            if initialize_state_snapshot and state_store.count() == 0:
                 state_store.initialize_from_snapshot(config.ART / "learner_state.sqlite")
             return cls(
                 state_store=state_store,
                 retriever=retriever,
                 recommender=recommender,
                 encoder=encoder,
+                task_database=task_database,
                 feedback_alpha=float(feedback_alpha),
             )
         except Exception:
-            state_store.close()
+            if owns_state_store:
+                state_store.close()
             raise
 
     def get_pending_activity(self, user_id: int) -> LearningActivity | None:
@@ -239,16 +251,28 @@ class LearningPipeline:
         mode: str = "practice",
         language: str = "vi",
         allow_new_task_generation: bool = True,
+        target_difficulty: float | None = None,
+        issue_task: bool = True,
     ) -> LearningActivity:
         if not query.strip():
             raise ValueError("query must not be empty")
         if not isinstance(allow_new_task_generation, bool):
             raise ValueError("allow_new_task_generation must be a boolean")
+        if not isinstance(issue_task, bool):
+            raise ValueError("issue_task must be a boolean")
+        if target_difficulty is not None and (
+            isinstance(target_difficulty, bool)
+            or not isinstance(target_difficulty, (int, float))
+            or not math.isfinite(target_difficulty)
+            or not 0 <= target_difficulty <= 1
+        ):
+            raise ValueError("target_difficulty must be finite and in [0, 1]")
         pending = self.get_pending_activity(user_id)
         if pending is not None:
             return pending
 
         state = self.state_store.get(user_id) or LearnerState(user_id=user_id)
+        stage_latency_ms: dict[str, float] = {}
         query_vectors = np.asarray(self.encoder.encode_queries([query]), dtype="float32")
         if query_vectors.ndim != 2 or query_vectors.shape[0] != 1:
             raise ValueError("Query encoder must return one vector for one query")
@@ -265,12 +289,13 @@ class LearningPipeline:
                     or item.get("subject") != target_subject
                     or str(item.get("grade")) != str(target_grade)):
                 continue
-            predicted_success, _granularity = self.recommender.cf.predict_candidate(
+            predicted_success, _ = self.recommender.cf.predict_candidate(
                 user_id, item, target_skill, float(item["difficulty"])
             )
             personalized_scores_by_doc[str(item["doc_id"])] = float(np.clip(
                 1.0 - abs(predicted_success - config.TARGET_SUCCESS), 0.0, 1.0
             ))
+        stage_started = time.perf_counter()
         documents = self.retriever.retrieve(
             query,
             target_subject=target_subject,
@@ -282,10 +307,12 @@ class LearningPipeline:
             personalized_scores_by_doc=personalized_scores_by_doc,
             personalization_confidence=personalization_confidence,
         )
+        stage_latency_ms["retrieval"] = (time.perf_counter() - stage_started) * 1000
         if not documents:
             raise NoLearningContentError(
                 "No indexed learning material matches the subject, grade, and skill."
             )
+        stage_started = time.perf_counter()
         recommendations = self.recommender.recommend(
             user_id=user_id,
             state=state,
@@ -293,11 +320,25 @@ class LearningPipeline:
             target_subject=target_subject,
             target_grade=target_grade,
             target_skill=target_skill,
-            top_k=5,
+            top_k=(
+                len(self.recommender.exercise_bank)
+                if target_difficulty is not None
+                else 5
+            ),
         )
+        if target_difficulty is not None:
+            recommendations = [
+                item for item in recommendations
+                if abs(float(item["difficulty"]) - float(target_difficulty)) <= 0.10
+            ]
+            recommendations.sort(key=lambda item: (
+                abs(float(item["difficulty"]) - float(target_difficulty)),
+                -float(item.get("ranking_score", item.get("final_score", 0.0))),
+            ))
+        stage_latency_ms["recommendation"] = (time.perf_counter() - stage_started) * 1000
         if not recommendations:
             raise NoLearningContentError(
-                "No unused mapped exercise matches the subject, grade, and skill."
+                "No unused mapped exercise matches the subject, grade, skill, and difficulty."
             )
 
         selected = recommendations[0]
@@ -343,9 +384,16 @@ class LearningPipeline:
             top_k=1,
             top_n=1,
         )
+        stage_started = time.perf_counter()
         generation = self.generator.generate(context)
+        stage_latency_ms["generation"] = (time.perf_counter() - stage_started) * 1000
         if generation["status"] == "insufficient_context":
-            return LearningActivity(None, None, generation)
+            return LearningActivity(
+                None,
+                None,
+                generation,
+                stage_latency_ms=stage_latency_ms,
+            )
         generated_task = generation["task"]
         if allow_new_task_generation:
             item_id = f"GEN-{uuid.uuid4()}"
@@ -372,10 +420,24 @@ class LearningPipeline:
             "user_id": user_id,
             "status": "issued",
         }
+        if not issue_task:
+            return LearningActivity(
+                None,
+                item_id,
+                public_generation,
+                internal_task=issued_task,
+                stage_latency_ms=stage_latency_ms,
+            )
         task_id = self.issued_tasks.issue(
             user_id, item_id, issued_task, public_generation
         )
-        return LearningActivity(task_id, item_id, public_generation)
+        return LearningActivity(
+            task_id,
+            item_id,
+            public_generation,
+            internal_task=issued_task,
+            stage_latency_ms=stage_latency_ms,
+        )
 
     def submit_answer(
         self,

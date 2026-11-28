@@ -72,7 +72,7 @@ SUBJECT_DEFAULT = "Mathematics"                              # all bundled exerc
 
 # ---- Layer 5 LLM ------------------------------------------------------------
 LLM_BACKEND = os.environ.get("LLM_BACKEND", "ollama").lower()
-GENERATION_MODEL = os.environ.get("GENERATION_MODEL", "qwen3:8b")
+GENERATION_MODEL = os.environ.get("GENERATION_MODEL", "qwen3:30b")
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
 OLLAMA_CONTEXT_LENGTH = int(os.environ.get("OLLAMA_CONTEXT_LENGTH", "4096"))

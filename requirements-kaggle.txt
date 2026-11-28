@@ -1,2 +1,4 @@
--r requirements.txt
+# Kaggle already provides its ML/Jupyter stack. Do not inherit requirements.txt:
+# that file pins newer pandas/numpy/scipy/torch versions than a Kaggle runtime,
+# which makes pip report dependency conflicts with preinstalled Colab/Kaggle packages.
 pykt-toolkit==0.0.38
