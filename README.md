@@ -37,6 +37,21 @@ python -m pip install -r requirements-kaggle.txt
 
 `requirements-render.txt` chỉ dành cho sinh corpus bằng Playwright. `requirements-kaggle.txt` bổ sung `pykt-toolkit` cho notebook GPU.
 
+Trong Kaggle/Colab, không chạy `pip install -r requirements.txt`:
+các pin trong file dành cho môi trường Windows có thể thay NumPy, pandas, Jupyter, Torch
+và các package runtime đã cung cấp. Nếu đã chạy lệnh đó và thấy cảnh báo dependency,
+hãy restart session để khôi phục runtime sạch, rồi chỉ cài toolkit bằng:
+
+```python
+%pip install -r requirements-kaggle.txt
+import torch, pykt
+print("torch:", torch.__version__, "CUDA:", torch.cuda.is_available())
+```
+
+File Kaggle chỉ cài `pykt-toolkit` và các dependency mà toolkit thật sự yêu cầu; không kéo
+các pin NumPy/pandas/Torch của môi trường Windows. Nếu pip còn báo conflict, lưu log và
+kiểm tra package nào vừa bị thay đổi; không cài toàn bộ `requirements.txt`.
+
 Trong môi trường Windows mới:
 
 ```powershell
@@ -191,6 +206,8 @@ Tập `dev` và `eval` được chia theo kỹ năng; lệnh chỉ chấp nhận
 
 Để chạy inference LLM local thật qua Layer 5 (không dùng mock), cài Ollama, pull model rồi chạy:
 
+Mặc định dùng `qwen3:8b` (Q4_K_M khoảng 5,2 GB), đúng model chốt ở P3-03. Không dùng tag `qwen3:30b` vì đó là bản Thinking luôn bật suy nghĩ; nếu nhóm đổi sang 30B thì dùng `qwen3:30b-instruct` trên Kaggle T4 x2 (Quy ước chung mục 6).
+
 ```powershell
 $env:OLLAMA_HOST = "127.0.0.1:11435"
 $env:OLLAMA_MODELS = "D:\OllamaModels"
@@ -237,3 +254,51 @@ python -m lmsrag.app --user-id 123 --skill Addition-and-Subtraction-Fractions
 Có thể truyền `--query`, `--subject`, hoặc `--grade`; mặc định query được tạo từ skill, môn là `Mathematics`, lớp là `lower_secondary`, và mode là `practice`. Skill cần dùng canonical tag đã có trong corpus. Nhập câu trả lời để chấm và cập nhật learner state; nhập `:quit` để giữ bài đang chờ cho lần chạy tiếp theo.
 
 Ứng dụng nối retrieval, gợi ý bài, sinh nội dung và feedback cho từng lượt học. Snapshot offline `learner_state.sqlite` không bị ghi đè; state online và bài đang chờ được lưu tại `lmsrag/artifacts/learner_state_live.sqlite`. Bài chưa có answer key tự động sẽ không được phát; câu trả lời không chấm được sẽ chuyển sang `needs_review` mà không cập nhật mastery. MVP hiện chấm một lần cho mỗi bài và chưa tự chấm bài tự luận/Socratic nhiều lượt. Lần đầu tạo retriever có thể cần tải Cross-Encoder model từ Hugging Face.
+
+## Moodle REST service (P3-05)
+
+Service FastAPI nằm trong `lmsrag.service`. PostgreSQL được dùng khi deploy; SQLite được hỗ trợ cho kiểm thử. Schema SQL ban đầu ở `sql/001_init.sql`. Service cần artifacts Layer 1–2 và dữ liệu ASSISTments để nạp recommender, vì vậy hãy build artifacts như phần hướng dẫn trên trước khi khởi động.
+
+### Chạy bằng Docker Compose
+
+Tạo `.env` ở thư mục gốc từ mẫu, rồi thay các giá trị giả bằng mật khẩu, bearer token và salt riêng, ngẫu nhiên, tối thiểu 32 ký tự. Để `POSTGRES_PASSWORD` chỉ gồm ký tự chữ và số vì giá trị được dùng trong SQLAlchemy URL. Không commit `.env`; không dùng chung token với salt.
+
+```powershell
+Copy-Item deploy\.env.example .env
+# Sửa .env: đặt POSTGRES_PASSWORD, SERVICE_TOKEN và LEARNER_ID_SALT riêng biệt.
+docker compose -f deploy\docker-compose.yml up --build
+```
+
+Compose khởi động PostgreSQL, chờ DB khỏe rồi chạy API tại `http://localhost:8800` (đổi bằng `SERVICE_PORT` trong `.env`; plugin Moodle trong container gọi `http://host.docker.internal:8800`). Endpoint `/health` không yêu cầu xác thực; các endpoint còn lại yêu cầu `Authorization: Bearer <SERVICE_TOKEN>`. Ví dụ PowerShell:
+
+```powershell
+$headers = @{ Authorization = "Bearer <SERVICE_TOKEN>" }
+Invoke-RestMethod -Method Post -Uri http://localhost:8800/recommend `
+  -Headers $headers -ContentType "application/json" `
+  -Body '{"user_id":"moodle-user-123","skill_tag":"Unit-Rate","k":5}'
+```
+
+API hiện có `POST /recommend`, `POST /generate`, `POST /tasks/{task_id}/review`, `POST /submit`, `GET /profile/{user_id}`, `POST /tutor` và `POST /sync`. Bài sinh ra ở trạng thái `draft`; giáo viên phải duyệt trước khi học viên gửi đáp án. `answer_key` chỉ lưu nội bộ và không xuất hiện trong response task. Moodle ID được HMAC-SHA256 bằng `LEARNER_ID_SALT` trước khi lưu; giữ salt ổn định để tra lại đúng learner sau khi service restart. Submit cần `idempotency_key`; replay cùng key và cùng payload trả lại kết quả cũ, không cập nhật mastery lần hai.
+
+### Kiểm thử và đo độ trễ
+
+Chạy test tập trung:
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest lmsrag\tests\test_service.py lmsrag\tests\test_layer5_6.py -q
+```
+
+Nếu Windows Application Control chặn extension nhị phân của Python, chạy cùng bộ test trong Linux test image (không cài PyTorch/CUDA):
+
+```powershell
+docker build --target service-test -t rag-ai-tutor-service-test .
+docker run --rm rag-ai-tutor-service-test
+```
+
+Đo p50/p95 cho 200 request `POST /recommend` (độ trễ API, tổng service và từng stage từ `decision_log`). Chạy từ thư mục gốc với cùng biến môi trường `SERVICE_TOKEN`, `LEARNER_ID_SALT` và `DATABASE_URL` mà service đang dùng:
+
+```powershell
+docker compose -f deploy\docker-compose.yml exec service `
+  python -m lmsrag.service.benchmark `
+  --user-id benchmark-learner --skill-tag Unit-Rate --requests 200
+```

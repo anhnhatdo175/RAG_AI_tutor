@@ -76,9 +76,9 @@ GeneratorCallable = Callable[..., str | tuple[str, float]]
 
 
 class GenerationValidationError(ValueError):
-    """A response failed both schema-validation attempts."""
+    """The model response remained invalid after the repair attempts."""
 
-    def __init__(self, message: str, attempts: int):
+    def __init__(self, message: str, attempts: int = 3):
         super().__init__(message)
         self.attempts = attempts
 
@@ -114,7 +114,7 @@ class LLMGenerator:
 
         generated = generate_response(prompt)
         raw = generated[0] if isinstance(generated, tuple) else generated
-        for attempt in range(2):
+        for attempt in range(3):
             try:
                 result = self._parse_json(raw)
                 result = self._bind_bank_task(result, context)
@@ -152,7 +152,7 @@ class LLMGenerator:
                 result["generation_attempts"] = attempt + 1
                 return result
             except ValueError as exc:
-                if attempt == 1:
+                if attempt == 2:
                     raise GenerationValidationError(str(exc), attempts=attempt + 1) from exc
                 duplicate_repair = (
                     "The new prompt must be different from every reference and retrieved example. "

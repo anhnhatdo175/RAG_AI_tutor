@@ -5,6 +5,7 @@ import pytest
 from lmsrag.layer1_data.learner_state import LearnerState
 from lmsrag.layer1_data.state_store import StateStore
 from lmsrag.layer5_generation import GenerationContext, LLMGenerator, SocraticTutor
+from lmsrag.layer5_generation.generator import GenerationValidationError
 from lmsrag.layer6_feedback import FeedbackLoop, GradingResult
 
 
@@ -86,8 +87,8 @@ def test_generator_reports_failed_schema_attempts():
 
     with pytest.raises(GenerationValidationError) as error:
         LLMGenerator(fake_generate).generate(_context())
-    assert error.value.attempts == 2
-    assert generation_validation_metrics(error.value)["retry_count"] == 1
+    assert error.value.attempts == 3
+    assert generation_validation_metrics(error.value)["retry_count"] == 2
 
 
 def test_default_generator_supplies_context_bound_ollama_schema(monkeypatch):
@@ -330,6 +331,39 @@ def test_exercise_bank_gold_answer_is_private_and_usable_by_grader(tmp_path):
 def test_generator_rejects_ambiguous_or_nonstandard_json(raw, message):
     with pytest.raises(ValueError, match=message):
         LLMGenerator._parse_json(raw)
+
+
+def test_generator_retries_invalid_json_twice_before_success():
+    responses = ["not-json", "still-not-json", json.dumps(_generation())]
+    prompts = []
+
+    def fake_generate(prompt, *, json_mode):
+        assert json_mode is True
+        prompts.append(prompt)
+        return responses.pop(0)
+
+    result = LLMGenerator(fake_generate).generate(_context())
+
+    assert result["status"] == "ok"
+    assert len(prompts) == 3
+    assert "REPAIR:" not in prompts[0]
+    assert all("REPAIR:" in prompt for prompt in prompts[1:])
+
+
+def test_generator_stops_after_two_invalid_json_retries():
+    attempts = 0
+
+    def fake_generate(prompt, *, json_mode):
+        nonlocal attempts
+        attempts += 1
+        assert prompt
+        assert json_mode is True
+        return "not-json"
+
+    with pytest.raises(GenerationValidationError):
+        LLMGenerator(fake_generate).generate(_context())
+
+    assert attempts == 3
 
 
 def test_socratic_generation_rejects_questions_beyond_step_limit():
